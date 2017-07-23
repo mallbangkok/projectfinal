@@ -33,7 +33,7 @@ public class ListMallController {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		MallManager mm = new MallManager();
 		String[] m = request.getParameterValues("mallid");
-		System.out.println(""+m[2]);
+//		System.out.println(""+m[2]);
 //		long mallId = Long.parseLong(m);
 //		List<Mall> list = mm.getAllMalls();
 //		for(Mall mall : list){
