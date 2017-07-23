@@ -42,6 +42,7 @@ public class ListMallController {
 //				md.addAttribute("mall" , mall);
 //			}
 //		}
+		System.out.println("demo");
 		return mav;
 	}
 }
