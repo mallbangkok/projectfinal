@@ -21,9 +21,8 @@ public class ListMallController {
 		ModelAndView mav = new ModelAndView("list-mall");
 		MallManager mm = new MallManager();
 		List<Mall> list = mm.getAllMalls();
-		String m = request.getParameter("mallid");
 		
-		//session.setAttribute("list", list);
+		session.setAttribute("list", list);
 		md.addAttribute("list",list);
 		md.addAttribute("size",list.size());
 		return mav;
@@ -33,14 +32,16 @@ public class ListMallController {
 	public ModelAndView ListMallPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		MallManager mm = new MallManager();
-		String m = request.getParameter("mallid");
-		long mallId = Long.parseLong(m);
-		List<Mall> list = mm.getAllMalls();
-		for(Mall mall : list){
-			if(mall.getMallId() == mallId){
-				md.addAttribute("mall" , mall);
-			}
-		}
+		String[] m = request.getParameterValues("mallid");
+		System.out.println(""+m[2]);
+//		long mallId = Long.parseLong(m);
+//		List<Mall> list = mm.getAllMalls();
+//		for(Mall mall : list){
+//			if(mall.getMallId() == mallId){
+//				System.out.println(mall.getMallName());
+//				md.addAttribute("mall" , mall);
+//			}
+//		}
 		return mav;
 	}
 }

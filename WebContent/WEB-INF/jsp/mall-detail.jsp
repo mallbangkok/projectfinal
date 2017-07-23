@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page
+	import="java.util.*,com.spring.model.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
@@ -33,9 +37,14 @@
                 </div>
                 <div class="user-area">
                     <div class="actions">
-                        <a href="create-agency.html" class="promoted">Create Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Register</strong></a>
-                        <a href="sign-in.html">Sign In</a>
+                        <c:choose>
+							<c:when test="${username != null}">
+								<a href="logout">Log Out</a>
+							</c:when>
+							<c:otherwise>
+								<a href="sign-in">Sign In</a>
+							</c:otherwise>
+						</c:choose>
                     </div>
                     <div class="language-bar">
                         <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
@@ -155,8 +164,8 @@
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                            <h1>${mall.mallGroup}</h1>
-                            <figure><c:out value="${mall.mallName}"></c:out></figure>
+                            <h1>${mall.mallName}</h1>
+                            <figure><c:out value="${mall.timeMall}"></c:out></figure>
                             <span class="actions">
                                 <!--<a href="#" class="fa fa-print"></a>-->
                                 <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Add to bookmark</span><span class="title-added">Added</span></a>
@@ -165,21 +174,9 @@
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
                                 <div class="property-slide">
-                                    <a href="<c:url value="/img/properties/property-detail-01.jpg"/>" class="image-popup">
+                                    <a href="<c:url value="/img/mall/${mall.imageMall }"/>" class="image-popup">
                                         <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="<c:url value="/img/properties/property-detail-01.jpg"/>">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                <div class="property-slide">
-                                    <a href="<c:url value="/img/properties/property-detail-02.jpg"/>" class="image-popup">
-                                        <div class="overlay"><h3>Bedroom</h3></div>
-                                        <img alt="" src="<c:url value="/img/properties/property-detail-02.jpg"/>">
-                                    </a>
-                                </div><!-- /.property-slide -->
-                                <div class="property-slide">
-                                    <a href="<c:url value="/img/properties/property-detail-03.jpg"/>" class="image-popup">
-                                        <div class="overlay"><h3>Bathroom</h3></div>
-                                        <img alt="" src="<c:url value="/img/properties/property-detail-03.jpg"/>">
+                                        <img alt="" src="<c:url value="/img/mall/${mall.imageMall }"/>">
                                     </a>
                                 </div><!-- /.property-slide -->
                             </div><!-- /.property-carousel -->
@@ -187,24 +184,20 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <section id="quick-summary" class="clearfix">
-                                    <header><h2>Quick Summary</h2></header>
+                                    <header><h2>Mall Infomation</h2></header>
                                     <dl>
-                                        <dt>Location</dt>
-                                            <dd>Chicago, IL 60610</dd>
-                                        <dt>Price</dt>
-                                            <dd><span class="tag price">$78,000</span></dd>
-                                        <dt>Property Type:</dt>
-                                            <dd>House</dd>
-                                        <dt>Status:</dt>
-                                            <dd>Sale</dd>
-                                        <dt>Area:</dt>
-                                            <dd>860 m<sup>2</sup></dd>
-                                        <dt>Beds:</dt>
-                                            <dd>3</dd>
-                                        <dt>Baths:</dt>
-                                            <dd>2</dd>
-                                        <dt>Garages:</dt>
-                                            <dd>2</dd>
+                                    	<dt>Mall Group</dt>
+                                            <dd>${mall.mallGroup}</dd>
+                                        <dt>Type</dt>
+                                            <dd>${mall.type}</dd>
+                                        <dt>Area</dt>
+                                            <dd>${mall.area}</dd>
+                                        <dt>Status Mall</dt>
+                                            <dd>${mall.statusMall}</dd>
+                                        <dt>Updated</dt>
+                                            <dd>${mall.updatedDate}</dd>
+                                        <dt>Phone Number</dt>
+                                            <dd>${mall.phoneNoMall}</dd>
                                         <dt>Rating:</dt>
                                             <dd><div class="rating rating-overall" data-score="4"></div></dd>
                                     </dl>
@@ -741,7 +734,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

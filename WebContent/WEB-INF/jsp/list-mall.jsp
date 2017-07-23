@@ -190,12 +190,14 @@
                         </section>
                         <section id="properties">
                         <form action="list-mall" method="post" id="frm">
+                        <%List<Mall> list = (List<Mall>)session.getAttribute("list"); %>
                         <div class="row">
                    		<c:forEach var="i" items="${list}">
                             	<div class="col-md-4 col-sm-4">
                                 	<div class="property equal-height">
                                     	<a href="javascript:;" onclick="document.getElementById('frm').submit();">
                                     	<input type="hidden" name="mallid" value="${i.mallId}">
+                                    	<p>${i.mallId }</p>
                                         	<div class="property-image">
                                             	<img alt="" src="<c:url value="/img/mall/${i.imageMall }"/>">
                                         	</div>
@@ -205,7 +207,6 @@
                                                 	<h3><c:out value="${i.mallName }" /></h3>
                                             	</div>
                                         	</div>
-                                    		
                                     	</a>
                                 	</div><!-- /.property -->
                             	</div><!-- /.col-md-3 -->
