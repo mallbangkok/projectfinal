@@ -33,16 +33,17 @@ public class ListMallController {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		MallManager mm = new MallManager();
 		String[] m = request.getParameterValues("mallid");
-//		System.out.println(""+m[2]);
-//		long mallId = Long.parseLong(m);
-//		List<Mall> list = mm.getAllMalls();
-//		for(Mall mall : list){
-//			if(mall.getMallId() == mallId){
-//				System.out.println(mall.getMallName());
-//				md.addAttribute("mall" , mall);
-//			}
-//		}
-		System.out.println("demo");
+		List<Mall> list = mm.getAllMalls();
+		//long mallId = Long.parseLong(m);
+		
+		for(String mArray : m){
+			for(Mall mall : list){
+				if(mall.getMallId() == Long.parseLong(mArray)){
+					System.out.println(mall.getMallName());
+					md.addAttribute("mall" , mall);
+				}
+			}
+		}
 		return mav;
 	}
 }
