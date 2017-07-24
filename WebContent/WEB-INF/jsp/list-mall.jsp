@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page import="java.util.*,com.spring.model.*"%>
 <!DOCTYPE html>
 
@@ -192,12 +193,11 @@
                         <form action="list-mall" method="post" id="frm">
                         <%List<Mall> list = (List<Mall>)session.getAttribute("list"); %>
                         <div class="row">
-                   		<c:forEach var="i" items="${list}">
+                   		<c:forEach var="i" items="${list}" varStatus="loop">
                             	<div class="col-md-4 col-sm-4">
                                 	<div class="property equal-height">
-                                    	<a href="javascript:;" onclick="document.getElementById('frm').submit();">
-                                    	<input type="hidden" name="mallid" value="${i.mallId}">
-                                    	<p>${i.mallId }</p>
+                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+                                    	<input type="hidden" id="mall_id" name="mallid" value="" />
                                         	<div class="property-image">
                                             	<img alt="" src="<c:url value="/img/mall/${i.imageMall }"/>">
                                         	</div>
@@ -211,6 +211,7 @@
                                 	</div><!-- /.property -->
                             	</div><!-- /.col-md-3 -->
                          </c:forEach>
+                         
                         </div><!-- /.row-->
                         </form>
                         <!-- Pagination -->
@@ -435,7 +436,16 @@
     </footer>
     <!-- end Page Footer -->
 </div>
-
+<script type="text/javascript">
+	var mid;
+	onClick = function(id){
+		document.getElementById('frm').submit();
+		mid = id;
+		console.log(mid);
+	}
+	
+	
+</script>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>

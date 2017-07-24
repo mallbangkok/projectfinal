@@ -36,14 +36,16 @@ public class ListMallController {
 		List<Mall> list = mm.getAllMalls();
 		//long mallId = Long.parseLong(m);
 		
-		for(String mArray : m){
-			for(Mall mall : list){
-				if(mall.getMallId() == Long.parseLong(mArray)){
-					System.out.println(mall.getMallName());
-					md.addAttribute("mall" , mall);
-				}
-			}
+		for(String malls : m){
+			System.out.println(malls);
 		}
+		
+//		for(Mall mall : list){
+//			if(mall.getMallId() == mallId){
+//				System.out.println(mall.getMallName());
+//				md.addAttribute("mall" , mall);
+//			}
+//		}
 		return mav;
 	}
 }
