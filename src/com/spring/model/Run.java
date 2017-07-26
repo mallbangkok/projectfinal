@@ -45,6 +45,8 @@ public class Run {
 	
 	public static void addMall(){
 		MallManager mm = new MallManager();
+		
+		
 		FacilitiesManager fm = new FacilitiesManager();
 		
 		Facilities f1 = fm.getAllFacilities().get(0);
