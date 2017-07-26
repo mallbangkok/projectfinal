@@ -21,3 +21,4 @@ public class StoreManager {
 			return "Cannot Add Facilities !!!";
 		}
 	}
+}

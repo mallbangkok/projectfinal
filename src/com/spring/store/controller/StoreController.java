@@ -19,7 +19,7 @@ public class StoreController {
 		ModelAndView mav = new ModelAndView("store-admin");
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/store-admin", method = RequestMethod.POST)
 	public void doGetDataStore(HttpServletRequest request, HttpSession session, Model md) {
 		MallManager mm = new MallManager();
@@ -29,21 +29,21 @@ public class StoreController {
 		String storeName = request.getParameter("submit-store");
 		String type = request.getParameter("select-type");
 		String status = request.getParameter("select-status");
-		
-		Store store = new Store(storeName,type,status,floor);
+
+		Store store = new Store(storeName, type, status, floor);
 		Mall mall = new Mall();
-		for(Mall m :mm.loadMall()){
-			if(mallName.equals(m.getMallName())){
-				mall=m;
+		for (Mall m : mm.getAllMalls()) {
+			if (mallName.equals(m.getMallName())) {
+				mall = m;
 			}
 		}
 		store.setMall(mall);
 		System.out.println(sm.doHibernateStore(store));
 
-//		String[] facilities = request.getParameterValues("facilites");
+		// String[] facilities = request.getParameterValues("facilites");
 		System.out.println("Start");
-		System.out.println(mallName +""+ floor +""+ storeName + " " +type +" "+ status);
+		System.out.println(mallName + "" + floor + "" + storeName + " " + type + " " + status);
 		System.out.println("Stop");
-		
-		
 	}
+
+}
