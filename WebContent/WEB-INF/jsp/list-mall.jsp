@@ -99,8 +99,8 @@
                             <ul class="child-navigation">
                                 <li><a href="#">List By Type</a>
                                 	<ul class="child-navigation">
-                                		<li><a href="list-mall">Regional Mall</a></li>
-                                		<li><a href="#">Community Mall</a></li>
+                                		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
+                                		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
                                 		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
                                 		<li><a href="#">Theme Mall</a></li>
                                 		<li><a href="#">Luxury Mall</a></li>
@@ -201,12 +201,12 @@
                         </section>
                         <section id="properties">
                         <form action="list-mall" method="post" id="frm">
-                        <%List<Mall> list = (List<Mall>)session.getAttribute("list"); %>
+                        <%List<Mall> listByType = (List<Mall>)session.getAttribute("listByType"); %>
                         <div class="row">
-                   		<c:forEach var="i" items="${list}" varStatus="loop">
+                   		<c:forEach var="i" items="${listByType}" varStatus="loop">
                             	<div class="col-md-4 col-sm-4">
                                 	<div class="property equal-height">
-                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+                                    	<a href="javascript:;" onclick="onClick()">
                                     	<input type="hidden" id="mallid" name="mallid" value="" />
                                         	<div class="property-image">
                                             	<img alt="" src="<c:url value="/img/mall/${i.imageMall }"/>">

@@ -1,5 +1,6 @@
 package com.spring.listMallController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +22,18 @@ public class ListMallController {
 		ModelAndView mav = new ModelAndView("list-mall");
 		MallManager mm = new MallManager();
 		List<Mall> list = mm.getAllMalls();
+		List<Mall> listByType = new ArrayList<>();
+		String typename = request.getParameter("typename");
 		
-		session.setAttribute("list", list);
-		md.addAttribute("list",list);
-		md.addAttribute("size",list.size());
+		for(Mall m : list){
+			if(m.getType().equals(typename)){
+				listByType.add(m);
+			}
+		}
+
+		session.setAttribute("listByType", listByType);
+		md.addAttribute("listByType",listByType);
+		md.addAttribute("size",listByType.size());
 		return mav;
 	}
 	
