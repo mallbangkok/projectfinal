@@ -3,6 +3,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page import="java.util.*,com.spring.model.*"%>
+<%String[] types = {"Regional Mall","Community Mall","HyperMarket/SpecialtyStore","Theme Mall","Luxury Mall"
+    				,"Department Store","Complex","Shopping Plaza"}; %>
+<%String[] areas = {"Siam","Central Bangkok","Sukhumvit","Thonburi","Inner Bangkok","Northern Bangkok",
+		"North-East Bangkok","North-Middle Bangkok","North-West Bangkok","South-East Bangkok","South-West Bangkok","Upcountry"}; %>
+<% HashMap<String,String> map = new HashMap<String,String>(); 
+	map.put("null", "Directory");
+	map.put("Type", "Type");
+	map.put("Area", "Area");
+	pageContext.setAttribute("map", map);
+%>
 <!DOCTYPE html>
 
 <html>
@@ -197,7 +207,7 @@
                             	<div class="col-md-4 col-sm-4">
                                 	<div class="property equal-height">
                                     	<a href="javascript:;" onclick="onClick(${i.mallId})">
-                                    	<input type="hidden" id="mall_id" name="mallid" value="" />
+                                    	<input type="hidden" id="mallid" name="mallid" value="" />
                                         	<div class="property-image">
                                             	<img alt="" src="<c:url value="/img/mall/${i.imageMall }"/>">
                                         	</div>
@@ -234,25 +244,21 @@
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
                         <aside id="edit-search">
-                            <header><h3>Search Properties</h3></header>
-                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
+                            <header><h3>Search Mall</h3></header>
+                            <form role="form" id="form-sidebar" name="form-sidebar" class="form-search" action="properties-listing.html">
                                 <div class="form-group">
-                                    <select name="type">
-                                        <option value="">Status</option>
-                                        <option value="1">Rent</option>
-                                        <option value="2">Sale</option>
+                                    <select id="directory" name="directory" onchange="populate()">
+                                        <c:forEach var="i" items="${map}">
+                                        	<option value="${i.key}">${i.value}</option>
+                                        </c:forEach>
                                     </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
-                                    <select name="country">
-                                        <option value="">Country</option>
-                                        <option value="1">France</option>
-                                        <option value="2">Great Britain</option>
-                                        <option value="3">Spain</option>
-                                        <option value="4">Russia</option>
-                                        <option value="5">United States</option>
+                                	<select id="malltype" name="malltype">
+                                        
                                     </select>
                                 </div><!-- /.form-group -->
+                                
                                 <div class="form-group">
                                     <select name="city">
                                         <option value="">City</option>
@@ -443,8 +449,16 @@
 		mid = id;
 		console.log(mid);
 	}
-	
-	
+</script>
+<script type="text/javascript">
+	var type = document.getElementById('directory').value;
+	function populate(){
+		if(type == 'Type'){
+			console.log("type");
+		}else{
+			console.log("area");
+		}
+	}
 </script>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>

@@ -236,14 +236,18 @@
                                                     <span class="input-group-addon">G</span>
                                                     <select name="mallgroup" required>
                                                     	<option value="null">Please Select Group</option>
+                                                    	<option value="No Group">No Group</option>
                                                     	<option value="Central Group">Central Group</option>
                                                     	<option value="The Mall Group">The Mall Group</option>
                                                     	<option value="Siam Piwat">Siam Piwat</option>
                                                     	<option value="MBK Group">MBK Group</option>
+                                                    	<option value="MBK Group,Siam Piwat">MBK Group,Siam Piwat</option>
                                                     	<option value="Chula">Chula</option>
                                                     	<option value="Siam Future">Siam Future</option>
                                                     	<option value="Land & House (Siam Retail)">Land & House (Siam Retail)</option>
                                                     	<option value="Aeon">Aeon</option>
+                                                    	<option value="Sansiri">Sansiri</option>
+                                                    	<option value="Sammakorn">Sammakorn</option>
                                                     	<option value="Major Group">Major Group</option>
                                                     	<option value="Gaysorn Group">Gaysorn Group</option>
                                                     	<option value="Tesco">Tesco</option>
@@ -262,7 +266,7 @@
                                                     	<option value="Development Bangkok">Development Bangkok</option>
                                                     	<option value="IRIS Group">IRIS Group</option>
                                                     	<option value="K.E.Land">K.E.Land</option>
-                                                    	<option value="Property Perfect">Property Perfectoption>
+                                                    	<option value="Property Perfect">Property Perfect</	option>
                                                     	<option value="PSDC">PSDC</option>
                                                     	<option value="Sena Development">Sena Development</option>
                                                     	<option value="Silom Complex">Silom Complex</option>
@@ -270,6 +274,8 @@
                                                     	<option value="Tang Hua Seng">Tang Hua Seng</option>
                                                     	<option value="ZEER Property">ZEER Property</option>
                                                     	<option value="Raimond Land">Raimond Land</option>
+                                                    	<option value="JAS">JAS</option>
+                                                    	<option value="Thai Rung Group">Thai Rung Group</option>
                                                     </select>
                                                 </div>
                                             </div><!-- /.form-group -->
@@ -296,6 +302,7 @@
                                                     <select name="timemall" required>
                                                     	<option value="null">Please Select Time Mall</option>
                                                     	<option value="24 Hours Everyday">24 Hours Everyday</option>
+                                                    	<option value="06:00 - 22:00 Everyday">06:00 - 22:00 Everyday</option>
                                                     	<option value="06:00 - 24:00 Everyday">06:00 - 24:00 Everyday</option>
                                                     	<option value="07:00 - 24:00 Everyday">07:00 - 24:00 Everyday</option>
                                                     	<option value="08:00 - 22:00 Everyday">08:00 - 22:00 Everyday</option>
@@ -303,10 +310,12 @@
                                                     	<option value="08:30 - 20:00 Everyday">08:30 - 20:00 Everyday</option>
                                                     	<option value="08:30 - 20:30 Everyday">08:30 - 20:30 Everyday</option>
                                                     	<option value="09:00 - 20:00 Everyday">09:00 - 20:00 Everyday</option>
+                                                    	<option value="09:00 - 21:00 Everyday">09:00 - 21:00 Everyday</option>
                                                     	<option value="09:00 - 22:00 Everyday">09:00 - 22:00 Everyday</option>
                                                     	<option value="09:00 - 23:00 Everyday">09:00 - 23:00 Everyday</option>
                                                     	<option value="09:00 - 24:00 Everyday">09:00 - 24:00 Everyday</option>
                                                     	<option value="10:00 - 24:00 Everyday">10:00 - 24:00 Everyday</option>
+                                                    	<option value="10:00 - 19:00 Everyday">10:00 - 19:00 Everyday</option>
                                                     	<option value="10:00 - 02:00 Everyday">10:00 - 02:00 Everyday</option>
                                                     	<option value="10:00 - 20:00 Everyday">10:00 - 20:00 Everyday</option>
                                                     	<option value="10:00 - 21:00 Everyday">10:00 - 21:00 Everyday</option>
@@ -331,6 +340,8 @@
                                                     	<option value="11:00 - 22:00 Weekday, 10:00 - 22:00 Weekend">11:00 - 22:00 Weekday, 10:00 - 22:00 Weekend</option>
                                                     	<option value="10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun">10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun</option>
                                                     	<option value="10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun">10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun</option>
+                                                    	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun</option>
+                                                    	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">10:30 - 21:00 Sun-Thu, 10:30 - 22:00 Fri-Sat</option>
                                                     	<option value="10:30 - 21:00 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend">10:30 - 21:00 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend</option>
                                                     	<option value="10:30 - 21:30 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend">10:30 - 21:30 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend</option>
                                                     	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri, 10:00 - 22:00 Sat, 10:00 - 21:30 Sun">11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri, 10:00 - 22:00 Sat, 10:00 - 21:30 Sun</option>
