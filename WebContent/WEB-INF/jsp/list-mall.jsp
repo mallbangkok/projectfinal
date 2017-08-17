@@ -209,7 +209,7 @@
                                     	<a href="javascript:;" onclick="onClick()">
                                     	<input type="hidden" id="mallid" name="mallid" value="" />
                                         	<div class="property-image">
-                                            	<img alt="" src="<c:url value="/img/mall/${i.imageMall }"/>">
+                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
                                         	</div>
                                         	<div class="overlay">
                                             	<div class="info">
