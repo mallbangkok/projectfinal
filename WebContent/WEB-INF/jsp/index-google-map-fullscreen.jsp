@@ -192,77 +192,77 @@
 							<div class="search-box map">
 								<form role="form" id="form-map" class="form-map form-search">
 									<h2>Search Your Mall</h2>
-
 									<div class="form-group">
-										<select name="type" onchange="myFunction()">
-											<option value="">Select</option>
-											<option value="1">Mall</option>
-											<option value="2">Store</option>
-										</select>
-										<script>
-											function myFunction() {
-												var demomall=["11","22"]
-												alert('alert');
-											}
-										</script>
-									</div>
-									<!-- /.form-group -->
-									<div class="form-group">
-										<select name="country">
-											<option value="">Country</option>
-											<option value="1">France</option>
-											<option value="2">Great Britain</option>
-											<option value="3">Spain</option>
-											<option value="4">Russia</option>
-											<option value="5">United States</option>
+										<select name="area" >
+											<option value="">Area</option>
+											<option value="1">Central Bangkok</option>
+											<option value="2">Siam </option>
+											<option value="3">Sukhumvit</option>
+											<option value="4">Thonburi</option>
+											<option value="5">Inner Bangkok</option>
+											<option value="6">Eastern Bangkok</option>
+											<option value="7">Western Bangkok</option>
+											<option value="8">Northern Bangkok</option>
+											<option value="9">Eastern & Central</option>
+											<option value="10">Northern</option>
+											<option value="11">Northeast (Esan)</option>
+											<option value="12">Southern</option>
 										</select>
 									</div>
 									<!-- /.form-group -->
 									<div class="form-group">
-										<select name="city">
-											<option value="">City</option>
-											<option value="1">New York</option>
-											<option value="2">Los Angeles</option>
-											<option value="3">Chicago</option>
-											<option value="4">Houston</option>
-											<option value="5">Philadelphia</option>
+										<select name="type">
+											<option value="0">Type</option>
+											<option value="1">Shopping Mall</option>
+											<option value="2">Community Mall</option>
+											<option value="3">Theme Mall</option>
+											<option value="4">Luxury Mall</option>
+											<option value="5">Complex</option>
+											<option value="6">Shopping Plaza</option>
+											<option value="7">Deparment Store</option>
+											<option value="8">Home Center</option>
+											<option value="9">Superstore</option>
+											<option value="10">Dining Destination</option>
+											<option value="11">Marketplace</option>
+											<option value="12">Regional Mall</option>
+											<option value="13">Super Regional Mall</option>
+											
 										</select>
 									</div>
 									<!-- /.form-group -->
 									<div class="form-group">
-										<select name="district">
-											<option value="">District</option>
-											<option value="1">Manhattan</option>
-											<option value="2">The Bronx</option>
-											<option value="3">Brooklyn</option>
-											<option value="4">Queens</option>
-											<option value="5">Staten Island</option>
+										<select name="groupmall">
+											<option value="">Group</option>
+											<option value="1">Central Group</option>
+											<option value="">The Mall Group</option>
+											<option value="">Siam Piwat</option>
+											<option value="">MBK Group</option>
+											<option value="">Chula</option>
+											<option value="">Siam Future</option>
+											<option value="">Land & House(Siam Retail)</option>
+											<option value="">Aeon</option>
+											<option value="">Major Group</option>
+											<option value="">Gaysorn Group</option>
+											<option value="">Tesco</option>
+											<option value="">Imperial Land</option>
+											<option value="">Rangsit Plaza</option>
+											<option value="">Seacon Group</option>
+											<option value="">Bangkok Land</option>
+											<option value=""></option>
+											<option value=""></option>
+											
 										</select>
 									</div>
 									<!-- /.form-group -->
 									<div class="form-group">
-										<select name="property-type">
-											<option value="">Property Type</option>
-											<option value="1">Apartment</option>
-											<option value="2">Condominium</option>
-											<option value="3">Cottage</option>
-											<option value="4">Construction Site</option>
-											<option value="5">Industrial Site</option>
-											<option value="6">Garage</option>
-											<option value="7">Land</option>
-											<option value="8">Houseboat</option>
-											<option value="9">Villa</option>
-											<option value="10">Single Family</option>
-											<option value="11">Vineyard</option>
+										<select name="statusmall">
+											<option value="">Status</option>
+											<option value="1">Open</option>
+											<option value="2">Close</option>
+											
 										</select>
 									</div>
-									<!-- /.form-group -->
-									<div class="form-group">
-										<div class="price-range">
-											<input id="price-input" type="text" name="price"
-												value="1000;299000">
-										</div>
-									</div>
+									
 									<div class="form-group">
 										<button type="submit" class="btn btn-default">Search
 											Now</button>
