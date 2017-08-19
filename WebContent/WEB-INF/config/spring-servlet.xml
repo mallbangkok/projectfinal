@@ -18,7 +18,7 @@
 	<mvc:resources location="/WEB-INF/assets/php/" mapping="/php/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/stylesheets/" mapping="/stylesheets/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/ckeditor/" mapping="/ckeditor/**"></mvc:resources>
-	<mvc:resources location="/WEB-INF/assets/jquery/" mapping="/jquery/**"></mvc:resources>
+	
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
