@@ -30,7 +30,7 @@ public class ListMallController {
 				listByType.add(m);
 			}
 		}
-
+		
 		session.setAttribute("listByType", listByType);
 		md.addAttribute("listByType",listByType);
 		md.addAttribute("size",listByType.size());
@@ -48,7 +48,7 @@ public class ListMallController {
 		for(String malls : m){
 			System.out.println(malls);
 		}
-		
+		System.out.println("is post");
 //		for(Mall mall : list){
 //			if(mall.getMallId() == mallId){
 //				System.out.println(mall.getMallName());
