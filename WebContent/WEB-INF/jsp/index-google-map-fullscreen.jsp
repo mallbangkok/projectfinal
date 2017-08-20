@@ -190,7 +190,7 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-4">
 							<div class="search-box map">
-								<form role="form" id="form-map" class="form-map form-search">
+								<form role="form" id="form-serchfilter" action="serch-demo"  method="get" class="form-map form-search">
 									<h2>Search Your Mall</h2>
 									<div class="form-group">
 										<select name="area" >
@@ -262,9 +262,8 @@
 											
 										</select>
 									</div>
-									
 									<div class="form-group">
-										<button type="submit" class="btn btn-default">Search
+										<button type="submit" class="btn btn-default"form="form-serchfilter" value="Submit">Search
 											Now</button>
 									</div>
 									<!-- /.form-group -->
