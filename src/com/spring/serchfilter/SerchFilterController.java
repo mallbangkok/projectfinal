@@ -7,9 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SerchFilterController {
-	@RequestMapping(value = "/serch-demo", method = RequestMethod.GET)
-	public ModelAndView loadPageDemo() {
-		ModelAndView mav = new ModelAndView("index-google-map-fullscreen");
+	@RequestMapping(value = "/loadserchfilter", method = RequestMethod.GET)
+	public ModelAndView loadPageSerch() {
+		ModelAndView mav = new ModelAndView("index-slider-horizontal-search-box-floated");
 		System.out.println("OK");
 		System.out.println("OK");
 		System.out.println("OK");

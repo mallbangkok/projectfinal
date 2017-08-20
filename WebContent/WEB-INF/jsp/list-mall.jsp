@@ -109,7 +109,7 @@
                                 		<li><a href="#">Shopping Plaza</a></li>
                                 	</ul>
                                 </li>
-                                <li><a href="properties-listing.html">List By Area</a></li>
+                                <li><a href="properties-listing">List By Area</a></li>
                                 <li><a href="properties-listing-grid.html">List All</a></li>
                             </ul>
                         </li>
