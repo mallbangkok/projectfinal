@@ -4780,7 +4780,7 @@ form label.error:before {
   color: #5a5a5a;
 }
 .horizontal-search-float .search-box .form-map {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 15px 15px 5px 15px;
 }
 .horizontal-search-float .search-box .form-map:hover {
