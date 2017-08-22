@@ -35,6 +35,13 @@
 				attr("value", second[j]).data("sel", j).text(second[j]));
 			}
 		}).change();
+		 <%String movie_name ="Matrix"; %>
+         <script type="text/javascript">
+             var movie_name="";
+             movie_name= <%= movie_name%>
+		;
+		alert(movie_name)
+	</script>
 	</script>
 </body>
 </html>

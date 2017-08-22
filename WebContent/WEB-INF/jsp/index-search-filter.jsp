@@ -2,19 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en-US">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="ThemeStarz">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ThemeStarz">
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700'
-	rel='stylesheet' type='text/css'>
-<link href="fonts/font-awesome.css" rel="stylesheet"type="text/css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css"type="text/css">
-<link rel="stylesheet" href="css/bootstrap-select.min.css"type="text/css">
-<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-<link rel="stylesheet" href="css/jquery.slider.min.css" type="text/css">
-<link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.transitions.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <title>Zoner | Slider with Floated Horizontal Search Box Homepage</title>
 
@@ -37,10 +36,11 @@
                         <a href="create-account.html" class="promoted"><strong>Register</strong></a>
                         <a href="sign-in.html">Sign In</a>
                     </div>
-                     <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/se.png"/>" alt=""></a>
+                    <div class="language-bar">
+                        <a href="#" class="active">
+                         <img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
+                        <a href="#"> <img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
+                        <a href="#"> <img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                        <a href="index-google-map-fullscreen.html">
+                         <img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -154,7 +155,8 @@
                         <a href="property-detail.html" class="link-arrow">Read More</a>
                     </div>
                 </div>
-                  <img src="<c:url value="/img/slide-01.jpg"/>" alt="">
+                 <img src="<c:url value="/img/slide-01.png"/>" alt="">
+                
             </div>
             <div class="slide">
                 <div class="container">
@@ -168,7 +170,7 @@
                         <a href="property-detail.html" class="link-arrow">Read More</a>
                     </div>
                 </div>
-                 <img src="<c:url value="/img/slide-02.jpg"/>" alt="">
+               <img src="<c:url value="/img/slide-02.png"/>" alt="">
             </div>
             <div class="slide">
                 <div class="container">
@@ -182,7 +184,7 @@
                         <a href="property-detail.html" class="link-arrow">Read More</a>
                     </div>
                 </div>
-                 <img src="<c:url value="/img/slide-03.jpg"/>" alt="">
+               <img src="<c:url value="/img/slide-03.png"/>" alt="">
             </div>
         </div>
     </div>
@@ -323,7 +325,8 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                  <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                  
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -357,7 +360,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                   <img src="<c:url value="/img/properties/property-04.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -391,7 +394,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                  <img src="<c:url value="/img/properties/property-07.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -425,7 +428,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                  <img src="<c:url value="/img/properties/property-08.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -481,7 +484,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                    <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -515,7 +518,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                   <img src="<c:url value="/img/properties/property-03.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -549,7 +552,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                     <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -619,7 +622,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                     <img src="<c:url value="/img/properties/property-02.jpg"/>" alt="">
+                                   <img src="<c:url value="/img/properties/property-02.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -653,7 +656,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                     <img src="<c:url value="/img/properties/property-10.jpg"/>" alt="">
+                                   <img src="<c:url value="/img/properties/property-12.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -687,7 +690,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                  <img src="<c:url value="/img/properties/property-05.jpg"/>" alt="">
+                                   <img src="<c:url value="/img/properties/property-05.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -721,7 +724,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-10.jpg"/>" alt="">
+                                    <img src="<c:url value="/img/properties/property-10.jpg"/>" alt="">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -761,8 +764,8 @@
                     <blockquote class="testimonial">
                         <figure>
                             <div class="image">
-                             <img src="<c:url value="/img/client-01.jpg"/>" alt="">
-                               
+                            <img src="<c:url value="/img/client-01.jpg"/>" alt="">
+                              
                             </div>
                         </figure>
                         <aside class="cite">
@@ -773,7 +776,7 @@
                     <blockquote class="testimonial">
                         <figure>
                             <div class="image">
-                                 <img src="<c:url value="/img/client-01.jpg"/>" alt="">
+                                <img src="<c:url value="/img/client-01.jpg"/>" alt="">
                             </div>
                         </figure>
                         <aside class="cite">
@@ -789,10 +792,10 @@
                 <header class="section-title"><h2>Our Partners</h2></header>
                 <div class="logos">
                     <div class="logo"><a href=""> <img src="<c:url value="/img/logo-partner-01.png"/>" alt=""></a></div>
-                    <div class="logo"><a href=""> <img src="<c:url value="/img/logo-partner-02.png"/>" alt=""></a></div>
-                    <div class="logo"><a href=""> <img src="<c:url value="/img/logo-partner-03.png"/>" alt=""></a></div>
-                    <div class="logo"><a href=""> <img src="<c:url value="/img/logo-partner-04.png"/>" alt=""></a></div>
-                    <div class="logo"><a href=""> <img src="<c:url value="/img/logo-partner-05.png"/>" alt=""></a></div>
+                    <div class="logo"> <img src="<c:url value="/img/logo-partner-02.png"/>" alt=""></a></div>
+                    <div class="logo"> <img src="<c:url value="/img/logo-partner-03.png"/>" alt=""></a></div>
+                    <div class="logo"> <img src="<c:url value="/img/logo-partner-04.png"/>" alt=""></a></div>
+                    <div class="logo"> <img src="<c:url value="/img/logo-partner-05.png"/>" alt=""></a></div>
                 </div>
             </div><!-- /.container -->
         </section><!-- /#partners -->
@@ -821,7 +824,9 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                        <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                        
+                                         <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                           
                                         </div>
                                     </a>
                                     <div class="info">
@@ -833,7 +838,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
+                                           <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
                                         </div>
                                     </a>
                                     <div class="info">
@@ -874,7 +879,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright Â© 2013. All Rights Reserved.</span>
+                    <span>Copyright © 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
