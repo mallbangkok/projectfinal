@@ -23,6 +23,12 @@ public class Run {
 		List<Login> list = lmg.getAllLogin();
 		
 		ArticleManager am = new ArticleManager();
+		MallManager mm = new MallManager();
+		List<String> types = mm.getMallType();
+		
+		for(String t : types){
+			System.out.println(t);
+		}
 		
 //		ImageArticle ia1 = new ImageArticle("image1");
 //		ImageArticle ia2 = new ImageArticle("image2");
@@ -53,7 +59,7 @@ public class Run {
 		Mall m1 = new Mall("Robinson Lifestyle Center Samutprakan","Regional Mall","South-East Bangkok"
 				,"Central Group","Open","07 Jan 2017","10:00 - 22:00 Everyday","021742911-21","robinson-samutprakan");
 		
-		Mall m2 = new Mall("CentralPlaza Salaya (เซ็นทรัล ศาลายา)","Regional Mall","South-West Bangkok"
+		Mall m2 = new Mall("CentralPlaza Salaya (เน€เธ�เน�เธ�เธ—เธฃเธฑเธฅ เธจเธฒเธฅเธฒเธขเธฒ)","Regional Mall","South-West Bangkok"
 				,"Central Group","Open","02 Dec 2016","11:00 - 21:30 Everyday","021742911-21","central-salaya");
 		m1.getFacilites().add(f1);
 		f1.getMalls().add(m1);
@@ -64,8 +70,8 @@ public class Run {
 	
 	public static double calculateTime(String timeIn,String timeOut){
 		CalculateParking cp1 = new CalculateParking(timeIn,timeOut);
-		NoStamp ns1 = new NoStamp("NS1","�Ѵ� ��.�� 30 /�Ѵ��ա ��.�� 40 /�� ��� 3 �繵�� ��.�� 20");
-		Service s1 = new Service("S01","20 �ҷ","3 ��",ns1);
+		NoStamp ns1 = new NoStamp("NS1","๏ฟฝัด๏ฟฝ ๏ฟฝ๏ฟฝ.๏ฟฝ๏ฟฝ 30 /๏ฟฝัด๏ฟฝ๏ฟฝีก ๏ฟฝ๏ฟฝ.๏ฟฝ๏ฟฝ 40 /๏ฟฝ๏ฟฝ ๏ฟฝ๏ฟฝ๏ฟฝ 3 ๏ฟฝ็นต๏ฟฝ๏ฟฝ ๏ฟฝ๏ฟฝ.๏ฟฝ๏ฟฝ 20");
+		Service s1 = new Service("S01","20 ๏ฟฝาท","3 ๏ฟฝ๏ฟฝ",ns1);
 		String[] values = s1.getNoStamp().getCondition().split("/");
 		String[] hour1 = values[0].split(" ");
 		String[] hour2 = values[1].split(" ");

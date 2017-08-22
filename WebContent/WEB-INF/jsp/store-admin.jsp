@@ -1,8 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page import="java.util.*,com.spring.model.* ,com.spring.addMallController.*"%>
     
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<% 
+  MallManager mm  = new MallManager();
+  List<Mall> list = mm.getAllMalls() ; 
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,7 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/fileinput.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Zoner | Add Your Property</title>
+    <title>Zoner | Add Your Store</title>
 
 
 
@@ -64,8 +68,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html">
-                        <img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                        <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -172,28 +175,33 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="select-mall">Select Mall:</label>
-                                                <% 
-                                                MallManager mm  = new MallManager();
-                                                List<Mall> list =mm.getAllMalls() ; %>
-                                                                <select name="select-mall" id="select-mall">
-                                                                 	<option value="null">Please Select Mall</option>
-                                                                 	<% for (Mall m: list){ %>
-                                        								 <option value="<%=m.getMallName()%>"><%=m.getMallName()%></option>
-                                        							<% } %>
-                                                                
-                                                                </select>
+                                                <label for="select-mall">Select Type</label>
+                                                	<select name="select-mall" id="select-mall">
+                                                    	<option value="null">Please Select Type</option>
+                                        					<c:forEach var="i" items="${types}">
+                                        						<option value="${i}"><c:out value="${i}"></c:out></option>
+                                        					</c:forEach>
+                                                    </select>
+                                            </div><!-- /.form-group -->
+                                            <div class="form-group">
+                                                <label for="select-mall">Select Mall</label>
+                                                	<select name="select-mall" id="select-mall">
+                                                    	<option value="null">Please Select Mall</option>
+                                                        	<% for (Mall m: list){ %>
+                                        						<option value="<%=m.getMallName()%>"><%=m.getMallName()%></option>
+                                        					<% } %>   
+                                                    </select>
                                             </div><!-- /.form-group -->
                                         </div>
                                         <div class="col-md-4">
                                            <div class="form-group">
-                                                <label for="select-mall"> Floor :</label>
+                                                <label for="select-mall"> Floor </label>
                                                                 <select name="select-floor" id="select-floor">
                                                                     <option value="null">Please Select Floor</option>
                                                                     <option value="Level A">Level A</option>
                                                                     <option value="Level B">Level B</option>
                                                                     <option value="Level C">Level C</option>
-                                                                    <option value=Level D">Level D</option>
+                                                                    <option value="Level D">Level D</option>
                                                                     <option value="Level 1">Level 1</option>
                                                                     <option value="Level 2">Level 2</option>
                                                                     <option value="Level 3">Level 3</option>
@@ -207,7 +215,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="submit-price">Store Name :</label>
+                                                <label for="submit-price">Store Name </label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">N</span>
                                                     <input type="text" class="form-control" id="submit-store" name="submit-store" >
@@ -216,7 +224,7 @@
                                         </div>
                                          <div class="col-md-4">
                                              <div class="form-group">
-                                                <label for="select-mall"> Type :</label>
+                                                <label for="select-mall"> Type </label>
                                                                 <select name="select-type" id="select-type">
                                                                     <option value="null">Please Select Type</option>
                                                                     <option value="Floor">Floor</option>
@@ -227,7 +235,7 @@
                                         </div>
                                          <div class="col-md-4">
                                              <div class="form-group">
-                                                <label for="select-status"> Status :</label>
+                                                <label for="select-status"> Status </label>
                                                                 <select name="select-status" id="select-status">
                                                                    <option value="null">Please Select Status</option>
                                                     			   <option value="Open">Open</option>
@@ -334,7 +342,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
