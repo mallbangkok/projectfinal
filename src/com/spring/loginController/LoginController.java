@@ -45,7 +45,7 @@ public class LoginController {
 			session.setAttribute("list", list);
 			md.addAttribute("access_msg",msg);
 			//md.addAttribute("list",list);
-			return "submit";
+			return "my-properties";
 		} else {
 			md.addAttribute("error_msg", msg);
 			return "sign-in";

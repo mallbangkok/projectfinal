@@ -1,5 +1,7 @@
 package com.spring.store.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -15,8 +17,11 @@ import com.spring.model.Store;
 @Controller
 public class StoreController {
 	@RequestMapping(value = "/store-admin", method = RequestMethod.GET)
-	public ModelAndView loadAddStorePage() {
+	public ModelAndView loadAddStorePage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("store-admin");
+		MallManager mm = new MallManager();
+		List<String> listType = mm.getMallType();
+		md.addAttribute("types",listType);
 		return mav;
 	}
 
