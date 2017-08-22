@@ -41,20 +41,16 @@ public class ListMallController {
 	public ModelAndView ListMallPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		MallManager mm = new MallManager();
-		String[] m = request.getParameterValues("mallid");
-		List<Mall> list = mm.getAllMalls();
-		//long mallId = Long.parseLong(m);
 		
-		for(String malls : m){
-			System.out.println(malls);
+		String m = request.getParameter("valueClick");
+		long mallId = Long.parseLong(m);
+		List<Mall> list = mm.getAllMalls();
+
+		for(Mall mall : list){
+			if(mall.getMallId() == mallId){
+				md.addAttribute("mall" , mall);
+			}
 		}
-		System.out.println("is post");
-//		for(Mall mall : list){
-//			if(mall.getMallId() == mallId){
-//				System.out.println(mall.getMallName());
-//				md.addAttribute("mall" , mall);
-//			}
-//		}
 		return mav;
 	}
 }

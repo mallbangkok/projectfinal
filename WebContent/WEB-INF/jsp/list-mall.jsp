@@ -206,14 +206,13 @@
                    		<c:forEach var="i" items="${listByType}" varStatus="loop">
                             	<div class="col-md-4 col-sm-4">
                                 	<div class="property equal-height">
-                                    	<a href="javascript:;" onclick="onClick()">
-                                    	<input type="hidden" id="mallid" name="mallid" value="" />
+                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+                                    	<input type="hidden" id="valueClick" name="valueClick" />
                                         	<div class="property-image">
                                             	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
                                         	</div>
                                         	<div class="overlay">
                                             	<div class="info">
-                                                	<div class="tag price"><c:out value="${i.mallGroup }" /></div>
                                                 	<h3><c:out value="${i.mallName }" /></h3>
                                             	</div>
                                         	</div>
@@ -445,6 +444,7 @@
 <script type="text/javascript">
 	var mid;
 	onClick = function(id){
+		document.getElementById('valueClick').value = id;
 		document.getElementById('frm').submit();
 		mid = id;
 		console.log(mid);
