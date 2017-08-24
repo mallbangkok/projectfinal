@@ -1,14 +1,21 @@
 package com.spring.store.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.spring.addMallController.MallManager;
 import com.spring.model.Mall;
@@ -21,7 +28,25 @@ public class StoreController {
 		ModelAndView mav = new ModelAndView("store-admin");
 		MallManager mm = new MallManager();
 		List<String> listType = mm.getMallType();
-		md.addAttribute("types",listType);
+		md.addAttribute("types", listType);
+		return mav;
+	}
+
+	@RequestMapping(value = "/gettype", method = RequestMethod.GET)
+	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
+		ModelAndView mav = new ModelAndView("store-admin");
+		MallManager mm = new MallManager();
+		List<String> listType = mm.getMallType();
+		String t = request.getParameter("type");
+		md.addAttribute("types", listType);
+		List<Mall> listMallByType = new ArrayList<>();
+		for(Mall m : mm.getAllMalls()){
+			if(m.getType().equals(t)){
+				listMallByType.add(m);
+			}
+		}
+		session.setAttribute("mallType", listMallByType);
+		session.setAttribute("typeMall", t);
 		return mav;
 	}
 

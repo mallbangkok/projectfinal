@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/fileinput.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Zoner | Add Your Store</title>
+    <title>Mall Bangkok | Add Your Store</title>
 
 
 
@@ -179,7 +179,14 @@
                                             <input type="hidden" name="mType" id="mType">
                                                 <label for="select-mall">Select Type</label>
                                                 	<select name="select-type" id="select-type" onchange="onChange()">
-                                                    	<option value="null">Please Select Type</option>
+                                                    	<c:choose>
+                                                    		<c:when test="${typeMall != null }">
+                                                    			<option value="${typeMall}"><c:out value="${typeMall}"></c:out></option>
+                                                    		</c:when>
+                                                    		<c:otherwise>
+                                                    			<option value="null">Please Select Mall Type</option>
+                                                    		</c:otherwise>
+                                                    	</c:choose>
                                         					<c:forEach var="i" items="${types}">
                                         						<option value="${i}"><c:out value="${i}" /></option>
                                         					</c:forEach>
@@ -189,10 +196,14 @@
                                             <div class="form-group">
                                                 <label for="select-mall">Select Mall</label>
                                                 	<select name="select-mall" id="select-mall">
-                                                    	<option value="null">Please Select Mall</option>
-                                                        	<% for (Mall m: list){ %>
-                                        						<option value="<%=m.getMallName()%>"><%=m.getMallName()%></option>
-                                        					<% } %>   
+                                                    	<option value="null">Please Select Mall Type</option>
+                                                       	<c:choose>
+                                                       		<c:when test="${mallType != null }">
+                                                       			<c:forEach var="i" items="${mallType}">
+                                                       				<option value="${i.mallName}"><c:out value="${i.mallName }"></c:out></option>
+                                                       			</c:forEach>
+                                                       		</c:when>
+                                                       	</c:choose>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </div>
@@ -377,11 +388,9 @@
 	function onChange(){
 		var type = document.getElementById('select-type').value;
 		console.log(type);
-		
-		var malls = document.getElementById('select-mall').value;
-		console.log();
-		//window.location.assign('http://localhost:8080/ProjectFinal/select-type');
+		location.assign('http://localhost:8080/ProjectFinal/gettype?type=' + type);
 	}
+	
 	
 // 	$("select#select-type").change(function() {
 // 	    var val=$("#select-type").val();
