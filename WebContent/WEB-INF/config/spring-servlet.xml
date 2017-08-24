@@ -14,7 +14,7 @@
 	<mvc:resources location="/WEB-INF/assets/img/" mapping="/img/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/fonts/" mapping="/fonts/**"></mvc:resources>
  	
- 	<!-- <mvc:resources location="/WEB-INF/assets/css/" mapping="/css/**"></mvc:resources>  -->
+ 	 <mvc:resources location="/WEB-INF/assets/css/" mapping="/css/**"></mvc:resources>  
 	<mvc:resources location="/WEB-INF/assets/js/" mapping="/js/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/scss/" mapping="/scss/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/php/" mapping="/php/**"></mvc:resources>
