@@ -176,10 +176,10 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="select-mall">Select Type</label>
-                                                	<select name="select-mall" id="select-mall">
+                                                	<select name="select-type" id="select-type" onchange="onChange()">
                                                     	<option value="null">Please Select Type</option>
                                         					<c:forEach var="i" items="${types}">
-                                        						<option value="${i}"><c:out value="${i}"></c:out></option>
+                                        						<option value="${i}"><c:out value="${i}" /></option>
                                         					</c:forEach>
                                                     </select>
                                             </div><!-- /.form-group -->
@@ -369,6 +369,32 @@
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
+
+<script type="text/javascript">
+	function onChange(){
+		var value = document.getElementById('select-type').value
+		console.log(value);
+	}
+	
+	$(document).ready(function() {
+	    $('#select-type').change(function() {
+	        var selectedValue = $(this).val();
+	        var servletUrl = 'select-malloptions?value=' + selectedValue;
+
+	        $.getJSON(servletUrl, function(options) {
+	            var dropdown2 = $('#select-mall');
+	            $('>option', dropdown2).remove(); // Clean old options first.
+	            if (options) {
+	                $.each(opts, function(key, value) {
+	                    dropdown2.append($('<option/>').val(key).text(value));
+	                });
+	            } else {
+	                dropdown2.append($('<option/>').text("Please select Type"));
+	            }
+	        });
+	    });
+	});
+</script>
 
 <script>
     var _latitude = 48.87;
