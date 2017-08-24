@@ -24,15 +24,6 @@ public class StoreController {
 		md.addAttribute("types",listType);
 		return mav;
 	}
-	
-	@RequestMapping(value = "/select-malloptions", method = RequestMethod.GET)
-	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("store-admin");
-		MallManager mm = new MallManager();
-		String value = request.getParameter("value");
-		System.out.println(value);
-		return mav;
-	}
 
 	@RequestMapping(value = "/store-admin", method = RequestMethod.POST)
 	public void doGetDataStore(HttpServletRequest request, HttpSession session, Model md) {

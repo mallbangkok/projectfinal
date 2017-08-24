@@ -174,7 +174,9 @@
                                     <header><h2>Store Information</h2></header>
                                     <div class="row">
                                         <div class="col-md-8">
+                                        <form action="select-type" method="get" id="sType">
                                             <div class="form-group">
+                                            <input type="hidden" name="mType" id="mType">
                                                 <label for="select-mall">Select Type</label>
                                                 	<select name="select-type" id="select-type" onchange="onChange()">
                                                     	<option value="null">Please Select Type</option>
@@ -183,6 +185,7 @@
                                         					</c:forEach>
                                                     </select>
                                             </div><!-- /.form-group -->
+                                        </form>
                                             <div class="form-group">
                                                 <label for="select-mall">Select Mall</label>
                                                 	<select name="select-mall" id="select-mall">
@@ -372,107 +375,34 @@
 
 <script type="text/javascript">
 	function onChange(){
-		var value = document.getElementById('select-type').value
-		console.log(value);
+		var type = document.getElementById('select-type').value;
+		console.log(type);
+		
+		var malls = document.getElementById('select-mall').value;
+		console.log();
+		//window.location.assign('http://localhost:8080/ProjectFinal/select-type');
 	}
 	
-	$(document).ready(function() {
-	    $('#select-type').change(function() {
-	        var selectedValue = $(this).val();
-	        var servletUrl = 'select-malloptions?value=' + selectedValue;
+// 	$("select#select-type").change(function() {
+// 	    var val=$("#select-type").val();
+// 	    alert(val);
+// 	    $.ajax({
+// 	    url : 'select-type',
+// 	    method : 'get',
+// 	    contentType: 'application/json',
+// 	     	data :{
+// 	              type : val
+// 	            },
+// 	      success: function (data) {
+// 	      alert("Success Response"+ data);
+// 	      },
+// 	       error :function()
+// 	       {
+// 	       		alert("error");
+// 	       }          
 
-	        $.getJSON(servletUrl, function(options) {
-	            var dropdown2 = $('#select-mall');
-	            $('>option', dropdown2).remove(); // Clean old options first.
-	            if (options) {
-	                $.each(opts, function(key, value) {
-	                    dropdown2.append($('<option/>').val(key).text(value));
-	                });
-	            } else {
-	                dropdown2.append($('<option/>').text("Please select Type"));
-	            }
-	        });
-	    });
-	});
+// 	 });
+// 	});
 </script>
-
-<script>
-    var _latitude = 48.87;
-    var _longitude = 2.29;
-
-    google.maps.event.addDomListener(window, 'load', initSubmitMap(_latitude,_longitude));
-    function initSubmitMap(_latitude,_longitude){
-        var mapCenter = new google.maps.LatLng(_latitude,_longitude);
-        var mapOptions = {
-            zoom: 15,
-            center: mapCenter,
-            disableDefaultUI: false,
-            //scrollwheel: false,
-            styles: mapStyles
-        };
-        var mapElement = document.getElementById('submit-map');
-        var map = new google.maps.Map(mapElement, mapOptions);
-        var marker = new MarkerWithLabel({
-            position: mapCenter,
-            map: map,
-            icon: 'img/marker.png',
-            labelAnchor: new google.maps.Point(50, 0),
-            draggable: true
-        });
-        $('#submit-map').removeClass('fade-map');
-        google.maps.event.addListener(marker, "mouseup", function (event) {
-            var latitude = this.position.lat();
-            var longitude = this.position.lng();
-            $('#latitude').val( this.position.lat() );
-            $('#longitude').val( this.position.lng() );
-        });
-
-//      Autocomplete
-        var input = /** @type {HTMLInputElement} */( document.getElementById('address-map') );
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        autocomplete.bindTo('bounds', map);
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            var place = autocomplete.getPlace();
-            if (!place.geometry) {
-                return;
-            }
-            if (place.geometry.viewport) {
-                map.fitBounds(place.geometry.viewport);
-            } else {
-                map.setCenter(place.geometry.location);
-                map.setZoom(17);
-            }
-            marker.setPosition(place.geometry.location);
-            marker.setVisible(true);
-            $('#latitude').val( marker.getPosition().lat() );
-            $('#longitude').val( marker.getPosition().lng() );
-            var address = '';
-            if (place.address_components) {
-                address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
-                    (place.address_components[1] && place.address_components[1].short_name || ''),
-                    (place.address_components[2] && place.address_components[2].short_name || '')
-                ].join(' ');
-            }
-        });
-
-    }
-
-    function success(position) {
-        initSubmitMap(position.coords.latitude, position.coords.longitude);
-        $('#latitude').val( position.coords.latitude );
-        $('#longitude').val( position.coords.longitude );
-    }
-
-    $('.geo-location').on("click", function() {
-        if (navigator.geolocation) {
-            $('#submit-map').addClass('fade-map');
-            navigator.geolocation.getCurrentPosition(success);
-        } else {
-            error('Geo Location is not supported');
-        }
-    });
-</script>
-
 </body>
 </html>
