@@ -44,21 +44,6 @@ public class Mall {
 		this.imageMall = imageMall;
 	}
 
-	public Mall(long mallId, String mallName, String type, String area, String mallGroup, String statusMall,
-			String updatedDate, String timeMall, String phoneNoMall, String imageMall) {
-		super();
-		this.mallId = mallId;
-		this.mallName = mallName;
-		this.type = type;
-		this.area = area;
-		this.mallGroup = mallGroup;
-		this.statusMall = statusMall;
-		this.updatedDate = updatedDate;
-		this.timeMall = timeMall;
-		this.phoneNoMall = phoneNoMall;
-		this.imageMall = imageMall;
-	}
-
 	public long getMallId() {
 		return mallId;
 	}
