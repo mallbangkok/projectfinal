@@ -8,7 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class FullScreenMapController {
 	@RequestMapping(value = "/index-google-map-fullscreen", method = RequestMethod.GET)
-	public String loadPage() {
-		return "index-google-map-fullscreen";
+	public ModelAndView loadIndexPage() {
+		ModelAndView mav = new ModelAndView("index-google-map-fullscreen");
+		return mav;
 	}
 }

@@ -32,8 +32,8 @@ public class ListMallController {
 		}
 		
 		session.setAttribute("listByType", listByType);
-		md.addAttribute("listByType",listByType);
-		md.addAttribute("size",listByType.size());
+		session.setAttribute("size", listByType.size());
+		
 		return mav;
 	}
 	

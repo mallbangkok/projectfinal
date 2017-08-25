@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Zoner | Google Map with Advanced Horizontal Search</title>
+    <title>Mall Bangkok | Google Map with Advanced Horizontal Search</title>
 
 </head>
 

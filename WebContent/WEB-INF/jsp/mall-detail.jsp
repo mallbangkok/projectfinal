@@ -64,7 +64,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                        <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -85,12 +85,22 @@
                                 <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
                             </ul>
                         </li>
-                        <li class="has-child"><a href="#">Properties</a>
+                        <li class="has-child"><a href="#">Directory</a>
                             <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
+                                <li><a href="#">List By Type</a>
+                                	<ul class="child-navigation">
+                                		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
+                                		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
+                                		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+                                		<li><a href="#">Theme Mall</a></li>
+                                		<li><a href="#">Luxury Mall</a></li>
+                                		<li><a href="#">Department Store</a></li>
+                                		<li><a href="#">Complex</a></li>
+                                		<li><a href="#">Shopping Plaza</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="properties-listing">List By Area</a></li>
+                                <li><a href="properties-listing-grid.html">List All</a></li>
                             </ul>
                         </li>
                         <li class="has-child"><a href="#">Pages</a>
@@ -140,9 +150,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
+                
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -203,27 +211,25 @@
                                     </dl>
                                 </section><!-- /#quick-summary -->
                             </div><!-- /.col-md-4 -->
-                            <div class="col-md-8 col-sm-12">
-                                <section id="description">
-                                    <header><h2>Property Description</h2></header>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum,
-                                        bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt.
-                                        Duis euismod placerat rhoncus. Phasellus mollis imperdiet placerat. Sed ac
-                                        turpis nisl. Mauris at ante mauris. Aliquam posuere fermentum lorem, a aliquam
-                                        mauris rutrum a. Curabitur sit amet pretium lectus, nec consequat orci.
-                                    </p>
-                                    <p>
-                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                        himenaeos. Duis et metus in libero sollicitudin venenatis eu sed enim. Nam felis
-                                        lorem, suscipit ac nisl ac, iaculis dapibus tellus. Cras ante justo, aliquet quis
-                                        placerat nec, molestie id turpis. Cras at tincidunt magna. Mauris aliquam sem sit
-                                        amet dapibus venenatis. Sed metus orci, tincidunt sed fermentum non, ornare non quam.
-                                        Aenean nec turpis at libero lobortis pretium.
-                                    </p>
-                                </section><!-- /#description -->
+                            <div class="col-md-8">
+                                <section id="find-shop">
+                                    <header><h2>Find Shop in This Mall</h2></header>
+                                    <div class="btn-group-shop">
+  										 <button>Food</button>
+										 <button>Shopping</button>
+										 <button>Service</button>
+									</div>
+                                </section><!-- /#find-shop -->
+                                <section id="select-floor">
+                                	<header><h2>Floor</h2></header>
+                                	<div class="btn-group2">
+									<%for(int i = 0; i < 10;i++){ %>
+										<button><%=i %></button>
+									<%} %>
+									</div>
+                                </section>
                                 <section id="property-features">
-                                    <header><h2>Property Description</h2></header>
+                                    <header><h2>List Shop</h2></header>
                                     <ul class="list-unstyled property-features-list">
                                         <li>Sauna</li>
                                         <li>Fireplace or fire pit</li>
@@ -235,13 +241,6 @@
                                         <li>Concrete Flooring</li>
                                     </ul>
                                 </section><!-- /#property-features -->
-                                <section id="floor-plans">
-                                    <div class="floor-plans">
-                                        <header><h2>Floor Plans</h2></header>
-                                        <a href="<c:url value="/img/properties/floor-plan-big.jpg"/>" class="image-popup"><img alt="" src="<c:url value="/img/properties/floor-plan-01.jpg"/>"></a>
-                                        <a href="<c:url value="/img/properties/floor-plan-big.jpg"/>" class="image-popup"><img alt="" src="<c:url value="/img/properties/floor-plan-02.jpg"/>"></a>
-                                    </div>
-                                </section><!-- /#floor-plans -->
                                 <section id="property-map">
                                     <header><h2>Map</h2></header>
                                     <div class="property-detail-map-wrapper">
@@ -294,68 +293,9 @@
                                         </form><!-- /#form-contact -->
                                     </div><!-- /.rating-form -->
                                 </section><!-- /#property-rating -->
-                                <section id="video-presentation">
-                                    <header><h2>Video Presentation</h2></header>
-                                    <div class="video">
-                                        <iframe src="//player.vimeo.com/video/34741214?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="281" ></iframe>
-                                    </div>
-                                </section><!-- /#video-presentation -->
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
-                                <section id="contact-agent">
-                                    <header><h2>Contact Agent</h2></header>
-                                    <div class="row">
-                                        <section class="agent-form">
-                                            <div class="col-md-7 col-sm-12">
-                                                <aside class="agent-info clearfix">
-                                                    <figure><a href="agent-detail.html"><img alt="" src="<c:url value="/img/agent-01.jpg"/>"></a></figure>
-                                                    <div class="agent-contact-info">
-                                                        <h3>Robert Farley</h3>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum,
-                                                            bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt.
-                                                            Duis euismod placerat rhoncus.
-                                                        </p>
-                                                        <dl>
-                                                            <dt>Phone:</dt>
-                                                            <dd>(123) 456 789</dd>
-                                                            <dt>Mobile:</dt>
-                                                            <dd>888 123 456 789</dd>
-                                                            <dt>Email:</dt>
-                                                            <dd><a href="mailto:#">john.doe@example.com</a></dd>
-                                                            <dt>Skype:</dt>
-                                                            <dd>john.doe</dd>
-                                                        </dl>
-                                                        <hr>
-                                                        <a href="agent-detail.html" class="link-arrow">Full Profile</a>
-                                                    </div>
-                                                </aside><!-- /.agent-info -->
-                                            </div><!-- /.col-md-7 -->
-                                            <div class="col-md-5 col-sm-12">
-                                                <div class="agent-form">
-                                                    <form role="form" id="form-contact-agent" method="post"  class="clearfix">
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-name">Your Name<em>*</em></label>
-                                                            <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-email">Your Email<em>*</em></label>
-                                                            <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <label for="form-contact-agent-message">Your Message<em>*</em></label>
-                                                            <textarea class="form-control" id="form-contact-agent-message" rows="2" name="form-contact-agent-message" required></textarea>
-                                                        </div><!-- /.form-group -->
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Send a Message</button>
-                                                        </div><!-- /.form-group -->
-                                                        <div id="form-contact-agent-status"></div>
-                                                    </form><!-- /#form-contact -->
-                                                </div><!-- /.agent-form -->
-                                            </div><!-- /.col-md-5 -->
-                                        </section><!-- /.agent-form -->
-                                    </div><!-- /.row -->
-                                </section><!-- /#contact-agent -->
+                                
                                 <hr class="thick">
                                 <section id="similar-properties">
                                     <header><h2 class="no-border">Similar Properties</h2></header>
@@ -465,71 +405,7 @@
                                     </div><!-- /.row-->
                                 </section><!-- /#similar-properties -->
                                 <hr class="thick">
-                                <section id="comments">
-                                    <header><h2 class="no-border">Comments</h2></header>
-                                    <ul class="comments">
-                                        <li class="comment">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="<c:url value="/img/client-01.jpg"/>">
-                                                </div>
-                                            </figure>
-                                            <div class="comment-wrapper">
-                                                <div class="name pull-left">Catherine Brown</div>
-                                                <span class="date pull-right"><span class="fa fa-calendar"></span>12.05.2014</span>
-                                                <div class="rating rating-individual" data-score="4"></div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                                    augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                                    mauris imperdiet vel. Nulla et massa metus. Nam porttitor quam eget ante elementum consectetur. Aenean ac nisl
-                                                    et nulla placerat suscipit eu a mauris. Curabitur quis augue condimentum, varius mi in, ultricies velit.
-                                                    Suspendisse potenti.
-                                                </p>
-                                                <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                <hr>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <ul class="comments-child">
-                                                <li class="comment">
-                                                    <figure>
-                                                        <div class="image">
-                                                            <img alt="" src="<c:url value="/img/agent-01.jpg"/>">
-                                                        </div>
-                                                    </figure>
-                                                    <div class="comment-wrapper">
-                                                        <div class="name">John Doe</div>
-                                                        <span class="date"><span class="fa fa-calendar"></span>24.06.2014</span>
-                                                        <div class="rating rating-individual" data-score="3"></div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                                            augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                                            mauris.
-                                                        </p>
-                                                        <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                        <hr>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="comment">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="<c:url value="/img/user-02.jpg"/>">
-                                                </div>
-                                            </figure>
-                                            <div class="comment-wrapper">
-                                                <div class="name">John Doe</div>
-                                                <span class="date"><span class="fa fa-calendar"></span>08.05.2014</span>
-                                                <div class="rating rating-individual" data-score="5"></div>
-                                                <p>Quisque iaculis neque at dui cursus posuere. Sed tristique pharetra orci, eu malesuada ante tempus nec.
-                                                    Phasellus enim odio, facilisis et ante vel, tempor congue sapien. Praesent eget ligula
-                                                    eu libero cursus facilisis vel non arcu. Sed vitae quam enim.
-                                                </p>
-                                                <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                <hr>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </section>
+                                
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </section><!-- /#property-detail -->
@@ -539,68 +415,8 @@
                 <!-- sidebar -->
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
-                        <aside id="edit-search">
-                            <header><h3>Search Properties</h3></header>
-                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
-                                <div class="form-group">
-                                    <select name="type">
-                                        <option value="">Status</option>
-                                        <option value="1">Rent</option>
-                                        <option value="2">Sale</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="country">
-                                        <option value="">Country</option>
-                                        <option value="1">France</option>
-                                        <option value="2">Great Britain</option>
-                                        <option value="3">Spain</option>
-                                        <option value="4">Russia</option>
-                                        <option value="5">United States</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="city">
-                                        <option value="">City</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Los Angeles</option>
-                                        <option value="3">Chicago</option>
-                                        <option value="4">Houston</option>
-                                        <option value="5">Philadelphia</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="district">
-                                        <option value="">District</option>
-                                        <option value="1">Manhattan</option>
-                                        <option value="2">The Bronx</option>
-                                        <option value="3">Brooklyn</option>
-                                        <option value="4">Queens</option>
-                                        <option value="5">Staten Island</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="property-type">
-                                        <option value="">Property Type</option>
-                                        <option value="1">Apartment</option>
-                                        <option value="2">Condominium</option>
-                                        <option value="3">Cottage</option>
-                                        <option value="4">Flat</option>
-                                        <option value="5">House</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <div class="price-range">
-                                        <input id="price-input" type="text" name="price" value="1000;299000">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
-                                </div><!-- /.form-group -->
-                            </form><!-- /#form-map -->
-                        </aside><!-- /#edit-search -->
-                        <aside id="featured-properties">
-                            <header><h3>Featured Properties</h3></header>
+                        <aside id="recent-post">
+                            <header><h3>Recent Post</h3></header>
                             <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
@@ -637,7 +453,7 @@
                                     <div class="tag price">$ 128,600</div>
                                 </div>
                             </div><!-- /.property -->
-                        </aside><!-- /#featured-properties -->
+                        </aside><!-- /#recent post -->
                         <aside id="our-guides">
                             <header><h3>Our Guides</h3></header>
                             <a href="#" class="universal-button">

@@ -5893,3 +5893,54 @@ body, html {
   page-break-after: auto;
   margin: 0;
 }
+.btn-group-shop button {
+    background-color: #e6ccff; /* Green background */
+    border: 1px solid black; /* Green border */
+    width: 185px;
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group-shop button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group-shop:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group-shop button:hover {
+    background-color: #b366ff;
+}
+
+.btn-group2 button {
+    background-color: #e6ccff; /* Green background */
+    border: 1px solid black; /* Green border */
+    width: 50px;
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group2 button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group2:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group2 button:hover {
+    background-color: #b366ff;
+}
