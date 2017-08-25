@@ -21,6 +21,7 @@ public class Mall {
 	
 	@ManyToMany(cascade=CascadeType.ALL , mappedBy = "malls" , fetch = FetchType.EAGER)
 	private Set<Facilities> facilites = new HashSet<Facilities>();
+	
 
 	@OneToMany (cascade=CascadeType.ALL, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Store> stores = new HashSet<Store>();
@@ -28,6 +29,7 @@ public class Mall {
 	public Mall() {
 		super();
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Mall(String mallName, String type, String area, String mallGroup,String statusMall,String updatedDate, String timeMall, String phoneNoMall,
