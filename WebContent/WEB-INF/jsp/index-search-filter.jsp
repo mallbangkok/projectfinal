@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="css/owl.transitions.css" type="text/css">
-    <link rel="stylesheet" href="css/style2.css" type="text/css">
+    <link rel="stylesheet" href="css/style3.css" type="text/css">
 
     <title>Zoner | Slider with Floated Horizontal Search Box Homepage</title>
 
