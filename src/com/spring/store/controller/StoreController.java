@@ -1,21 +1,16 @@
 package com.spring.store.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.spring.addMallController.MallManager;
 import com.spring.model.Mall;
@@ -51,12 +46,21 @@ public class StoreController {
 	}
 
 	@RequestMapping(value = "/store-admin", method = RequestMethod.POST)
-	public void doGetDataStore(HttpServletRequest request, HttpSession session, Model md) {
+	public ModelAndView doAddStore(HttpServletRequest request, HttpSession session, Model md) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		ModelAndView mav = new ModelAndView("my-properties");
 		MallManager mm = new MallManager();
 		StoreManager sm = new StoreManager();
+		
 		String mallName = request.getParameter("select-mall");
 		String floor = request.getParameter("select-floor");
-		String storeName = request.getParameter("submit-store");
+		String storeName = request.getParameter("storename");
 		String type = request.getParameter("select-type");
 		String status = request.getParameter("select-status");
 
@@ -67,13 +71,17 @@ public class StoreController {
 				mall = m;
 			}
 		}
-		store.setMall(mall);
-		System.out.println(sm.doHibernateStore(store));
-
-		// String[] facilities = request.getParameterValues("facilites");
-		System.out.println("Start");
-		System.out.println(mallName + "" + floor + "" + storeName + " " + type + " " + status);
-		System.out.println("Stop");
+		
+		try{
+			mall.getStores().add(store);
+			store.setMall(mall);
+			mall.setStores(mall.getStores());
+			System.out.println(sm.doHibernateStore(store));
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		
+		return mav;
 	}
 
 }

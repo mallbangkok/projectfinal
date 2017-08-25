@@ -165,7 +165,7 @@
         <div class="container">
             <header><h1>Add Your Store</h1></header>
           
-            <form role="form" id="form-submit" class="form-submit" action="store-admin" method="post">
+            
                 <div class="row">
                     <div class="block">
                         <div class="col-md-9 col-sm-9">
@@ -193,9 +193,10 @@
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
+                           <form role="form" id="form-submit" class="form-submit" action="store-admin" method="post">
                                             <div class="form-group">
                                                 <label for="select-mall">Select Mall</label>
-                                                	<select name="select-mall" id="select-mall">
+                                                	<select name="select-mall" id="select-mall" required>
                                                     	<option value="null">Please Select Mall Type</option>
                                                        	<c:choose>
                                                        		<c:when test="${mallType != null }">
@@ -210,38 +211,44 @@
                                         <div class="col-md-4">
                                            <div class="form-group">
                                                 <label for="select-mall"> Floor </label>
-                                                                <select name="select-floor" id="select-floor">
+                                                                <select name="select-floor" id="select-floor" required> 
                                                                     <option value="null">Please Select Floor</option>
-                                                                    <option value="Level A">Level A</option>
-                                                                    <option value="Level B">Level B</option>
-                                                                    <option value="Level C">Level C</option>
-                                                                    <option value="Level D">Level D</option>
-                                                                    <option value="Level 1">Level 1</option>
-                                                                    <option value="Level 2">Level 2</option>
-                                                                    <option value="Level 3">Level 3</option>
-                                                                    <option value="Level 4">Level 4</option>
-                                                                    <option value="Level 5">Level 5</option>
-                                                                    <option value="Level 6">Level 6</option>
-                                                                    <option value="Level 7">Level 7</option>
-                                                                    <option value="Level 8">Level 8</option>
+                                                                    <option value="G">G</option>
+                                                                    <option value="LG">LG</option>
+                                                                    <option value="M">M</option>
+                                                                    <option value="B">B</option>
+                                                                    <option value="B1">B1</option>
+                                                                    <option value="B2">B2</option>
+                                                                    <option value="B3">B3</option>
+                                                                    <option value="B4">B4</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="10">10</option>
                                                                 </select>
                                             </div><!-- /.form-group -->
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="submit-price">Store Name </label>
+                                                <label for="submit-price">Store Name</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">N</span>
-                                                    <input type="text" class="form-control" id="submit-store" name="submit-store" >
+                                                    <input type="text" class="form-control" id="storename" name="storename" required>
                                                 </div>
                                             </div><!-- /.form-group -->
                                         </div>
                                          <div class="col-md-4">
                                              <div class="form-group">
                                                 <label for="select-mall"> Type </label>
-                                                                <select name="select-type" id="select-type">
-                                                                    <option value="null">Please Select Type</option>
-                                                                    <option value="Floor">Floor</option>
+                                                                <select name="select-type" id="select-type" required>
+                                                                    <option>Please Select Type</option>
+                                                                    <option value="Food">Food</option>
                                                                     <option value="Shopping">Shopping</option>
                                                                     <option value="Service">Service</option>
                                                                 </select>
@@ -250,8 +257,8 @@
                                          <div class="col-md-4">
                                              <div class="form-group">
                                                 <label for="select-status"> Status </label>
-                                                                <select name="select-status" id="select-status">
-                                                                   <option value="null">Please Select Status</option>
+                                                                <select name="select-status" id="select-status" required>
+                                                                   <option>Please Select Status</option>
                                                     			   <option value="Open">Open</option>
                                                     		       <option value="Closed">Closed</option>
                                                     	           <option value="Renovated">Renovated</option>

@@ -18,7 +18,7 @@ public class StoreManager {
 			return "Add store successfully...";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Add Facilities !!!";
+			return "Cannot Add Store !!!";
 		}
 	}
 }

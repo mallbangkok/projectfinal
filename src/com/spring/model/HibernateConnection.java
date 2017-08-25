@@ -23,7 +23,8 @@ public class HibernateConnection {
 				.addAnnotatedClass(Mall.class)
 				.addAnnotatedClass(Facilities.class)
 				.addAnnotatedClass(Article.class)
-				.addAnnotatedClass(ImageArticle.class);
+				.addAnnotatedClass(ImageArticle.class)
+				.addAnnotatedClass(Store.class);
 		StandardServiceRegistryBuilder ssrd = new StandardServiceRegistryBuilder()
 				.applySettings(cfg.getProperties());
 		sessionFactory = cfg.buildSessionFactory(ssrd.build());
