@@ -13,6 +13,7 @@ import com.spring.addMallController.FacilitiesManager;
 import com.spring.addMallController.MallManager;
 import com.spring.loginController.AddUserManager;
 import com.spring.loginController.LoginMannager;
+import com.spring.store.controller.StoreManager;
 
 public class Run {
 
@@ -20,15 +21,22 @@ public class Run {
 		AddUserManager aum = new AddUserManager();
 		Login login = new Login("admin","1234");
 		LoginMannager lmg = new LoginMannager();
+		StoreManager sm = new StoreManager();
 		List<Login> list = lmg.getAllLogin();
 		
 		ArticleManager am = new ArticleManager();
 		MallManager mm = new MallManager();
-		List<String> types = mm.getMallType();
 		
-		for(String t : types){
-			System.out.println(t);
-		}
+		Mall m = mm.getAllMalls().get(0);
+		
+		Store st = new Store("Nike","Shopping","Open","1");
+//		
+//		m.getStores().add(st);
+//		
+//		st.setMall(m);
+//		
+//		m.setStores(m.getStores());
+//		System.out.println(sm.doHibernateStore(st));
 		
 //		ImageArticle ia1 = new ImageArticle("image1");
 //		ImageArticle ia2 = new ImageArticle("image2");

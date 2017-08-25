@@ -18,9 +18,10 @@ public class Store {
 	private String storeType;
 	private String storeStatus;
 	private String floor;
+	
 	@ManyToOne (cascade=CascadeType.ALL) 
 	@JoinColumn (name = "mallId")
-	private Mall mall = new Mall() ;
+	private Mall mall;
 
 	public int getStoreId() {
 		return storeId;
