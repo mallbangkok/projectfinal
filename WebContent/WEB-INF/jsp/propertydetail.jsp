@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
@@ -35,11 +36,11 @@
                         <a href="create-account.html" class="promoted"><strong>Register</strong></a>
                         <a href="sign-in.html">Sign In</a>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
-                    </div>
+                 <div class="language-bar">
+							<a href="#" class="active"><img src="<c:url value="/img/flags/th.png"/>" alt=""></a>
+							 <a href="#"><img src="<c:url value="/img/flags/de.png"/>"alt=""></a> 
+							 <a href="#"><img src="<c:url value="/img/flags/se.png"/>" alt=""></a>
+						</div>
                 </div>
             </div>
         </div>
@@ -54,7 +55,7 @@
                     </button>
                     <div class="navbar-brand nav" id="brand">
                         <a href="index-google-map-fullscreen.html">
-                        <img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                       <img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
                         
                     </div>
                 </div>
@@ -155,9 +156,8 @@
             <div class="container">
                 <div class="search-box map">
                     <ul class="nav nav-pills">
-                        <li class="active"><a href="#search-form-sale" data-toggle="tab">Area</a></li>
-                        <li><a href="#search-form-rent" data-toggle="tab">Department Store</a></li>
-                        <li><a href="#search-form-group" data-toggle="tab">Mall Group</a> </li>
+                        <li class="active"><a href="#search-form-sale" data-toggle="tab">Sale</a></li>
+                        <li><a href="#search-form-rent" data-toggle="tab">Rent</a></li>
                     </ul>
                     <hr>
                     <div class="tab-content">
@@ -170,28 +170,82 @@
                                         <ul class="submit-features">
                                             <li><div class="checkbox"><label><input type="checkbox">Air conditioning</label></div></li>
                                             <li><div class="checkbox"><label><input type="checkbox">Bedding</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Heating</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Internet</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Microwave</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Smoking allowed</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Use of pool</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Toaster</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Coffee pot</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Cable TV</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Parquet</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Roof terrace</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Terrace</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Balcony</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Iron</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Hi-Fi</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Beach</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Garage</label></div></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
-                                        
+                                        <div class="form-group">
+                                            <select name="form-sale-country">
+                                                <option value="">Country</option>
+                                                <option value="1">France</option>
+                                                <option value="2">Great Britain</option>
+                                                <option value="3">Spain</option>
+                                                <option value="4">Russia</option>
+                                                <option value="5">United States</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
+                                    </div>
+                                    <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="form-sale-city">
+                                                <option value="">City</option>
+                                                <option value="1">New York</option>
+                                                <option value="2">Los Angeles</option>
+                                                <option value="3">Chicago</option>
+                                                <option value="4">Houston</option>
+                                                <option value="5">Philadelphia</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
+                                    </div>
+                                    <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="form-sale-district">
+                                                <option value="">District</option>
+                                                <option value="1">Manhattan</option>
+                                                <option value="2">The Bronx</option>
+                                                <option value="3">Brooklyn</option>
+                                                <option value="4">Queens</option>
+                                                <option value="5">Staten Island</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
                                             <select name="form-sale-property-type">
-                                                <option value="">Select Area</option>
-                                                <option value="1">Data Area</option>
-                                               
+                                                <option value="">Property Type</option>
+                                                <option value="1">Apartment</option>
+                                                <option value="2">Condominium</option>
+                                                <option value="3">Cottage</option>
+                                                <option value="4">Flat</option>
+                                                <option value="5">House</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
                                             <select name="form-sale-price">
-                                                <option value="">Select Mall</option>
-                                                <option value="1">Mall Detail</option>
-                                              
+                                                <option value="">Price</option>
+                                                <option value="1">$10,000 +</option>
+                                                <option value="2">$50,000 +</option>
+                                                <option value="3">$100,000 +</option>
+                                                <option value="4">$500,000 +</option>
                                             </select>
                                         </div>
                                     </div>
@@ -207,22 +261,58 @@
                             <form role="form" id="form-map-rent" class="form-map form-search clearfix">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="form-rent-city">
+                                                <option value="">City</option>
+                                                <option value="1">New York</option>
+                                                <option value="2">Los Angeles</option>
+                                                <option value="3">Chicago</option>
+                                                <option value="4">Houston</option>
+                                                <option value="5">Philadelphia</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
                                     </div>
-                                   
+                                    <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="form-rent-district">
+                                                <option value="">District</option>
+                                                <option value="1">Manhattan</option>
+                                                <option value="2">The Bronx</option>
+                                                <option value="3">Brooklyn</option>
+                                                <option value="4">Queens</option>
+                                                <option value="5">Staten Island</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
+                                    </div>
+                                    <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="form-rent-property-type">
+                                                <option value="">Property Type</option>
+                                                <option value="1">Apartment</option>
+                                                <option value="2">Condominium</option>
+                                                <option value="3">Cottage</option>
+                                                <option value="4">Flat</option>
+                                                <option value="5">House</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
+                                    </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
                                             <select name="form-rent-payment">
-                                                <option value="">Department Store</option>
-                                              
+                                                <option value="">Payment</option>
+                                                <option value="1">Monthly</option>
+                                                <option value="2">Quarterly</option>
+                                                <option value="3">Yearly</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
                                             <select name="form-rent-price">
-                                                <option value="">Select Mall</option>
-                                                <option value="">Mall Detail</option>
-                                               
+                                                <option value="">Price</option>
+                                                <option value="1">$100 +</option>
+                                                <option value="2">$500 +</option>
+                                                <option value="2">$1000 +</option>
                                             </select>
                                         </div>
                                     </div>
@@ -234,73 +324,74 @@
                                 </div>
                             </form><!-- /#form-map-rent -->
                         </div>
-                        <!-- new -->
-                         <div class="tab-pane fade" id="search-form-group">
-                            <form role="form" id="search-form-group" class="form-map form-search clearfix">
-                                <div class="row">
-                                    <div class="col-md-2 col-sm-4">
-                                    </div>
-                                    <div class="col-md-2 col-sm-4">
-                                        <div class="form-group">
-                                            <select name="form-rent-payment">
-                                                <option value="">Mall Group</option>
-                                                <option value="">Group Detail</option>
-                                            </select>
-                                        </div><!-- /.form-group -->
-                                    </div>
-                                    <div class="col-md-2 col-sm-4">
-                                        <div class="form-group">
-                                            <select name="form-rent-price">
-                                                <option value="">Select Mall</option>
-                                                <option value="">Mall Detail</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 col-sm-4">
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-default">Search Rent</button>
-                                        </div><!-- /.form-group -->
-                                    </div>
-                                </div>
-                            </form><!-- /#form-map-rent -->
-                        </div>
-                        <!-- end  -->
-                        
                     </div><!-- /.tab-content -->
                 </div><!-- /.search-box -->
             </div><!-- /.container -->
         </div><!-- /.search-box-inner -->
         <div class="background-image">
-        <img class="opacity-20" src="<c:url value="/img/searchbox-bg.jpg"/>" alt=""></div>
+        <img class="opacity-20" src="<c:url value="/img/searchbox-bg.jpg"/>">
+      </div>
     </div>
     <!-- end Search Box -->
 
     <!-- Page Content -->
     <div id="page-content">
-        
+        <section id="banner">
+            <div class="block has-dark-background background-color-default-darker center text-banner">
+                <div class="container">
+                    <h1 class="no-bottom-margin no-border">Zoner Is Fully Loaded Real Estate Template with <a href="#" class="text-underline">Tons of Features</a>!</h1>
+                </div>
+            </div>
+        </section><!-- /#banner -->
         <section id="our-services" class="block">
             <div class="container">
                 <header class="section-title"><h2>Our Services</h2></header>
                 <div class="row">
-                    
-                   <!-- add detail -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-folder"></i></figure>
+                            <aside class="description">
+                                <header><h3>Wide Range of Properties</h3></header>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                <a href="properties-listing.html" class="link-arrow">Read More</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-users"></i></figure>
+                            <aside class="description">
+                                <header><h3>14 Agents for Your Service</h3></header>
+                                <p>Aliquam gravida magna et fringilla convallis. Pellentesque habitant morbi </p>
+                                <a href="agents-listing.html" class="link-arrow">Read More</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature-box equal-height">
+                            <figure class="icon"><i class="fa fa-money"></i></figure>
+                            <aside class="description">
+                                <header><h3>Best Price Guarantee!</h3></header>
+                                <p>Phasellus non viverra tortor, id auctor leo. Suspendisse id nibh placerat</p>
+                                <a href="#" class="link-arrow">Read More</a>
+                            </aside>
+                        </div><!-- /.feature-box -->
+                    </div><!-- /.col-md-4 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /#our-services -->
-       
-      
-        <section id="new-properties" class="block">
+        <section id="price-drop" class="block">
             <div class="container">
                 <header class="section-title">
-                    <h2>New Properties for You</h2>
-                   
+                    <h2>Price Drop</h2>
+                    <a href="properties-listing.html" class="link-arrow">All Properties</a>
                 </header>
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
+                                 <img  src="<c:url value="/img/properties/property-06.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -334,7 +425,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-03.jpg"/>" alt="">
+                                   <img  src="<c:url value="/img/properties/property-04.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -368,7 +459,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                  <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                   <img  src="<c:url value="/img/properties/property-07.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -402,7 +493,165 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-01.jpg"/>" alt="">
+                                    <img  src="<c:url value="/img/properties/property-08.jpg"/>">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">$ 16,000</div>
+                                        <h3>362 Lynn Ogden Lane</h3>
+                                        <figure>Galveston, TX 77550</figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Area:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Beds:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                </div><!-- /.row-->
+            </div><!-- /.container -->
+        </section><!-- /#price-drop -->
+        <aside id="advertising" class="block">
+            <div class="container">
+                <a href="submit.html">
+                    <div class="banner">
+                        <div class="wrapper">
+                            <span class="title">Do you want your property to be listed here?</span>
+                            <span class="submit">Submit it now! <i class="fa fa-plus-square"></i></span>
+                        </div>
+                    </div><!-- /.banner-->
+                </a>
+            </div>
+        </aside><!-- /#adveritsing-->
+        <section id="new-properties" class="block">
+            <div class="container">
+                <header class="section-title">
+                    <h2>New Properties for You</h2>
+                    <a href="properties-listing.html" class="link-arrow">All Properties</a>
+                </header>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                  <img  src="<c:url value="/img/properties/property-09.jpg"/>">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">$ 11,000</div>
+                                        <h3>3398 Lodgeville Road</h3>
+                                        <figure>Golden Valley, MN 55427</figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Area:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Beds:</header>
+                                            <figure>2</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>2</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>0</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                   <img  src="<c:url value="/img/properties/property-03.jpg"/>">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">$ 38,000</div>
+                                        <h3>2186 Rinehart Road</h3>
+                                        <figure>Doral, FL 33178 </figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Area:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Beds:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                   <img  src="<c:url value="/img/properties/property-06.jpg"/>">
+                                </div>
+                                <div class="overlay">
+                                    <div class="info">
+                                        <div class="tag price">$ 325,000</div>
+                                        <h3>3705 Brighton Circle Road</h3>
+                                        <figure>Glenwood, MN 56334</figure>
+                                    </div>
+                                    <ul class="additional-info">
+                                        <li>
+                                            <header>Area:</header>
+                                            <figure>240m<sup>2</sup></figure>
+                                        </li>
+                                        <li>
+                                            <header>Beds:</header>
+                                            <figure>3</figure>
+                                        </li>
+                                        <li>
+                                            <header>Baths:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                        <li>
+                                            <header>Garages:</header>
+                                            <figure>1</figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div><!-- /.property -->
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="property">
+                            <a href="property-detail.html">
+                                <div class="property-image">
+                                   <img  src="<c:url value="/img/properties/property-01.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -438,7 +687,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-02.jpg"/>" alt="">
+                                   <img  src="<c:url value="/img/properties/property-02.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -472,7 +721,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-12.jpg"/>" alt="">
+                                   <img  src="<c:url value="/img/properties/property-12.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -506,7 +755,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-05.jpg"/>" alt="">
+                                   <img  src="<c:url value="/img/properties/property-05.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -540,7 +789,7 @@
                         <div class="property">
                             <a href="property-detail.html">
                                 <div class="property-image">
-                                   <img src="<c:url value="/img/properties/property-10.jpg"/>" alt="">
+                                    <img  src="<c:url value="/img/properties/property-10.jpg"/>">
                                 </div>
                                 <div class="overlay">
                                     <div class="info">
@@ -573,8 +822,47 @@
                 </div><!-- /.row-->
             </div><!-- /.container-->
         </section><!-- /#new-properties-->
-       
-       
+        <section id="testimonials" class="block">
+            <div class="container">
+                <header class="section-title"><h2>Testimonials</h2></header>
+                <div class="owl-carousel testimonials-carousel">
+                    <blockquote class="testimonial">
+                        <figure>
+                            <div class="image">
+                                <img  src="<c:url value="/img/client-01.jpg"/>">
+                            </div>
+                        </figure>
+                        <aside class="cite">
+                            <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                            <footer>Natalie Jenkins</footer>
+                        </aside>
+                    </blockquote>
+                    <blockquote class="testimonial">
+                        <figure>
+                            <div class="image">
+                               <img  src="<c:url value="/img/client-01.jpg"/>">
+                            </div>
+                        </figure>
+                        <aside class="cite">
+                            <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                            <footer>Natalie Jenkins</footer>
+                        </aside>
+                    </blockquote>
+                </div><!-- /.testimonials-carousel -->
+            </div><!-- /.container -->
+        </section><!-- /#testimonials -->
+        <section id="partners" class="block">
+            <div class="container">
+                <header class="section-title"><h2>Our Partners</h2></header>
+                <div class="logos">
+                    <div class="logo"><a href=""><img  src="<c:url value="/img/logo-partner-01.png"/>"></a></div>
+                     <div class="logo"><a href=""><img  src="<c:url value="/img/logo-partner-02.png"/>"></a></div>
+                      <div class="logo"><a href=""><img  src="<c:url value="/img/logo-partner-03.png"/>"></a></div>
+                       <div class="logo"><a href=""><img  src="<c:url value="/img/logo-partner-04.png"/>"></a></div>
+                        <div class="logo"><a href=""><img  src="<c:url value="/img/logo-partner-05.png"/>"></a></div>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /#partners -->
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
@@ -600,8 +888,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                           
+                                        <img  src="<c:url value="/img/properties/property-06.jpg"/>">
                                         </div>
                                     </a>
                                     <div class="info">
@@ -613,7 +900,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
+                                            <img  src="<c:url value="/img/properties/property-09.jpg"/>">
                                         </div>
                                     </a>
                                     <div class="info">
@@ -664,9 +951,7 @@
 </div>
 
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-
-<script type="text/javascript"
-		src="http://maps.google.com/maps/api/js?key=AIzaSyAMhGbKMT4LRrhHNJGy316qFefrYNAHmns"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/smoothscroll.js"></script>
@@ -692,12 +977,12 @@
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
 <script>
-		_latitude = 13.755123;
-		_longitude = 100.503968;
-		createHomepageGoogleMap(_latitude, _longitude);
-		$(window).load(function() {
-			initializeOwl(false);
-		});
-	</script>
+    _latitude = 48.87;
+    _longitude = 2.29;
+    createHomepageGoogleMap(_latitude,_longitude);
+    $(window).load(function(){
+        initializeOwl(false);
+    });
+</script>
 </body>
 </html>
