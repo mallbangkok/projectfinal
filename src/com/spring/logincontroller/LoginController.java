@@ -1,4 +1,4 @@
-package com.spring.loginController;
+package com.spring.logincontroller;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addMallController.FacilitiesManager;
+import com.spring.addmallcontroller.FacilitiesManager;
 import com.spring.model.Facilities;
 import com.spring.model.Login;
 

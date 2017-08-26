@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Zoner | Slider with Search Box Homepage</title>
+    <title>Mall Bangkok | Search Shop</title>
 
 </head>
 
@@ -33,9 +33,14 @@
                 </div>
                 <div class="user-area">
                     <div class="actions">
-                        <a href="create-agency.html" class="promoted">Create Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Register</strong></a>
-                        <a href="sign-in.html">Sign In</a>
+						<c:choose>
+							<c:when test="${username != null}">
+								<a href="logout">Log Out</a>
+							</c:when>
+							<c:otherwise>
+								<a href="sign-in">Sign In</a>
+							</c:otherwise>
+						</c:choose>
                     </div>
                     <div class="language-bar">
                         <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
@@ -55,7 +60,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                        <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">

@@ -12,7 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.spring.addMallController.MallManager;
+
+import com.spring.addmallcontroller.MallManager;
 import com.spring.model.Mall;
 import com.spring.model.Store;
 

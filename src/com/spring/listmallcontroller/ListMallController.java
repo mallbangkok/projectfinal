@@ -1,4 +1,4 @@
-package com.spring.listMallController;
+package com.spring.listmallcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addMallController.MallManager;
+import com.spring.addmallcontroller.MallManager;
 import com.spring.model.Mall;
 
 @Controller

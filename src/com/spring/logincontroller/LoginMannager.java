@@ -1,4 +1,4 @@
-package com.spring.addMallController;
+package com.spring.logincontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,34 +6,38 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.spring.model.Facilities;
 import com.spring.model.HibernateConnection;
+import com.spring.model.Login;
 
 
-public class FacilitiesManager {
-	public String doHibernateAddFacilities(Facilities facilities) {
+public class LoginMannager {
+	public String doHibernateLogin(Login login) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			session.saveOrUpdate(facilities);
-			session.getTransaction().commit();
+			@SuppressWarnings("unchecked")
+			List<Login> user = session.createQuery("From Login where username='"+login.getUsername()+"' and password='"+
+					login.getPassword()+"'").list();
 			session.close();
-			return "Add Facilities Successfully...";
+			if(user.size() == 1){
+				return "Login Success";
+			}else{
+				return "Username and Password doesn't match !!";
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Add Facilities !!!";
+			return "Please try again...";
 		}
 	}
-	
 	@SuppressWarnings("unchecked")
-	public List<Facilities> getAllFacilities() {
-		List<Facilities> list = new ArrayList<Facilities>();
+	public List<Login> getAllLogin() {
+		List<Login> list = new ArrayList<Login>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			list = session.createQuery("from Facilities").list();
+			list = session.createQuery("from Login").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();

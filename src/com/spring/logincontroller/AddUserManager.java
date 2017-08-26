@@ -1,4 +1,4 @@
-package com.spring.loginController;
+package com.spring.logincontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,35 +9,30 @@ import org.hibernate.SessionFactory;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Login;
 
-
-public class LoginMannager {
-	public String doHibernateLogin(Login login) {
+public class AddUserManager {
+	public String doHibernateAddUser(Login login) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			@SuppressWarnings("unchecked")
-			List<Login> user = session.createQuery("From Login where username='"+login.getUsername()+"' and password='"+
-					login.getPassword()+"'").list();
+			session.save(login);
+			session.getTransaction().commit();
 			session.close();
-			if(user.size() == 1){
-				return "Login Success";
-			}else{
-				return "Username and Password doesn't match !!";
-			}
+			return "Add User Successfully...";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Please try again...";
+			return "Cannot Add User !!!";
 		}
 	}
+	
 	@SuppressWarnings("unchecked")
-	public List<Login> getAllLogin() {
+	public List<Login> getHibernateLogin() {
 		List<Login> list = new ArrayList<Login>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			list = session.createQuery("from Login").list();
+			list = session.createQuery("From Login").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
