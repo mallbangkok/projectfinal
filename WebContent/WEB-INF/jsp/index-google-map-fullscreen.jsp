@@ -150,7 +150,11 @@
 									<li><a href="agencies-listing.html">Agencies Listing</a></li>
 									<li><a href="agency-detail.html">Agency Detail</a></li>
 								</ul></li>
-							<li><a href="loadsearchfilter">Search Mall</a></li>
+							<li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-box">Search Custom</a></li>
+								</ul></li>
+							</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
 									<li><a href="blog.html">Blog Listing</a></li>

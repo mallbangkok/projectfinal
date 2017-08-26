@@ -1,4 +1,4 @@
-package com.spring.loginController;
+package com.spring.addmallcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,33 +6,34 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.spring.model.Facilities;
 import com.spring.model.HibernateConnection;
-import com.spring.model.Login;
 
-public class AddUserManager {
-	public String doHibernateAddUser(Login login) {
+
+public class FacilitiesManager {
+	public String doHibernateAddFacilities(Facilities facilities) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			session.save(login);
+			session.saveOrUpdate(facilities);
 			session.getTransaction().commit();
 			session.close();
-			return "Add User Successfully...";
+			return "Add Facilities Successfully...";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Add User !!!";
+			return "Cannot Add Facilities !!!";
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Login> getHibernateLogin() {
-		List<Login> list = new ArrayList<Login>();
+	public List<Facilities> getAllFacilities() {
+		List<Facilities> list = new ArrayList<Facilities>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			list = session.createQuery("From Login").list();
+			list = session.createQuery("from Facilities").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();

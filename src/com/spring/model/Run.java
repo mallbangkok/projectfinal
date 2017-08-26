@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import com.spring.addMallController.ArticleManager;
-import com.spring.addMallController.FacilitiesManager;
-import com.spring.addMallController.MallManager;
-import com.spring.loginController.AddUserManager;
-import com.spring.loginController.LoginMannager;
+import com.spring.addmallcontroller.ArticleManager;
+import com.spring.addmallcontroller.FacilitiesManager;
+import com.spring.addmallcontroller.MallManager;
+import com.spring.logincontroller.AddUserManager;
+import com.spring.logincontroller.LoginMannager;
 import com.spring.store.controller.StoreManager;
 
 public class Run {

@@ -1,4 +1,4 @@
-package com.spring.loginController;
+package com.spring.logincontroller;
 
 import javax.servlet.http.HttpSession;
 
