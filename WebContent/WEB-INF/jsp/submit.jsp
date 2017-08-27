@@ -349,6 +349,7 @@
                                                     	<option value="10:30 - 23:00 Weekday, 09:00 - 23:00 Weekend">10:30 - 23:00 Weekday, 09:00 - 23:00 Weekend</option>
                                                     	<option value="11:00 - 21:30 Weekday, 10:00 - 21:30 Weekend">11:00 - 21:30 Weekday, 10:00 - 21:30 Weekend</option>
                                                     	<option value="11:00 - 22:00 Weekday, 10:00 - 22:00 Weekend">11:00 - 22:00 Weekday, 10:00 - 22:00 Weekend</option>
+                                                    	<option value="10:00 - 20:00 Mon-Fri, 10:30 - 21:00 Sat-Sun">10:00 - 20:00 Mon-Fri, 10:30 - 21:00 Sat-Sun</option>
                                                     	<option value="10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun">10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun</option>
                                                     	<option value="10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun">10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun</option>
                                                     	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun</option>
