@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import com.spring.addMallController.ArticleManager;
-import com.spring.addMallController.FacilitiesManager;
-import com.spring.addMallController.MallManager;
-import com.spring.loginController.AddUserManager;
-import com.spring.loginController.LoginMannager;
+import com.spring.addmallcontroller.*;
+import com.spring.logincontroller.AddUserManager;
+import com.spring.logincontroller.LoginMannager;
 import com.spring.store.controller.StoreManager;
 
 public class Run {
@@ -28,7 +26,6 @@ public class Run {
 		MallManager mm = new MallManager();
 
 		Mall m = mm.getAllMalls().get(0);
-<<<<<<< HEAD
 		
 		Store st = new Store("Nike","Shopping","Open","1");
 
@@ -57,10 +54,8 @@ public class Run {
 		
 //		SimpleDateFormat sdf = new SimpleDateFormat("MMM-dd-yyyy" , Locale.ENGLISH);
 //		String date = sdf.format(new Date());
-//		System.out.println(date); 
-=======
 
-		Store st = new Store("Nike", "Shopping", "Open", "1");
+//		Store st = new Store("Nike", "Shopping", "Open", "1");
 		//
 		// m.getStores().add(st);
 		//
@@ -86,14 +81,14 @@ public class Run {
 		// Locale.ENGLISH);
 		// String date = sdf.format(new Date());
 		// System.out.println(date);
->>>>>>> fd08fe8590ee2454d6594707eaf172a444b3ab55
+
 	}
 
 	public static void addMall() {
 		MallManager mm = new MallManager();
 
 		FacilitiesManager fm = new FacilitiesManager();
-<<<<<<< HEAD
+
 //		
 //		Facilities f1 = fm.getAllFacilities().get(0);
 //		Mall m1 = new Mall("Robinson Lifestyle Center Samutprakan","Regional Mall","South-East Bangkok"
@@ -106,22 +101,6 @@ public class Run {
 		
 //		System.out.println(mm.doHibernateAddMall(m1));
 		//System.out.println(mm.doHibernateAddMall(m2));
-=======
-
-		Facilities f1 = fm.getAllFacilities().get(0);
-		Mall m1 = new Mall("Robinson Lifestyle Center Samutprakan", "Regional Mall", "South-East Bangkok",
-				"Central Group", "Open", "07 Jan 2017", "10:00 - 22:00 Everyday", "021742911-21",
-				"robinson-samutprakan");
-
-		Mall m2 = new Mall("CentralPlaza Salaya (เน€เธ�เน�เธ�เธ—เธฃเธฑเธฅ เธจเธฒเธฅเธฒเธขเธฒ)", "Regional Mall",
-				"South-West Bangkok", "Central Group", "Open", "02 Dec 2016", "11:00 - 21:30 Everyday", "021742911-21",
-				"central-salaya");
-		m1.getFacilites().add(f1);
-		f1.getMalls().add(m1);
-
-		System.out.println(mm.doHibernateAddMall(m1));
-		// System.out.println(mm.doHibernateAddMall(m2));
->>>>>>> fd08fe8590ee2454d6594707eaf172a444b3ab55
 	}
 
 	public static double calculateTime(String timeIn, String timeOut) {

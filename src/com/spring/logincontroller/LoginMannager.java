@@ -1,4 +1,4 @@
-package com.spring.loginController;
+package com.spring.logincontroller;
 
 import java.util.ArrayList;
 import java.util.List;
