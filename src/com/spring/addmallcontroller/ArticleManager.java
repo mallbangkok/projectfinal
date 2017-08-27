@@ -1,4 +1,4 @@
-package com.spring.addmallcontroller;
+package com.spring.addMallController;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

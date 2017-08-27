@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addmallcontroller.MallManager;
+import com.spring.addMallController.MallManager;
 import com.spring.model.Mall;
 import com.spring.model.Store;
 
@@ -36,8 +36,8 @@ public class StoreController {
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
 		List<Mall> listMallByType = new ArrayList<>();
-		for(Mall m : mm.getAllMalls()){
-			if(m.getType().equals(t)){
+		for (Mall m : mm.getAllMalls()) {
+			if (m.getType().equals(t)) {
 				listMallByType.add(m);
 			}
 		}
@@ -54,11 +54,11 @@ public class StoreController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		ModelAndView mav = new ModelAndView("my-properties");
 		MallManager mm = new MallManager();
 		StoreManager sm = new StoreManager();
-		
+
 		String mallName = request.getParameter("select-mall");
 		String floor = request.getParameter("select-floor");
 		String storeName = request.getParameter("storename");
@@ -72,16 +72,16 @@ public class StoreController {
 				mall = m;
 			}
 		}
-		
-		try{
+
+		try {
 			mall.getStores().add(store);
 			store.setMall(mall);
 			mall.setStores(mall.getStores());
 			System.out.println(sm.doHibernateStore(store));
-		}catch(Exception ex){
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
+
 		return mav;
 	}
 

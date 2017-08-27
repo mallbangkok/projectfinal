@@ -1,4 +1,4 @@
-package com.spring.listmallcontroller;
+package com.spring.listMallController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

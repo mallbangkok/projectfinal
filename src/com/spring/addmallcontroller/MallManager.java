@@ -1,4 +1,4 @@
-package com.spring.addmallcontroller;
+package com.spring.addMallController;
 
 import java.util.ArrayList;
 import java.util.List;
