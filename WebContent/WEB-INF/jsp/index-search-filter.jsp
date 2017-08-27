@@ -205,12 +205,12 @@
                                             <select name="nameMall" id="nameMall">
                                                 <option value="null">Select Mall</option>
                                                 <c:choose>
-                                                       		<c:when test="${listMall != null }">
-                                                       			<c:forEach var="i" items="${listMall}">
-                                                       				<option value="${i.mallName}"><c:out value="${i.mallName }"></c:out></option>
-                                                       			</c:forEach>
-                                                       		</c:when>
-                                                       	</c:choose>
+                                                     <c:when test="${listMall != null }">
+                                                       	<c:forEach var="i" items="${listMall}">
+                                                       				<option value="${i.getMallNameEng}"><c:out value="${i.getMallNameEng }"></c:out></option>
+                                                      	</c:forEach>
+                                                     </c:when>
+                                                </c:choose>
                                             </select>
                                         </div>
                                     </div>
@@ -312,7 +312,7 @@
                         <header class="property-title">
                         	<c:choose>
                                   <c:when test="${dataMall != null }">
-                                  <h1><c:out value="${dataMall.mallName }"></c:out></h1>
+                                  <h1><c:out value="${dataMall.mallNameEng }"></c:out></h1>
                                   </c:when>
                             </c:choose>
                             
@@ -692,9 +692,7 @@
 	function onChange(){
 		var type = document.getElementById('select-area').value;
 		console.log(type);
-		$('#nav nav-pills').click(function() {
-		    $('#nav nav-pills').addClass('selected');
-		});
+		
 		location.assign('http://localhost:8080/ProjectFinal/selecttypeofmall?type=' + type);
 	}
 </script>

@@ -22,48 +22,50 @@ public class SerchFilterController {
 	@RequestMapping(value = "/loadsearchfilter", method = RequestMethod.GET)
 	public ModelAndView loadPageSerch() {
 		ModelAndView mav = new ModelAndView("index-search-filter");
-		
+
 		return mav;
 
 	}
-	@RequestMapping(value ="/selecttypeofmall",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/selecttypeofmall", method = RequestMethod.GET)
 	public ModelAndView doSelectTypeOfMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		String name = request.getParameter("type");
 		MallManager mm = new MallManager();
 		List<Mall> list = mm.getAllMalls();
 		List<Mall> listMall = new ArrayList();
-		for(Mall m :list){
-			if(name.equals(m.getArea())){
-				 listMall.add(m);
-				
+		for (Mall m : list) {
+			if (name.equals(m.getArea())) {
+				listMall.add(m);
+
 			}
 		}
 		session.setAttribute("listMall", listMall);
-		
+
 		return mav;
 	}
-	@RequestMapping(value ="/search-mall",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
 		String name = request.getParameter("nameMall");
 		Mall mall = new Mall();
-		for(Mall m:mm.getAllMalls()){
-			if(name.equals(m.getMallName())){
+		for (Mall m : mm.getAllMalls()) {
+			if (name.equals(m.getMallNameEng())) {
 				mall = m;
 			}
 		}
 		List<String> listStore = new ArrayList();
-		for(Store s: mall.getStores()){
-			if(s.getStoreType().equals("Food")){
-				listStore.add(s.getStoreName()+" "+s.getFloor());
+		for (Store s : mall.getStores()) {
+			if (s.getStoreType().equals("Food")) {
+				listStore.add(s.getStoreName() + " " + s.getFloor());
 			}
 		}
-		
+
 		session.setAttribute("dataStore", listStore);
 		session.setAttribute("dataMall", mall);
-		
+
 		return mav;
 	}
 
