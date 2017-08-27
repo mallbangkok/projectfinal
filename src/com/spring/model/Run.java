@@ -30,7 +30,9 @@ public class Run {
 		Mall m = mm.getAllMalls().get(0);
 		
 		Store st = new Store("Nike","Shopping","Open","1");
-//		
+
+		Store s1 = sm.getAllStores().get(0);
+		
 //		m.getStores().add(st);
 //		
 //		st.setMall(m);
@@ -62,17 +64,17 @@ public class Run {
 		
 		
 		FacilitiesManager fm = new FacilitiesManager();
+//		
+//		Facilities f1 = fm.getAllFacilities().get(0);
+//		Mall m1 = new Mall("Robinson Lifestyle Center Samutprakan","Regional Mall","South-East Bangkok"
+//				,"Central Group","Open","07 Jan 2017","10:00 - 22:00 Everyday","021742911-21","robinson-samutprakan");
+//		
+//		Mall m2 = new Mall("CentralPlaza Salaya (เน€เธ�เน�เธ�เธ—เธฃเธฑเธฅ เธจเธฒเธฅเธฒเธขเธฒ)","Regional Mall","South-West Bangkok"
+//				,"Central Group","Open","02 Dec 2016","11:00 - 21:30 Everyday","021742911-21","central-salaya");
+//		m1.getFacilites().add(f1);
+//		f1.getMalls().add(m1);
 		
-		Facilities f1 = fm.getAllFacilities().get(0);
-		Mall m1 = new Mall("Robinson Lifestyle Center Samutprakan","Regional Mall","South-East Bangkok"
-				,"Central Group","Open","07 Jan 2017","10:00 - 22:00 Everyday","021742911-21","robinson-samutprakan");
-		
-		Mall m2 = new Mall("CentralPlaza Salaya (เน€เธ�เน�เธ�เธ—เธฃเธฑเธฅ เธจเธฒเธฅเธฒเธขเธฒ)","Regional Mall","South-West Bangkok"
-				,"Central Group","Open","02 Dec 2016","11:00 - 21:30 Everyday","021742911-21","central-salaya");
-		m1.getFacilites().add(f1);
-		f1.getMalls().add(m1);
-		
-		System.out.println(mm.doHibernateAddMall(m1));
+//		System.out.println(mm.doHibernateAddMall(m1));
 		//System.out.println(mm.doHibernateAddMall(m2));
 	}
 	

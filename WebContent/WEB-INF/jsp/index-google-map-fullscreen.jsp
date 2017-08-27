@@ -152,7 +152,7 @@
 								</ul></li>
 							<li><a href="loadsearchfilter">Search Mall</a>
 								<ul class="child-navigation">
-									<li><a href="index-slider-search-box">Search Custom</a></li>
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
 							</li>
 							<li class="has-child"><a href="#">Blog</a>
