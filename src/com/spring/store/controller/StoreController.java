@@ -68,7 +68,7 @@ public class StoreController {
 		Store store = new Store(storeName, type, status, floor);
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
-			if (mallName.equals(m.getMallName())) {
+			if (mallName.equals(m.getMallNameEng())) {
 				mall = m;
 			}
 		}

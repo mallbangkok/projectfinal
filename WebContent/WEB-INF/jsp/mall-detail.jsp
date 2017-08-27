@@ -140,7 +140,11 @@
                                 <li><a href="agency-detail.html">Agency Detail</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit.html">Submit</a></li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul>
+						</li>
                         <li class="has-child"><a href="#">Blog</a>
                             <ul class="child-navigation">
                                 <li><a href="blog.html">Blog Listing</a></li>

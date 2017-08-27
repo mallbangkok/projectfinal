@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class Mall {
 	@Id @GeneratedValue
 	private long mallId;
-	private String mallName;
+	private String mallNameEng;
+	private String mallNameThai;
 	private String type;
 	private String area;
 	private String mallGroup;
@@ -32,10 +33,11 @@ public class Mall {
 		
 	}
 
-	public Mall(String mallName, String type, String area, String mallGroup,String statusMall,String updatedDate, String timeMall, String phoneNoMall,
-			String imageMall) {
+	public Mall(String mallNameEng, String mallNameThai, String type, String area, String mallGroup, String statusMall,
+			String updatedDate, String timeMall, String phoneNoMall, String imageMall) {
 		super();
-		this.mallName = mallName;
+		this.mallNameEng = mallNameEng;
+		this.mallNameThai = mallNameThai;
 		this.type = type;
 		this.area = area;
 		this.mallGroup = mallGroup;
@@ -54,13 +56,29 @@ public class Mall {
 		this.mallId = mallId;
 	}
 
-	public String getMallName() {
-		return mallName;
+	public String getMallNameEng() {
+		return mallNameEng;
 	}
 
-	public void setMallName(String mallName) {
-		this.mallName = mallName;
+
+
+	public void setMallNameEng(String mallNameEng) {
+		this.mallNameEng = mallNameEng;
 	}
+
+
+
+	public String getMallNameThai() {
+		return mallNameThai;
+	}
+
+
+
+	public void setMallNameThai(String mallNameThai) {
+		this.mallNameThai = mallNameThai;
+	}
+
+
 
 	public String getType() {
 		return type;

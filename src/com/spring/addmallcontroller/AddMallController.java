@@ -38,7 +38,8 @@ public class AddMallController {
 		MallManager mm = new MallManager();
 		FacilitiesManager fm = new FacilitiesManager();
 		List<Facilities> list = fm.getAllFacilities();
-		String mallName = request.getParameter("mallname");
+		String mallNameEng = request.getParameter("mallnameEng");
+		String mallNameThai = request.getParameter("mallNameThai");
 		String type = request.getParameter("type");
 		String area = request.getParameter("area");
 		String mallGroup = request.getParameter("mallgroup");
@@ -48,7 +49,7 @@ public class AddMallController {
 		String imageName = request.getParameter("file");
 		String[] facilities = request.getParameterValues("facilites");
 		
-		Mall mall = new Mall(mallName,type,area,mallGroup,statusMall,getCurrentDate(),timeMall,phoneNumber,imageName);
+		Mall mall = new Mall(mallNameEng,mallNameThai,type,area,mallGroup,statusMall,getCurrentDate(),timeMall,phoneNumber,imageName);
 		
 		if(facilities == null){
 			System.out.println(mm.doHibernateAddMall(mall));

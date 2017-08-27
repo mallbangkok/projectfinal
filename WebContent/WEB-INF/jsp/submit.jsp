@@ -140,7 +140,11 @@
                                 <li><a href="agency-detail.html">Agency Detail</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit">Submit</a></li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul>
+						</li>
                         <li class="has-child"><a href="#">Blog</a>
                             <ul class="child-navigation">
                                 <li><a href="blog.html">Blog Listing</a></li>
@@ -181,11 +185,18 @@
                                     <div class="row">
                                     	<div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="submit-title">Mall Name</label>
-                                                <input type="text" class="form-control" id="submit-title" name="mallname" required>
+                                                <label for="submit-title">Mall Name Eng</label>
+                                                <input type="text" class="form-control" id="submit-title" name="mallnameEng" required>
+                                            </div><!-- /.form-group -->
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                                <label for="submit-title">Mall Name Thai</label>
+                                                <input type="text" class="form-control" id="submit-title" name="mallNameThai" required>
                                             </div><!-- /.form-group -->
                                         </div>
                                     </div>
+                                    
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
