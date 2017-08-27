@@ -1,4 +1,4 @@
-package com.spring.addmallcontroller;
+package com.spring.addMallController;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
