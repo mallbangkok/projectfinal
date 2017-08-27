@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import="java.util.*,com.spring.model.*,com.spring.searchfilter.*"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+  
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
@@ -156,14 +160,15 @@
                 <div class="search-box map">
                     <ul class="nav nav-pills">
                         <li class="active"><a href="#search-form-sale" data-toggle="tab">Area</a></li>
-                        <li><a href="#search-form-rent" data-toggle="tab">Department Store</a></li>
+                        <li><a href="#search-form-rent" data-toggle="tab" >Department Store</a></li>
                         <li><a href="#search-form-group" data-toggle="tab">Mall Group</a> </li>
                     </ul>
                     <hr>
+                    <!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="search-form-sale">
                             <a class="advanced-search-toggle" data-toggle="collapse" data-parent="#accordion" href="#advanced-search-sale">Advanced Sale Search <i class="fa fa-plus"></i></a>
-                            <form role="form" id="form-map-sale" class="form-map form-search clearfix has-dark-background">
+                            <form role="form" id="form-map-sale" action="search-mall" method="get" class="form-map form-search clearfix has-dark-background">
                                 <div id="advanced-search-sale" class="panel-collapse collapse">
                                     <div class="advanced-search">
                                         <header><h3>Property Features</h3></header>
@@ -175,54 +180,76 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
-                                        
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="form-sale-property-type">
+                                            <select name="select-area"id="select-area" onchange="onChange()">
                                                 <option value="">Select Area</option>
-                                                <option value="1">Data Area</option>
-                                               
+                                                <option value="Central Bangkok">Central Bangkok</option>
+                                                <option value="Siam">Siam</option>
+                                                <option value="Sukhumvit">Sukhumvit </option>
+                                                <option value="Thonburi">Thonburi</option>
+                                                <option value="Inner Bangkok">Inner Bangkok</option>
+                                                <option value="Eastern Bangkok">Eastern Bangkok</option>
+                                                <option value="Western Bangkok">Western Bangkok</option>
+                                                <option value="Northern Bangkok">Northern Bangkok</option>
+                                                <option value="Eastern & Central">Eastern & Central</option>
+                                                <option value="Northern">Northern</option>
+                                                <option value="Northeast (Esan)">Northeast (Esan)</option>
+                                                <option value="Southern">Southern</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="form-sale-price">
-                                                <option value="">Select Mall</option>
-                                                <option value="1">Mall Detail</option>
-                                              
+                                            <select name="nameMall" id="nameMall">
+                                                <option value="null">Select Mall</option>
+                                                <c:choose>
+                                                       		<c:when test="${listMall != null }">
+                                                       			<c:forEach var="i" items="${listMall}">
+                                                       				<option value="${i.mallName}"><c:out value="${i.mallName }"></c:out></option>
+                                                       			</c:forEach>
+                                                       		</c:when>
+                                                       	</c:choose>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default">Search Sale</button>
+                                            <button type="submit" class="btn btn-default">Search Mall</button>
                                         </div><!-- /.form-group -->
                                     </div>
                                 </div>
                             </form><!-- /#form-map-sale -->
                         </div><!-- /#search-form-rent -->
                         <div class="tab-pane fade" id="search-form-rent">
-                            <form role="form" id="form-map-rent" class="form-map form-search clearfix">
+                        <!-- 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 -->
+                            <form role="form" id="form-map-rent" action="search-mall" method="get" class="form-map form-search clearfix">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
                                     </div>
-                                   
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="form-rent-payment">
+                                            <select name="select-area"id="select-area" onchange="onChange()">
                                                 <option value="">Department Store</option>
-                                              
+                                                <option value="Central">Central</option>
+                                                <option value="Robinson">Robinson</option>
+                                                <option value="Zen">Zen</option>
+                                                <option value="Isetan">Isetan</option>
+                                                <option value="Tokyu">Tokyu</option>
+                                                <option value="The Mall">The Mall</option>
+                                                <option value="Paragon">Paragon</option>
+                                                <option value="Emporium">Emporium</option>
+                                                <option value="Tang Hua Seng">Tang Hua Seng</option>
+                                                <option value="Pata">Pata</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="form-rent-price">
+                                            <select name="form-rent-price" onchange="onChange()">
                                                 <option value="">Select Mall</option>
                                                 <option value="">Mall Detail</option>
-                                               
                                             </select>
                                         </div>
                                     </div>
@@ -283,7 +310,12 @@
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                            <h1>Mall Detail Name..</h1>
+                        	<c:choose>
+                                  <c:when test="${dataMall != null }">
+                                  <h1><c:out value="${dataMall.mallName }"></c:out></h1>
+                                  </c:when>
+                            </c:choose>
+                            
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
@@ -333,12 +365,13 @@
                                     <header><h2>Shopping</h2></header>
                                     <ul class="list-unstyled property-features-list">
                                         <li>Sauna</li>
-                                        <li>Fireplace or fire pit</li>
-                                        <li>Outdoor Kitchen</li>
-                                        <li>Tennis Courts</li>
-                                        <li>Trees and Landscaping</li>
-                                        <li>Sun Room</li>
-                                        <li>Family Room</li>
+                                       	<c:choose>
+                                                  <c:when test="${dataStore != null }">
+                                                      <c:forEach var="i" items="${dataStore}">
+                                                      	<li><c:out value="${i}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                         <li>Concrete Flooring</li>
                                     </ul>
                                 </section><!-- /#property-features -->
@@ -616,7 +649,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
@@ -651,8 +684,20 @@
 <script type="text/javascript" src="js/custom-map.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <!--[if gt IE 8]>
+
 <script type="text/javascript" src="assets/js/ie.js"></script>
+
 <![endif]-->
+<script type="text/javascript">
+	function onChange(){
+		var type = document.getElementById('select-area').value;
+		console.log(type);
+		$('#nav nav-pills').click(function() {
+		    $('#nav nav-pills').addClass('selected');
+		});
+		location.assign('http://localhost:8080/ProjectFinal/selecttypeofmall?type=' + type);
+	}
+</script>
 <script>
 		_latitude = 13.755123;
 		_longitude = 100.503968;
@@ -661,5 +706,6 @@
 			initializeOwl(false);
 		});
 	</script>
+
 </body>
 </html>

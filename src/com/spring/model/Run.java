@@ -4,9 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import com.spring.addMallController.ArticleManager;
 import com.spring.addMallController.FacilitiesManager;
@@ -26,9 +28,8 @@ public class Run {
 
 		ArticleManager am = new ArticleManager();
 		MallManager mm = new MallManager();
-
-		Mall m = mm.getAllMalls().get(0);
-
+		Mall m1 = mm.getAllMalls().get(0);
+		
 		Store st = new Store("Nike", "Shopping", "Open", "1");
 		//
 		// m.getStores().add(st);
@@ -55,6 +56,13 @@ public class Run {
 		// Locale.ENGLISH);
 		// String date = sdf.format(new Date());
 		// System.out.println(date);
+		Set< Integer > numbers = new HashSet< Integer >();
+		numbers.add(1);
+		numbers.add(1);
+		numbers.add(2);
+		for(Integer i: numbers){
+			System.out.println(i);
+		}
 	}
 
 	public static void addMall() {
@@ -97,5 +105,8 @@ public class Run {
 
 		double sum = (priceHour1 + priceHour2) + (priceHour3 * hour);
 		return sum;
+		
+		
+		
 	}
 }
