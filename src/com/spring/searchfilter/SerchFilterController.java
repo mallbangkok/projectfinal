@@ -20,9 +20,34 @@ import com.spring.store.controller.StoreManager;
 @Controller
 public class SerchFilterController {
 	@RequestMapping(value = "/loadsearchfilter", method = RequestMethod.GET)
-	public ModelAndView loadPageSerch() {
+	public ModelAndView loadPageSerch(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
+		MallManager mm = new MallManager();
+		Mall mall = new Mall();
+		for (Mall m : mm.getAllMalls()) {
+			if ("Siam Square One ".equals(m.getMallNameEng())) {
+				mall = m;
+			}
+		}
+		List<String> listFood = new ArrayList();
+		List<String> listShopping = new ArrayList();
+		List<String> listService = new ArrayList();
+		for (Store s : mall.getStores()) {
+			if (s.getStoreType().equals("Food")) {
+				listFood.add(s.getStoreName() + " Level " + s.getFloor());
+			}
+			if (s.getStoreType().equals("Shopping")) {
+				listShopping.add(s.getStoreName() + " Level " + s.getFloor());
+			}
+			if (s.getStoreType().equals("Service")) {
+				listService.add(s.getStoreName() + " Level " + s.getFloor());
+			}
+		}
 
+		session.setAttribute("listShopping", listShopping);
+		session.setAttribute("listFood", listFood);
+		session.setAttribute("listService", listService);
+		session.setAttribute("dataMall", mall);
 		return mav;
 
 	}
@@ -56,15 +81,26 @@ public class SerchFilterController {
 				mall = m;
 			}
 		}
-		List<String> listStore = new ArrayList();
+		List<String> listFood = new ArrayList();
+		List<String> listShopping = new ArrayList();
+		List<String> listService = new ArrayList();
 		for (Store s : mall.getStores()) {
 			if (s.getStoreType().equals("Food")) {
-				listStore.add(s.getStoreName() + " " + s.getFloor());
+				listFood.add(s.getStoreName() + " Level " + s.getFloor());
+			}
+			if (s.getStoreType().equals("Shopping")) {
+				listShopping.add(s.getStoreName() + " Level " + s.getFloor());
+			}
+			if (s.getStoreType().equals("Service")) {
+				listService.add(s.getStoreName() + " Level " + s.getFloor());
 			}
 		}
 
-		session.setAttribute("dataStore", listStore);
+		session.setAttribute("listShopping", listShopping);
+		session.setAttribute("listFood", listFood);
+		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);
+		
 
 		return mav;
 	}

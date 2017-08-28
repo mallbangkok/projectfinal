@@ -62,80 +62,101 @@
                         
                     </div>
                 </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="#">Homepage</a>
-                            <ul class="child-navigation">
-                                <li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
-                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
-                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
-                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
-                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
-                                <li><a href="index-slider.html">Slider Homepage</a></li>
-                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
-                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
-                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Properties</a>
-                            <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Pages</a>
-                            <ul class="child-navigation">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="invoice-print.html">Invoice</a></li>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="my-properties.html">My Properties</a></li>
-                                <li><a href="bookmarked.html">Bookmarked Properties</a></li>
-                                <li><a href="create-account.html">Create Account</a></li>
-                                <li><a href="create-agency.html">Create Agency</a></li>
-                                <li><a href="sign-in.html">Sign In</a></li>
-                                <li class="has-child"><a href="#">Error Pages</a>
-                                    <ul class="child-navigation">
-                                        <li><a href="403.html">403</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="500.html">500</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                <li><a href="rtl.html">RTL Support</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                                <li><a href="agency-detail.html">Agency Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="submit.html">Submit</a></li>
-                        <li class="has-child"><a href="#">Blog</a>
-                            <ul class="child-navigation">
-                                <li><a href="blog.html">Blog Listing</a></li>
-                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
+              <nav
+						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+						role="navigation">
+						<ul class="nav navbar-nav">
+							<li class="active has-child"><a href="#">Homepage</a>
+								<ul class="child-navigation">
+									<li><a href="index-google-map-fullscreen">Google Map
+											Full Screen</a></li>
+									<li><a href="index-google-map-fixed-height.html">Google
+											Map Fixed Height</a></li>
+									<li><a href="index-google-map-fixed-navigation.html">Google
+											Map Fixed Navigation</a></li>
+									<li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
+									<li><a href="index-osm-fixed-height.html">OpenStreetMap
+											Fixed Height</a></li>
+									<li><a href="index-osm-fixed-navigation.html">OpenStreetMap
+											Fixed Navigation</a></li>
+									<li><a href="index-slider.html">Slider Homepage</a></li>
+									<li><a href="index-slider-search-box.html">Slider with
+											Search Box</a></li>
+									<li><a href="index-horizontal-search-floated.html">Horizontal
+											Search Floated</a></li>
+									<li><a href="index-advanced-horizontal-search.html">Horizontal
+											Advanced Search</a></li>
+									<li><a href="index-slider-horizontal-search-box.html">Horizontal
+											Slider Search</a></li>
+									<li><a
+										href="index-slider-horizontal-search-box-floated.html">Horizontal
+											Slider Floated Search</a></li>
+								</ul></li>
+							<li class="has-child"><a href="#">Directory</a>
+								<ul class="child-navigation">
+									<li><a href="#">List By Type</a>
+										<ul class="child-navigation">
+											<li><a href="list-mall?typename=Regional Mall">Regional
+													Mall</a></li>
+											<li><a href="list-mall?typename=Community Mall">Community
+													Mall</a></li>
+											<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+											<li><a href="#">Theme Mall</a></li>
+											<li><a href="#">Luxury Mall</a></li>
+											<li><a href="#">Department Store</a></li>
+											<li><a href="#">Complex</a></li>
+											<li><a href="#">Shopping Plaza</a></li>
+										</ul></li>
+									<li><a href="properties-listing.html">List By Area</a></li>
+									<li><a href="properties-listing-grid.html">List All</a></li>
+								</ul></li>
+							<li class="has-child"><a href="#">Pages</a>
+								<ul class="child-navigation">
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="agent-detail.html">Agent Detail</a></li>
+									<li><a href="invoice-print.html">Invoice</a></li>
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="my-properties.html">My Properties</a></li>
+									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
+									<li><a href="create-account.html">Create Account</a></li>
+									<li><a href="create-agency.html">Create Agency</a></li>
+									<li><a href="sign-in">Sign In</a></li>
+									<li class="has-child"><a href="#">Error Pages</a>
+										<ul class="child-navigation">
+											<li><a href="403.html">403</a></li>
+											<li><a href="404.html">404</a></li>
+											<li><a href="500.html">500</a></li>
+										</ul></li>
+									<li><a href="faq.html">FAQ</a></li>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="sticky-footer.html">Sticky Footer</a></li>
+									<li><a href="pricing.html">Pricing</a></li>
+									<li><a href="shortcodes.html">Shortcodes</a></li>
+									<li><a href="timeline.html">Timeline</a></li>
+									<li><a href="terms-conditions.html">Terms & Conditions</a></li>
+									<li><a href="rtl.html">RTL Support</a></li>
+								</ul></li>
+							<li class="has-child"><a href="#">Agents & Agencies</a>
+								<ul class="child-navigation">
+									<li><a href="agents-listing.html">Agents Listing</a></li>
+									<li><a href="agent-detail.html">Agent Detail</a></li>
+									<li><a href="agencies-listing.html">Agencies Listing</a></li>
+									<li><a href="agency-detail.html">Agency Detail</a></li>
+								</ul></li>
+							<li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul></li>
+							</li>
+							<li class="has-child"><a href="#">Blog</a>
+								<ul class="child-navigation">
+									<li><a href="blog.html">Blog Listing</a></li>
+									<li><a href="blog-detail.html">Blog Post Detail</a></li>
+								</ul></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
                     <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
                 </div>
@@ -205,12 +226,12 @@
                                             <select name="nameMall" id="nameMall">
                                                 <option value="null">Select Mall</option>
                                                 <c:choose>
-                                                     <c:when test="${listMall != null }">
-                                                       	<c:forEach var="i" items="${listMall}">
-                                                       				<option value="${i.getMallNameEng}"><c:out value="${i.getMallNameEng }"></c:out></option>
-                                                      	</c:forEach>
-                                                     </c:when>
-                                                </c:choose>
+                                                       		<c:when test="${listMall != null }">
+                                                       			<c:forEach var="i" items="${listMall}">
+                                                       				<option value="${i.mallNameEng}"><c:out value="${i.mallNameEng }"></c:out></option>
+                                                       			</c:forEach>
+                                                       		</c:when>
+                                                       	</c:choose>
                                             </select>
                                         </div>
                                     </div>
@@ -255,7 +276,7 @@
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default">Search Rent</button>
+                                            <button type="submit" class="btn btn-default">Search Mall</button>
                                         </div><!-- /.form-group -->
                                     </div>
                                 </div>
@@ -285,7 +306,7 @@
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default">Search Rent</button>
+                                            <button type="submit" class="btn btn-default">Search Mall</button>
                                         </div><!-- /.form-group -->
                                     </div>
                                 </div>
@@ -310,19 +331,14 @@
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                        	<c:choose>
-                                  <c:when test="${dataMall != null }">
-                                  <h1><c:out value="${dataMall.mallNameEng }"></c:out></h1>
-                                  </c:when>
-                            </c:choose>
-                            
+                       
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
                                 <div class="property-slide">
                                     <a href="assets/img/properties/property-detail-01.jpg" class="image-popup">
                                         <div class="overlay"><h3>Front View</h3></div>
-                                         <img src="<c:url value="/img/properties/property-detail-01.jpg"/>" alt="">
+                                         <img src="<c:url value="/img/mall/${dataMall.imageMall}"/>" alt="">
                                     </a>
                                 </div><!-- /.property-slide -->
                                 <div class="property-slide">
@@ -337,26 +353,71 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
                                 <section id="quick-summary" class="clearfix">
-                                    <header><h2>Quick Summary</h2></header>
+                                    <header>
+                                     <c:choose>
+                                  		<c:when test="${dataMall != null }">
+                                  			<h1><c:out value="${dataMall.mallNameEng}"></c:out></h1>
+                                  		</c:when>
+                            		</c:choose>
+                                    </header>
                                     <dl>
-                                        <dt>Location</dt>
-                                            <dd>Chicago, IL 60610</dd>
-                                        <dt>Price</dt>
-                                            <dd><span class="tag price">$78,000</span></dd>
-                                        <dt>Property Type:</dt>
-                                            <dd>House</dd>
-                                        <dt>Status:</dt>
-                                            <dd>Sale</dd>
                                         <dt>Area:</dt>
-                                            <dd>860 m<sup>2</sup></dd>
-                                        <dt>Beds:</dt>
-                                            <dd>3</dd>
-                                        <dt>Baths:</dt>
-                                            <dd>2</dd>
-                                        <dt>Garages:</dt>
-                                            <dd>2</dd>
-                                        <dt>Rating:</dt>
-                                            <dd><div class="rating rating-overall" data-score="4"></div></dd>
+                                            <dd><c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.area }"></c:out>
+                                  					</c:when>
+                            				</c:choose>
+                            			   </dd>
+                                        <dt>Type Mall:</dt>
+                                            <dd><span class="tag price">
+												<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.type }"></c:out>
+                                  					</c:when>
+                            				    </c:choose>
+											</span></dd>
+                                        <dt>Group Mall:</dt>
+                                            <dd>
+                                            		<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.mallGroup }"></c:out>
+                                  					</c:when>
+                            				    </c:choose>
+                                            </dd>
+                                        <dt>Time Mall:</dt>
+                                           <dd><span class="tag price">
+												<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.timeMall }"></c:out>
+                                  					</c:when>
+                            				    </c:choose>
+											</span></dd>
+                                        <dt>Status:</dt>
+                                            <dd>
+                                            		<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.statusMall }"></c:out>
+                                  					</c:when>
+                            				   	    </c:choose>
+                                            </dd>
+                                        <dt>Time Update:</dt>
+                                            <dd>
+                                            		<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.updatedDate }"></c:out>
+                                  					</c:when>
+                            				   	    </c:choose>
+                                            </dd>
+                                        <dt>Phone:</dt>
+                                            <dd>
+                                            	<dd><span class="tag price">
+												<c:choose>
+                                  					<c:when test="${dataMall != null }">
+                                  						<c:out value="${dataMall.phoneNoMall }"></c:out>
+                                  					</c:when>
+                            				    </c:choose>
+											</span></dd>
+                                            </dd>
                                     </dl>
                                 </section><!-- /#quick-summary -->
                             </div><!-- /.col-md-4 -->
@@ -364,15 +425,15 @@
                                 <section id="property-features">
                                     <header><h2>Shopping</h2></header>
                                     <ul class="list-unstyled property-features-list">
-                                        <li>Sauna</li>
+                                       
                                        	<c:choose>
-                                                  <c:when test="${dataStore != null }">
-                                                      <c:forEach var="i" items="${dataStore}">
+                                                  <c:when test="${listShopping != null }">
+                                                      <c:forEach var="i" items="${listShopping}">
                                                       	<li><c:out value="${i}"></c:out></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
-                                        <li>Concrete Flooring</li>
+                                       
                                     </ul>
                                 </section><!-- /#property-features -->
                                 
@@ -381,14 +442,13 @@
                                 <section id="property-features">
                                     <header><h2>Food</h2></header>
                                     <ul class="list-unstyled property-features-list">
-                                        <li>Sauna</li>
-                                        <li>Fireplace or fire pit</li>
-                                        <li>Outdoor Kitchen</li>
-                                        <li>Tennis Courts</li>
-                                        <li>Trees and Landscaping</li>
-                                        <li>Sun Room</li>
-                                        <li>Family Room</li>
-                                        <li>Concrete Flooring</li>
+                                      	<c:choose>
+                                                  <c:when test="${listFood != null }">
+                                                      <c:forEach var="i" items="${listFood}">
+                                                      	<li><c:out value="${i}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                     </ul>
                                 </section><!-- /#property-features -->
                                 
@@ -398,14 +458,13 @@
                                 <section id="property-features">
                                     <header><h2>Services</h2></header>
                                     <ul class="list-unstyled property-features-list">
-                                        <li>Sauna</li>
-                                        <li>Fireplace or fire pit</li>
-                                        <li>Outdoor Kitchen</li>
-                                        <li>Tennis Courts</li>
-                                        <li>Trees and Landscaping</li>
-                                        <li>Sun Room</li>
-                                        <li>Family Room</li>
-                                        <li>Concrete Flooring</li>
+                                       	<c:choose>
+                                                  <c:when test="${listService != null }">
+                                                      <c:forEach var="i" items="${listService}">
+                                                      	<li><c:out value="${i}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                     </ul>
                                 </section><!-- /#property-features -->
                             <div class="col-md-12 col-sm-12">
@@ -492,61 +551,62 @@
                             <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-06.jpg">
+                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
                                     </div>
                                 </a>
                                 <div class="info">
                                     <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
                                     <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
+                                    <div class="tag price">Read More</div>
                                 </div>
                             </div><!-- /.property -->
                               <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-06.jpg">
+                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                        
                                     </div>
                                 </a>
                                 <div class="info">
                                     <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
                                     <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
+                                    <div class="tag price">Read More</div>
                                 </div>
                             </div><!-- /.property -->
                               <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-06.jpg">
+                                      <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
                                     </div>
                                 </a>
                                 <div class="info">
                                     <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
                                     <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
+                                    <div class="tag price">Read More</div>
                                 </div>
                             </div><!-- /.property -->
                             <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-09.jpg">
+                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
                                     </div>
                                 </a>
                                 <div class="info">
                                     <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
                                     <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 36,000</div>
+                                    <div class="tag price">Read More</div>
                                 </div>
                             </div><!-- /.property -->
                             <div class="property small">
                                 <a href="property-detail.html">
                                     <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-03.jpg">
+                                       <img src="<c:url value="/img/properties/property-03.jpg"/>" alt="">
                                     </div>
                                 </a>
                                 <div class="info">
                                     <a href="property-detail.html"><h4>1949 Tennessee Avenue</h4></a>
                                     <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 128,600</div>
+                                    <div class="tag price">Read More</div>
                                 </div>
                             </div><!-- /.property -->
                         </aside><!-- /#featured-properties -->
@@ -692,7 +752,9 @@
 	function onChange(){
 		var type = document.getElementById('select-area').value;
 		console.log(type);
-		
+		$('#nav nav-pills').click(function() {
+		    $('#nav nav-pills').addClass('selected');
+		});
 		location.assign('http://localhost:8080/ProjectFinal/selecttypeofmall?type=' + type);
 	}
 </script>
