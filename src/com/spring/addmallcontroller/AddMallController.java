@@ -34,10 +34,12 @@ public class AddMallController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ModelAndView mav = new ModelAndView("submit");
+		ModelAndView mav = new ModelAndView("my-properties");
+		
 		MallManager mm = new MallManager();
 		FacilitiesManager fm = new FacilitiesManager();
 		List<Facilities> list = fm.getAllFacilities();
+		
 		String mallNameEng = request.getParameter("mallnameEng");
 		String mallNameThai = request.getParameter("mallNameThai");
 		String type = request.getParameter("type");

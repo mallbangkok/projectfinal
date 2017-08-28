@@ -10,7 +10,7 @@ import com.spring.model.HibernateConnection;
 import com.spring.model.Store;
 
 public class StoreManager {
-	public String doHibernateStore(Store store) {
+	public String do_isAddStore(Store store) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();

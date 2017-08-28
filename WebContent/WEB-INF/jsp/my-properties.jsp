@@ -146,12 +146,12 @@
             <!-- sidebar -->
             <div class="col-md-3 col-sm-2">
                 <section id="sidebar">
-                    <header><h3>Account</h3></header>
+                    <header><h3>Management List</h3></header>
                     <aside>
                         <ul class="sidebar-navigation">
                             <li><a href="submit"><i class="fa fa-user"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
-                            <li><a href="bookmarked.html"><i class="fa fa-heart"></i><span>Bookmarked Properties</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i><span>Bookmarked Properties</span></a></li>
                         </ul>
                     </aside>
                 </section><!-- /#sidebar -->

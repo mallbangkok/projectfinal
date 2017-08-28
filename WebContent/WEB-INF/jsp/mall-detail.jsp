@@ -176,8 +176,8 @@
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                            <h1>${mall.mallName}</h1>
-                            <figure><c:out value="${mall.timeMall}"></c:out></figure>
+                            <h1>${mall.mallNameEng}  ${mall.mallNameThai}</h1>
+                            <figure>Open-Closed : <c:out value="${mall.timeMall}"></c:out></figure>
                             <span class="actions">
                                 <!--<a href="#" class="fa fa-print"></a>-->
                                 <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Add to bookmark</span><span class="title-added">Added</span></a>

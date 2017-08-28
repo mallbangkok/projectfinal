@@ -217,7 +217,8 @@
                                         	</div>
                                         	<div class="overlay">
                                             	<div class="info">
-                                                	<h3><c:out value="${i.mallName }" /></h3>
+                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
+                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
                                             	</div>
                                         	</div>
                                     	</a>
