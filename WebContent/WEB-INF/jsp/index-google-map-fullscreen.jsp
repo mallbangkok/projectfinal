@@ -168,6 +168,9 @@
 									<li><a href="blog-detail.html">Blog Post Detail</a></li>
 								</ul></li>
 							<li><a href="contact.html">Contact</a></li>
+							<c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+							</c:if>
 						</ul>
 					</nav>
 					<!-- /.navbar collapse-->

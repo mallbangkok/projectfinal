@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/fileinput.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Add Your Mall</title>
+    <title>Mall Bangkok | Admin Update Mall</title>
 
 </head>
 
@@ -176,9 +176,9 @@
         <!-- end Breadcrumb -->
 
         <div class="container">
-            <header><h1>Add Your Mall</h1></header>
+            <header><h1>Update Your Mall</h1></header>
             
-            <form role="form" id="form-submit" class="form-submit" action="submit" method="post">
+            <form role="form" id="form-submit" class="form-submit" action="list-update-admin" method="post">
                 <div class="row">
                     <div class="block">
                         <div class="col-md-12">
@@ -189,13 +189,13 @@
                                     	<div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="submit-title">Mall Name Eng</label>
-                                                <input type="text" class="form-control" id="submit-title" name="mallnameEng" required>
+                                                <input type="text" class="form-control" id="submit-title" name="mallnameEng" value="${mall.mallNameEng }" required>
                                             </div><!-- /.form-group -->
                                         </div>
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                 <label for="submit-title">Mall Name Thai</label>
-                                                <input type="text" class="form-control" id="submit-title" name="mallNameThai" required>
+                                                <input type="text" class="form-control" id="submit-title" name="mallNameThai" value="${mall.mallNameThai }" required>
                                             </div><!-- /.form-group -->
                                         </div>
                                     </div>
@@ -385,7 +385,7 @@
                                                 <label for="submit-price">Phone Number</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">P</span>
-                                                    <input type="text" class="form-control" id="submit-price" name="phonenumber" required>
+                                                    <input type="text" class="form-control" id="submit-price" name="phonenumber" value="${mall.phoneNoMall }" required>
                                                 </div>
                                             </div><!-- /.form-group -->
                                         </div>
@@ -423,7 +423,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="center">
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-default large" value="Add Mall">
+                                    <input type="submit" class="btn btn-default large" value="Update Mall">
                                 </div><!-- /.form-group -->
                             </div>
                         </div>

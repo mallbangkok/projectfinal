@@ -2,30 +2,30 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+
 <html lang="en-US">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="ThemeStarz">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ThemeStarz">
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700'
-	rel='stylesheet' type='text/css'>
-<link href="fonts/font-awesome.css" rel="stylesheet"type="text/css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css"type="text/css">
-<link rel="stylesheet" href="css/bootstrap-select.min.css"type="text/css">
-<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-<link rel="stylesheet" href="css/jquery.slider.min.css" type="text/css">
-<link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Search Shop</title>
+    <title>Mall Bangkok | Admin List Mall</title>
 
 </head>
 
-<body class="page-homepage navigation-fixed-top page-slider page-slider-search-box" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
+<body class="page-sub-page page-my-properties page-account" id="page-top">
 <!-- Wrapper -->
 <div class="wrapper">
-
+    <!-- Navigation -->
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
@@ -47,7 +47,7 @@
                     <div class="language-bar">
                         <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
                         <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/se.png"/>" alt=""></a>
+                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -83,41 +83,27 @@
                                 <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
                             </ul>
                         </li>
-                        <li class="has-child"><a href="#">Properties</a>
+                        <li class="has-child"><a href="#">Directory</a>
                             <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
+                                <li><a href="#">List By Type</a>
+                                	<ul class="child-navigation">
+                                		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
+                                		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
+                                		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+                                		<li><a href="#">Theme Mall</a></li>
+                                		<li><a href="#">Luxury Mall</a></li>
+                                		<li><a href="#">Department Store</a></li>
+                                		<li><a href="#">Complex</a></li>
+                                		<li><a href="#">Shopping Plaza</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="properties-listing">List By Area</a></li>
+                                <li><a href="properties-listing-grid.html">List All</a></li>
                             </ul>
                         </li>
                         <li class="has-child"><a href="#">Pages</a>
                             <ul class="child-navigation">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="invoice-print.html">Invoice</a></li>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="my-properties.html">My Properties</a></li>
-                                <li><a href="bookmarked.html">Bookmarked Properties</a></li>
-                                <li><a href="create-account.html">Create Account</a></li>
-                                <li><a href="create-agency.html">Create Agency</a></li>
-                                <li><a href="sign-in.html">Sign In</a></li>
-                                <li class="has-child"><a href="#">Error Pages</a>
-                                    <ul class="child-navigation">
-                                        <li><a href="403.html">403</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="500.html">500</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                <li><a href="rtl.html">RTL Support</a></li>
+                                <li><a href="my-properties">Admin Management</a></li>
                             </ul>
                         </li>
                         <li class="has-child"><a href="#">Agents & Agencies</a>
@@ -128,7 +114,11 @@
                                 <li><a href="agency-detail.html">Agency Detail</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit.html">Submit</a></li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul>
+						</li>
                         <li class="has-child"><a href="#">Blog</a>
                             <ul class="child-navigation">
                                 <li><a href="blog.html">Blog Listing</a></li>
@@ -147,113 +137,91 @@
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
-
-    <!-- Slider -->
-    <div id="slider" class="loading has-parallax">
-        <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
-        <div class="owl-carousel homepage-slider carousel-full-width">
-            <div class="slide">
-                <div class="container">
-                    <div class="overlay">
-                        <div class="info">
-                        </div>
-                    </div>
-                </div>
-                <img src="<c:url value="/img/slide-01.png"/>" >
-            </div>
-            <div class="slide">
-                <div class="container">
-                    <div class="overlay">
-                        <div class="info">
-                        </div>
-                    </div>
-                </div>
-                <img src="<c:url value="/img/slide-02.png"/>" >
-            </div>
-            <div class="slide">
-                <div class="container">
-                    <div class="overlay">
-                        <div class="info">
-                        </div>
-                    </div>
-                </div>
-                <img src="<c:url value="/img/slide-03.png"/>" >
-            </div>
-        </div>
-    </div>
-    <!-- end Slider -->
-
-    <!-- Search Box -->
-    <div class="search-box-wrapper">
-        <div class="search-box-inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8">
-                        <div class="search-box map">
-                            <form role="form" id="form-map" class="form-map form-search" action="index-slider-search-custom" method="post">
-                                <h2>Search Shop</h2>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="inputShop" name="inputShop" placeholder="Nike Shop" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
-                                </div><!-- /.form-group -->
-                            </form><!-- /#form-map -->
-                        </div><!-- /.search-box.map -->
-                    </div><!-- /.col-md-3 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </div><!-- /.search-box-inner -->
-    </div>
-    <!-- end Search Box -->
-
+    <!-- end Navigation -->
     <!-- Page Content -->
     <div id="page-content">
-        <section id="banner">
-            <div class="block has-dark-background background-color-default-darker center text-banner">
-                <div class="container">
-                    <h1 class="no-bottom-margin no-border">Retail Shop Directory Website <a href="index-google-map-fullscreen" class="text-underline">Mall Bangkok</a>!</h1>
-                </div>
-            </div>
-        </section><!-- /#banner -->
-        <section id="new-properties" class="block">
-            <div class="container">
-                <header class="section-title">
-                    <h2>Result Shop</h2>
-                    <a href="#" class="link-arrow">All Properties</a>
-                </header>
-                <div class="row">
-                	<c:choose>
-                		<c:when test="${store != null }">
-                			<c:forEach var="i" items="${store}">
-                    		<div class="col-md-3 col-sm-6">
-                        	<div class="property">
-                            	<a href="property-detail.html">
-                                	<div class="property-image">
-                                  	<img src="<c:url value="/img/mall/thumbnail/${i.mall.imageMall }"/>" >
-                                	</div>
-                                	<div class="overlay">
-                                    	<div class="info">
-                                        	<div class="tag price"><c:out value="${i.storeName}" /></div>
-                                        	<h3><c:out value="${i.mall.mallNameEng }"/></h3>
-                                        	<h3>Floor : <c:out value="${i.floor }"/></h3>
-                                        	<figure>Status : <c:out value="${i.storeStatus }"/></figure>
-                                    	</div>
-                                	</div>
-                            		</a>
-                        		</div><!-- /.property -->
-                    		</div><!-- /.col-md-3 -->
-                    		</c:forEach>
-                		</c:when>
-                		<c:otherwise>
-                			<h2>No Data Found</h2>
-                		</c:otherwise>
-                	</c:choose>
-                	
-                </div><!-- /.row-->
-            </div><!-- /.container-->
-        </section><!-- /#new-properties-->
+        <!-- Breadcrumb -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="index-google-map-fullscreen">Home</a></li>
+                <li class="active">My Properties</li>
+            </ol>
+        </div>
+        <!-- end Breadcrumb -->
+
+        <div class="container">
+            <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 col-sm-2">
+                <section id="sidebar">
+                    <header><h3>Management List</h3></header>
+                    <aside>
+                        <ul class="sidebar-navigation">
+                            <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
+                            <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
+                            <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
+                        </ul>
+                    </aside>
+                </section><!-- /#sidebar -->
+            </div><!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+                <!-- My Properties -->
+                <c:choose>
+                	<c:when test="${listMalls != null}">
+                		<div class="col-md-9 col-sm-10">
+                    		<section id="my-properties">
+                        	<header><h1>List Mall (found : <c:out value="${listMallSize}"/> Mall)</h1></header>
+                        	<div class="my-properties">
+                            	<div class="table-responsive">
+                                	<table class="table">
+                                    	<thead>
+                                    	<tr>
+                                        	<th>Mall name</th>
+                                        	<th></th>
+                                        	<th></th>
+                                        	<th>Actions</th>
+                                        	<th></th>
+                                    	</tr>
+                                    	</thead>
+                                    <tbody>
+	                                    <c:forEach var="i" items="${listMalls}">
+	                                    <tr>
+	                                        <td>
+	                                          	<div class="inner">
+	                                            	<a href="#"><h2><c:out value="${i.mallNameEng}"/></h2></a>
+	                                        	</div>  
+	                                        </td>
+	                                        <td><c:out value="${i.mallNameThai }"/></td>
+	                                        <td></td>
+	                                        <td class="actions">
+	                                            <a href="list-update-admin?mallid=${i.mallId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+	                                        </td>
+	                                        <td class="actions">
+	                                            <button type="button" class="btn btn-danger">Delete</button>
+	                                        </td>
+	                                    </tr>
+	                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.table-responsive -->
+                            <!-- Pagination -->
+                            <div class="center">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul><!-- /.pagination-->
+                            </div><!-- /.center-->
+                        </div><!-- /.my-properties -->
+                    </section><!-- /#my-properties -->
+                </div><!-- /.col-md-9 -->
+                	</c:when>
+                </c:choose>
+                <!-- end My Properties -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
@@ -279,7 +247,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
+                                            <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
                                         </div>
                                     </a>
                                     <div class="info">
@@ -291,7 +259,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                             <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
+                                            <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
                                         </div>
                                     </a>
                                     <div class="info">
@@ -341,33 +309,16 @@
     <!-- end Page Footer -->
 </div>
 
-<div id="overlay"></div>
-
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/smoothscroll.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/jquery.placeholder.js"></script>
-<script type="text/javascript" src="js/icheck.min.js"></script>
-<script type="text/javascript" src="js/jquery.vanillabox-0.1.5.min.js"></script>
 <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="js/jshashtable-2.1_src.js"></script>
-<script type="text/javascript" src="js/jquery.numberformatter-1.2.3.js"></script>
-<script type="text/javascript" src="js/tmpl.js"></script>
-<script type="text/javascript" src="js/jquery.dependClass-0.1.js"></script>
-<script type="text/javascript" src="js/draggable-0.1.js"></script>
-<script type="text/javascript" src="js/jquery.slider.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
-<script>
-    $(window).load(function(){
-        initializeOwl(false);
-    });
-</script>
+
 </body>
 </html>

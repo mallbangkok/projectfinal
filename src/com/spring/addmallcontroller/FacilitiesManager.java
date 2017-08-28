@@ -40,4 +40,20 @@ public class FacilitiesManager {
 		}
 		return list;
 	}
+	
+	public String do_deleteFacilities(long mallId) {
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			
+			
+			
+			session.close();
+			return "Delete Facilities Successfully...";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Cannot Delete Facilities !!!";
+		}
+	}
 }

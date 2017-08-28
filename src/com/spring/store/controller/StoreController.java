@@ -77,7 +77,7 @@ public class StoreController {
 			mall.getStores().add(store);
 			store.setMall(mall);
 			mall.setStores(mall.getStores());
-			System.out.println(sm.doHibernateStore(store));
+			System.out.println(sm.do_isAddStore(store));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
