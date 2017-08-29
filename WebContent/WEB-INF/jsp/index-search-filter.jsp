@@ -9,14 +9,17 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style3.css" type="text/css">
 
     <title>Mall Bangkok | Google Map with Advanced Horizontal Search</title>
 
@@ -422,10 +425,17 @@
                                 </section><!-- /#quick-summary -->
                             </div><!-- /.col-md-4 -->
                             <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                    <header><h2>Shopping</h2></header>
+                            <!-- STSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS -->
+                            <div class="col-md-12 col-sm-12">
+								<ul class="nav nav-tabs">
+									<li><a href="#home">Shopping</a></li>
+									<li><a href="#menu1">Food</a></li>
+									<li><a href="#menu2">Services</a></li>
+								</ul>
+								<div class="tab-content">
+								<div id="home" class="tab-pane fade in active">
+								<section id="property-features">
                                     <ul class="list-unstyled property-features-list">
-                                       
                                        	<c:choose>
                                                   <c:when test="${listShopping != null }">
                                                       <c:forEach var="i" items="${listShopping}">
@@ -433,12 +443,46 @@
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
-                                       
+                                    </ul>
+                               	 </section><!-- /#property-features -->
+								</div>
+								<div id="menu1" class="tab-pane fade in active">
+								<section id="property-features">
+                                    <ul class="list-unstyled property-features-list">
+                                      	<c:choose>
+                                                  <c:when test="${listFood != null }">
+                                                      <c:forEach var="i" items="${listFood}">
+                                                      	<li><c:out value="${i}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                     </ul>
                                 </section><!-- /#property-features -->
-                                
+								</div>
+								<div id="menu2" class="tab-pane fade in active">
+								  <section id="property-features">
+                                    <ul class="list-unstyled property-features-list">
+                                       	<c:choose>
+                                                  <c:when test="${listService != null }">
+                                                      <c:forEach var="i" items="${listService}">
+                                                      	<li><c:out value="${i}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
+                                    </ul>
+                                </section><!-- /#property-features -->
+								</div>
+								</div><!-- tab-content -->
+								<script>
+									$(document).ready(function() {
+									$(".nav-tabs a").click(function() {
+									$(this).tab('show');
+									});
+								});
+								</script>
+							</div><!-- EndDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD -->
                             </div><!-- /.col-md-8 -->
-                                <div class="col-md-8 col-sm-12">
+                            <!--   <div class="col-md-8 col-sm-12">
                                 <section id="property-features">
                                     <header><h2>Food</h2></header>
                                     <ul class="list-unstyled property-features-list">
@@ -452,91 +496,13 @@
                                     </ul>
                                 </section><!-- /#property-features -->
                                 
-                            </div><!-- /.col-md-8 -->
+                            </div>                                
                             <div class="col-md-4 col-sm-12"></div>
                               <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                    <header><h2>Services</h2></header>
-                                    <ul class="list-unstyled property-features-list">
-                                       	<c:choose>
-                                                  <c:when test="${listService != null }">
-                                                      <c:forEach var="i" items="${listService}">
-                                                      	<li><c:out value="${i}"></c:out></li>
-                                                     </c:forEach>
-                                                  </c:when>
-                                       	</c:choose>
-                                    </ul>
-                                </section><!-- /#property-features -->
+                                
                             <div class="col-md-12 col-sm-12">
                                
                                 <hr class="thick">
-                                
-                               
-                                <section id="comments">
-                                    <header><h2 class="no-border">Comments</h2></header>
-                                    <ul class="comments">
-                                        <li class="comment">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="assets/img/client-01.jpg">
-                                                </div>
-                                            </figure>
-                                            <div class="comment-wrapper">
-                                                <div class="name pull-left">Catherine Brown</div>
-                                                <span class="date pull-right"><span class="fa fa-calendar"></span>12.05.2014</span>
-                                                <div class="rating rating-individual" data-score="4"></div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                                    augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                                    mauris imperdiet vel. Nulla et massa metus. Nam porttitor quam eget ante elementum consectetur. Aenean ac nisl
-                                                    et nulla placerat suscipit eu a mauris. Curabitur quis augue condimentum, varius mi in, ultricies velit.
-                                                    Suspendisse potenti.
-                                                </p>
-                                                <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                <hr>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <ul class="comments-child">
-                                                <li class="comment">
-                                                    <figure>
-                                                        <div class="image">
-                                                            <img alt="" src="assets/img/agent-01.jpg">
-                                                        </div>
-                                                    </figure>
-                                                    <div class="comment-wrapper">
-                                                        <div class="name">John Doe</div>
-                                                        <span class="date"><span class="fa fa-calendar"></span>24.06.2014</span>
-                                                        <div class="rating rating-individual" data-score="3"></div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                                            augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                                            mauris.
-                                                        </p>
-                                                        <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                        <hr>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="comment">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="assets/img/user-02.jpg">
-                                                </div>
-                                            </figure>
-                                            <div class="comment-wrapper">
-                                                <div class="name">John Doe</div>
-                                                <span class="date"><span class="fa fa-calendar"></span>08.05.2014</span>
-                                                <div class="rating rating-individual" data-score="5"></div>
-                                                <p>Quisque iaculis neque at dui cursus posuere. Sed tristique pharetra orci, eu malesuada ante tempus nec.
-                                                    Phasellus enim odio, facilisis et ante vel, tempor congue sapien. Praesent eget ligula
-                                                    eu libero cursus facilisis vel non arcu. Sed vitae quam enim.
-                                                </p>
-                                                <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                                <hr>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </section>
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </section><!-- /#property-detail -->
@@ -610,19 +576,7 @@
                                 </div>
                             </div><!-- /.property -->
                         </aside><!-- /#featured-properties -->
-                        <aside id="our-guides">
-                            <header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                        </aside><!-- /#our-guide -->
+                       
                     </section><!-- /#sidebar -->
                 </div><!-- /.col-md-3 -->
                 <!-- end Sidebar -->
