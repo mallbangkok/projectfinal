@@ -426,9 +426,9 @@
                             </div><!-- /.col-md-4 -->
                             <div class="col-md-8 col-sm-12">
                             <!-- STSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS -->
-                            <div class="container">
+                            <div class="col-md-12 col-sm-12">
 								<ul class="nav nav-tabs">
-									<li class="active"><a href="#home">Shopping</a></li>
+									<li><a href="#home">Shopping</a></li>
 									<li><a href="#menu1">Food</a></li>
 									<li><a href="#menu2">Services</a></li>
 								</ul>
