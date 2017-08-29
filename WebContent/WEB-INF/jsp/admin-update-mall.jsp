@@ -404,11 +404,10 @@
                                 <section id="property-features" class="block">
                                     <section>
                                         <header><h2>Facilities</h2></header>
-                                        <% List<Facilities> list = (List<Facilities>)session.getAttribute("list"); %>
                                         <ul class="submit-features">
-                                        	<% for (Facilities f: list){ %>
-                                        		<li><div class="checkbox"><label><input type="checkbox" name="facilites" value="<%=f.getFacilitiesId()%>"><%=f.getFacilitiesName() %></label></div></li>
-                                        	<% } %>
+                                        	<c:forEach var="i" items="${listFac}">
+                                        		<li><div class="checkbox"><label><input type="checkbox" name="facilites" value="${i.facilitiesId}"><c:out value="${i.facilitiesName }"/></label></div></li>
+                                        	</c:forEach>
                                         </ul>
                                     </section>
                                 </section>
