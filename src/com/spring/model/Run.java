@@ -21,10 +21,38 @@ public class Run {
 	public static void main(String[] args) {
 		MallManager mm = new MallManager();
 		FacilitiesManager fm = new FacilitiesManager();
-		List<Facilities> list = fm.getAllFacilities();
+//		List<Mall> list =
+//		list.get(0).getFacilites()
 		
+		//System.out.println(mm.do_deleteMall(1));
+		
+		for(Mall m : mm.getAllMalls()){
+			System.out.println(m.getMallId());
+			for(Facilities f : m.getFacilites()){
+				System.out.println(f.getFacilitiesId());
+			}
+		}
+		
+//		String[] facilities = {"fac1","fac2","fac3","fac4","fac5"};
+//		Mall mall = new Mall("asdf", "asdf", "Regional Mall", "asdf", "asdf", "asdf", getCurrentDate(),
+//				"asdf", "asdf", "asdf");
+//		Facilities fac = null;
+//		for(Facilities f : fm.getAllFacilities()){
+//			for(String s : facilities){
+//				if(s.equals(f.getFacilitiesId())){
+//					mall.getFacilites().add(f);
+//					fac = f;
+//					fac.getMalls().add(mall);
+//				}
+//			}
+//		}
+//		System.out.println(mm.doHibernateAddMall(mall));
 	}
-
+	public static String getCurrentDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MMM-dd-yyyy", Locale.ENGLISH);
+		String date = sdf.format(new Date());
+		return date;
+	}
 	public static double calculateTime(String timeIn, String timeOut) {
 		CalculateParking cp1 = new CalculateParking(timeIn, timeOut);
 		NoStamp ns1 = new NoStamp("NS1",

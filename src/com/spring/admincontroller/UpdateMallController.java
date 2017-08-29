@@ -55,12 +55,13 @@ public class UpdateMallController {
 			e.printStackTrace();
 		}
 
-		ModelAndView mav = new ModelAndView("admin-update-mall");
+		ModelAndView mav = new ModelAndView("my-properties");
 		MallManager mm = new MallManager();
 		FacilitiesManager fm = new FacilitiesManager();
 		List<Facilities> list = fm.getAllFacilities();
 
 		long mid = (long) session.getAttribute("mallid");
+		System.out.println(mm.do_deleteMall(mid));
 		String mallNameEng = request.getParameter("mallnameEng");
 		String mallNameThai = request.getParameter("mallNameThai");
 		String type = request.getParameter("type");
@@ -71,29 +72,22 @@ public class UpdateMallController {
 		String phoneNumber = request.getParameter("phonenumber");
 		String imageName = request.getParameter("file");
 		String[] facilities = request.getParameterValues("facilites");
-
-		Mall mall = new Mall(mid, mallNameEng, mallNameThai, type, area, mallGroup, statusMall, getCurrentDate(),
+		
+		Mall mall = new Mall(mallNameEng, mallNameThai, type, area, mallGroup, statusMall, getCurrentDate(),
 				timeMall, phoneNumber, imageName);
-
-		for (Mall m : mm.getAllMalls()) {
-			if (mall.getMallId() == m.getMallId()) {
-				if (facilities == null) {
-					System.out.println(mm.doHibernateAddMall(mall));
-				} else {
-					Facilities fac = null;
-					for (Facilities f : list) {
-						for (String s : facilities) {
-							if (s.equals(f.getFacilitiesId())) {
-								mall.getFacilites().add(f);
-								fac = f;
-								fac.getMalls().add(mall);
-							}
-						}
+		
+		if (facilities == null) {
+			System.out.println(mm.doHibernateUpdateMall(mall));
+		} else {
+			for(String s : facilities){
+				for(Facilities f : list){
+					if (s.equals(f.getFacilitiesId())) {
+						mall.getFacilites().add(f);
+						f.getMalls().add(mall);
 					}
-					System.out.println(mm.doHibernateUpdateMall(mall));
 				}
 			}
-
+			System.out.println(mm.doHibernateUpdateMall(mall));
 		}
 
 		return mav;

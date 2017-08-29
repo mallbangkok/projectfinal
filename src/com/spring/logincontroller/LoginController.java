@@ -42,7 +42,7 @@ public class LoginController {
 			}
 			List<Facilities> list = fm.getAllFacilities();
 			session.setMaxInactiveInterval(24*60*60);
-			session.setAttribute("list", list);
+			session.setAttribute("listFac", list);
 			md.addAttribute("access_msg",msg);
 			//md.addAttribute("list",list);
 			return "my-properties";
