@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
@@ -112,7 +114,11 @@
                                 <li><a href="agency-detail.html">Agency Detail</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit.html">Submit</a></li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul>
+						</li>
                         <li class="has-child"><a href="#">Blog</a>
                             <ul class="child-navigation">
                                 <li><a href="blog.html">Blog Listing</a></li>
@@ -120,6 +126,9 @@
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
+                        <c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -134,8 +143,7 @@
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="index-google-map-fullscreen">Home</a></li>
                 <li class="active">My Properties</li>
             </ol>
         </div>
@@ -146,136 +154,51 @@
             <!-- sidebar -->
             <div class="col-md-3 col-sm-2">
                 <section id="sidebar">
-                    <header><h3>Account</h3></header>
+                    <header><h3>Management List</h3></header>
                     <aside>
                         <ul class="sidebar-navigation">
-                            <li><a href="submit"><i class="fa fa-user"></i><span>Add Mall</span></a></li>
+                            <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
-                            <li><a href="bookmarked.html"><i class="fa fa-heart"></i><span>Bookmarked Properties</span></a></li>
+                            <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
                         </ul>
                     </aside>
                 </section><!-- /#sidebar -->
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
-                <div class="col-md-9 col-sm-10">
-                    <section id="my-properties">
-                        <header><h1>My Properties</h1></header>
-                        <div class="my-properties">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Property</th>
-                                        <th></th>
-                                        <th>Date Added</th>
-                                        <th>Views</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
+                <c:choose>
+                	<c:when test="${type != null}">
+                		<div class="col-md-9 col-sm-10">
+                    		<section id="my-properties">
+                        	<header><h1>List Mall Category</h1></header>
+                        	<div class="my-properties">
+                            	<div class="table-responsive">
+                                	<table class="table">
+                                    	<thead>
+                                    	<tr>
+                                        	<th>Category Name</th>
+                                        	<th></th>
+                                        	<th></th>
+                                        	<th></th>
+                                        	<th></th>
+                                    	</tr>
+                                    	</thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-04.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>987 Cantebury Drive</h2></a>
-                                            <figure>Golden Valley, MN 55427</figure>
-                                            <div class="tag price">$ 38,000</div>
-                                        </div>
-                                        </td>
-                                        <td>20.05.2014</td>
-                                        <td>236</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-02.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>3398 Lodgeville Road</h2></a>
-                                            <figure>Golden Valley, MN 55427</figure>
-                                            <div class="tag price">$ 135,000</div>
-                                        </div>
-                                        </td>
-                                        <td>06.05.2014</td>
-                                        <td>662</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-01.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>1179 Stroop Hill Road</h2></a>
-                                            <figure>Atlanta, GA 30309</figure>
-                                            <div class="tag price">$ 26,000</div>
-                                        </div>
-                                        </td>
-                                        <td>29.04.2014</td>
-                                        <td>85</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-06.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>1028 Henery Street</h2></a>
-                                            <figure>Wichita, KS 67202</figure>
-                                            <div class="tag price">$ 47,000</div>
-                                        </div>
-                                        </td>
-                                        <td>22.04.2014</td>
-                                        <td>357</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-07.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>4068 Diamond Street</h2></a>
-                                            <figure>Charlotte, NC 28217 </figure>
-                                            <div class="tag price">$ 980,000</div>
-                                        </div>
-                                        </td>
-                                        <td>16.03.2014</td>
-                                        <td>456</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="image">
-                                            <a href="property-detail.html"><img alt="" src="<c:url value="/img/properties/property-08.jpg"/>"></a>
-                                        </td>
-                                        <td><div class="inner">
-                                            <a href="property-detail.html"><h2>2088 May Street</h2></a>
-                                            <figure>Somerset, KY 42503 </figure>
-                                            <div class="tag price">$ 11,000</div>
-                                        </div>
-                                        </td>
-                                        <td>18.02.2014</td>
-                                        <td>267</td>
-                                        <td class="actions">
-                                            <a href="#" class="edit"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="#"><i class="delete fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
+	                                    <c:forEach var="i" items="${type}">
+	                                    <tr>
+	                                        <td>
+	                                          	<div class="inner">
+	                                            	<a href="list-mall-admin?type=${i}"><h2><c:out value="${i}"/></h2></a>
+	                                        	</div>  
+	                                        </td>
+	                                        <td></td>
+	                                        <td></td>
+	                                        <td></td>
+	                                        <td class="actions">
+	                                            <button type="button" class="btn btn-danger">Delete</button>
+	                                        </td>
+	                                    </tr>
+	                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
@@ -292,6 +215,18 @@
                         </div><!-- /.my-properties -->
                     </section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->
+                	</c:when>
+                	<c:otherwise>
+                	<div class="col-md-9 col-sm-10">
+                    <section id="my-properties">
+                        <header><h1>Welcome To Admin Management</h1></header>
+                        	<div class="my-properties">
+                           
+                        	</div><!-- /.my-properties -->
+                    	</section><!-- /#my-properties -->
+                	</div><!-- /.col-md-9 -->
+                	</c:otherwise>
+                </c:choose>
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -373,7 +308,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

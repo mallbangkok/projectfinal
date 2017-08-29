@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -18,6 +19,9 @@ import com.spring.store.controller.StoreManager;
 public class Run {
 
 	public static void main(String[] args) {
+		MallManager mm = new MallManager();
+		FacilitiesManager fm = new FacilitiesManager();
+		List<Facilities> list = fm.getAllFacilities();
 		
 	}
 

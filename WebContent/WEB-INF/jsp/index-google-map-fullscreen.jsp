@@ -42,8 +42,15 @@
 					</div>
 					<div class="user-area">
 						<div class="actions">
-							<a href="sign-in">Sign In</a>
-						</div>
+						<c:choose>
+							<c:when test="${username != null}">
+								<a href="logout">Log Out</a>
+							</c:when>
+							<c:otherwise>
+								<a href="sign-in">Sign In</a>
+							</c:otherwise>
+						</c:choose>
+                    </div>
 						<div class="language-bar">
 							<a href="#" class="active"><img
 								src="<c:url value="/img/flags/th.png"/>" alt=""></a> <a
@@ -161,6 +168,9 @@
 									<li><a href="blog-detail.html">Blog Post Detail</a></li>
 								</ul></li>
 							<li><a href="contact.html">Contact</a></li>
+							<c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+							</c:if>
 						</ul>
 					</nav>
 					<!-- /.navbar collapse-->
