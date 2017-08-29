@@ -4,16 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+
 	<select id="worker"></select>
 	<select id="fruits"></select>
-	<script>
+	<script type="text/javascript">
 		var data = [ // The data
 		[ 'Roy', [ 'Apples', 'Peaches' ] ],
-				[ 'John', [ 'Oranges', 'Pears', 'Peaches', 'Nuts' ] ] ];
+				[ 'John', [ 'Oranges', 'Pears', 'Peaches', 'Nuts' ] ] ,
+		['Test',['demo','demo']]
+		];
 
 		$a = $('#worker'); // The dropdowns
 		$b = $('#fruits');
@@ -35,13 +38,10 @@
 				attr("value", second[j]).data("sel", j).text(second[j]));
 			}
 		}).change();
-		 <%String movie_name ="Matrix"; %>
-         <script type="text/javascript">
-             var movie_name="";
-             movie_name= <%= movie_name%>
-		;
-		alert(movie_name)
+		
 	</script>
-	</script>
+	
+       
+	
 </body>
 </html>
