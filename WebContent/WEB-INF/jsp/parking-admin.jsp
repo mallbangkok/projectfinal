@@ -8,7 +8,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
@@ -160,74 +160,48 @@
                             <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
-                            <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a></li>
+                            <li><a href="parking-admin"><i class="fa fa-book"></i><span>Parking</span></a></li>
                         </ul>
                     </aside>
                 </section><!-- /#sidebar -->
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
-                <c:choose>
-                	<c:when test="${type != null}">
-                		<div class="col-md-9 col-sm-10">
-                    		<section id="my-properties">
-                        	<header><h1>List Mall Category</h1></header>
-                        	<div class="my-properties">
-                            	<div class="table-responsive">
-                                	<table class="table">
-                                    	<thead>
-                                    	<tr>
-                                        	<th>Category Name</th>
-                                        	<th></th>
-                                        	<th></th>
-                                        	<th></th>
-                                        	<th></th>
-                                    	</tr>
-                                    	</thead>
-                                    <tbody>
-	                                    <c:forEach var="i" items="${type}">
-	                                    <tr>
-	                                        <td>
-	                                          	<div class="inner">
-	                                            	<a href="list-mall-admin?type=${i}"><h2><c:out value="${i}"/></h2></a>
-	                                        	</div>  
-	                                        </td>
-	                                        <td></td>
-	                                        <td></td>
-	                                        <td></td>
-	                                        <td class="actions">
-	                                            <button type="button" class="btn btn-danger">Delete</button>
-	                                        </td>
-	                                    </tr>
-	                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div><!-- /.table-responsive -->
-                            <!-- Pagination -->
-                            <div class="center">
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul><!-- /.pagination-->
-                            </div><!-- /.center-->
-                        </div><!-- /.my-properties -->
-                    </section><!-- /#my-properties -->
-                </div><!-- /.col-md-9 -->
-                	</c:when>
-                	<c:otherwise>
+           
                 	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
-                        <header><h1>Welcome To Admin Management</h1></header>
+                    
+                      <div class="col-md-9 col-sm-10">
+                    		  <div class="col-md-4">
+                                    <div class="form-group">
+                                                <select name="select-type" id="select-type" required>
+                                                    <option>Please Select Type</option>
+                                                    <option value="Food">Food</option>
+                                                    <option value="Shopping">Shopping</option>
+                                                                  
+                                                </select>
+                                   </div><!-- /.form-group -->
+                             </div>
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                                                <select name="select-type" id="select-type" required>
+                                                    <option>Please Select Mall</option>
+                                                    <option value="Food">Food</option>
+                                                    <option value="Shopping">Shopping</option>           
+                                                </select>
+                                   </div><!-- /.form-group -->
+                             </div>
+                             <div class="col-md-4">
+                             	<button type="submit" class="btn btn-default"form="form-serchfilter" value="Submit">Search
+											Now</button>
+                             </div>
+               		 </div><!-- /.col-md-9 -->
                         	<div class="my-properties">
                            
                         	</div><!-- /.my-properties -->
                     	</section><!-- /#my-properties -->
                 	</div><!-- /.col-md-9 -->
-                	</c:otherwise>
-                </c:choose>
+                	
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->

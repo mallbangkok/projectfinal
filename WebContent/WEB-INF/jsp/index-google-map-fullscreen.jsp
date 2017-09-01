@@ -162,7 +162,7 @@
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
 							</li>
-							<li><a href="user-calculate-parking">Calculate Parking</a>
+							<li><a href="parking-user">Parking</a>
 								</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
