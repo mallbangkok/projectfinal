@@ -7,9 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ParkingController {
-	@RequestMapping(value = "/user-calculate-parking", method = RequestMethod.GET)
-	public ModelAndView loadPageCalculateParking() {
-		ModelAndView mav = new ModelAndView("user-calculateparking");
+	@RequestMapping(value = "/parking-user", method = RequestMethod.GET)
+	public ModelAndView loadPageCalculateParkingUser() {
+		ModelAndView mav = new ModelAndView("parking-user");
+		return mav;
+	}
+
+	@RequestMapping(value = "parking-admin", method = RequestMethod.GET)
+	public ModelAndView loadPageCalculateParkingAdmin() {
+		ModelAndView mav = new ModelAndView("parking-admin");
 		return mav;
 	}
 
