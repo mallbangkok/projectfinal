@@ -38,6 +38,7 @@ public class SearchCustomController {
 		String shopname = request.getParameter("inputShop");
 		
 		List<Store> listStore = new ArrayList<>();
+		
 		for(Store s : sm.getAllStores()){
 			if(shopname.equalsIgnoreCase(s.getStoreName())){
 				listStore.add(s);

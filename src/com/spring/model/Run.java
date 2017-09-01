@@ -21,17 +21,17 @@ public class Run {
 	public static void main(String[] args) {
 		MallManager mm = new MallManager();
 		FacilitiesManager fm = new FacilitiesManager();
+		StoreManager sm = new StoreManager();
+		
+		
+		System.out.println(sm.getAllStores().get(0).getStoreName() + " " +sm.getAllStores().get(0).getMall().getMallNameEng());
+		
 //		List<Mall> list =
 //		list.get(0).getFacilites()
 		
 		//System.out.println(mm.do_deleteMall(1));
 		
-		for(Mall m : mm.getAllMalls()){
-			System.out.println(m.getMallId());
-			for(Facilities f : m.getFacilites()){
-				System.out.println(f.getFacilitiesId());
-			}
-		}
+		
 		
 //		String[] facilities = {"fac1","fac2","fac3","fac4","fac5"};
 //		Mall mall = new Mall("asdf", "asdf", "Regional Mall", "asdf", "asdf", "asdf", getCurrentDate(),
