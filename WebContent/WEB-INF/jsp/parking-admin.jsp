@@ -167,24 +167,22 @@
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
-           
                 	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
                     
                       <div class="col-md-9 col-sm-10">
                     		  <div class="col-md-4">
                                     <div class="form-group">
-                                                <select name="select-type" id="select-type" required>
+                                                <select name="select-type"  >
                                                     <option>Please Select Type</option>
                                                     <option value="Food">Food</option>
-                                                    <option value="Shopping">Shopping</option>
-                                                                  
+                                                    <option value="Shopping">Shopping</option>          
                                                 </select>
                                    </div><!-- /.form-group -->
                              </div>
                             <div class="col-md-4">
                                     <div class="form-group">
-                                                <select name="select-type" id="select-type" required>
+                                                <select name="select-type" >
                                                     <option>Please Select Mall</option>
                                                     <option value="Food">Food</option>
                                                     <option value="Shopping">Shopping</option>           
@@ -195,13 +193,21 @@
                              	<button type="submit" class="btn btn-default"form="form-serchfilter" value="Submit">Search
 											Now</button>
                              </div>
+                            
                		 </div><!-- /.col-md-9 -->
+               		  <header><h3> </h3></header>
                         	<div class="my-properties">
                            
                         	</div><!-- /.my-properties -->
                     	</section><!-- /#my-properties -->
                 	</div><!-- /.col-md-9 -->
-                	
+                	<div class="col-md-9 col-sm-10">
+                		   <section id="sidebar">
+                   		  
+                   
+               			   </section><!-- /#sidebar -->
+                	</div>
+
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->
