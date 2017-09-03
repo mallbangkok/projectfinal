@@ -10,7 +10,6 @@ import com.spring.model.Facilities;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
 
-
 public class MallManager {
 	public String doHibernateAddMall(Mall mall) {
 		try {
@@ -26,7 +25,7 @@ public class MallManager {
 			return "Cannot Add Mall !!!";
 		}
 	}
-	
+
 	public String doHibernateUpdateMall(Mall mall) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
@@ -41,7 +40,7 @@ public class MallManager {
 			return "Cannot Add Update !!!";
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Mall> getAllMalls() {
 		List<Mall> list = new ArrayList<Mall>();
@@ -56,7 +55,7 @@ public class MallManager {
 		}
 		return list;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<String> getMallType() {
 		List<String> list = new ArrayList<String>();
@@ -71,26 +70,26 @@ public class MallManager {
 		}
 		return list;
 	}
-	
+
 	public String do_deleteMall(long mallId) {
 		try {
 			String message = "";
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			
-			for(Mall m : getAllMalls()){
-				for(Facilities f : m.getFacilites()){
-					for(Mall mw : f.getMalls()){
+
+			for (Mall m : getAllMalls()) {
+				for (Facilities f : m.getFacilites()) {
+					for (Mall mw : f.getMalls()) {
 						mw.setFacilites(null);
 					}
-					
+
 				}
-				if(mallId == m.getMallId()){
+				if (mallId == m.getMallId()) {
 					session.delete(m);
 					message = "Delete Mall Successfully...";
 					break;
-				}else{
+				} else {
 					message = "Cannot Delete , You don't have mall id " + mallId;
 				}
 			}
@@ -101,5 +100,7 @@ public class MallManager {
 			e.printStackTrace();
 			return "Cannot Delete Mall !!!";
 		}
+
 	}
+
 }
