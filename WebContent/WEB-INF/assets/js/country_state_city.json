@@ -1,52 +1,52 @@
 [
 	{
 		"id": "1",
-		"name": "USA",
+		"name": "Regional Mall",
 		"parent_id": "0"
 	},
 	{
 		"id": "2",
-		"name": "Canada",
+		"name": "Community Mall",
 		"parent_id": "0"
 	},
 	{
 		"id": "3",
-		"name": "Australia",
+		"name": "Luxury Mall",
 		"parent_id": "0"
 	},
 	{
 		"id": "4",
-		"name": "New York",
+		"name": "Robinson Lifestyle Center Samutprakan",
 		"parent_id": "1"
 	},
 	{
 		"id": "5",
-		"name": "Alabama",
+		"name": "CentralPlaza Salaya",
 		"parent_id": "1"
 	},
 	{
 		"id": "6",
-		"name": "California",
+		"name": "CentralPlaza Chaengwattana",
 		"parent_id": "1"
 	},
 	{
 		"id": "7",
-		"name": "Ontario",
+		"name": "Platform Wongwianyai",
 		"parent_id": "2"
 	},
 	{
 		"id": "8",
-		"name": "British Columbia",
+		"name": "The Avenue Chaengwattana",
 		"parent_id": "2"
 	},
 	{
 		"id": "9",
-		"name": "New South Wales",
+		"name": "Emporium",
 		"parent_id": "3"
 	},
 	{
 		"id": "10",
-		"name": "Queensland",
+		"name": "EmQuatier",
 		"parent_id": "3"
 	},
 	{

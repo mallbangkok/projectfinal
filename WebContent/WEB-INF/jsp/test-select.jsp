@@ -16,19 +16,17 @@
 		<h2 align="center">JSON - Dynamic Dependent Dropdown List using
 			Jquery and Ajax</h2>
 		<br />
-		<br /> <select name="country" id="country"
+		<br /> <select name="type" id="type"
 			class="form-control input-lg">
-			<option value="">Select country</option>
-		</select> <br /> <select name="state" id="state" class="form-control input-lg">
+			<option value="">Select type</option>
+		</select> <br /> <select name="mall" id="mall" class="form-control input-lg">
 			<option value="">Select state</option>
-		</select> <br /> <select name="city" id="city" class="form-control input-lg">
-			<option value="">Select city</option>
 		</select>
 	</div>
 	
 	<script>
 		$(document).ready(function(){
-		 load_json_data('country');
+		 load_json_data('type');
 		 function load_json_data(id, parent_id)
 		 {
 		  var html_code = '';
@@ -36,7 +34,7 @@
 		
 		   html_code += '<option value="">Select '+id+'</option>';
 		   $.each(data, function(key, value){
-		    if(id == 'country')
+		    if(id == 'type')
 		    {
 		     if(value.parent_id == '0')
 		     {
@@ -53,30 +51,17 @@
 		   });
 		   $('#'+id).html(html_code);
 		  });
-		
 		 }
 		
-		 $(document).on('change', '#country', function(){
+		 $(document).on('change', '#type', function(){
 		  var country_id = $(this).val();
 		  if(country_id != '')
 		  {
-		   load_json_data('state', country_id);
+		   load_json_data('mall', country_id);
 		  }
 		  else
 		  {
 		   $('#state').html('<option value="">Select state</option>');
-		   $('#city').html('<option value="">Select city</option>');
-		  }
-		 });
-		 $(document).on('change', '#state', function(){
-		  var state_id = $(this).val();
-		  if(state_id != '')
-		  {
-		   load_json_data('city', state_id);
-		  }
-		  else
-		  {
-		   $('#city').html('<option value="">Select city</option>');
 		  }
 		 });
 		});
