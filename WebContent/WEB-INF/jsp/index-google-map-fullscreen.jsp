@@ -121,7 +121,7 @@
 											<li><a href="#">Shopping Plaza</a></li>
 										</ul></li>
 									<li><a href="properties-listing.html">List By Area</a></li>
-									<li><a href="properties-listing-grid.html">List All</a></li>
+									<li><a href="test-select">List All</a></li>
 								</ul></li>
 							<li class="has-child"><a href="#">Pages</a>
 								<ul class="child-navigation">
