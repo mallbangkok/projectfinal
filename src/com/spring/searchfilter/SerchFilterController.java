@@ -57,16 +57,13 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		String name = request.getParameter("type");
 		MallManager mm = new MallManager();
-		List<Mall> list = mm.getAllMalls();
 		List<Mall> listMall = new ArrayList();
-		for (Mall m : list) {
+		for (Mall m :  mm.getAllMalls()) {
 			if (name.equals(m.getArea())) {
 				listMall.add(m);
-
 			}
 		}
 		session.setAttribute("listMall", listMall);
-
 		return mav;
 	}
 
