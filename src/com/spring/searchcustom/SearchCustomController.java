@@ -18,13 +18,13 @@ import com.spring.store.controller.StoreManager;
 @Controller
 public class SearchCustomController {
 	@RequestMapping(value = "/index-slider-search-custom", method = RequestMethod.GET)
-	public ModelAndView loadSignInPage() {
+	public ModelAndView loadSearchCustomPage() {
 		ModelAndView mav = new ModelAndView("index-slider-search-custom");
 		return mav;
 	}
 	
 	@RequestMapping(value = "/index-slider-search-custom", method = RequestMethod.POST)
-	public ModelAndView doSearchShop(HttpServletRequest request, HttpSession session, Model md) {
+	public ModelAndView do_SearchShop(HttpServletRequest request, HttpSession session, Model md) {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {

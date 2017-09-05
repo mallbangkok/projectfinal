@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/fileinput.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    
     <title>Mall Bangkok | Add Your Store</title>
 
 
@@ -167,33 +168,16 @@
                                             <div class="form-group">
                                             <input type="hidden" name="mType" id="mType">
                                                 <label for="select-mall">Select Type</label>
-                                                	<select name="select-type" id="select-type" onchange="onChange()">
-                                                    	<c:choose>
-                                                    		<c:when test="${typeMall != null }">
-                                                    			<option value="${typeMall}"><c:out value="${typeMall}"></c:out></option>
-                                                    		</c:when>
-                                                    		<c:otherwise>
-                                                    			<option value="null">Please Select Mall Type</option>
-                                                    		</c:otherwise>
-                                                    	</c:choose>
-                                        					<c:forEach var="i" items="${types}">
-                                        						<option value="${i}"><c:out value="${i}" /></option>
-                                        					</c:forEach>
+                                                	<select name="type" id="type">
+                                                    	<option value="">Select type</option>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
                           				<form role="form" id="form-submit" class="form-submit" action="store-admin" method="post">
                                             <div class="form-group">
                                                 <label for="select-mall">Select Mall</label>
-                                                	<select name="select-mall" id="select-mall" required>
-                                                    	<option value="null">Please Select Mall Type</option>
-                                                       	<c:choose>
-                                                       		<c:when test="${mallType != null }">
-                                                       			<c:forEach var="i" items="${mallType}">
-                                                       				<option value="${i.mallNameEng}"><c:out value="${i.mallNameEng}"></c:out></option>
-                                                       			</c:forEach>
-                                                       		</c:when>
-                                                       	</c:choose>
+                                                	<select name="mall" id="mall" required>
+                                                    	<option value="">Please Select Mall</option>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </div>
@@ -361,7 +345,7 @@
     <!-- end Page Footer -->
 </div>
 
-<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
 <script type="text/javascript" src="js/markerwithlabel_packed.js"></script>
@@ -376,9 +360,11 @@
 <script type="text/javascript" src="js/fileinput.min.js"></script>
 <script type="text/javascript" src="js/custom-map.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
+
 
 <script type="text/javascript">
 	function onChange(){

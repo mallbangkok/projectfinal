@@ -102,7 +102,7 @@
 									<li><a href="index-slider-horizontal-search-box.html">Horizontal
 											Slider Search</a></li>
 									<li><a
-										href="index-slider-horizontal-search-box-floated.html">Horizontal
+										href="demo-test-game">Horizontal
 											Slider Floated Search</a></li>
 								</ul></li>
 							<li class="has-child"><a href="#">Directory</a>
@@ -149,13 +149,6 @@
 									<li><a href="timeline.html">Timeline</a></li>
 									<li><a href="terms-conditions.html">Terms & Conditions</a></li>
 									<li><a href="rtl.html">RTL Support</a></li>
-								</ul></li>
-							<li class="has-child"><a href="#">Agents & Agencies</a>
-								<ul class="child-navigation">
-									<li><a href="agents-listing.html">Agents Listing</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="agencies-listing.html">Agencies Listing</a></li>
-									<li><a href="agency-detail.html">Agency Detail</a></li>
 								</ul></li>
 							<li><a href="loadsearchfilter">Search Mall</a>
 								<ul class="child-navigation">
