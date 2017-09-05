@@ -15,6 +15,7 @@ public class Mall {
 	private String area;
 	private String mallGroup;
 	private String statusMall;
+	@Column(name = "updDate")
 	private String updatedDate;
 	private String timeMall;
 	private String phoneNoMall;
