@@ -109,19 +109,6 @@
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
 										<ul class="child-navigation">
-											<li><a href="list-mall?typename=Regional Mall">Regional
-													Mall</a></li>
-											<li><a href="list-mall?typename=Community Mall">Community
-													Mall</a></li>
-											<li><a href="list-mall?typename=HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</a></li>
-											<li><a href="#">Theme Mall</a></li>
-											<li><a href="#">Luxury Mall</a></li>
-											<li><a href="#">Department Store</a></li>
-											<li><a href="#">Complex</a></li>
-											<li><a href="#">Shopping Plaza</a></li>
-										</ul></li>
-									<li><a href="#">List By Type</a>
-										<ul class="child-navigation">
 											<c:forEach var="type" items="${types}">
 												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
 											</c:forEach>

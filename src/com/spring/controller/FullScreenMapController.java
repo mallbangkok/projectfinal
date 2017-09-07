@@ -20,10 +20,6 @@ public class FullScreenMapController {
 		List<String> listType = mm.getMallType();
 		session.setAttribute("types", listType);
 		
-		for(String s : listType){
-			System.out.println(s);
-		}
-		
 		return mav;
 	}
 }
