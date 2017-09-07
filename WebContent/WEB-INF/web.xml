@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <web-app id="WebApp_MallBangkok" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-=======
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
->>>>>>> 7c2137261e8d442731f3e0b85a7ab64a17e5a0d6
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
