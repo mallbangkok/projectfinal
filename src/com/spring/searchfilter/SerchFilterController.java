@@ -57,8 +57,9 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		String name = request.getParameter("type");
 		MallManager mm = new MallManager();
+		List<Mall> list = mm.getAllMalls();
 		List<Mall> listMall = new ArrayList();
-		for (Mall m :  mm.getAllMalls()) {
+		for (Mall m :  list) {
 			if (name.equals(m.getArea())) {
 				listMall.add(m);
 			}

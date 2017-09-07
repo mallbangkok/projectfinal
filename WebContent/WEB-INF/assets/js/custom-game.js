@@ -11,7 +11,6 @@ $(function() {
 			function() {
 				var stateOptions=null;
 				$.getJSON('js/states.json', function(result) {
-					
 					$.each(result, function(i, statename) {
 						if ($(country).val() == statename.name) {
 							stateOptions += "<option value='" +i+ statename.name

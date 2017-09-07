@@ -207,34 +207,16 @@
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="select-area"id="select-area" onchange="onChange()">
-                                                <option value="">Select Area</option>
-                                                <option value="Central Bangkok">Central Bangkok</option>
-                                                <option value="Siam">Siam</option>
-                                                <option value="Sukhumvit">Sukhumvit </option>
-                                                <option value="Thonburi">Thonburi</option>
-                                                <option value="Inner Bangkok">Inner Bangkok</option>
-                                                <option value="Eastern Bangkok">Eastern Bangkok</option>
-                                                <option value="Western Bangkok">Western Bangkok</option>
-                                                <option value="Northern Bangkok">Northern Bangkok</option>
-                                                <option value="Eastern & Central">Eastern & Central</option>
-                                                <option value="Northern">Northern</option>
-                                                <option value="Northeast (Esan)">Northeast (Esan)</option>
-                                                <option value="Southern">Southern</option>
+                                            <select name="country"id="country" >
+												<option value=''>null</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="nameMall" id="nameMall">
-                                                <option value="null">Select Mall</option>
-                                                <c:choose>
-                                                       		<c:when test="${listMall != null }">
-                                                       			<c:forEach var="i" items="${listMall}">
-                                                       				<option value="${i.mallNameEng}"><c:out value="${i.mallNameEng }"></c:out></option>
-                                                       			</c:forEach>
-                                                       		</c:when>
-                                                       	</c:choose>
+                                            <select name="state" id="state">
+                                                <option value=''>null</option>
+                                             
                                             </select>
                                         </div>
                                     </div>
@@ -672,8 +654,9 @@
     <!-- end Page Footer -->
 </div>
 
-<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/custom-game.js"></script>
 <script type="text/javascript"
 		src="http://maps.google.com/maps/api/js?key=AIzaSyAMhGbKMT4LRrhHNJGy316qFefrYNAHmns"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -682,7 +665,6 @@
 <script type="text/javascript" src="js/markerwithlabel_packed.js"></script>
 <script type="text/javascript" src="js/infobox.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/jquery.placeholder.js"></script>
 <script type="text/javascript" src="js/icheck.min.js"></script>
@@ -702,16 +684,7 @@
 <script type="text/javascript" src="assets/js/ie.js"></script>
 
 <![endif]-->
-<script type="text/javascript">
-	function onChange(){
-		var type = document.getElementById('select-area').value;
-		console.log(type);
-		$('#nav nav-pills').click(function() {
-		    $('#nav nav-pills').addClass('selected');
-		});
-		location.assign('http://localhost:8080/ProjectFinal/selecttypeofmall?type=' + type);
-	}
-</script>
+
 <script>
 		_latitude = 13.755123;
 		_longitude = 100.503968;
