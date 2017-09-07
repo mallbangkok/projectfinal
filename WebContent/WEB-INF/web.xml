@@ -6,7 +6,6 @@
 	<display-name>MallBangkok</display-name>
 	<welcome-file-list>
 	 <welcome-file>/WEB-INF/jsp/index-google-map-fullscreen.jsp</welcome-file> 
-		<!-- <welcome-file>/WEB-INF/jsp/demo-test-game.jsp</welcome-file> -->
 		
 	</welcome-file-list>
 	<servlet>
