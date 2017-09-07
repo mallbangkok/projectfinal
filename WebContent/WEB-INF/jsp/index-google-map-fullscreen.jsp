@@ -113,7 +113,7 @@
 													Mall</a></li>
 											<li><a href="list-mall?typename=Community Mall">Community
 													Mall</a></li>
-											<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+											<li><a href="list-mall?typename=HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</a></li>
 											<li><a href="#">Theme Mall</a></li>
 											<li><a href="#">Luxury Mall</a></li>
 											<li><a href="#">Department Store</a></li>

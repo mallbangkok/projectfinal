@@ -101,7 +101,7 @@
                                 	<ul class="child-navigation">
                                 		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
                                 		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
-                                		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+                                		<li><a href="list-mall?typename=HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</a></li>
                                 		<li><a href="#">Theme Mall</a></li>
                                 		<li><a href="#">Luxury Mall</a></li>
                                 		<li><a href="#">Department Store</a></li>
@@ -190,7 +190,7 @@
                 <!-- Results -->
                 <div class="col-md-9 col-sm-9">
                     <section id="results">
-                        <header><h1>Regional Mall Listing</h1></header>
+                        <header><h1><c:out value="${type }"/> Listing</h1></header>
                         <section id="search-filter">
                             <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
                                 <span class="search-count"><c:out value="${size }"></c:out></span>
