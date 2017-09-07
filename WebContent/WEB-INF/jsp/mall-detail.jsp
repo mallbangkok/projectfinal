@@ -181,17 +181,14 @@
                         <header class="property-title">
                             <h1>${mall.mallNameEng}  ${mall.mallNameThai}</h1>
                             <figure>Open-Closed : <c:out value="${mall.timeMall}"></c:out></figure>
-                            <span class="actions">
-                                <!--<a href="#" class="fa fa-print"></a>-->
-                                <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Add to bookmark</span><span class="title-added">Added</span></a>
-                            </span>
+                            
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
                                 <div class="property-slide">
                                     <a href="<c:url value="/img/mall/${mall.imageMall }"/>" class="image-popup">
                                         <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="<c:url value="/img/mall/${mall.imageMall }"/>">
+                                        <img alt="" src="<c:url value="/img/mall/${mall.imageMall}"/>">
                                     </a>
                                 </div><!-- /.property-slide -->
                             </div><!-- /.property-carousel -->

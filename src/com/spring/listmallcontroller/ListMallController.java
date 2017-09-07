@@ -33,7 +33,6 @@ public class ListMallController {
 		
 		session.setAttribute("listByType", listByType);
 		session.setAttribute("size", listByType.size());
-		
 		return mav;
 	}
 	
@@ -48,7 +47,8 @@ public class ListMallController {
 
 		for(Mall mall : list){
 			if(mall.getMallId() == mallId){
-				md.addAttribute("mall" , mall);
+				session.setAttribute("mall", mall);
+				System.out.println(mall.getImageMall());
 			}
 		}
 		return mav;

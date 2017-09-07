@@ -89,8 +89,10 @@
                             <ul class="child-navigation">
                                 <li><a href="#">List By Type</a>
                                 	<ul class="child-navigation">
-                                		<li><a href="list-mall">Regional Mall</a></li>
-                                		<li><a href="#">Community Mall</a></li>
+                                		<li><a href="list-mall?typename=Regional Mall">Regional
+													Mall</a></li>
+											<li><a href="list-mall?typename=Community Mall">Community
+													Mall</a></li>
                                 		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
                                 		<li><a href="#">Theme Mall</a></li>
                                 		<li><a href="#">Luxury Mall</a></li>
@@ -318,6 +320,7 @@
                                                     	<option value="24 Hours Everyday">24 Hours Everyday</option>
                                                     	<option value="06:00 - 22:00 Everyday">06:00 - 22:00 Everyday</option>
                                                     	<option value="06:00 - 24:00 Everyday">06:00 - 24:00 Everyday</option>
+                                                    	<option value="07:00 - 22:00 Everyday">07:00 - 22:00 Everyday</option>
                                                     	<option value="07:00 - 24:00 Everyday">07:00 - 24:00 Everyday</option>
                                                     	<option value="08:00 - 22:00 Everyday">08:00 - 22:00 Everyday</option>
                                                     	<option value="08:00 - 23:00 Everyday">08:00 - 23:00 Everyday</option>
@@ -327,6 +330,7 @@
                                                     	<option value="09:00 - 21:00 Everyday">09:00 - 21:00 Everyday</option>
                                                     	<option value="09:00 - 22:00 Everyday">09:00 - 22:00 Everyday</option>
                                                     	<option value="09:00 - 23:00 Everyday">09:00 - 23:00 Everyday</option>
+                                                    	<option value="09:30 - 22:00 Everyday">09:30 - 22:00 Everyday</option>
                                                     	<option value="09:00 - 24:00 Everyday">09:00 - 24:00 Everyday</option>
                                                     	<option value="10:00 - 24:00 Everyday">10:00 - 24:00 Everyday</option>
                                                     	<option value="10:00 - 19:00 Everyday">10:00 - 19:00 Everyday</option>
@@ -341,6 +345,7 @@
                                                     	<option value="10.30 - 22.00 Everyday">10.30 - 22.00 Everyday</option>
                                                     	<option value="10:30 - 22:30 Everyday">10:30 - 22:30 Everyday</option>
                                                     	<option value="10:30 - 23:45 Everyday">10:30 - 23:45 Everyday</option>
+                                                    	<option value="11:00 - 21:00 Everyday">11:00 - 21:00 Everyday</option>
                                                     	<option value="11:00 - 22:00 Everyday">11:00 - 22:00 Everyday</option>
                                                     	<option value="17:00 - 24:00 Everyday">17:00 - 24:00 Everyday</option>
                                                     	<option value="08:00 - 21:30 Weekday, 09:00 - 21:30 Weekend">08:00 - 21:30 Weekday, 09:00 - 21:30 Weekend</option>
@@ -355,6 +360,7 @@
                                                     	<option value="10:00 - 20:00 Mon-Fri, 10:30 - 21:00 Sat-Sun">10:00 - 20:00 Mon-Fri, 10:30 - 21:00 Sat-Sun</option>
                                                     	<option value="10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun">10:30 - 24:00 Mon-Wed, 10:00 - 24:00 Thu-Sun</option>
                                                     	<option value="10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun">10:30 - 23:30 Mon-Wed, 10:00 - 23:30 Thu-Sun</option>
+                                                    	<option value="10:30 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">10:30 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun</option>
                                                     	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun</option>
                                                     	<option value="11:00 - 21:30 Mon-Thu, 11:00 - 22:00 Fri-Sun">10:30 - 21:00 Sun-Thu, 10:30 - 22:00 Fri-Sat</option>
                                                     	<option value="10:30 - 21:00 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend">10:30 - 21:00 Mon-Thu, 10:30 - 22:00 Fri, 10:00 - 22:00 Weekend</option>
