@@ -120,6 +120,12 @@
 											<li><a href="#">Complex</a></li>
 											<li><a href="#">Shopping Plaza</a></li>
 										</ul></li>
+									<li><a href="#">List By Type</a>
+										<ul class="child-navigation">
+											<c:forEach var="type" items="${types}">
+												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
+											</c:forEach>
+										</ul></li>
 									<li><a href="properties-listing.html">List By Area</a></li>
 									<li><a href="test-select">List All</a></li>
 								</ul></li>

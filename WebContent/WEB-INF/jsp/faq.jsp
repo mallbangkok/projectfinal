@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="contact">
                     <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Emailss:</strong>zoner@example.com</figure>
+                    <figure><strong>Email:</strong>zoner@example.com</figure>
                 </div>
                 <div class="user-area">
                     <div class="actions">
