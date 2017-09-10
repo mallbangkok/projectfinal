@@ -183,40 +183,39 @@
             <div class="container">
                 <div class="search-box map">
                     <ul class="nav nav-pills">
-                        <li class="active"><a href="#search-form-sale" data-toggle="tab">Area</a></li>
+                        <li><a href="#search-form-sales" data-toggle="tab">Search Filter</a></li>
                         <li><a href="#search-form-rent" data-toggle="tab" >Department Store</a></li>
                         <li><a href="#search-form-group" data-toggle="tab">Mall Group</a> </li>
                     </ul>
                     <hr>
                     <!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="search-form-sale">
-                            <a class="advanced-search-toggle" data-toggle="collapse" data-parent="#accordion" href="#advanced-search-sale">Advanced Sale Search <i class="fa fa-plus"></i></a>
+                        <div class="tab-pane fade in active" id="search-form-sales">
                             <form role="form" id="form-map-sale" action="search-mall" method="get" class="form-map form-search clearfix has-dark-background">
-                                <div id="advanced-search-sale" class="panel-collapse collapse">
-                                    <div class="advanced-search">
-                                        <header><h3>Property Features</h3></header>
-                                        <ul class="submit-features">
-                                            <li><div class="checkbox"><label><input type="checkbox">Air conditioning</label></div></li>
-                                            <li><div class="checkbox"><label><input type="checkbox">Bedding</label></div></li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="country"id="country" >
-												<option value=''>null</option>
+                                            <select name="searchselect"id="searchselect" >
+                                            <option value=''>Please select Search</option>
+                                            	<option value='Area'>Select By Area</option>
+                                            	<option value="Groups">Select By Mall Group</option>
+                                            	<option value='Depart'>Select By Department Store</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="state" id="state">
-                                                <option value=''>null</option>
-                                             
+                                            <select name="typeselect" id="typeselect" >
+                                            	<option>Please Select Type</option>
+                                            </select>
+                                        </div><!-- /.form-group -->
+                                    </div>
+                                    <div class="col-md-2 col-sm-4">
+                                        <div class="form-group">
+                                            <select name="malls" id="malls">
+                                             <option>Please Select Mall</option>
                                             </select>
                                         </div>
                                     </div>
@@ -226,36 +225,25 @@
                                         </div><!-- /.form-group -->
                                     </div>
                                 </div>
-                            </form><!-- /#form-map-sale -->
-                        </div><!-- /#search-form-rent -->
-                        <div class="tab-pane fade" id="search-form-rent">
+                            </form>
+                        </div><!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
                         <!-- 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 -->
-                            <form role="form" id="form-map-rent" action="search-mall" method="get" class="form-map form-search clearfix">
+                        <div class="tab-pane fade " id="search-form-rent">
+                             <form role="form" id="form-map-depart" action="search-mall" method="get" class="form-map form-search clearfix has-dark-background">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-4">
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="select-area"id="select-area" onchange="onChange()">
-                                                <option value="">Department Store</option>
-                                                <option value="Central">Central</option>
-                                                <option value="Robinson">Robinson</option>
-                                                <option value="Zen">Zen</option>
-                                                <option value="Isetan">Isetan</option>
-                                                <option value="Tokyu">Tokyu</option>
-                                                <option value="The Mall">The Mall</option>
-                                                <option value="Paragon">Paragon</option>
-                                                <option value="Emporium">Emporium</option>
-                                                <option value="Tang Hua Seng">Tang Hua Seng</option>
-                                                <option value="Pata">Pata</option>
+                                           <select name="countrys"id="countrys" >
+                                           <option>55</option>
                                             </select>
                                         </div><!-- /.form-group -->
                                     </div>
                                     <div class="col-md-2 col-sm-4">
                                         <div class="form-group">
-                                            <select name="form-rent-price" onchange="onChange()">
-                                                <option value="">Select Mall</option>
-                                                <option value="">Mall Detail</option>
+                                            <select name="select-dep-detail" id="select-dep-detail">
+                                               
                                             </select>
                                         </div>
                                     </div>
@@ -684,6 +672,7 @@
 <script type="text/javascript" src="assets/js/ie.js"></script>
 
 <![endif]-->
+
 
 <script>
 		_latitude = 13.755123;

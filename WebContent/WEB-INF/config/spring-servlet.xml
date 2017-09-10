@@ -20,6 +20,7 @@
 	<mvc:resources location="/WEB-INF/assets/php/" mapping="/php/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/stylesheets/" mapping="/stylesheets/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/assets/ckeditor/" mapping="/ckeditor/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/assets/text/" mapping="/text/**"></mvc:resources>
 	
 	
 	<bean id="viewResolver"

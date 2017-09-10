@@ -39,6 +39,7 @@ public class StoreController {
 		for (Mall m : mm.getAllMalls()) {
 			if (m.getType().equals(t)) {
 				listMallByType.add(m);
+				System.out.println(m.getMallNameEng());
 			}
 		}
 		session.setAttribute("mallType", listMallByType);
