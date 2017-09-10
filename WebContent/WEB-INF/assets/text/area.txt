@@ -1,0 +1,14 @@
+Area:::Siam
+Area:::Sukhumvit
+Area:::Central Bangkok
+Depart:::null
+Depart:::Shopping Plaza
+Depart:::Luxury Mall
+Depart:::Theme Mall
+Depart:::Complex
+Groups:::null
+Groups:::Shopping Plaza
+Groups:::Luxury Mall
+Groups:::Theme Mall
+Groups:::Complex
+Groups:::null

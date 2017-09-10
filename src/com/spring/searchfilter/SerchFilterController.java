@@ -1,7 +1,10 @@
 package com.spring.searchfilter;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,6 +27,43 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
 		Mall mall = new Mall();
+		String area = "WebContent/WEB-INF/assets/text/area.txt";
+		String malls = "WebContent/WEB-INF/assets/text/listmall.txt";
+
+		Set<String> listArea = new HashSet();
+		Set<String> listDepart = new HashSet();
+		Set<String> listGroup = new HashSet();
+		for (Mall m : mm.getAllMalls()) {
+			listArea.add(m.getArea());
+			listDepart.add(m.getType());
+			listGroup.add(m.getMallGroup());
+
+		}
+		String[] liArea = listArea.toArray(new String[listArea.size()]);
+		String[] liDepart = listDepart.toArray(new String[listDepart.size()]);
+		String[] liGroup = listDepart.toArray(new String[listGroup.size()]);
+		try {
+			FileWriter out = new FileWriter(area);
+			FileWriter outMall = new FileWriter(malls);
+			for (int i = 0; i < liArea.length; i++) {
+				out.write("Area:::" + liArea[i] + "\n");
+			}
+			for (int i = 0; i < liDepart.length; i++) {
+				out.write("Depart:::" + liDepart[i] + "\n");
+			}
+			for (int i = 0; i < liGroup.length; i++) {
+				out.write("Groups:::" + liGroup[i] + "\n");
+			}
+			out.close();
+			for (Mall m : mm.getAllMalls()) {
+				outMall.write(m.getArea() + ":::" + m.getMallNameEng() + "\n");
+				outMall.write(m.getType() + ":::" + m.getMallNameEng() + "\n");
+				outMall.write(m.getMallGroup() + ":::" + m.getMallNameEng() + "\n");
+			}
+			outMall.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		for (Mall m : mm.getAllMalls()) {
 			if ("Siam Square One ".equals(m.getMallNameEng())) {
 				mall = m;
@@ -52,27 +92,11 @@ public class SerchFilterController {
 
 	}
 
-	@RequestMapping(value = "/selecttypeofmall", method = RequestMethod.GET)
-	public ModelAndView doSelectTypeOfMall(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("index-search-filter");
-		String name = request.getParameter("type");
-		MallManager mm = new MallManager();
-		List<Mall> list = mm.getAllMalls();
-		List<Mall> listMall = new ArrayList();
-		for (Mall m :  list) {
-			if (name.equals(m.getArea())) {
-				listMall.add(m);
-			}
-		}
-		session.setAttribute("listMall", listMall);
-		return mav;
-	}
-
 	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
-		String name = request.getParameter("nameMall");
+		String name = request.getParameter("malls");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
 			if (name.equals(m.getMallNameEng())) {
@@ -98,7 +122,6 @@ public class SerchFilterController {
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);
-		
 
 		return mav;
 	}

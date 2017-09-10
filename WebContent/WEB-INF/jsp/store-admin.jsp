@@ -168,8 +168,21 @@
                                             <div class="form-group">
                                             <input type="hidden" name="mType" id="mType">
                                                 <label for="select-mall">Select Type</label>
-                                                	<select name="type" id="type">
+                                                	<select name="types" id="types" onchange="onChange()">
                                                     	<option value="">Select type</option>
+                                                    	<option value="Shopping Mall">Shopping Mall</option>
+                                                    	<option value="Community Mall">Community Mall</option>
+                                                    	<option value="Theme Mall">Theme Mall</option>
+                                                    	<option value="Luxury Mall">Luxury Mall</option>
+                                                    	<option value="Complex">Complex</option>
+                                                    	<option value="Shopping Plaza">Shopping Plaza</option>
+                                                    	<option value="Department Store">Department Store</option>
+                                                    	<option value="Regional Mall">Regional Mall</option>
+                                                        <c:choose>
+                                  							<c:when test="${typeMall != null }">
+                                  							<option value="${typeMall}"selected>${typeMall}</option>
+                                  					</c:when>
+                            				    </c:choose>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
@@ -178,6 +191,13 @@
                                                 <label for="select-mall">Select Mall</label>
                                                 	<select name="mall" id="mall" required>
                                                     	<option value="">Please Select Mall</option>
+                                                    	 	<c:choose>
+                                               				   <c:when test="${mallType != null }">
+                                                     		   <c:forEach var="i" items="${mallType}">
+                                                      <option value="${i.mallNameEng}">${i.mallNameEng}</option>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </div>
@@ -368,32 +388,13 @@
 
 <script type="text/javascript">
 	function onChange(){
-		var type = document.getElementById('select-type').value;
+		var type = document.getElementById('types').value;
 		console.log(type);
 		location.assign('http://localhost:8080/ProjectFinal/gettype?type=' + type);
 	}
 	
 	
-// 	$("select#select-type").change(function() {
-// 	    var val=$("#select-type").val();
-// 	    alert(val);
-// 	    $.ajax({
-// 	    url : 'select-type',
-// 	    method : 'get',
-// 	    contentType: 'application/json',
-// 	     	data :{
-// 	              type : val
-// 	            },
-// 	      success: function (data) {
-// 	      alert("Success Response"+ data);
-// 	      },
-// 	       error :function()
-// 	       {
-// 	       		alert("error");
-// 	       }          
 
-// 	 });
-// 	});
 </script>
 </body>
 </html>

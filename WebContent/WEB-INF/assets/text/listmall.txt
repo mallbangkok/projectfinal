@@ -1,0 +1,27 @@
+Siam:::Siam Discovery 
+Theme Mall:::Siam Discovery 
+Siam Piwat:::Siam Discovery 
+Siam:::Siam Square One 
+Theme Mall:::Siam Square One 
+Chula:::Siam Square One 
+Siam:::Siam Paragon 
+null:::Siam Paragon 
+The Mall Group:::Siam Paragon 
+Siam:::Siam Center 
+Theme Mall:::Siam Center 
+Siam Piwat:::Siam Center 
+Siam:::Chamchuri Square 
+Complex:::Chamchuri Square 
+Chula:::Chamchuri Square 
+Siam:::MBK Center 
+Shopping Plaza:::MBK Center 
+MBK Group:::MBK Center 
+Central Bangkok:::Amarin Plaza
+Complex:::Amarin Plaza
+Gaysorn Group:::Amarin Plaza
+Sukhumvit:::Terminal 21
+Theme Mall:::Terminal 21
+Land & House (Siam Retail):::Terminal 21
+Sukhumvit:::Emporium
+Luxury Mall:::Emporium
+The Mall Group:::Emporium
