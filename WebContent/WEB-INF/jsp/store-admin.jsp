@@ -180,9 +180,15 @@
                                                     	<option value="Regional Mall">Regional Mall</option>
                                                         <c:choose>
                                   							<c:when test="${typeMall != null }">
+<<<<<<< HEAD
                                   							<option value="${typeMall}"selected>${typeMall}</option>
                                   						    </c:when>
                             				           </c:choose>
+=======
+                                  								<option value="${typeMall}"selected>${typeMall}</option>
+                                  							</c:when>
+                            				    		</c:choose>
+>>>>>>> 26d8f39a895765ef99f220f689490d55f219211f
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
@@ -243,7 +249,7 @@
                                                                     <option>Please Select Type</option>
                                                                     <option value="Food">Food</option>
                                                                     <option value="Shopping">Shopping</option>
-                                                                    <option value="Service">Service</option>
+                                                                    <option value="Services">Services</option>
                                                                 </select>
                                             </div><!-- /.form-group -->
                                         </div>
