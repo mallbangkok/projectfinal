@@ -184,8 +184,7 @@
                 <div class="search-box map">
                     <ul class="nav nav-pills">
                         <li><a href="#search-form-sales" data-toggle="tab">Search Filter</a></li>
-                        <li><a href="#search-form-rent" data-toggle="tab" >Department Store</a></li>
-                        <li><a href="#search-form-group" data-toggle="tab">Mall Group</a> </li>
+                       
                     </ul>
                     <hr>
                     <!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->

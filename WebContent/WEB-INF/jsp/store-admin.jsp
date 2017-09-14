@@ -181,8 +181,8 @@
                                                         <c:choose>
                                   							<c:when test="${typeMall != null }">
                                   							<option value="${typeMall}"selected>${typeMall}</option>
-                                  					</c:when>
-                            				    </c:choose>
+                                  						    </c:when>
+                            				           </c:choose>
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
@@ -391,6 +391,8 @@
 		var type = document.getElementById('types').value;
 		console.log(type);
 		location.assign('http://localhost:8080/ProjectFinal/gettype?type=' + type);
+		
+		
 	}
 	
 	

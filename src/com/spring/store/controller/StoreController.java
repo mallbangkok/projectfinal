@@ -60,7 +60,7 @@ public class StoreController {
 		MallManager mm = new MallManager();
 		StoreManager sm = new StoreManager();
 
-		String mallName = request.getParameter("select-mall");
+		String mallName = request.getParameter("mall");
 		String floor = request.getParameter("select-floor");
 		String storeName = request.getParameter("storename");
 		String type = request.getParameter("select-type");

@@ -1,7 +1,7 @@
 $(function() {
 	$("#searchselect").change(
 			function() {
-				jQuery.get('text/area.txt', function(data) {
+				jQuery.get('WebContent/WEB-INF/assets/text/area.txt', function(data) {
 					var mallOptions = null;
 					mallOptions += "<option value='" + "'>"
 							+ "Please select Type" + "</option>";
@@ -21,7 +21,7 @@ $(function() {
 			});
 	$("#typeselect").change(
 			function() {
-				jQuery.get('text/listmall.txt', function(data) {
+				jQuery.get('WebContent/WEB-INF/assets/text/listmall.txt', function(data) {
 					var mallOptions = null;
 					mallOptions += "<option value='" + "'>"
 							+ "Please select Mall" + "</option>";
