@@ -199,7 +199,7 @@
                                             <select name="searchselect"id="searchselect" >
                                             <option value=''>Please select Search</option>
                                             	<option value='Area'>Select By Area</option>
-                                            	<option value="Groups">Select By Mall Group</option>
+                                            	<option value='Groups'>Select By Mall Group</option>
                                             	<option value='Depart'>Select By Department Store</option>
                                             </select>
                                         </div><!-- /.form-group -->
@@ -643,7 +643,7 @@
 
 
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="js/custom-game.js"></script>
+	<script type="text/javascript" src="js/custom-search.js"></script>
 <script type="text/javascript"
 		src="http://maps.google.com/maps/api/js?key=AIzaSyAMhGbKMT4LRrhHNJGy316qFefrYNAHmns"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>

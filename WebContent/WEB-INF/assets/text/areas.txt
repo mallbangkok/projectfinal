@@ -1,0 +1,13 @@
+Area:::Siam
+Area:::Sukhumvit
+Area:::Central Bangkok
+Depart:::Shopping Plaza
+Depart:::Luxury Mall
+Depart:::Theme Mall
+Depart:::Complex
+Groups:::Gaysorn Group
+Groups:::Chula
+Groups:::Land & House (Siam Retail)
+Groups:::The Mall Group
+Groups:::MBK Group
+Groups:::Siam Piwat

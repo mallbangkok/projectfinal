@@ -4,9 +4,6 @@ Siam Piwat:::Siam Discovery
 Siam:::Siam Square One 
 Theme Mall:::Siam Square One 
 Chula:::Siam Square One 
-Siam:::Siam Paragon 
-null:::Siam Paragon 
-The Mall Group:::Siam Paragon 
 Siam:::Siam Center 
 Theme Mall:::Siam Center 
 Siam Piwat:::Siam Center 
