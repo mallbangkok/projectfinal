@@ -2,6 +2,7 @@ package com.spring.searchfilter;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,7 +42,7 @@ public class SerchFilterController {
 		}
 		String[] liArea = listArea.toArray(new String[listArea.size()]);
 		String[] liDepart = listDepart.toArray(new String[listDepart.size()]);
-		String[] liGroup = listDepart.toArray(new String[listGroup.size()]);
+		String[] liGroup = listGroup.toArray(new String[listGroup.size()]);
 		try {
 			FileWriter out = new FileWriter(area);
 			FileWriter outMall = new FileWriter(malls);
@@ -83,7 +84,10 @@ public class SerchFilterController {
 				listService.add(s.getStoreName() + " Level " + s.getFloor());
 			}
 		}
-
+		Collections.sort(listFood);
+		Collections.sort(listShopping);
+		Collections.sort(listService);
+		
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
@@ -119,6 +123,7 @@ public class SerchFilterController {
 		}
 
 		session.setAttribute("listShopping", listShopping);
+		
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);
