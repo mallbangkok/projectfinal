@@ -11,9 +11,8 @@ import com.spring.addmallcontroller.MallManager;
 
 public class RunGame {
 	public static void main(String[] arge) {
-
-		 String area = "WebContent/WEB-INF/assets/text/areas.txt";
-		 String malls = "WebContent/WEB-INF/assets/text/listmalls.txt";
+		 String area = "WebContent/WEB-INF/assets/text/areas1.txt";
+		 String malls = "WebContent/WEB-INF/assets/text/listmalls1.txt";
 		 MallManager mm = new MallManager();
 		 Set<String> listArea = new HashSet();
 		 Set<String> listDepart = new HashSet();

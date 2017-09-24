@@ -16,7 +16,7 @@ import com.spring.model.ConditionOfParking;
 import com.spring.model.Mall;
 
 @Controller
-public class ParkingController {
+public class ParkingAdminController {
 	@RequestMapping(value = "add-stamp-parking", method = RequestMethod.GET)
 	public ModelAndView addStamp(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -166,7 +166,7 @@ public class ParkingController {
 
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("parking-user");
 		MallManager mm = new MallManager();
 		List<String> listType = mm.getMallType();
 		String t = request.getParameter("type");

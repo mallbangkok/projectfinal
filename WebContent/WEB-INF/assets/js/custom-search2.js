@@ -2,7 +2,7 @@
 $(function() {
 	$("#searchselect").change(
 			function() {
-				jQuery.get('text/areas.txt', function(data) {
+				jQuery.get('text/areas1.txt', function(data) {
 					var mallOptions = null;
 					mallOptions += "<option value='" + "'>"
 							+ "Please select Type" + "</option>";
@@ -20,7 +20,7 @@ $(function() {
 			});
 	$("#typeselect").change(
 			function() {
-				jQuery.get('text/listmalls.txt', function(data) {
+				jQuery.get('text/listmalls1.txt', function(data) {
 					var mallOptions = null;
 					mallOptions += "<option value='"+"'>"+"Please select Mall"+"</option>";
 					var lines = data.split('\n');
