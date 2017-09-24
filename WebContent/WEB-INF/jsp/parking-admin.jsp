@@ -7,8 +7,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta name="author" content="ThemeStarz">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
@@ -160,7 +161,12 @@
                             <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
-                            <li><a href="parking-admin"><i class="fa fa-book"></i><span>Parking</span></a></li>
+                            <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
+                            	<ul>
+                            		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
+                            		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Update Parking</span></a>
+                            	</ul>
+                            </li>
                         </ul>
                     </aside>
                 </section><!-- /#sidebar -->
@@ -169,32 +175,346 @@
                 <!-- My Properties -->
                 	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
-                    
                       <div class="col-md-9 col-sm-10">
+                        <div class="col-md-4">
+                                    <div class="form-group">
+                                                <select name="select-type" id="select-type" onchange="demoselect()">
+                                                    <option>Type Of Parking</option>
+                                                    <option value="I">Type of Parking I</option>
+                                                    <option value="II">Type of Parking II</option>  
+                                                    <option value="III">Type of Parking III</option>
+                                                    <option value="addStamp">Add Stamp</option>       
+                                                </select>
+                                   </div><!-- /.form-group -->
+                             </div>
                     		  <div class="col-md-4">
                                     <div class="form-group">
-                                                <select name="select-type"  >
-                                                    <option>Please Select Type</option>
-                                                    <option value="Food">Food</option>
-                                                    <option value="Shopping">Shopping</option>          
-                                                </select>
+                                               <select name="types" id="types" onchange="onChanges()">
+                                                    	<option value="">Select type</option>
+                                                    	<option value="Community Mall">Community Mall</option>
+                                                    	<option value="Theme Mall">Theme Mall</option>
+                                                    	<option value="Luxury Mall">Luxury Mall</option>
+                                                    	<option value="Complex">Complex</option>
+                                                    	<option value="Shopping Plaza">Shopping Plaza</option>
+                                                    	<option value="Department Store">Department Store</option>
+                                                    	<option value="Regional Mall">Regional Mall</option>
+                                                    	<option value="HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</option>
+                                                        <c:choose>
+                                  							<c:when test="${typeMall != null }">
+                                  							<option value="${typeMall}"selected>${typeMall}</option>
+                                  						    </c:when>
+                            				           </c:choose>
+                                                    </select>
                                    </div><!-- /.form-group -->
                              </div>
                             <div class="col-md-4">
                                     <div class="form-group">
-                                                <select name="select-type" >
-                                                    <option>Please Select Mall</option>
-                                                    <option value="Food">Food</option>
-                                                    <option value="Shopping">Shopping</option>           
-                                                </select>
+                                               <select name="nameMall" id="nameMall" onchange="onChangeName()" required>
+                                                    	<option value="Please Select Mall">Please Select Mall</option>
+                                                    	 	<c:choose>
+                                               				   <c:when test="${mallType != null }">
+                                                     		    <c:forEach var="i" items="${mallType}">
+                                                      				<option value="${i.mallNameEng}">${i.mallNameEng}</option>
+                                                                </c:forEach>
+                                                            </c:when>
+                                       						</c:choose>
+                                       						
+                                                    </select>
                                    </div><!-- /.form-group -->
                              </div>
-                             <div class="col-md-4">
-                             	<button type="submit" class="btn btn-default"form="form-serchfilter" value="Submit">Search
-											Now</button>
-                             </div>
                             
+                           
                		 </div><!-- /.col-md-9 -->
+               		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
+               		   <c:choose>
+                               <c:when test="${typeOfParking == 'III' }">
+                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get" >
+                                <input type="hidden" name="nameMalls" id="nameMalls" >
+                               <div class="col-md-8 col-sm-12">   
+                                <section id="property-features">
+                                   <hr class="thick"></hr>
+                                   <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                    <div class="form-group">
+                                        <label for="form-create-agency-address-1">Starting Rate :</label>
+                                        <input type="text" class="form-control" id="conditionIII1"name="conditionIII1" value="จอดรถฟรี">
+                                    </div><!-- /.form-group -->
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <select name="dateIII1" id="dateIII1">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="timeIII1"name="timeIII1" placeholder="Time">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                                <select name="typeIII1" id="typeIII1">
+                                                	<option value="นาที">นาที</option>
+                                                	<option value="ชั่วโมง">ชั่วโมง</option>
+                                                </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->  
+                                    </div><!-- /.row -->
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                            </section><!-- /#property-features -->
+                            </div><!-- /.col-md-8 -->
+                                <div class="col-md-8 col-sm-12">
+                                <section id="property-features">
+                                   <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                    <div class="form-group">
+                                        <label for="form-create-agency-address-1">Next Rate :</label>
+                                        <input type="text" class="form-control" id="conIII2" name="conIII2" value="ชั่วโมงถัดไป">
+                                    </div><!-- /.form-group -->
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <select name="dateIII2" id="dateIII2">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="priceIII2" name="priceIII2" placeholder="Price">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="" value="บาท">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->  
+                                    </div><!-- /.row -->
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                            </section><!-- /#property-features -->
+                             <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                    <div class="form-group">
+                                        <label for="form-create-agency-address-1">Last Rate :</label>
+                                        <select id="conIII3" name="conIII3">
+                                        	<option value="ชั่วโมงที่กำหนดเป็นต้นไป">ชั่วโมงที่กำหนดเป็นต้นไป</option>
+                                        	<option value="เกินคิดเป็นชั่วโมงละ">เกินคิดเป็นชั่วโมงละ</option>
+                                        </select>
+                                    </div><!-- /.form-group -->
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <select name="dateIII3" id="dateIII3">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="timeIII3" name="timeIII3" placeholder="Hour">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="priceIII3" name="priceIII3" placeholder="Price">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->  
+                                    </div><!-- /.row -->
+                                     <section id="submit">
+                           				 <div class="form-group center">
+                              				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
+                           				 </div><!-- /.form-group -->
+                       				 </section>
+                                </section><!-- /#address -->
+                                
+                            </div><!-- /.col-md-6 --> 
+                            </div><!-- /.col-md-8 -->  
+                            </form>
+                               </c:when>
+                       </c:choose>
+               		  <c:choose>
+                               <c:when test="${typeOfParking == 'I' }">
+                               <div class="col-md-8 col-sm-12">
+                                <section id="property-features">
+                                   <hr class="thick"></hr>
+                                   <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                 <form role="form" id="addconditioni"  action="add-conditionI-parking" method="get">
+                                  <input type="hidden" name="nameMalls" id="nameMalls" >
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="form-create-agency-city">Condition :</label>
+                                                <select name="typeOfFreeConditionI" id="typeOfFreeConditionI">
+                                        		 	<option value="จอดรถฟรี(รับบัตร)">จอดรถฟรี(รับบัตร)</option>
+                                        			<option value="จอดรถฟรี(ไม่ต้องรับบัตร)">จอดรถฟรี(ไม่ต้องรับบัตร)</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="form-create-agency-zip">Date:</label>
+                                                <select name="dateofTypeConditonI" id="dateofTypeConditonI">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                    </div><!-- /.row -->
+                                     <section id="submit">
+                           				 <div class="form-group center">
+                              				  <button type="submit" class="btn btn-default large" id="addconditioni">Add Condition</button>
+                           				 </div><!-- /.form-group -->
+                       				 </section>
+                       				 </form>
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                         
+                                </section><!-- /#property-features -->
+                            </div><!-- /.col-md-8 -->
+                               </c:when>
+                      </c:choose>
+               		 <c:choose>
+                               <c:when test="${typeOfParking == 'II' }">
+                                <div class="col-md-8 col-sm-12">
+                                  <form role="form" id="addconditionII"  action="add-conditionII-parking" method="get" >
+                                   <input type="hidden" name="nameMalls" id="nameMalls" >
+                                <section id="property-features">
+                                   <hr class="thick"></hr>
+                                   <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                    <div class="form-group">
+                                        <label for="form-create-agency-address-1">Starting Rate:</label>
+                                        <input type="text" class="form-control"name="nameConII1" id="nameConII1" value="จอดรถฟรี">
+                                    </div><!-- /.form-group -->
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <select name="dateoftypeII1" id="dateoftypeII">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control"name="timeII1" id="timeII1" placeholder="Time">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                                <select name="timeoftypeII" id="timeoftypeII">
+                                                	<option value="นาที">นาที</option>
+                                                	<option value="ชั่วโมง">ชั่วโมง</option>
+                                                </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                    </div><!-- /.row -->
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                            <div class="col-md-6 col-sm-6">
+                                <section id="contacts">
+                                     <div class="form-group">
+                                        <label for="form-create-agency-address-1">Next Rate:</label>
+                                        <input type="text" class="form-control"name="nameConII2" id="nameConII2" value="ชั่วโมงถัดไป">
+                                    </div><!-- /.form-group -->
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <select name="dateoftypeII2" id="dateoftypeII2">
+                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
+                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
+                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group"> 
+                                                <input type="text" class="form-control"name="priceConII" id="priceConII" placeholder="Price">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                         <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                    </div><!-- /.row -->
+                                  
+                                </section><!-- /#address -->
+                                 <section id="submit">
+                            <div class="form-group center">
+                                <button type="submit" class="btn btn-default large" id="addconditionII">Add Condition</button>
+                            </div><!-- /.form-group -->
+                        </section>
+                            </div><!-- /.col-md-6 -->
+                                </section><!-- /#property-features -->
+                                  </form>
+                            </div><!-- /.col-md-8 -->
+                               </c:when>
+                     </c:choose>
+                      <c:choose>
+                               <c:when test="${typeOfParking == 'addStamp' }">
+                                <div class="col-md-8 col-sm-12">
+                                <section id="property-features">
+                                   <hr class="thick"></hr>
+                                   <div class="col-md-6 col-sm-6">
+                                <section id="address">
+                                    <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="form-create-agency-city">Stramp :</label>
+  												<input type="text" class="form-control" id="form-create-agency-city" value="ใบเสร็จ">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                         <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                               
+                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Price">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                         <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                               
+                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                               
+                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Time">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                         <div class="col-md-8 col-sm-8">
+                                            <div class="form-group">
+                                               
+                                                <input type="text" class="form-control" id="form-create-agency-city" value="ชั่วโมง">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-8 -->
+                                    </div><!-- /.row -->
+                                     <section id="submit">
+                           				 <div class="form-group center">
+                              				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
+                           				 </div><!-- /.form-group -->
+                       				 </section>
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                         
+                                </section><!-- /#property-features -->
+                            </div><!-- /.col-md-8 -->
+                               </c:when>
+                      </c:choose>
+               		 <!-- End of Add Condition Condition Condition Condition Condition Condition Condition -->
                		  <header><h3> </h3></header>
                         	<div class="my-properties">
                            
@@ -308,6 +628,20 @@
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
-
+<script type="text/javascript">
+  function demoselect(){
+	  var type = document.getElementById('select-type').value;
+	  var malls = document.getElementById('nameMall').value;
+		location.assign('http://localhost:8080/ProjectFinal/parking-admin-typeofparking?type=' + type+'&nameMall='+malls);
+  }
+  function onChanges(){
+		var type = document.getElementById('types').value;
+		console.log(type);
+		location.assign('http://localhost:8080/ProjectFinal/gettype-parking?type=' + type);
+  }
+  function onChangeName(){
+	  document.getElementById('nameMalls').value=document.getElementById('nameMall').value;
+  }
+</script>
 </body>
 </html>

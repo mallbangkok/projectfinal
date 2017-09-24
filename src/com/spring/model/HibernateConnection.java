@@ -17,16 +17,11 @@ public class HibernateConnection {
 		database.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/mallbangkok");
 		database.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 
-		Configuration cfg = new Configuration().setProperties(database)
-				.addPackage("com.spring.model")
-				.addAnnotatedClass(Login.class)
-				.addAnnotatedClass(Mall.class)
-				.addAnnotatedClass(Facilities.class)
-				.addAnnotatedClass(Article.class)
-				.addAnnotatedClass(ImageArticle.class)
-				.addAnnotatedClass(Store.class);
-		StandardServiceRegistryBuilder ssrd = new StandardServiceRegistryBuilder()
-				.applySettings(cfg.getProperties());
+		Configuration cfg = new Configuration().setProperties(database).addPackage("com.spring.model")
+				.addAnnotatedClass(Login.class).addAnnotatedClass(Mall.class).addAnnotatedClass(Facilities.class)
+				.addAnnotatedClass(Article.class).addAnnotatedClass(ImageArticle.class).addAnnotatedClass(Store.class)
+				.addAnnotatedClass(ConditionOfParking.class);
+		StandardServiceRegistryBuilder ssrd = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties());
 		sessionFactory = cfg.buildSessionFactory(ssrd.build());
 		return sessionFactory;
 	}

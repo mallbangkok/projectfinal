@@ -1,5 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en-US">
 <head>
@@ -8,7 +10,7 @@
     <meta name="author" content="ThemeStarz">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
@@ -38,7 +40,9 @@
                         <a href="sign-in.html">Sign In</a>
                     </div>
                     <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
+                        <a href="#" class="active">
+                        
+                        <img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
                         <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
                         <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
@@ -55,7 +59,10 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
+                        <a href="index-google-map-fullscreen.html">
+                        
+                        <img src="<c:url value="/img/logo.png"/>"alt="brand">
+</a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -164,12 +171,7 @@
                                 <a href="#"><i class="fa fa-heart"></i><span>Item 3</span></a>
                                 <ul>
                                     <li><a href="#">Sub Item 1</a></li>
-                                    <li><a href="#">Sub Item 2</a>
-                                        <ul>
-                                            <li><a href="#">Sub Item 1</a></li>
-                                            <li class="active"><a href="#">Sub Item 2</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="#">Sub Item 2</a></li>
                                     <li><a href="#">Sub Item 3</a></li>
                                 </ul>
                             </li>
@@ -187,10 +189,12 @@
                             <div class="col-md-4 col-sm-4">
                                 <div class="property equal-height">
                                     <figure class="tag status">For Sale</figure>
-                                    <figure class="type" title="Apartment"><img src="<c:url value="/img/property-types/apartment.png"/>"></figure>
+                                    <figure class="type" title="Apartment">
+                                     <img src="<c:url value="/img/property-types/apartment.png"/>">
+                                  </figure>
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
+                                         <img src="<c:url value="/img/properties/property-09.jpg"/>">    
                                         </div>
                                         <div class="overlay">
                                             <div class="info">
@@ -229,13 +233,16 @@
                                     <a href="property-detail.html">
                                         <div class="property-image">
                                             <figure class="tag status">For Sale</figure>
-                                            <figure class="type" title="Apartment"><img src="<c:url value="/img/property-types/apartment.png"/>"></figure>
+                                            <figure class="type" title="Apartment">
+                                             <img src="<c:url value="/img/property-types/apartment.png"/>">
+                                           </figure>
                                             <div class="overlay">
                                                 <div class="info">
                                                     <div class="tag price">$ 11,000</div>
                                                 </div>
                                             </div>
-                                            <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
+                                             <img src="<c:url value="/img/properties/property-09.jpg"/>">
+                                            
                                         </div>
                                     </a>
                                     <aside>
@@ -264,11 +271,14 @@
                         <div class="display-lines">
                             <div class="property">
                                 <figure class="tag status">For Sale</figure>
-                                <figure class="type" title="Apartment"><img src="<c:url value="/img/property-types/apartment.png"/>"></figure>
+                                <figure class="type" title="Apartment">
+                                  <img src="<c:url value="/img/property-types/apartment.png"/>">
+                               </figure>
                                 <div class="property-image">
                                     <figure class="ribbon">In Hold</figure>
                                     <a href="property-detail.html">
-                                        <img alt="" src="<c:url value="/img/properties/property-01.jpg"/>">
+                                    <img src="<c:url value="/img/properties/property-01.jpg"/>">
+                                       
                                     </a>
                                 </div>
                                 <div class="info">
@@ -394,7 +404,8 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
+                                        <img src="<c:url value="/img/properties/property-06.jpg"/>">
+                                           
                                         </div>
                                     </a>
                                     <div class="info">
@@ -406,7 +417,7 @@
                                 <div class="property small">
                                     <a href="property-detail.html">
                                         <div class="property-image">
-                                            <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
+                                           <img src="<c:url value="/img/properties/property-09.jpg"/>">
                                         </div>
                                     </a>
                                     <div class="info">

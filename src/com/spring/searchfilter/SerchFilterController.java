@@ -66,7 +66,7 @@ public class SerchFilterController {
 			e.printStackTrace();
 		}
 		for (Mall m : mm.getAllMalls()) {
-			if ("Siam Square One ".equals(m.getMallNameEng())) {
+			if ("Siam Square One".equals(m.getMallNameEng())) {
 				mall = m;
 			}
 		}
@@ -87,7 +87,7 @@ public class SerchFilterController {
 		Collections.sort(listFood);
 		Collections.sort(listShopping);
 		Collections.sort(listService);
-		
+
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
@@ -101,9 +101,12 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
 		String name = request.getParameter("malls");
+		System.out.println("--" + name + "--");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
-			if (name.equals(m.getMallNameEng())) {
+			String demo = (m.getMallNameEng() + " ");
+			System.out.println("-*-" + demo + "-*-");
+			if (name.equals(demo)) {
 				mall = m;
 			}
 		}
@@ -123,7 +126,7 @@ public class SerchFilterController {
 		}
 
 		session.setAttribute("listShopping", listShopping);
-		
+
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);

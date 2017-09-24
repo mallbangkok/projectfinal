@@ -643,7 +643,7 @@
 
 
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="js/custom-search.js"></script>
+	<script type="text/javascript" src="js/custom-search2.js"></script>
 <script type="text/javascript"
 		src="http://maps.google.com/maps/api/js?key=AIzaSyAMhGbKMT4LRrhHNJGy316qFefrYNAHmns"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>

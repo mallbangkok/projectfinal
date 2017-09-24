@@ -28,6 +28,9 @@ public class Mall {
 	@OneToMany (cascade=CascadeType.ALL, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Store> stores = new HashSet<Store>();
 	
+	@OneToMany (cascade=CascadeType.ALL, mappedBy = "mall" , fetch = FetchType.EAGER) 
+	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
+	
 	public Mall() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -176,4 +179,13 @@ public class Mall {
 	public void setStores(Set<Store> stores) {
 		this.stores = stores;
 	}
+
+	public Set<ConditionOfParking> getConditionOfParking() {
+		return conditionOfParking;
+	}
+
+	public void setConditionOfParking(Set<ConditionOfParking> conditionOfParking) {
+		this.conditionOfParking = conditionOfParking;
+	}
+	
 }

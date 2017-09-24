@@ -170,7 +170,6 @@
                                                 <label for="select-mall">Select Type</label>
                                                 	<select name="types" id="types" onchange="onChange()">
                                                     	<option value="">Select type</option>
-                                                    	<option value="Shopping Mall">Shopping Mall</option>
                                                     	<option value="Community Mall">Community Mall</option>
                                                     	<option value="Theme Mall">Theme Mall</option>
                                                     	<option value="Luxury Mall">Luxury Mall</option>
@@ -178,13 +177,13 @@
                                                     	<option value="Shopping Plaza">Shopping Plaza</option>
                                                     	<option value="Department Store">Department Store</option>
                                                     	<option value="Regional Mall">Regional Mall</option>
+                                                    	<option value="HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</option>
                                                         <c:choose>
                                   							<c:when test="${typeMall != null }">
 
                                   							<option value="${typeMall}"selected>${typeMall}</option>
                                   						    </c:when>
                             				           </c:choose>
-
                                                     </select>
                                             </div><!-- /.form-group -->
                                         </form>
