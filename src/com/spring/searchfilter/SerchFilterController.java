@@ -2,6 +2,7 @@ package com.spring.searchfilter;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,7 +42,7 @@ public class SerchFilterController {
 		}
 		String[] liArea = listArea.toArray(new String[listArea.size()]);
 		String[] liDepart = listDepart.toArray(new String[listDepart.size()]);
-		String[] liGroup = listDepart.toArray(new String[listGroup.size()]);
+		String[] liGroup = listGroup.toArray(new String[listGroup.size()]);
 		try {
 			FileWriter out = new FileWriter(area);
 			FileWriter outMall = new FileWriter(malls);
@@ -65,7 +66,7 @@ public class SerchFilterController {
 			e.printStackTrace();
 		}
 		for (Mall m : mm.getAllMalls()) {
-			if ("Siam Square One ".equals(m.getMallNameEng())) {
+			if ("Siam Square One".equals(m.getMallNameEng())) {
 				mall = m;
 			}
 		}
@@ -83,6 +84,9 @@ public class SerchFilterController {
 				listService.add(s.getStoreName() + " Level " + s.getFloor());
 			}
 		}
+		Collections.sort(listFood);
+		Collections.sort(listShopping);
+		Collections.sort(listService);
 
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
@@ -97,9 +101,12 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
 		String name = request.getParameter("malls");
+		System.out.println("--" + name + "--");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
-			if (name.equals(m.getMallNameEng())) {
+			String demo = (m.getMallNameEng() + " ");
+			System.out.println("-*-" + demo + "-*-");
+			if (name.equals(demo)) {
 				mall = m;
 			}
 		}
@@ -119,6 +126,7 @@ public class SerchFilterController {
 		}
 
 		session.setAttribute("listShopping", listShopping);
+
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);

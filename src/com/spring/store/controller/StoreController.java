@@ -59,8 +59,7 @@ public class StoreController {
 		ModelAndView mav = new ModelAndView("my-properties");
 		MallManager mm = new MallManager();
 		StoreManager sm = new StoreManager();
-
-		String mallName = request.getParameter("select-mall");
+		String mallName = request.getParameter("mall");
 		String floor = request.getParameter("select-floor");
 		String storeName = request.getParameter("storename");
 		String type = request.getParameter("select-type");
@@ -71,6 +70,7 @@ public class StoreController {
 		for (Mall m : mm.getAllMalls()) {
 			if (mallName.equals(m.getMallNameEng())) {
 				mall = m;
+				
 			}
 		}
 
