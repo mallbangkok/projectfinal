@@ -1,73 +1,89 @@
 package com.spring.model;
 
-import java.util.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "article")
 public class Article {
-	@Id
-	@GeneratedValue
-	private long articleId;
-	private String articleTitile;
-	private String articleContent;
-	private String articleDateTime;
-	private String articleStatus;
+	@Id @GeneratedValue
+	@Column(name = "article_id")
+	private long articleid;
+	private String articlename;
+	private String filename;
+	private String articledatetime;
+	private int articlestatus;
+	private String articletype;
 	
-	@OneToMany(cascade = CascadeType.ALL , mappedBy = "article")
-	private Set<ImageArticle> articleImages = new HashSet<ImageArticle>();
-
 	public Article() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Article(String articleTitile, String articleContent, String articleDateTime, String articleStatus) {
+	public Article(String articlename, String filename, String articledatetime, int articlestatus , String articletype) {
 		super();
-		this.articleTitile = articleTitile;
-		this.articleContent = articleContent;
-		this.articleDateTime = articleDateTime;
-		this.articleStatus = articleStatus;
+		this.articlename = articlename;
+		this.filename = filename;
+		this.articledatetime = articledatetime;
+		this.articlestatus = articlestatus;
+		this.articletype = articletype;
+	}
+	
+	public Article(long articleid ,String articlename, String filename, String articledatetime, int articlestatus , String articletype) {
+		super();
+		this.articleid = articleid;
+		this.articlename = articlename;
+		this.filename = filename;
+		this.articledatetime = articledatetime;
+		this.articlestatus = articlestatus;
+		this.articletype = articletype;
+	}
+	
+	public long getArticleid() {
+		return articleid;
 	}
 
-	public String getArticleTitile() {
-		return articleTitile;
+	public void setArticleid(long articleid) {
+		this.articleid = articleid;
 	}
 
-	public void setArticleTitile(String articleTitile) {
-		this.articleTitile = articleTitile;
+	public String getArticlename() {
+		return articlename;
 	}
 
-	public String getArticleContent() {
-		return articleContent;
+	public void setArticlename(String articlename) {
+		this.articlename = articlename;
 	}
 
-	public void setArticleContent(String articleContent) {
-		this.articleContent = articleContent;
+	public String getFilename() {
+		return filename;
 	}
 
-	public String getArticleDateTime() {
-		return articleDateTime;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
-	public void setArticleDateTime(String articleDateTime) {
-		this.articleDateTime = articleDateTime;
+	public String getArticledatetime() {
+		return articledatetime;
 	}
 
-	public String getArticleStatus() {
-		return articleStatus;
+	public void setArticledatetime(String articledatetime) {
+		this.articledatetime = articledatetime;
 	}
 
-	public void setArticleStatus(String articleStatus) {
-		this.articleStatus = articleStatus;
+	public int getArticlestatus() {
+		return articlestatus;
 	}
 
-	public Set<ImageArticle> getArticleImages() {
-		return articleImages;
+	public void setArticlestatus(int articlestatus) {
+		this.articlestatus = articlestatus;
 	}
 
-	public void setArticleImages(Set<ImageArticle> articleImages) {
-		this.articleImages = articleImages;
+	public String getArticletype() {
+		return articletype;
+	}
+
+	public void setArticletype(String articletype) {
+		this.articletype = articletype;
 	}
 }

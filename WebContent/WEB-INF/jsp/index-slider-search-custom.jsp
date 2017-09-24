@@ -83,14 +83,23 @@
                                 <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
                             </ul>
                         </li>
-                        <li class="has-child"><a href="#">Properties</a>
-                            <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
-                            </ul>
-                        </li>
+                        <li class="has-child"><a href="#">Directory</a>
+								<ul class="child-navigation">
+									<li><a href="#">List By Type</a>
+										<ul class="child-navigation">
+											<c:forEach var="type" items="${types}">
+												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
+											</c:forEach>
+										</ul></li>
+									<li><a href="#">List By Area</a>
+										<ul class="child-navigation">
+											<c:forEach var="area" items="${areas}">
+												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
+											</c:forEach>
+										</ul>
+									</li>
+									<li><a href="list-mall?typename=all">List All</a></li>
+								</ul></li>
                         <li class="has-child"><a href="#">Pages</a>
                             <ul class="child-navigation">
                                 <li><a href="about-us.html">About Us</a></li>
@@ -140,10 +149,7 @@
 								<li><a href="my-properties">Admin Management</a></li>
 						</c:if>
                     </ul>
-                </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
+                </nav><!-- /.navbar collapse-->  
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -197,7 +203,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
+                                    <button id="btnShop" type="submit" class="btn btn-default" disabled="true">Search Now</button>
                                 </div><!-- /.form-group -->
                             </form><!-- /#form-map -->
                         </div><!-- /.search-box.map -->
@@ -220,7 +226,7 @@
         <section id="new-properties" class="block">
             <div class="container">
                 <header class="section-title">
-                    <h2>Result Shop</h2>
+                    <h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
                     <a href="#" class="link-arrow">All Properties</a>
                 </header>
                 <div class="row">
@@ -231,7 +237,7 @@
                         	<div class="property">
                             	<a href="property-detail.html">
                                 	<div class="property-image">
-                                  	<img src="<c:url value="/img/mall/thumbnail/${i.mall.imageMall }"/>" >
+                                  		<img src="<c:url value="/img/mall/thumbnail/${i.mall.imageMall }"/>" >
                                 	</div>
                                 	<div class="overlay">
                                     	<div class="info">
@@ -252,6 +258,30 @@
                 	</c:choose>
                 	
                 </div><!-- /.row-->
+                <form action="index-slider-search-custom-click" method="post" id="frm">
+	                <div class="center">
+	                            <ul class="pagination">
+	                            <c:choose>
+	                            	<c:when test="${storeSize <= 15}">
+	                            		<li class="active"><a href="#">1</a></li>
+	                            	</c:when>
+	                            	<c:when test="${storeSize <= 30}">
+	                            		<li class="active"><a href="javascript:;" onclick="onClick(1)">1</a></li>
+		                                <li><a href="javascript:;" onclick="onClick(2)">2</a></li>
+	                            	</c:when>
+	                            	<c:otherwise>
+	                            		<li class="active"><a href="javascript:;" onclick="onClick(1)">1</a></li>
+		                                <li><a href="javascript:;" onclick="onClick(2)">2</a></li>
+		                                <li><a href="javascript:;" onclick="onClick(3)">3</a></li>
+		                                <li><a href="javascript:;" onclick="onClick(4)">4</a></li>
+		                                <li><a href="javascript:;" onclick="onClick(5)">5</a></li>
+	                            	</c:otherwise>
+	                            </c:choose>
+	                                
+	                            </ul><!-- /.pagination-->
+	                        </div><!-- /.center-->
+	                        <input type="hidden" id="valueClick" name="valueClick" />
+                </form>
             </div><!-- /.container-->
         </section><!-- /#new-properties-->
     </div>
@@ -343,6 +373,35 @@
 
 <div id="overlay"></div>
 
+<script type="text/javascript">
+	onClick = function(num){
+		document.getElementById('valueClick').value = num;
+		document.getElementById('frm').submit();
+	}
+	
+	function doCheck(){
+        var allFilled = true;
+        var inputs = document.getElementsByName("inputShop");
+        for(var i=0; i<inputs.length; i++){
+            var t = inputs[i].value;
+            if(t.length < 3 && inputs[i].type == "text"){
+            	allFilled = false;
+                break;
+            }
+        }
+        document.getElementById("btnShop").disabled = !allFilled;
+    }
+	
+	window.onload = function(){
+        var inputs = document.getElementsByName("inputShop");
+        for(var i=0; i<inputs.length; i++){
+            if(inputs[i].type == "text"){
+                inputs[i].onkeyup = doCheck;
+                inputs[i].onblur = doCheck;
+            }
+        }
+    };
+</script>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>

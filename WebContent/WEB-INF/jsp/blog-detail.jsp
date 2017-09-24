@@ -1,5 +1,8 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.io.*"%>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8" />
@@ -8,7 +11,7 @@
 
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700'
 	rel='stylesheet' type='text/css'>
-<link href="assets/fonts/font-awesome.css" rel="stylesheet"type="text/css">
+<link href="fonts/font-awesome.css" rel="stylesheet"type="text/css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css"type="text/css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css"type="text/css">
 <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
@@ -16,7 +19,7 @@
 <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Zoner | Blog Detail</title>
+    <title>Mall Bangkok | Blog Detail</title>
 
 </head>
 
@@ -33,9 +36,14 @@
                 </div>
                 <div class="user-area">
                     <div class="actions">
-                        <a href="create-agency.html" class="promoted">Create Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Register</strong></a>
-                        <a href="sign-in.html">Sign In</a>
+						<c:choose>
+							<c:when test="${username != null}">
+								<a href="logout">Log Out</a>
+							</c:when>
+							<c:otherwise>
+								<a href="sign-in">Sign In</a>
+							</c:otherwise>
+						</c:choose>
                     </div>
                     <div class="language-bar">
                         <a href="#" class="active">  <img src="<c:url value="/img/flags/gb.png"/>" alt=""></a> 
@@ -55,82 +63,63 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html">
-                        
-                       <img src="<c:url value="/img/logo.png"/>" alt=""></a> 
-                    </div>
+							<a href="index-google-map-fullscreen"><img
+								src="<c:url value="/img/logo1@1x.png"/>" alt="MALL BANGKOK"></a>
+					</div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="#">Homepage</a>
-                            <ul class="child-navigation">
-                                <li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
-                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
-                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
-                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
-                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
-                                <li><a href="index-slider.html">Slider Homepage</a></li>
-                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
-                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
-                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Properties</a>
-                            <ul class="child-navigation">
-                                <li><a href="property-detail.html">Property Detail</a></li>
-                                <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li>
-                                <li><a href="properties-listing-lines.html">Lines Listing</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Pages</a>
-                            <ul class="child-navigation">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="invoice-print.html">Invoice</a></li>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="my-properties.html">My Properties</a></li>
-                                <li><a href="bookmarked.html">Bookmarked Properties</a></li>
-                                <li><a href="create-account.html">Create Account</a></li>
-                                <li><a href="create-agency.html">Create Agency</a></li>
-                                <li><a href="sign-in.html">Sign In</a></li>
-                                <li class="has-child"><a href="#">Error Pages</a>
-                                    <ul class="child-navigation">
-                                        <li><a href="403.html">403</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="500.html">500</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                <li><a href="rtl.html">RTL Support</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                                <li><a href="agency-detail.html">Agency Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="submit.html">Submit</a></li>
-                        <li class="has-child"><a href="#">Blog</a>
-                            <ul class="child-navigation">
-                                <li><a href="blog.html">Blog Listing</a></li>
-                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
+						<li class="has-child"><a href="#">Directory</a>
+								<ul class="child-navigation">
+									<li><a href="#">List By Type</a>
+										<ul class="child-navigation">
+											<c:forEach var="type" items="${types}">
+												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
+											</c:forEach>
+										</ul></li>
+									<li><a href="#">List By Area</a>
+										<ul class="child-navigation">
+											<c:forEach var="area" items="${areas}">
+												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
+											</c:forEach>
+										</ul>
+									</li>
+									<li><a href="list-mall?typename=all">List All</a></li>
+								</ul></li>
+							<li class="has-child"><a href="#">Pages</a>
+								<ul class="child-navigation">
+									<li><a href="article">Test Article</a></li>
+									<li><a href="agent-detail.html">Agent Detail</a></li>
+									<li><a href="invoice-print.html">Invoice</a></li>
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="my-properties.html">My Properties</a></li>
+									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
+									<li><a href="create-account.html">Create Account</a></li>
+									<li><a href="create-agency.html">Create Agency</a></li>
+									<li><a href="sign-in">Sign In</a></li>
+									<li class="has-child"><a href="#">Error Pages</a>
+										<ul class="child-navigation">
+											<li><a href="403.html">403</a></li>
+											<li><a href="404.html">404</a></li>
+											<li><a href="500.html">500</a></li>
+										</ul></li>
+								</ul></li>
+							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
+								<ul class="child-navigation">
+									<li><a href="index-slider-search-custom">Search Custom</a></li>
+								</ul></li>
+							<li><a href="parking-user">Parking</a>
+								</li>
+							<li class="has-child"><a href="#">Blog</a>
+								<ul class="child-navigation">
+									<li><a href="blog">Blog Listing</a></li>
+									<li><a href="blog-detail">Blog Post Detail</a></li>
+								</ul></li>
+							<li><a href="agency-detail">Contact</a></li>
+							<c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+							</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -158,13 +147,13 @@
                     <section id="content">
                         <header><h1>Article Detail</h1></header>
                         <article class="blog-post">
-                            <a href="blog-detail.html">
-                            <img src="<c:url value="/img/properties/property-detail-02.jpg"/>" alt=""></a> 
+                            <%-- <a href="blog-detail.html">
+                            <img src="<c:url value="/img/properties/property-detail-02.jpg"/>" alt=""></a>  --%>
                            
-                            <header><a href="blog-detail.html"><h2>Vivamus porta orci eu turpis vulputate ornare fusce hendrerit arcu risu</h2></a></header>
+                            <header><a href="blog-detail.html"><h2><c:out value="${article.articlename }"/></h2></a></header>
                             <figure class="meta">
                                 <a href="#" class="link-icon"><i class="fa fa-user"></i>Admin</a>
-                                <a href="#" class="link-icon"><i class="fa fa-calendar"></i>06/04/2014</a>
+                                <a href="#" class="link-icon"><i class="fa fa-calendar"></i><c:out value="${article.articledatetime }"/></a>
                                 <div class="tags">
                                     <a href="#" class="tag article">Architecture</a>
                                     <a href="#" class="tag article">Design</a>
@@ -179,15 +168,17 @@
                                 in malesuada sem rutrum. In placerat porta egestas.
                             </p>
                             <h3>Parahraph Headline</h3>
-                            <p>
-                                Phasellus metus ipsum, sollicitudin lacinia turpis in, pellentesque pulvinar diam.
-                                Cras ultricies augue sapien, aliquam hendrerit mi suscipit at. Suspendisse vulputate felis eget
-                                felis convallis fermentum et eu nulla. Donec sagittis sit amet erat non eleifend. Mauris at convallis
-                                magna. Quisque pellentesque id mauris vitae placerat. Mauris facilisis odio nec metus cursus commodo.
-                                Integer vel libero nunc. Donec ac lorem commodo, laoreet elit eget, tempus ante. Quisque eu nunc blandit
-                                erat rutrum feugiat ac sed arcu. In nisi risus, molestie a sem adipiscing, porta volutpat velit.
-                                Pellentesque nec felis sit amet nunc porta tincidunt sit amet et justo.
-                            </p>
+                            <% 
+	                            BufferedReader reader = new BufferedReader(
+	                            		new FileReader("C:\\Users\\demon\\Documents\\GitHub\\projectfinal\\WebContent\\WEB-INF\\assets\\test3.txt"));
+	                            StringBuilder sb = new StringBuilder();
+	                            String line;
+	
+	                            while((line = reader.readLine())!= null){
+	                                sb.append(line);
+	                            }
+	                            out.print(sb.toString());
+                            %>
                             <h3>Audio Object</h3>
                             <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/71654970&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                             <h3>Parahraph Headline</h3>
@@ -450,7 +441,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
@@ -459,19 +450,19 @@
     <!-- end Page Footer -->
 </div>
 
-<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>
-<script type="text/javascript" src="assets/js/jquery.numberformatter-1.2.3.js"></script>
-<script type="text/javascript" src="assets/js/tmpl.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
-<script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
-<script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="js/jshashtable-2.1_src.js"></script>
+<script type="text/javascript" src="js/jquery.numberformatter-1.2.3.js"></script>
+<script type="text/javascript" src="js/tmpl.js"></script>
+<script type="text/javascript" src="js/jquery.dependClass-0.1.js"></script>
+<script type="text/javascript" src="js/draggable-0.1.js"></script>
+<script type="text/javascript" src="js/jquery.slider.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->

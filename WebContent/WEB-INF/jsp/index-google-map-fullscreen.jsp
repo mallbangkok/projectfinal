@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8" />
@@ -41,7 +43,7 @@
 						</figure>
 					</div>
 					<div class="user-area">
-						<div class="actions">
+					<div class="actions">
 						<c:choose>
 							<c:when test="${username != null}">
 								<a href="logout">Log Out</a>
@@ -79,32 +81,7 @@
 						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
 						role="navigation">
 						<ul class="nav navbar-nav">
-							<li class="active has-child"><a href="#">Homepage</a>
-								<ul class="child-navigation">
-									<li><a href="index-google-map-fullscreen">Google Map
-											Full Screen</a></li>
-									<li><a href="index-google-map-fixed-height.html">Google
-											Map Fixed Height</a></li>
-									<li><a href="index-google-map-fixed-navigation.html">Google
-											Map Fixed Navigation</a></li>
-									<li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-									<li><a href="index-osm-fixed-height.html">OpenStreetMap
-											Fixed Height</a></li>
-									<li><a href="index-osm-fixed-navigation.html">OpenStreetMap
-											Fixed Navigation</a></li>
-									<li><a href="index-slider.html">Slider Homepage</a></li>
-									<li><a href="index-slider-search-box.html">Slider with
-											Search Box</a></li>
-									<li><a href="index-horizontal-search-floated.html">Horizontal
-											Search Floated</a></li>
-									<li><a href="index-advanced-horizontal-search.html">Horizontal
-											Advanced Search</a></li>
-									<li><a href="index-slider-horizontal-search-box.html">Horizontal
-											Slider Search</a></li>
-									<li><a
-										href="demo-test-game">Horizontal
-											Slider Floated Search</a></li>
-								</ul></li>
+							<li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
 							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
@@ -113,12 +90,18 @@
 												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
 											</c:forEach>
 										</ul></li>
-									<li><a href="properties-listing.html">List By Area</a></li>
-									<li><a href="test-select">List All</a></li>
+									<li><a href="#">List By Area</a>
+										<ul class="child-navigation">
+											<c:forEach var="area" items="${areas}">
+												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
+											</c:forEach>
+										</ul>
+									</li>
+									<li><a href="list-mall?typename=all">List All</a></li>
 								</ul></li>
 							<li class="has-child"><a href="#">Pages</a>
 								<ul class="child-navigation">
-									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="article">Test Article</a></li>
 									<li><a href="agent-detail.html">Agent Detail</a></li>
 									<li><a href="invoice-print.html">Invoice</a></li>
 									<li><a href="profile.html">Profile</a></li>
@@ -133,29 +116,19 @@
 											<li><a href="404.html">404</a></li>
 											<li><a href="500.html">500</a></li>
 										</ul></li>
-									<li><a href="faq.html">FAQ</a></li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="sticky-footer.html">Sticky Footer</a></li>
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="shortcodes.html">Shortcodes</a></li>
-									<li><a href="timeline.html">Timeline</a></li>
-									<li><a href="terms-conditions.html">Terms & Conditions</a></li>
-									<li><a href="rtl.html">RTL Support</a></li>
 								</ul></li>
-							<li><a href="loadsearchfilter">Search Mall</a>
+							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
 								<ul class="child-navigation">
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
-							</li>
 							<li><a href="parking-user">Parking</a>
 								</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
-									<li><a href="blog.html">Blog Listing</a></li>
-									<li><a href="blog-detail.html">Blog Post Detail</a></li>
+									<li><a href="blog">Blog Listing</a></li>
+									<li><a href="blog-detail">Blog Post Detail</a></li>
 								</ul></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="agency-detail">Contact</a></li>
 							<c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
 							</c:if>
@@ -1160,7 +1133,7 @@
 				<!-- /#footer-thumbnails -->
 				<aside id="footer-copyright">
 					<div class="container">
-						<span>Copyright © 2013. All Rights Reserved.</span> <span
+						<span>Copyright Â© 2013. All Rights Reserved.</span> <span
 							class="pull-right"><a href="#page-top" class="roll">Go
 								to top</a></span>
 					</div>

@@ -70,7 +70,22 @@ public class MallManager {
 		}
 		return list;
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getMallArea() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(area) from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	public String do_deleteMall(long mallId) {
 		try {
 			String message = "";

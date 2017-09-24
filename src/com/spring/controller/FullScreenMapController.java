@@ -17,9 +17,12 @@ public class FullScreenMapController {
 	public ModelAndView loadIndexPage(HttpSession session) {
 		ModelAndView mav = new ModelAndView("index-google-map-fullscreen");
 		MallManager mm = new MallManager();
-		List<String> listType = mm.getMallType();
-		session.setAttribute("types", listType);
 		
+		List<String> listType = mm.getMallType();
+		List<String> listArea = mm.getMallArea();
+		
+		session.setAttribute("types", listType);
+		session.setAttribute("areas", listArea);
 		return mav;
 	}
 }

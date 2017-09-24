@@ -25,9 +25,21 @@ public class ListMallController {
 		List<Mall> listByType = new ArrayList<>();
 		String typename = request.getParameter("typename");
 		
-		for(Mall m : list){
-			if(m.getType().equals(typename)){
+		if(typename.equals("all")){
+			for(Mall m : list){
 				listByType.add(m);
+			}
+		}else{
+			for(Mall m : list){
+				if(m.getType().equals(typename)){
+					listByType.add(m);
+				}
+			}
+			
+			for(Mall m : list){
+				if(m.getArea().equals(typename)){
+					listByType.add(m);
+				}
 			}
 		}
 		session.setAttribute("type", typename);

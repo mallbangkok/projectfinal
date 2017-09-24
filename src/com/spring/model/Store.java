@@ -19,7 +19,7 @@ public class Store {
 	private String storeStatus;
 	private String floor;
 	
-	@ManyToOne (cascade=CascadeType.ALL) 
+	@ManyToOne (cascade=CascadeType.MERGE) 
 	@JoinColumn (name = "mallId")
 	private Mall mall;
 
@@ -70,7 +70,16 @@ public class Store {
 		this.storeStatus = storeStatus;
 		this.floor = floor;
 	}
-
+	
+	public Store(int storeId,String storeName, String storeType, String storeStatus, String floor) {
+		super();
+		this.storeId = storeId;
+		this.storeName = storeName;
+		this.storeType = storeType;
+		this.storeStatus = storeStatus;
+		this.floor = floor;
+	}
+	
 	public Store() {
 		super();
 		// TODO Auto-generated constructor stub
