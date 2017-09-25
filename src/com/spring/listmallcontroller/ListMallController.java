@@ -63,6 +63,7 @@ public class ListMallController {
 		StoreManager sm = new StoreManager();
 		String m = request.getParameter("valueClick");
 		long mallId = Long.parseLong(m);
+		System.out.println(mallId);
 		List<Mall> list = mm.getAllMalls();
 
 		for(Mall mall : list){
@@ -80,6 +81,7 @@ public class ListMallController {
 		List<Store> listFood = new ArrayList<>();
 		List<Store> listShopping = new ArrayList<>();
 		List<Store> listServices = new ArrayList<>();
+		
 		for(Store s : listStore){
 			if(s.getStoreType().equals("Food")){
 				listFood.add(s);
