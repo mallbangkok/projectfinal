@@ -54,4 +54,19 @@ public class ArticleManager {
 		}
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getArticleType() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(articletype) from Article").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

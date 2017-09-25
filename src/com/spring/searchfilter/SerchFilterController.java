@@ -28,8 +28,8 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		MallManager mm = new MallManager();
 		Mall mall = new Mall();
-		String area = "WebContent/WEB-INF/assets/text/area.txt";
-		String malls = "WebContent/WEB-INF/assets/text/listmall.txt";
+		String area = "WebContent/WEB-INF/assets/text/area1.txt";
+		String malls = "WebContent/WEB-INF/assets/text/listmall1.txt";
 
 		Set<String> listArea = new HashSet();
 		Set<String> listDepart = new HashSet();

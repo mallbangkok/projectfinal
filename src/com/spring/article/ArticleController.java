@@ -25,9 +25,17 @@ public class ArticleController {
 		ModelAndView mav = new ModelAndView("blog");
 		ArticleManager am = new ArticleManager();
 		
-		List<Article> listArticle = am.getAllArticle();
+		String atype = request.getParameter("articletype");
 		
-		session.setAttribute("articles", listArticle);
+		List<Article> listArticle = am.getAllArticle();
+		List<Article> listArticleByType = new ArrayList<>();
+		for(Article a : listArticle){
+			if(atype.equals(a.getArticletype())){
+				listArticleByType.add(a);
+			}
+		}
+		
+		session.setAttribute("articles", listArticleByType);
 		return mav;
 	}
 	

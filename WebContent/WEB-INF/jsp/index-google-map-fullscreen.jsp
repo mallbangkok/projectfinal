@@ -117,16 +117,18 @@
 											<li><a href="500.html">500</a></li>
 										</ul></li>
 								</ul></li>
-							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
+							<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
+									<li><a href="loadsearchfilter">Search Filter</a></li>
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
 							<li><a href="parking-user">Parking</a>
 								</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
-									<li><a href="blog">Blog Listing</a></li>
-									<li><a href="blog-detail">Blog Post Detail</a></li>
+									<c:forEach var="val" items="${blogtype}">
+										<li><a href="blog?articletype=${val}"><c:out value="${val}"/></a></li>
+									</c:forEach>
 								</ul></li>
 							<li><a href="agency-detail">Contact</a></li>
 							<c:if test="${username != null }">
@@ -135,11 +137,6 @@
 						</ul>
 					</nav>
 					<!-- /.navbar collapse-->
-					<div class="add-your-property">
-						<a href="submit.html" class="btn btn-default"><i
-							class="fa fa-plus"></i><span class="text">Add Your
-								Property</span></a>
-					</div>
 				</header>
 				<!-- /.navbar -->
 			</div>
@@ -267,206 +264,28 @@
 					</header>
 				</div>
 				<!-- /.container -->
+				<form id="frmIndex" action="list-mall" method="post">
 				<div class="owl-carousel featured-properties-carousel">
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-01.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 11,000</div>
-									<h3>3398 Lodgeville Road</h3>
-									<figure>Golden Valley, MN 55427
-									</figure>
+					<c:forEach var="i" items="${mallupdated}">
+						<div class="property big">
+							<a href="javascript:;" onclick="onClick(${i.mallId})">
+							<input type="hidden" id="valueClick" name="valueClick" />
+								<div class="property-image">
+									<img src="<c:url value="/img/mall/thumbnail/${i.imageMall}"/>"
+										alt="">
 								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											240m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>2
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>2
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>0
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- /.property -->
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-02.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 16,000</div>
-									<h3>987 Cantebury Drive</h3>
-									<figure>Chicago, IL 60610
-									</figure>
+								<div class="overlay">
+									<div class="info">
+										<h3><c:out value="${i.mallNameEng }"/></h3>
+										<figure><c:out value="${i.mallNameThai}"/></figure>
+									</div>
 								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											120m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>1
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- /.property -->
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-03.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 28,500</div>
-									<h3>1866 Clement Street</h3>
-									<figure>Atlanta, GA 30303
-									</figure>
-								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											120m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>1
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- /.property -->
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-03.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 268,800</div>
-									<h3>2186 Rinehart Road</h3>
-									<figure>Doral, FL 33178
-									</figure>
-								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											620m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>3
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>2
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>2
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- /.property -->
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-05.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 28,500</div>
-									<h3>1866 Clement Street</h3>
-									<figure>Atlanta, GA 30303
-									</figure>
-								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											120m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>1
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- /.property -->
-					<div class="property big">
-						<a href="property-detail.html">
-							<div class="property-image">
-								<img src="<c:url value="/img/properties/property-03.jpg"/>"
-									alt="">
-							</div>
-							<div class="overlay">
-								<div class="info">
-									<div class="tag price">$ 28,500</div>
-									<h3>1866 Clement Street</h3>
-									<figure>Atlanta, GA 30303
-									</figure>
-								</div>
-								<ul class="additional-info">
-									<li><header>Area:</header>
-										<figure>
-											120m
-											<sup>2</sup>
-										</figure></li>
-									<li><header>Beds:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Baths:</header>
-										<figure>1
-										</figure></li>
-									<li><header>Garages:</header>
-										<figure>1
-										</figure></li>
-								</ul>
-							</div>
-						</a>
-					</div>
+							</a>
+						</div>
+					</c:forEach>
 					<!-- /.property -->
 				</div>
+				</form>
 			</section>
 			<!-- /#featured-properties -->
 			<section id="price-drop" class="block">
@@ -1181,5 +1000,14 @@
 			initializeOwl(false);
 		});
 	</script>
+	<script type="text/javascript">
+	var mid;
+	onClick = function(id){
+		document.getElementById('valueClick').value = id;
+		document.getElementById('frmIndex').submit();
+		mid = id;
+		console.log(mid);
+	}
+</script>
 </body>
 </html>

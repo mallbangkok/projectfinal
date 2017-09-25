@@ -10,7 +10,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
@@ -165,7 +166,6 @@
                         <header class="property-title">
                             <h1>${mall.mallNameEng}  ${mall.mallNameThai}</h1>
                             <figure>Open-Closed : <c:out value="${mall.timeMall}"></c:out></figure>
-                            
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
@@ -202,85 +202,60 @@
                             <div class="col-md-8">
                                 <section id="find-shop">
                                     <header><h2>Find Shop in This Mall</h2></header>
-                                    <div class="btn-group-shop">
-  										 <button>Food</button>
-										 <button>Shopping</button>
-										 <button>Service</button>
-									</div>
+                                    <ul class="nav nav-tabs">
+										<li><a href="#home">Shopping</a></li>
+										<li><a href="#menu1">Food</a></li>
+										<li><a href="#menu2">Services</a></li>
+									</ul>
                                 </section><!-- /#find-shop -->
-                                <section id="select-floor">
-                                	<header><h2>Floor</h2></header>
-                                	<div class="btn-group2">
-									<%for(int i = 0; i < 10;i++){ %>
-										<button><%=i %></button>
-									<%} %>
-									</div>
-                                </section>
-                                <section id="property-features">
-                                    <header><h2>List Shop</h2></header>
+                                <div class="tab-content">
+								<div id="home" class="tab-pane fade in active">
+								<section id="property-features">
                                     <ul class="list-unstyled property-features-list">
-                                        <li>Sauna</li>
-                                        <li>Fireplace or fire pit</li>
-                                        <li>Outdoor Kitchen</li>
-                                        <li>Tennis Courts</li>
-                                        <li>Trees and Landscaping</li>
-                                        <li>Sun Room</li>
-                                        <li>Family Room</li>
-                                        <li>Concrete Flooring</li>
+                                       	<c:choose>
+                                                  <c:when test="${listShopping != null }">
+                                                      <c:forEach var="i" items="${listShopping}">
+                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
+                                    </ul>
+                               	 </section><!-- /#property-features -->
+								</div>
+								<div id="menu1" class="tab-pane fade in active">
+								<section id="property-features">
+                                    <ul class="list-unstyled property-features-list">
+                                      	<c:choose>
+                                                  <c:when test="${listFood != null }">
+                                                      <c:forEach var="i" items="${listFood}">
+                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
                                     </ul>
                                 </section><!-- /#property-features -->
-                                <section id="property-map">
-                                    <header><h2>Map</h2></header>
-                                    <div class="property-detail-map-wrapper">
-                                        <div class="property-detail-map" id="property-detail-map"></div>
-                                    </div>
-                                </section><!-- /#property-map -->
-                                <section id="property-rating">
-                                    <header><h2>Rating</h2></header>
-                                    <div class="clearfix">
-                                        <aside>
-                                            <header>Your Rating</header>
-                                            <div class="rating rating-user">
-                                                <div class="inner"></div>
-                                            </div>
-                                        </aside>
-                                        <figure>
-                                            <header>Overall Rating</header>
-                                            <div class="rating rating-overall" data-score="4"></div>
-                                        </figure>
-                                    </div>
-                                    <div class="rating-form">
-                                        <header>Thank you! Please describe your rating</header>
-                                        <form role="form" id="form-rating" method="post"  class="clearfix">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="form-rating-name">Your Name<em>*</em></label>
-                                                        <input type="text" class="form-control" id="form-rating-name" name="form-rating-name" required>
-                                                    </div><!-- /.form-group -->
-                                                </div><!-- /.col-md-6 -->
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="form-rating-email">Your Email<em>*</em></label>
-                                                        <input type="email" class="form-control" id="form-rating-email" name="form-rating-email" required>
-                                                    </div><!-- /.form-group -->
-                                                </div><!-- /.col-md-6 -->
-                                            </div><!-- /.row -->
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="form-rating-message">Your Message<em>*</em></label>
-                                                        <textarea class="form-control" id="form-rating-message" rows="6" name="form-rating-message" required></textarea>
-                                                    </div><!-- /.form-group -->
-                                                </div><!-- /.col-md-12 -->
-                                            </div><!-- /.row -->
-                                            <div class="form-group">
-                                                <button type="submit" class="btn pull-right btn-default" id="form-rating-submit">Send a Message</button>
-                                            </div><!-- /.form-group -->
-                                            <div id="form-rating-status"></div>
-                                        </form><!-- /#form-contact -->
-                                    </div><!-- /.rating-form -->
-                                </section><!-- /#property-rating -->
+								</div>
+								<div id="menu2" class="tab-pane fade in active">
+								  <section id="property-features">
+                                    <ul class="list-unstyled property-features-list">
+                                       	<c:choose>
+                                                  <c:when test="${listServices != null }">
+                                                      <c:forEach var="i" items="${listServices}">
+                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                     </c:forEach>
+                                                  </c:when>
+                                       	</c:choose>
+                                    </ul>
+                                </section><!-- /#property-features -->
+								</div>
+								</div><!-- tab-content -->
+								<script>
+									$(document).ready(function() {
+									$(".nav-tabs a").click(function() {
+									$(this).tab('show');
+									});
+								});
+								</script>
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
                                 

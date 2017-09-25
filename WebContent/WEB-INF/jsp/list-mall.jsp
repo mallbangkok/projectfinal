@@ -152,9 +152,6 @@
 						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -165,7 +162,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Regional Mall Listing</li>
+                <li class="active">List Mall</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -173,57 +170,107 @@
         <div class="container">
             <div class="row">
                 <!-- Results -->
-                <div class="col-md-9 col-sm-9">
+                <div class="col-md-12">
                     <section id="results">
-                        <header><h1><c:out value="${type }"/> Listing</h1></header>
+                        <header><h1><c:out value="${type }"/></h1></header>
                         <section id="search-filter">
                             <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
                                 <span class="search-count"><c:out value="${size }"></c:out></span>
-                                <div class="sorting">
-                                    <div class="form-group">
-                                        <select name="sorting">
-                                            <option value="">Sort By</option>
-                                            <option value="1">Lowest price first</option>
-                                            <option value="2">Highest price first</option>
-                                            <option value="3">Date added</option>
-                                        </select>
-                                    </div><!-- /.form-group -->
-                                </div>
                             </figure>
                         </section>
                         <section id="properties">
                         <form action="list-mall" method="post" id="frm">
-                        <%List<Mall> listByType = (List<Mall>)session.getAttribute("listByType"); %>
                         <div class="row">
-                   		<c:forEach var="i" items="${listByType}" varStatus="loop">
-                            	<div class="col-md-4 col-sm-4">
-                                	<div class="property equal-height">
-                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
-                                    	<input type="hidden" id="valueClick" name="valueClick" />
-                                        	<div class="property-image">
-                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
-                                        	</div>
-                                        	<div class="overlay">
-                                            	<div class="info">
-                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
-                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
-                                            	</div>
-                                        	</div>
-                                    	</a>
-                                	</div><!-- /.property -->
-                            	</div><!-- /.col-md-3 -->
-                         </c:forEach>
-                         
+                   		<c:if test="${listmallpage != null }">
+                                    		<c:forEach begin="1" end="${countpages}" varStatus="loop">
+                                    			<c:choose>
+                                    				<c:when test="${listpage == loop.index }">
+                                    					<c:choose>
+                                    						<c:when test="${listpage == 1}">
+                                    							<c:forEach begin="0" end="9" var="i" items="${listByType}" varStatus="loop">
+									                            		<div class="col-md-3 col-sm-3">
+										                                	<div class="property equal-height">
+										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+										                                    	<input type="hidden" id="valueClick" name="valueClick" />
+										                                        	<div class="property-image">
+										                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+										                                        	</div>
+										                                        	<div class="overlay">
+										                                            	<div class="info">
+										                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
+										                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
+										                                            	</div>
+										                                        	</div>
+										                                    	</a>
+										                                	</div><!-- /.property -->
+									                            		</div><!-- /.col-md-3 -->
+                         										</c:forEach>
+                                    						</c:when>
+                                    						<c:otherwise>
+                                    							<c:forEach begin="${listpage * 10 - 10 }" end="${listpage * 10 - 1}" var="i" items="${listByType}" varStatus="loop">
+									                            		<div class="col-md-3 col-sm-3">
+										                                	<div class="property equal-height">
+										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+										                                    	<input type="hidden" id="valueClick" name="valueClick" />
+										                                        	<div class="property-image">
+										                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+										                                        	</div>
+										                                        	<div class="overlay">
+										                                            	<div class="info">
+										                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
+										                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
+										                                            	</div>
+										                                        	</div>
+										                                    	</a>
+										                                	</div><!-- /.property -->
+									                            		</div><!-- /.col-md-3 -->
+                         										</c:forEach>
+                                    						</c:otherwise>
+                                    					</c:choose>
+                                    				</c:when>
+                                    			</c:choose>
+                                    		</c:forEach>
+                                    	</c:if>
+                                 <c:if test="${listmallpage == 1 }">
+                                 	<c:forEach begin="0" end="9" var="i" items="${listByType}" varStatus="loop">
+									                            		<div class="col-md-3 col-sm-3">
+										                                	<div class="property equal-height">
+										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
+										                                    	<input type="hidden" id="valueClick" name="valueClick" />
+										                                        	<div class="property-image">
+										                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+										                                        	</div>
+										                                        	<div class="overlay">
+										                                            	<div class="info">
+										                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
+										                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
+										                                            	</div>
+										                                        	</div>
+										                                    	</a>
+										                                	</div><!-- /.property -->
+									                            		</div><!-- /.col-md-3 -->
+                         										</c:forEach>
+                                 </c:if>
                         </div><!-- /.row-->
                         </form>
                         <!-- Pagination -->
                         <div class="center">
                             <ul class="pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
+                            <c:if test="${listmallpage == null }">
+                            	<li class="active"><a href="change-list-mall-page?page=1"><c:out value="1"/></a></li>
+                            </c:if>
+                            <c:if test="${listmallpage != null }">
+                            	<c:forEach varStatus="val" begin="1" end="${countpages}">
+	                                	<c:choose>
+	                                		<c:when test="${listpage == val.index }">
+	                                			<li class="active"><a href="change-list-mall-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:when>
+	                                		<c:otherwise>
+	                                			<li><a href="change-list-mall-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:otherwise>
+	                                	</c:choose>
+                                </c:forEach>
+                            </c:if>
                             </ul><!-- /.pagination-->
                         </div><!-- /.center-->
 
@@ -232,115 +279,7 @@
                 </div><!-- /.col-md-9 -->
                 <!-- end Results -->
 
-                <!-- sidebar -->
-                <div class="col-md-3 col-sm-3">
-                    <section id="sidebar">
-                        <aside id="edit-search">
-                            <header><h3>Search Mall</h3></header>
-                            <form role="form" id="form-sidebar" name="form-sidebar" class="form-search" action="properties-listing.html">
-                                <div class="form-group">
-                                    <select id="directory" name="directory" onchange="populate()">
-                                        <c:forEach var="i" items="${map}">
-                                        	<option value="${i.key}">${i.value}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                	<select id="malltype" name="malltype">
-                                        
-                                    </select>
-                                </div><!-- /.form-group -->
-                                
-                                <div class="form-group">
-                                    <select name="city">
-                                        <option value="">City</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Los Angeles</option>
-                                        <option value="3">Chicago</option>
-                                        <option value="4">Houston</option>
-                                        <option value="5">Philadelphia</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="district">
-                                        <option value="">District</option>
-                                        <option value="1">Manhattan</option>
-                                        <option value="2">The Bronx</option>
-                                        <option value="3">Brooklyn</option>
-                                        <option value="4">Queens</option>
-                                        <option value="5">Staten Island</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="property-type">
-                                        <option value="">Property Type</option>
-                                        <option value="1">Apartment</option>
-                                        <option value="2">Condominium</option>
-                                        <option value="3">Cottage</option>
-                                        <option value="4">Flat</option>
-                                        <option value="5">House</option>
-                                    </select>
-                                </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
-                                </div><!-- /.form-group -->
-                            </form><!-- /#form-map -->
-                        </aside><!-- /#edit-search -->
-                        <aside id="featured-properties">
-                            <header><h3>Featured Properties</h3></header>
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 36,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-03.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>1949 Tennessee Avenue</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 128,600</div>
-                                </div>
-                            </div><!-- /.property -->
-                        </aside><!-- /#featured-properties -->
-                        <aside id="our-guides">
-                            <header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                        </aside><!-- /#our-guide -->
-                    </section><!-- /#sidebar -->
-                </div><!-- /.col-md-3 -->
-                <!-- end Sidebar -->
+                
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div>
