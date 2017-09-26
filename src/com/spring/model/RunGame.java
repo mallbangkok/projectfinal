@@ -7,17 +7,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-<<<<<<< HEAD
-
 import com.spring.addmall.AddMallManager;
 
-
-
-=======
-import com.spring.addmall.AddMallManager;
-import javax.swing.plaf.synth.SynthSpinnerUI;
-
->>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 public class RunGame {
 	
 	public static void main(String []arge){
@@ -109,10 +100,7 @@ public class RunGame {
 			}
 			totalOfParking = ((hourCon3-free)*price)+((aHour-hourCon3)*priceCon3);
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		
 		System.out.println(timeOut);
 		System.out.println(timeIn);
