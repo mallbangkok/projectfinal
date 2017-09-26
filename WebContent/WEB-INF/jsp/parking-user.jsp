@@ -36,14 +36,7 @@
                 </div>
                 <div class="user-area">
                     <div class="actions">
-						<c:choose>
-							<c:when test="${username != null}">
-								<a href="logout">Log Out</a>
-							</c:when>
-							<c:otherwise>
 								<a href="sign-in">Sign In</a>
-							</c:otherwise>
-						</c:choose>
                     </div>
                     <div class="language-bar">
                         <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
@@ -127,7 +120,7 @@
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Condition Of Parking</span></a>
                 </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
@@ -143,24 +136,21 @@
             </ol>
         </div>
         <!-- end Breadcrumb -->
-
         <div class="container">
             <div class="row">
             <!-- sidebar -->
             <div class="col-md-3 col-sm-2">
-                
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
                 	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
+                     <form role="form" id="searchMall"  action="dosearchmall-user" method="get">
                       <div class="col-md-9 col-sm-10">
-                        <div class="col-md-4">
-                             </div>
                     		  <div class="col-md-4">
                                     <div class="form-group">
                                                <select name="types" id="types" onchange="onChanges()">
-                                                    	<option value="">Select type</option>
+                                                    	<option value="Please Select type">Please Select type</option>
                                                     	<option value="Community Mall">Community Mall</option>
                                                     	<option value="Theme Mall">Theme Mall</option>
                                                     	<option value="Luxury Mall">Luxury Mall</option>
@@ -179,7 +169,7 @@
                              </div>
                             <div class="col-md-4">
                                     <div class="form-group">
-                                               <select name="nameMall" id="nameMall" onchange="onChangeName()" required>
+                                               <select name="nameMall" id="nameMall"  required>
                                                     	<option value="Please Select Mall">Please Select Mall</option>
                                                     	 	<c:choose>
                                                				   <c:when test="${mallType != null }">
@@ -188,316 +178,135 @@
                                                                 </c:forEach>
                                                             </c:when>
                                        						</c:choose>
-                                       						
+
                                                     </select>
                                    </div><!-- /.form-group -->
                              </div>
-                            
-                           
+                             <div class="col-md-4">
+                             <div class="form-group">
+                             	<button type="submit" id="searchMall" class="btn btn-default">Search Mall</button>
+                             	</div>
+                             </div>
                		 </div><!-- /.col-md-9 -->
-               		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
-               		   <c:choose>
-                               <c:when test="${typeOfParking == 'III' }">
-                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get" >
-                                <input type="hidden" name="nameMalls" id="nameMalls" >
-                               <div class="col-md-8 col-sm-12">   
-                                <section id="property-features">
-                                   <hr class="thick"></hr>
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="form-group">
-                                        <label for="form-create-agency-address-1">Starting Rate :</label>
-                                        <input type="text" class="form-control" id="conditionIII1"name="conditionIII1" value="จอดรถฟรี">
-                                    </div><!-- /.form-group -->
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <select name="dateIII1" id="dateIII1">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="timeIII1"name="timeIII1" placeholder="Time">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                                <select name="typeIII1" id="typeIII1">
-                                                	<option value="นาที">นาที</option>
-                                                	<option value="ชั่วโมง">ชั่วโมง</option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->  
-                                    </div><!-- /.row -->
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                            </section><!-- /#property-features -->
-                            </div><!-- /.col-md-8 -->
-                                <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="form-group">
-                                        <label for="form-create-agency-address-1">Next Rate :</label>
-                                        <input type="text" class="form-control" id="conIII2" name="conIII2" value="ชั่วโมงถัดไป">
-                                    </div><!-- /.form-group -->
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <select name="dateIII2" id="dateIII2">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="priceIII2" name="priceIII2" placeholder="Price">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="" value="บาท">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->  
-                                    </div><!-- /.row -->
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                            </section><!-- /#property-features -->
-                             <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="form-group">
-                                        <label for="form-create-agency-address-1">Last Rate :</label>
-                                        <select id="conIII3" name="conIII3">
-                                        	<option value="ชั่วโมงที่กำหนดเป็นต้นไป">ชั่วโมงที่กำหนดเป็นต้นไป</option>
-                                        	<option value="เกินคิดเป็นชั่วโมงละ">เกินคิดเป็นชั่วโมงละ</option>
-                                        </select>
-                                    </div><!-- /.form-group -->
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <select name="dateIII3" id="dateIII3">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="timeIII3" name="timeIII3" placeholder="Hour">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="priceIII3" name="priceIII3" placeholder="Price">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->  
-                                    </div><!-- /.row -->
-                                     <section id="submit">
-                           				 <div class="form-group center">
-                              				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
-                           				 </div><!-- /.form-group -->
-                       				 </section>
-                                </section><!-- /#address -->
-                                
-                            </div><!-- /.col-md-6 --> 
-                            </div><!-- /.col-md-8 -->  
-                            </form>
-                               </c:when>
-                       </c:choose>
-               		  <c:choose>
-                               <c:when test="${typeOfParking == 'I' }">
-                               <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                   <hr class="thick"></hr>
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                 <form role="form" id="addconditioni"  action="add-conditionI-parking" method="get">
-                                  <input type="hidden" name="nameMalls" id="nameMalls" >
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="form-create-agency-city">Condition :</label>
-                                                <select name="typeOfFreeConditionI" id="typeOfFreeConditionI">
-                                        		 	<option value="จอดรถฟรี(รับบัตร)">จอดรถฟรี(รับบัตร)</option>
-                                        			<option value="จอดรถฟรี(ไม่ต้องรับบัตร)">จอดรถฟรี(ไม่ต้องรับบัตร)</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="form-create-agency-zip">Date:</label>
-                                                <select name="dateofTypeConditonI" id="dateofTypeConditonI">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                    </div><!-- /.row -->
-                                     <section id="submit">
-                           				 <div class="form-group center">
-                              				  <button type="submit" class="btn btn-default large" id="addconditioni">Add Condition</button>
-                           				 </div><!-- /.form-group -->
-                       				 </section>
-                       				 </form>
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                         
-                                </section><!-- /#property-features -->
-                            </div><!-- /.col-md-8 -->
-                               </c:when>
-                      </c:choose>
-               		 <c:choose>
-                               <c:when test="${typeOfParking == 'II' }">
-                                <div class="col-md-8 col-sm-12">
-                                  <form role="form" id="addconditionII"  action="add-conditionII-parking" method="get" >
-                                   <input type="hidden" name="nameMalls" id="nameMalls" >
-                                <section id="property-features">
-                                   <hr class="thick"></hr>
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="form-group">
-                                        <label for="form-create-agency-address-1">Starting Rate:</label>
-                                        <input type="text" class="form-control"name="nameConII1" id="nameConII1" value="จอดรถฟรี">
-                                    </div><!-- /.form-group -->
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <select name="dateoftypeII1" id="dateoftypeII">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control"name="timeII1" id="timeII1" placeholder="Time">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                                <select name="timeoftypeII" id="timeoftypeII">
-                                                	<option value="นาที">นาที</option>
-                                                	<option value="ชั่วโมง">ชั่วโมง</option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                    </div><!-- /.row -->
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                            <div class="col-md-6 col-sm-6">
-                                <section id="contacts">
-                                     <div class="form-group">
-                                        <label for="form-create-agency-address-1">Next Rate:</label>
-                                        <input type="text" class="form-control"name="nameConII2" id="nameConII2" value="ชั่วโมงถัดไป">
-                                    </div><!-- /.form-group -->
-                                    <div class="row">
-                                      <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <select name="dateoftypeII2" id="dateoftypeII2">
-                                        		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
-                                        			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
-                                        			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
-                                       		   </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group"> 
-                                                <input type="text" class="form-control"name="priceConII" id="priceConII" placeholder="Price">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                         <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                    </div><!-- /.row -->
-                                  
-                                </section><!-- /#address -->
-                                 <section id="submit">
-                            <div class="form-group center">
-                                <button type="submit" class="btn btn-default large" id="addconditionII">Add Condition</button>
-                            </div><!-- /.form-group -->
-                        </section>
-                            </div><!-- /.col-md-6 -->
-                                </section><!-- /#property-features -->
-                                  </form>
-                            </div><!-- /.col-md-8 -->
-                               </c:when>
-                     </c:choose>
-                      <c:choose>
-                               <c:when test="${typeOfParking == 'addStamp' }">
-                                <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                   <hr class="thick"></hr>
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="form-create-agency-city">Stramp :</label>
-  												<input type="text" class="form-control" id="form-create-agency-city" value="ใบเสร็จ">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                         <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Price">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                         <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Time">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                         <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="ชั่วโมง">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                    </div><!-- /.row -->
-                                     <section id="submit">
-                           				 <div class="form-group center">
-                              				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
-                           				 </div><!-- /.form-group -->
-                       				 </section>
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                         
-                                </section><!-- /#property-features -->
-                            </div><!-- /.col-md-8 -->
-                               </c:when>
-                      </c:choose>
-               		 <!-- End of Add Condition Condition Condition Condition Condition Condition Condition -->
-               		  <header><h3> </h3></header>
-                        	<div class="my-properties">
-                           
-                        	</div><!-- /.my-properties -->
-                    	</section><!-- /#my-properties -->
+               		 </form>
+                    </section><!-- /#my-properties -->
                 	</div><!-- /.col-md-9 -->
-                	<div class="col-md-9 col-sm-10">
-                		   <section id="sidebar">
-                   		  
-                   
-               			   </section><!-- /#sidebar -->
-                	</div>
-
+                	<div class="container">
+            <header><h1>Condition Of Parking</h1></header>
+            <section id="pricing-3">
+             <form role="form" id="docalculate-user" name="docalculate-user"  action="docalculate-user" method="get">
+              <c:choose>
+              <c:when test="${number != null }">
+             <input type="hidden" name="mallsName" value="${malls.mallNameEng}">
+             <input type="hidden" name="typeNumber" value="${number}">
+             </c:when>
+             </c:choose>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4"></div><!-- /.col-md-3 -->
+                   <div class="col-md-4 col-sm-4">
+                        <div class="price-box">
+                            <header><h2>Paking</h2></header>
+                            <div class="price">
+                                <figure>Condition</figure>
+                            </div>
+                            <ul> 
+                            <c:choose>
+                            	<c:when test="${number == null }">
+                            	 <li><span>ขออภัย ไม่พบข้อมูลของบริการค่าจอดรถ</span></li>
+                            	</c:when>
+                                <c:when test="${number != null }">
+                                	 <li><span>Mall Name : ${malls.mallNameEng}</span> </li>
+                                 <c:if test = "${number == '1'}">      
+                                 <c:forEach var="i" items="${malls.conditionOfParking}">
+                                	 <li><span>${i.conName}</span> </li>
+                                	 <li><span>${i.dateOfCon}</span></li>
+                                 </c:forEach>
+                                </c:if>
+                                <c:if test = "${number == '2'}">      
+                                	 <li><span>${con1}</span> </li>
+                                	 <li><span>${con2}</span></li>
+                                	 <li><span>${date}</span></li>
+                                </c:if>
+                                 <c:if test = "${number == '3'}">      
+                                	 <li><span>${con1}</span> </li>
+                                	 <li><span>${con2}</span></li>
+                                	 <li><span>${con3}</span></li>
+                                	 <li><span>${date}</span></li>
+                                </c:if>
+                                </c:when>
+                            </c:choose>
+                            </ul>
+                             <c:choose>
+                             <c:when test="${priceafter == null }">
+                              <a>Price after calculate</a>
+                              </c:when>
+                             <c:when test="${priceafter != null }">
+                               <a>ค่าจอดรถ ${priceafter} บาท</a>
+                              </c:when>
+                            </c:choose>
+                        </div><!-- /.price-box -->    
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-4 col-sm-4"> 
+                    </div><!-- /.col-md-3 -->
+                </div><!-- /.row -->
+                 <div class="row">
+                    <div class="col-md-4 col-sm-4"> </div>
+                     <div class="col-md-4 col-sm-4">
+                                <section id="address">
+                                <c:choose>
+                                           <c:when test="${number != null }">
+                                           <c:if test = "${number != '1'}">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                            <label for="form-create-agency-zip">Time In:</label>
+                                                <input type="text" class="form-control"name="timeIn" id="timeIn" placeholder="00.00">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                            <label for="form-create-agency-zip">Time Out:</label>
+                                                <input type="text" class="form-control"name="timeOut" id="timeOut" placeholder="00.00">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="form-group">
+                                            <label for="form-create-agency-zip">Date :</label>
+                                               <select name="dateOfCal" id="dateOfCal">
+                                                	<option value="อาทิตย์">อาทิตย์</option>
+                                        		 	<option value="จันทร์">จันทร์</option>
+                                        		 	<option value="อังคาร">อังคาร</option>
+                                        		 	<option value="พุธ">พุธ</option>
+                                        		 	<option value="พฤหัสบดี">พฤหัสบดี</option>
+                                        		 	<option value="ศุกร์">ศุกร์</option>
+                                        		 	<option value="เสาร์">เสาร์<option>
+                                       		   </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->  
+                                    </div><!-- /.row -->
+                                     <div class="row">
+                                     <div class="col-md-4 col-sm-4"></div>
+                                        <div class="col-md-4 col-sm-4">
+                                           <div class="form-group clearfix">
+                                            
+                                                <button class="btn btn-default large" id="docalculate-user">Calculate</button>
+                                          
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-4 -->  
+                                        <div class="col-md-4 col-sm-4"></div>
+                                    </div><!-- /.row -->
+                                    </c:if>
+                                     </c:when>
+                                           </c:choose>
+                                </section><!-- /#address -->
+                            </div><!-- /.col-md-6 --> 
+                    <div class="col-md-4 col-sm-4"> </div>
+                </div><!-- /.row -->
+                </form>
+            </section><!-- /#pricing-3 -->
+        </div><!-- /.container -->
+                	
+                	 
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -599,7 +408,6 @@
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
 <script type="text/javascript">
-  
   function onChanges(){
 		var type = document.getElementById('types').value;
 		console.log(type);
