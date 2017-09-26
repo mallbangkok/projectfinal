@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LogoutController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView loadIndexPage(HttpSession session) {
-		ModelAndView mav = new ModelAndView("index-google-map-fullscreen");
+		ModelAndView mav = new ModelAndView("index");
 		session.invalidate();
 		return mav;
 	}

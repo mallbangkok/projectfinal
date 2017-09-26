@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8" />
@@ -16,7 +18,7 @@
 <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Zoner | Contact</title>
+    <title>Mall Bangkok | Contact</title>
 
 </head>
 
@@ -61,22 +63,7 @@
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="#">Homepage</a>
-                            <ul class="child-navigation">
-                                <li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
-                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
-                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
-                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
-                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
-                                <li><a href="index-slider.html">Slider Homepage</a></li>
-                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
-                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
-                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
-                            </ul>
-                        </li>
+                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
                         <li class="has-child"><a href="#">Properties</a>
                             <ul class="child-navigation">
                                 <li><a href="property-detail.html">Property Detail</a></li>
@@ -420,7 +407,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Copyright Â© 2013. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

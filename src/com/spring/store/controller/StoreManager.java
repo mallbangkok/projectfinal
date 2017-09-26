@@ -10,7 +10,22 @@ import com.spring.model.HibernateConnection;
 import com.spring.model.Store;
 
 public class StoreManager {
-	public String do_isAddStore(Store store) {
+	public String do_hibernateAddStore(Store store) {
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.save(store);
+			session.getTransaction().commit();
+			session.close();
+			return "Add Store successfully...";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Cannot Add Store !!!";
+		}
+	}
+	
+	public String do_hibernateUpdateStore(Store store) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
@@ -18,10 +33,10 @@ public class StoreManager {
 			session.saveOrUpdate(store);
 			session.getTransaction().commit();
 			session.close();
-			return "Add store successfully...";
+			return "Update store successfully...";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Add Store !!!";
+			return "Cannot Update Store !!!";
 		}
 	}
 	
@@ -33,6 +48,21 @@ public class StoreManager {
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 			list = session.createQuery("from Store").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getStoreType() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(storeType) from Store").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();

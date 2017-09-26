@@ -22,7 +22,7 @@ import com.spring.model.Mall;
 @Controller
 public class UpdateMallController {
 	@RequestMapping(value = "/list-update-admin", method = RequestMethod.GET)
-	public ModelAndView loadAdminUpdatePage(HttpSession session, HttpServletRequest request) {
+	public ModelAndView loadAdminUpdateMallPage(HttpSession session, HttpServletRequest request) {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {

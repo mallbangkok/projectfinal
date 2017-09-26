@@ -1,7 +1,5 @@
 package com.spring.logincontroller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addmallcontroller.FacilitiesManager;
-import com.spring.model.Facilities;
 import com.spring.model.Login;
 
 
@@ -30,7 +26,6 @@ public class LoginController {
 		String upass = request.getParameter("upass");
 		Login user = new Login(uname,upass);
 		LoginMannager lmg = new LoginMannager();
-		FacilitiesManager fm = new FacilitiesManager();
 		String msg = lmg.doHibernateLogin(user);
 		if ("Login Success".equals(msg)) {
 			session.setAttribute("username", user.getUsername());
@@ -40,9 +35,7 @@ public class LoginController {
 					//session.setAttribute("custid", lmg.getAllLogin().get(i).getCustomer().getCustomerId());
 				}
 			}
-			List<Facilities> list = fm.getAllFacilities();
 			session.setMaxInactiveInterval(24*60*60);
-			session.setAttribute("listFac", list);
 			md.addAttribute("access_msg",msg);
 			//md.addAttribute("list",list);
 			return "my-properties";

@@ -64,9 +64,9 @@ public class StoreController {
 		String storeName = request.getParameter("storename");
 		String type = request.getParameter("select-type");
 		String status = request.getParameter("select-status");
-
+		
 		Store store = new Store(storeName, type, status, floor);
-		Mall mall = new Mall();
+		Mall mall = null;
 		for (Mall m : mm.getAllMalls()) {
 			if (mallName.equals(m.getMallNameEng())) {
 				mall = m;
@@ -78,12 +78,11 @@ public class StoreController {
 			mall.getStores().add(store);
 			store.setMall(mall);
 			mall.setStores(mall.getStores());
-			System.out.println(sm.do_isAddStore(store));
+			System.out.println(sm.do_hibernateAddStore(store));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
 		return mav;
 	}
-
 }
