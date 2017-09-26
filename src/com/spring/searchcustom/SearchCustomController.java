@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.model.Store;
-import com.spring.store.controller.StoreManager;
 
 @Controller
 public class SearchCustomController {
@@ -32,17 +31,11 @@ public class SearchCustomController {
 		}
 		
 		ModelAndView mav = new ModelAndView("index-slider-search-custom");
-		StoreManager sm = new StoreManager();
+		SearchCustomManager sm = new SearchCustomManager();
 		
 		String shopname = request.getParameter("inputShop");
 		
-		List<Store> listStore = new ArrayList<>();
-		
-		for(Store s : sm.getAllStores()){
-			if(s.getStoreName().matches(shopname + "(.*)")){
-				listStore.add(s);
-			}
-		}
+		List<Store> listStore = sm.isSearchStore(shopname);
 		
 		session.setAttribute("store", listStore);
 		session.setAttribute("storeSize", listStore.size());
@@ -52,26 +45,7 @@ public class SearchCustomController {
 	@RequestMapping(value = "/index-slider-search-custom-click", method = RequestMethod.POST)
 	public ModelAndView loadSearchCustomPageClick(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-slider-search-custom");
-		String c = request.getParameter("valueClick");
-		@SuppressWarnings("unchecked")
-		List<Store> getStores = (List<Store>) session.getAttribute("store");
-		System.out.println(getStores.size()+"");
-		List<Store> listStorePage = new ArrayList<>();
-		if("1".equals(c)){
-			for(int i = 0; i < (getStores.size() - 15);i++){
-				listStorePage.add(getStores.get(i));
-			}
-			System.out.println(listStorePage.size()+"");
-		}else if("2".equals(c)){
-			
-		}else if("3".equals(c)){
-			
-		}else if("4".equals(c)){
-			
-		}else{
-			
-		}
-		session.setAttribute("store", listStorePage);
+		
 		return mav;
 	}
 }

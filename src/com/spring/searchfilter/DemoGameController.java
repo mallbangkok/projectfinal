@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addmallcontroller.MallManager;
+import com.spring.addmall.AddMallManager;
 import com.spring.model.Mall;
 
 @Controller
@@ -23,7 +23,7 @@ public class DemoGameController {
 	public ModelAndView loadPageDemo(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("demo-test-game");
 	
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		Set<String> list = new HashSet<String>();
 		for (Mall m : mm.getAllMalls()) {
 			list.add(m.getArea());

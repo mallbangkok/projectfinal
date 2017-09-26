@@ -163,6 +163,7 @@
                     		<section id="my-properties">
                         	<header><h1>List Mall (found : <c:out value="${listMallSize}"/> Mall)</h1></header>
                         	<div class="my-properties">
+                        	<form id="frm" action="admin-delete-mall" method="post">
                             	<div class="table-responsive">
                                 	<table class="table">
                                     	<thead>
@@ -194,8 +195,8 @@
 																				<td></td>
 																				<td class="actions"><a href="list-update-admin?mallid=${val.mallId }" class="edit"><i
 																						class="fa fa-pencil"></i>Edit</a></td>
-																				<td class="actions">
-																					<button type="button" class="btn btn-danger">Delete</button>
+																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																				</td>
 																			</tr>
 																		</c:forEach>
@@ -216,8 +217,8 @@
 																				<td></td>
 																				<td class="actions"><a href="list-update-admin?mallid=${val.mallId }" class="edit"><i
 																						class="fa fa-pencil"></i>Edit</a></td>
-																				<td class="actions">
-																					<button type="button" class="btn btn-danger">Delete</button>
+																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																				</td>
 																			</tr>
 																		</c:forEach>
@@ -229,6 +230,7 @@
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
+                            </form>
                             <!-- Pagination -->
                             <div class="center">
                                 <ul class="pagination">

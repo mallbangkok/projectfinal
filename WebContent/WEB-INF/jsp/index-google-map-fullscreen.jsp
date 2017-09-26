@@ -97,7 +97,7 @@
 											</c:forEach>
 										</ul>
 									</li>
-									<li><a href="list-mall?typename=all">List All</a></li>
+									<li><a href="list-mall?typename=All Malls">List All</a></li>
 								</ul></li>
 							<li class="has-child"><a href="#">Pages</a>
 								<ul class="child-navigation">
@@ -292,42 +292,21 @@
 				<div class="container">
 					<header class="section-title">
 						<h2>Featured Mall</h2>
-						<a href="properties-listing.html" class="link-arrow">All
-							Properties</a>
+						<a href="list-mall?typename=All Malls" class="link-arrow">All Mall</a>
 					</header>
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="property">
-								<figure class="tag status">Central Group
-								</figure>
-								<a href="property-detail.html">
+								<figure class="tag status">Central Group</figure>
+								<a href="list-mall?typename=Central">
 									<div class="property-image">
 										<img src="<c:url value="/img/properties/central-world.jpg"/>"
 											alt="">
 									</div>
 									<div class="overlay">
 										<div class="info">
-											<div class="tag price">$ 11,000</div>
-											<h3>3398 Lodgeville Road</h3>
-											<figure>Golden Valley, MN 55427
-											</figure>
+											<div class="tag price">Central Group</div>
 										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>2
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>2
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>0
-												</figure></li>
-										</ul>
 									</div>
 								</a>
 							</div>
@@ -336,35 +315,15 @@
 						<!-- /.col-md-3 -->
 						<div class="col-sm-4">
 							<div class="property">
-								<figure class="tag status">The Mall Group
-								</figure>
-								<a href="property-detail.html">
+								<figure class="tag status">The Mall Group</figure>
+								<a href="list-mall?typename=The Mall">
 									<div class="property-image">
 										<img src="<c:url value="/img/properties/themall.jpg"/>" alt="">
 									</div>
 									<div class="overlay">
 										<div class="info">
-											<div class="tag price">$ 38,000</div>
-											<h3>2186 Rinehart Road</h3>
-											<figure>Doral, FL 33178
-											</figure>
+											<div class="tag price">The Mall Group</div>
 										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
 									</div>
 								</a>
 							</div>
@@ -373,36 +332,16 @@
 						<!-- /.col-md-3 -->
 						<div class="col-sm-4">
 							<div class="property">
-								<figure class="tag status">The Other Popular Malls
-								</figure>
-								<a href="property-detail.html">
+								<figure class="tag status">The Other Malls</figure>
+								<a href="list-mall?typename=All Malls">
 									<div class="property-image">
 										<img src="<c:url value="/img/properties/futurepark.jpg"/>"
 											alt="">
 									</div>
 									<div class="overlay">
 										<div class="info">
-											<div class="tag price">$ 325,000</div>
-											<h3>3705 Brighton Circle Road</h3>
-											<figure>Glenwood, MN 56334
-											</figure>
+											<div class="tag price">The Other Malls</div>
 										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
 									</div>
 								</a>
 							</div>

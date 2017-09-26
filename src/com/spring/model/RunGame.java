@@ -7,6 +7,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+<<<<<<< HEAD
+import com.spring.addmall.AddMallManager;
+
+public class RunGame {
+	public static void main(String[] arge) {
+		 String area = "WebContent/WEB-INF/assets/text/areas1.txt";
+		 String malls = "WebContent/WEB-INF/assets/text/listmalls1.txt";
+		 AddMallManager mm = new AddMallManager();
+		 Set<String> listArea = new HashSet();
+		 Set<String> listDepart = new HashSet();
+		 Set<String> listGroup = new HashSet();
+		 for (Mall m : mm.getAllMalls()) {
+		 listArea.add(m.getArea());
+		 listDepart.add(m.getType());
+		 listGroup.add(m.getMallGroup());
+=======
 import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import com.spring.addmallcontroller.MallManager;
@@ -102,6 +118,7 @@ public class RunGame {
 			}
 			totalOfParking = ((hourCon3-free)*price)+((aHour-hourCon3)*priceCon3);
 		}
+>>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
 		
 		System.out.println(timeOut);
 		System.out.println(timeIn);

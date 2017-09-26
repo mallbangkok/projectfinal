@@ -10,8 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+<<<<<<< HEAD
+
+import com.spring.addmall.AddMallManager;
+=======
 import com.spring.addmallcontroller.MallManager;
 import com.spring.model.ConditionOfParking;
+>>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
 import com.spring.model.Mall;
 
 @Controller
@@ -31,7 +36,12 @@ public class ParkingUserController {
 	@RequestMapping(value = "/gettype-user", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-user");
+<<<<<<< HEAD
+		AddMallManager mm = new AddMallManager();
+		List<String> listType = mm.getMallType();
+=======
 		ParkingUserManager pm = new ParkingUserManager();
+>>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
 		String t = request.getParameter("type");
 		List<String> listType = pm.getMallType();
 		md.addAttribute("types", listType);

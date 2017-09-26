@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin List Mall</title>
+    <title>Mall Bangkok | Admin List Store</title>
 
 </head>
 
@@ -205,9 +205,9 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions">
-								                                            <button type="button" class="btn btn-danger">Delete</button>
-								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+																		</td>
 								                                    </tr>
 							                                    </c:forEach>
                                     						</c:when>
@@ -224,9 +224,9 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions">
-								                                            <button type="button" class="btn btn-danger">Delete</button>
-								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+																		</td>
 								                                    </tr>
 							                                    </c:forEach>
                                     						</c:otherwise>

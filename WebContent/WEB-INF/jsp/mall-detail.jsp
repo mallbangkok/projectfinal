@@ -10,7 +10,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
@@ -215,7 +214,7 @@
                                        	<c:choose>
                                                   <c:when test="${listShopping != null }">
                                                       <c:forEach var="i" items="${listShopping}">
-                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                      	<li><c:out value="${i.storeName}" /> , Level : <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
@@ -258,117 +257,6 @@
 								</script>
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
-                                
-                                <hr class="thick">
-                                <section id="similar-properties">
-                                    <header><h2 class="no-border">Similar Properties</h2></header>
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="property">
-                                                <a href="property-detail.html">
-                                                    <div class="property-image">
-                                                        <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
-                                                    </div>
-                                                    <div class="overlay">
-                                                        <div class="info">
-                                                            <div class="tag price">$ 11,000</div>
-                                                            <h3>3398 Lodgeville Road</h3>
-                                                            <figure>Golden Valley, MN 55427</figure>
-                                                        </div>
-                                                        <ul class="additional-info">
-                                                            <li>
-                                                                <header>Area:</header>
-                                                                <figure>240m<sup>2</sup></figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Beds:</header>
-                                                                <figure>2</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Baths:</header>
-                                                                <figure>2</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Garages:</header>
-                                                                <figure>0</figure>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div><!-- /.property -->
-                                        </div><!-- /.col-md-3 -->
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="property">
-                                                <a href="property-detail.html">
-                                                    <div class="property-image">
-                                                        <img alt="" src="<c:url value="/img/properties/property-04.jpg"/>">
-                                                    </div>
-                                                    <div class="overlay">
-                                                        <div class="info">
-                                                            <div class="tag price">$ 38,000</div>
-                                                            <h3>2186 Rinehart Road</h3>
-                                                            <figure>Doral, FL 33178 </figure>
-                                                        </div>
-                                                        <ul class="additional-info">
-                                                            <li>
-                                                                <header>Area:</header>
-                                                                <figure>240m<sup>2</sup></figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Beds:</header>
-                                                                <figure>3</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Baths:</header>
-                                                                <figure>1</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Garages:</header>
-                                                                <figure>1</figure>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div><!-- /.property -->
-                                        </div><!-- /.col-md-3 -->
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="property">
-                                                <a href="property-detail.html">
-                                                    <div class="property-image">
-                                                        <img alt="" src="<c:url value="/img/properties/property-07.jpg"/>">
-                                                    </div>
-                                                    <div class="overlay">
-                                                        <div class="info">
-                                                            <div class="tag price">$ 325,000</div>
-                                                            <h3>3705 Brighton Circle Road</h3>
-                                                            <figure>Glenwood, MN 56334</figure>
-                                                        </div>
-                                                        <ul class="additional-info">
-                                                            <li>
-                                                                <header>Area:</header>
-                                                                <figure>240m<sup>2</sup></figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Beds:</header>
-                                                                <figure>3</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Baths:</header>
-                                                                <figure>1</figure>
-                                                            </li>
-                                                            <li>
-                                                                <header>Garages:</header>
-                                                                <figure>1</figure>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div><!-- /.property -->
-                                        </div><!-- /.col-md-3 -->
-                                    </div><!-- /.row-->
-                                </section><!-- /#similar-properties -->
-                                <hr class="thick">
-                                
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </section><!-- /#property-detail -->
@@ -376,62 +264,31 @@
                 <!-- end Property Detail Content -->
 
                 <!-- sidebar -->
+                <form id="frmMallupdate" action="list-mall" method="post">
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
                         <aside id="recent-post">
                             <header><h3>Recent Post</h3></header>
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 36,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="<c:url value="/img/properties/property-03.jpg"/>">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>1949 Tennessee Avenue</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 128,600</div>
-                                </div>
-                            </div><!-- /.property -->
-                        </aside><!-- /#recent post -->
-                        <aside id="our-guides">
-                            <header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                            <a href="#" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                        </aside><!-- /#our-guide -->
+                            <c:forEach var="i" items="${mallupdated}">
+	                            <div class="property small">
+	                                <a href="javascript:;" onclick="onClick(${i.mallId})">
+	                                <input type="hidden" id="valueClick" name="valueClick" />
+	                                    <div class="property-image">
+	                                        <img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+	                                    </div>
+	                                </a>
+	                                <div class="info">
+	                                    <a href="javascript:;" onclick="onClickMall(${i.mallId})">
+	                                    <h4><c:out value="${i.mallNameEng }"/></h4></a>
+	                                    <figure><c:out value="${i.mallNameThai }"/></figure>
+	                                    <div class="tag price"><c:out value="${i.updatedDate }"/></div>
+	                                </div>
+	                            </div><!-- /.property -->
+	                        </c:forEach>
+                        </aside><!-- /#recent post --> 
                     </section><!-- /#sidebar -->
                 </div><!-- /.col-md-3 -->
+                </form>
                 <!-- end Sidebar -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -522,6 +379,15 @@
     <!-- end Page Footer -->
 </div>
 
+<script type="text/javascript">
+	var mid;
+	onClickMall = function(id){
+		document.getElementById('valueClick').value = id;
+		document.getElementById('frmMallupdate').submit();
+		mid = id;
+		console.log(mid);
+	}
+</script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAMhGbKMT4LRrhHNJGy316qFefrYNAHmns"></script>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -556,6 +422,5 @@
         initializeOwl(false);
     });
 </script>
-
 </body>
 </html>

@@ -154,9 +154,12 @@
                                     <a href="blog?articletype=${article.articletype}" class="tag article"><c:out value="${article.articletype}"/></a>
                                 </div>
                             </figure>
+                            <%
+                            	String filename = (String)session.getAttribute("filename");
+                            %>
                             <% 
 	                            BufferedReader reader = new BufferedReader(
-	                            		new FileReader("C:\\Users\\demon\\Documents\\GitHub\\projectfinal\\WebContent\\WEB-INF\\assets\\test3.txt"));
+	                            		new FileReader("C:\\Users\\demon\\Documents\\GitHub\\projectfinal\\WebContent\\WEB-INF\\assets\\article\\" + filename));
 	                            StringBuilder sb = new StringBuilder();
 	                            String line;
 	

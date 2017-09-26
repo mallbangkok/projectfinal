@@ -22,17 +22,27 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
-import com.spring.addmallcontroller.*;
-import com.spring.logincontroller.AddUserManager;
-import com.spring.logincontroller.LoginMannager;
-import com.spring.store.controller.StoreManager;
+import com.spring.addmall.*;
+import com.spring.addstore.AddStoreManager;
+import com.spring.admindeletemall.AdminDeleteMallManager;
+import com.spring.admindeletestore.AdminDeleteStoreManager;
+import com.spring.login.AddUserManager;
+import com.spring.login.LoginMannager;
+import com.spring.searchfilter.SearchFilterManager;
 
 public class Run {
 
 	public static void main(String[] args) throws Exception {
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		FacilitiesManager fm = new FacilitiesManager();
-		StoreManager sm = new StoreManager();
+		AddStoreManager sm = new AddStoreManager();
+		
+		AddMallManager am = new AddMallManager();
+		
+		SearchFilterManager sfm = new SearchFilterManager();
+		
+		
+		
 		
 //		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\demon\\Documents\\GitHub\\projectfinal\\WebContent\\WEB-INF\\assets\\test3.txt"));
 //		try {
@@ -59,14 +69,6 @@ public class Run {
 //		}
 		List<Mall> listMall = mm.getAllMalls();
 		List<Mall> listMallLastedUpdate = new ArrayList<>();
-		
-		for(int i = 0;i < 4;i++){
-			listMallLastedUpdate.add(listMall.get(listMall.size() - (i + 1)));
-		}
-		
-		for(Mall m : listMallLastedUpdate){
-			System.out.println(m.getMallNameEng());
-		}
 		
 	}
 	

@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addmallcontroller.MallManager;
-import com.spring.article.ArticleManager;
+import com.spring.addmall.AddMallManager;
 import com.spring.model.Mall;
+import com.spring.userlistarticle.UserListArticleManager;
 
 @Controller
 public class FullScreenMapController {
 	@RequestMapping(value = "/index-google-map-fullscreen", method = RequestMethod.GET)
 	public ModelAndView loadIndexPage(HttpSession session) {
 		ModelAndView mav = new ModelAndView("index-google-map-fullscreen");
-		MallManager mm = new MallManager();
-		ArticleManager am = new ArticleManager();
+		AddMallManager mm = new AddMallManager();
+		UserListArticleManager am = new UserListArticleManager();
 		
 		List<String> listType = mm.getMallType();
 		List<String> listArea = mm.getMallArea();

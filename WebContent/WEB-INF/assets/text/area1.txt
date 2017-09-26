@@ -1,0 +1,49 @@
+Area:::South-West Bangkok
+Area:::Northern Bangkok
+Area:::Siam
+Area:::South-East Bangkok
+Area:::North-East Bangkok
+Area:::Upcountry
+Area:::North-West Bangkok
+Area:::Inner Bangkok
+Area:::Sukhumvit
+Area:::Thonburi
+Area:::Central Bangkok
+Area:::North-Middle Bangkok
+Depart:::Department Store
+Depart:::Shopping Plaza
+Depart:::Regional Mall
+Depart:::Luxury Mall
+Depart:::Community Mall
+Depart:::HyperMarket/SpecialtyStore
+Depart:::Theme Mall
+Depart:::Complex
+Groups:::Major Group,Tesco Lotus
+Groups:::Gaysorn Group
+Groups:::Central Group
+Groups:::No Group
+Groups:::Index
+Groups:::Major Group
+Groups:::MBK Group,Paradise Park,Siam Piwat
+Groups:::Seacon Group
+Groups:::Siam Future
+Groups:::MBK Group,Siam Piwat
+Groups:::K.E.Land
+Groups:::Rangsit Plaza
+Groups:::TCC Group, The Street
+Groups:::MBK Group
+Groups:::Pata
+Groups:::Siam Piwat
+Groups:::Sammakorn
+Groups:::TBN
+Groups:::Tesco
+Groups:::Sansiri
+Groups:::Chula
+Groups:::Sena Development
+Groups:::Land & House (Siam Retail)
+Groups:::The Mall Group
+Groups:::Century
+Groups:::TCC Group
+Groups:::Raimond Land
+Groups:::Tang Hua Seng
+Groups:::JAS
