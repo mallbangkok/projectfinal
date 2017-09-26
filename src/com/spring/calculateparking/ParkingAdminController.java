@@ -190,17 +190,17 @@ public class ParkingAdminController {
 		AddMallManager mm = new AddMallManager();
 
 		ModelAndView mav = new ModelAndView("parking-admin");
+<<<<<<< HEAD
+		ParkingAdminManager pm  = new ParkingAdminManager();
+		List<String> listType = pm.getMallType();
+=======
 		MallManager mm = new MallManager();
 
 		List<String> listType = mm.getMallType();
+>>>>>>> 9c227f6c39d478b92011cc82edb60ddd71570a75
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
-		List<Mall> listMallByType = new ArrayList<>();
-		for (Mall m : mm.getAllMalls()) {
-			if (m.getType().equals(t)) {
-				listMallByType.add(m);
-			}
-		}
+		List<Mall> listMallByType = pm.getMallShow(t);
 		session.setAttribute("mallType", listMallByType);
 		session.setAttribute("typeMall", t);
 		session.setAttribute("nameMall", null);
