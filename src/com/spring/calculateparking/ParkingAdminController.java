@@ -26,13 +26,8 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionIII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionIII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-<<<<<<< HEAD
 		AddMallManager mm = new AddMallManager();
-		ParkingManager pm = new ParkingManager();
-=======
-		MallManager mm = new MallManager();
 		ParkingUserManager pm = new ParkingUserManager();
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
 		String nameMall = request.getParameter("nameMalls");
 		String con1 = request.getParameter("conditionIII1");
 		String date1 = request.getParameter("dateIII1");
@@ -48,17 +43,12 @@ public class ParkingAdminController {
 		String date3 = request.getParameter("dateIII3");
 		String time3 = request.getParameter("timeIII3");
 		String price3 = request.getParameter("priceIII3");
-<<<<<<< HEAD
-		System.out.println("3::"+con3 +" "+date3+" "+time3+" "+price3);
-		int times=Integer.parseInt(time1);
-		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(type1)){
-			times=(times*60) ;
-=======
+
 		System.out.println("3::" + con3 + " " + date3 + " " + time3 + " " + price3);
 		int times = Integer.parseInt(time1);
 		if ("ชั่วโมง".equals(type1)) {
 			times = (times * 60);
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
+
 		}
 		ConditionOfParking c1 = new ConditionOfParking(con1, times, 0, date1, "1");
 		ConditionOfParking c2 = new ConditionOfParking(con2, 0, Integer.parseInt(price2), date2, "2");
@@ -88,13 +78,11 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-<<<<<<< HEAD
+
 		AddMallManager mm = new AddMallManager();
-		ParkingManager pm = new ParkingManager();
-=======
-		MallManager mm = new MallManager();
+
 		ParkingUserManager pm = new ParkingUserManager();
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
+
 		String nameMall = request.getParameter("nameMalls");
 		String conditionI = request.getParameter("nameConII1");
 		String dateI = request.getParameter("dateoftypeII1");
@@ -103,17 +91,12 @@ public class ParkingAdminController {
 		String conditionII = request.getParameter("nameConII2");
 		String dateII = request.getParameter("dateoftypeII2");
 		String price = request.getParameter("priceConII");
-<<<<<<< HEAD
-		int times=Integer.parseInt(timeII1);
-		
-		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(timeoftypeII)){
-			times=(times*60) ;
-=======
+
 		int times = Integer.parseInt(timeII1);
 
 		if ("ชั่วโมง".equals(timeoftypeII)) {
 			times = (times * 60);
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
+
 		}
 		Mall mall = new Mall();
 		ConditionOfParking c1 = new ConditionOfParking(conditionI, times, 0, dateI, "1");
@@ -141,13 +124,10 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionI-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionI(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-<<<<<<< HEAD
+
 		AddMallManager mm = new AddMallManager();
-		ParkingManager pm = new ParkingManager();
-=======
-		MallManager mm = new MallManager();
 		ParkingUserManager pm = new ParkingUserManager();
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
+
 		String conditionI = request.getParameter("typeOfFreeConditionI");
 		String dateI = request.getParameter("dateofTypeConditonI");
 		String nameMall = request.getParameter("nameMalls");
@@ -189,19 +169,10 @@ public class ParkingAdminController {
 
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
-<<<<<<< HEAD
-		ModelAndView mav = new ModelAndView("parking-user");
 		AddMallManager mm = new AddMallManager();
-=======
 		ModelAndView mav = new ModelAndView("parking-admin");
-<<<<<<< HEAD
-		ParkingAdminManager pm  = new ParkingAdminManager();
+		ParkingAdminManager pm = new ParkingAdminManager();
 		List<String> listType = pm.getMallType();
-=======
-		MallManager mm = new MallManager();
->>>>>>> 06d692f8cbb00615c2734dfcd0a5750aa396552f
-		List<String> listType = mm.getMallType();
->>>>>>> 9c227f6c39d478b92011cc82edb60ddd71570a75
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
 		List<Mall> listMallByType = pm.getMallShow(t);

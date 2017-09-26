@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import com.spring.addmallcontroller.MallManager;
 import com.spring.model.ConditionOfParking;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
