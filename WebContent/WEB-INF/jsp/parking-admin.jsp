@@ -454,7 +454,7 @@
                                 </section><!-- /#address -->
                                  <section id="submit">
                             <div class="form-group center">
-                                <button type="submit" class="btn btn-default large" id="addconditionII">Add Condition</button>
+                                <button type="submit" class="btn btn-default large" id="addconditionII">Update</button>
                             </div><!-- /.form-group -->
                         </section>
                             </div><!-- /.col-md-6 -->

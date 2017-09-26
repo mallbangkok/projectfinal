@@ -19,23 +19,23 @@ public class ParkingUserController {
 	@RequestMapping(value = "/parking-user", method = RequestMethod.GET)
 	public ModelAndView loadPageCalculateParkingUser(HttpSession session) {
 		ModelAndView mav = new ModelAndView("parking-user");
-		
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("55");
+		list.add("55");
+		list.add("55");
+		list.add("55");
+		session.setAttribute("listCondition", list);
 		return mav;
 	}
 	
 	@RequestMapping(value = "/gettype-user", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-user");
-		MallManager mm = new MallManager();
-		List<String> listType = mm.getMallType();
+		ParkingUserManager pm = new ParkingUserManager();
 		String t = request.getParameter("type");
+		List<String> listType = pm.getMallType();
 		md.addAttribute("types", listType);
-		List<Mall> listMallByType = new ArrayList<>();
-		for (Mall m : mm.getAllMalls()) {
-			if (m.getType().equals(t)) {
-				listMallByType.add(m);
-			}
-		}
+		List<Mall> listMallByType = pm.doSearchTypeMall(t);
 		session.setAttribute("mallType", listMallByType);
 		session.setAttribute("typeMall", t);
 		session.setAttribute("nameMall", null);
@@ -45,15 +45,12 @@ public class ParkingUserController {
 	@RequestMapping(value = "/dosearchmall-user", method = RequestMethod.GET)
 	public ModelAndView doSearchMall(HttpServletRequest request,HttpSession session) {
 		ModelAndView mav = new ModelAndView("parking-user");
+		ParkingUserManager pm = new ParkingUserManager();
 		MallManager mm = new MallManager();
 		String nameMall = request.getParameter("nameMall");
-		Mall mall = new Mall();
-		for (Mall m : mm.getAllMalls()) {
-			if (nameMall.equals(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-		String number = "";
+		Mall mall = pm.doSearchMall(nameMall);
+		
+		String number = ""; 
 		try{
 			if(mall.getConditionOfParking().size()==0){
 				number="0";
@@ -102,7 +99,7 @@ public class ParkingUserController {
 							 con2 =""+c.getConName()+" "+c.getPriceOfCon()+" บาท";
 							 
 						}else if("3".equals(c.getType())){
-							con3="ชั่วโมงที่ "+(c.getTimeOfCon()/60)+" เป็นต้นไป คิดเป็นชั่วโมงละ "+c.getPriceOfCon()+" บาท";
+							con3="ชั่วโมงที่ "+(c.getTimeOfCon())+" เป็นต้นไป คิดเป็นชั่วโมงละ "+c.getPriceOfCon()+" บาท";
 							date =c.getDateOfCon();
 						}
 					}
@@ -114,6 +111,7 @@ public class ParkingUserController {
 				}
 				session.setAttribute("malls", mall);
 				
+				
 			}
 		}catch(Exception e){}
 		
@@ -121,13 +119,17 @@ public class ParkingUserController {
 	}
 	@RequestMapping(value = "/docalculate-user", method = RequestMethod.GET)
 	public ModelAndView doCalculate(HttpServletRequest request,HttpSession session) {
+		ParkingUserManager pm = new ParkingUserManager();
 		ModelAndView mav = new ModelAndView("parking-user");
 		String timeIn= request.getParameter("timeIn");
 		String timeOut = request.getParameter("timeOut");
 		String nameMall = request.getParameter("mallsName");
 		String type= request.getParameter("typeNumber");
 		String date = request.getParameter("dateOfCal");
-		System.out.println(nameMall +" "+timeIn+" "+timeOut+" "+type+" "+date);
+		int price=pm.checkCalculate(nameMall,timeIn,timeOut,date,type);
+		session.setAttribute("priceafter",""+price);
+		
+		
 		return mav;
 	}
 }

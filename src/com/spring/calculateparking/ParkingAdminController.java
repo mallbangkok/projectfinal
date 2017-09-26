@@ -27,7 +27,7 @@ public class ParkingAdminController {
 	public ModelAndView addConditionIII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
 		MallManager mm = new MallManager();
-		ParkingManager pm = new ParkingManager();
+		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMalls");
 		String con1 = request.getParameter("conditionIII1");
 		String date1 = request.getParameter("dateIII1");
@@ -77,7 +77,7 @@ public class ParkingAdminController {
 	public ModelAndView addConditionII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
 		MallManager mm = new MallManager();
-		ParkingManager pm = new ParkingManager();
+		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMalls");
 		String conditionI = request.getParameter("nameConII1");
 		String dateI = request.getParameter("dateoftypeII1");
@@ -118,7 +118,7 @@ public class ParkingAdminController {
 	public ModelAndView addConditionI(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
 		MallManager mm = new MallManager();
-		ParkingManager pm = new ParkingManager();
+		ParkingUserManager pm = new ParkingUserManager();
 		String conditionI = request.getParameter("typeOfFreeConditionI");
 		String dateI = request.getParameter("dateofTypeConditonI");
 		String nameMall = request.getParameter("nameMalls");

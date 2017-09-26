@@ -209,7 +209,7 @@
                             <div class="price">
                                 <figure>Condition</figure>
                             </div>
-                            <ul>
+                            <ul> 
                             <c:choose>
                             	<c:when test="${number == null }">
                             	 <li><span>ขออภัย ไม่พบข้อมูลของบริการค่าจอดรถ</span></li>
@@ -236,7 +236,14 @@
                                 </c:when>
                             </c:choose>
                             </ul>
-                            <a>Price after calculate</a>
+                             <c:choose>
+                             <c:when test="${priceafter == null }">
+                              <a>Price after calculate</a>
+                              </c:when>
+                             <c:when test="${priceafter != null }">
+                               <a>ค่าจอดรถ ${priceafter} บาท</a>
+                              </c:when>
+                            </c:choose>
                         </div><!-- /.price-box -->    
                     </div><!-- /.col-md-3 -->
                     <div class="col-md-4 col-sm-4"> 
@@ -248,6 +255,7 @@
                                 <section id="address">
                                 <c:choose>
                                            <c:when test="${number != null }">
+                                           <c:if test = "${number != '1'}">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
@@ -287,6 +295,7 @@
                                         </div><!-- /.col-md-4 -->  
                                         <div class="col-md-4 col-sm-4"></div>
                                     </div><!-- /.row -->
+                                    </c:if>
                                      </c:when>
                                            </c:choose>
                                 </section><!-- /#address -->
