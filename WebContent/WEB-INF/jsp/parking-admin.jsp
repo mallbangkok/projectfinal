@@ -228,7 +228,7 @@
                		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
                		   <c:choose>
                                <c:when test="${typeOfParking == 'III' }">
-                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get" >
+                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get">
                                 <input type="hidden" name="nameMalls" id="nameMalls" >
                                <div class="col-md-8 col-sm-12">   
                                 <section id="property-features">

@@ -9,10 +9,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
@@ -451,27 +449,15 @@
 								</script>
 							</div><!-- EndDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD -->
                             </div><!-- /.col-md-8 -->
-                            <!--   <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                    <header><h2>Food</h2></header>
-                                    <ul class="list-unstyled property-features-list">
-                                      	<c:choose>
-                                                  <c:when test="${listFood != null }">
-                                                      <c:forEach var="i" items="${listFood}">
-                                                      	<li><c:out value="${i}"></c:out></li>
-                                                     </c:forEach>
-                                                  </c:when>
-                                       	</c:choose>
-                                    </ul>
-                                </section><!-- /#property-features -->
+                           
                                 
                             </div>                                
                             <div class="col-md-4 col-sm-12"></div>
                               <div class="col-md-8 col-sm-12">
                                 
                             <div class="col-md-12 col-sm-12">
-                               
                                 <hr class="thick">
+                               <div class="fb-comments" data-href="http://localhost:8080/ProjectFinal/loadsearchfilter" data-width="500" data-numposts="5"></div>
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </section><!-- /#property-detail -->
@@ -672,7 +658,14 @@
 
 <![endif]-->
 
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.10&appId=2039217382978375";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script>
 		_latitude = 13.755123;
 		_longitude = 100.503968;

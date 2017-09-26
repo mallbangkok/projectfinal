@@ -104,7 +104,7 @@ public class SerchFilterController {
 		System.out.println("--" + name + "--");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
-			String demo = (m.getMallNameEng() + " ");
+			String demo = (m.getMallNameEng());
 			System.out.println("-*-" + demo + "-*-");
 			if (name.equals(demo)) {
 				mall = m;
