@@ -161,16 +161,11 @@ public class ParkingAdminController {
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-		MallManager mm = new MallManager();
-		List<String> listType = mm.getMallType();
+		ParkingAdminManager pm  = new ParkingAdminManager();
+		List<String> listType = pm.getMallType();
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
-		List<Mall> listMallByType = new ArrayList<>();
-		for (Mall m : mm.getAllMalls()) {
-			if (m.getType().equals(t)) {
-				listMallByType.add(m);
-			}
-		}
+		List<Mall> listMallByType = pm.getMallShow(t);
 		session.setAttribute("mallType", listMallByType);
 		session.setAttribute("typeMall", t);
 		session.setAttribute("nameMall", null);

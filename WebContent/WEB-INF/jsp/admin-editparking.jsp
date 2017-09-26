@@ -176,18 +176,8 @@
                 	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
                       <div class="col-md-9 col-sm-10">
+                      <form role="form" id="searchMall"  action="searchmall-parking" method="get">
                         <div class="col-md-4">
-                                    <div class="form-group">
-                                                <select name="select-type" id="select-type" onchange="demoselect()">
-                                                    <option>Type Of Parking</option>
-                                                    <option value="I">Type of Parking I</option>
-                                                    <option value="II">Type of Parking II</option>  
-                                                    <option value="III">Type of Parking III</option>
-                                                    <option value="addStamp">Add Stamp</option>       
-                                                </select>
-                                   </div><!-- /.form-group -->
-                             </div>
-                    		  <div class="col-md-4">
                                     <div class="form-group">
                                                <select name="types" id="types" onchange="onChanges()">
                                                     	<option value="">Select type</option>
@@ -207,9 +197,9 @@
                                                     </select>
                                    </div><!-- /.form-group -->
                              </div>
-                            <div class="col-md-4">
+                    		  <div class="col-md-4">
                                     <div class="form-group">
-                                               <select name="nameMall" id="nameMall" onchange="onChangeName()" required>
+                                                <select name="nameMall" id="nameMall" onchange="onChangeName()" required>
                                                     	<option value="Please Select Mall">Please Select Mall</option>
                                                     	 	<c:choose>
                                                				   <c:when test="${mallType != null }">
@@ -217,13 +207,16 @@
                                                       				<option value="${i.mallNameEng}">${i.mallNameEng}</option>
                                                                 </c:forEach>
                                                             </c:when>
-                                       						</c:choose>
-                                       						
+                                       						</c:choose>	
                                                     </select>
                                    </div><!-- /.form-group -->
                              </div>
-                            
-                           
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                             			<button type="submit" id="searchMall" class="btn btn-default">Search Mall</button>
+                             		</div>
+                             </div>
+                      </form>
                		 </div><!-- /.col-md-9 -->
                		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
                		   <c:choose>
@@ -637,7 +630,7 @@
   function onChanges(){
 		var type = document.getElementById('types').value;
 		console.log(type);
-		location.assign('http://localhost:8080/ProjectFinal/gettype-parking?type=' + type);
+		location.assign('http://localhost:8080/ProjectFinal/gettype-edit?type=' + type);
   }
   function onChangeName(){
 	  document.getElementById('nameMalls').value=document.getElementById('nameMall').value;
