@@ -27,6 +27,11 @@ public class ParkingAdminController {
 	public ModelAndView addConditionIII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
 		AddMallManager mm = new AddMallManager();
+<<<<<<< HEAD
+=======
+		ParkingManager pm = new ParkingManager();
+		MallManager mm = new MallManager();
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMalls");
 		String con1 = request.getParameter("conditionIII1");
@@ -44,6 +49,14 @@ public class ParkingAdminController {
 		String time3 = request.getParameter("timeIII3");
 		String price3 = request.getParameter("priceIII3");
 
+<<<<<<< HEAD
+=======
+		System.out.println("3::"+con3 +" "+date3+" "+time3+" "+price3);
+		int times=Integer.parseInt(time1);
+		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(type1)){
+			times=(times*60) ;
+
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		System.out.println("3::" + con3 + " " + date3 + " " + time3 + " " + price3);
 		int times = Integer.parseInt(time1);
 		if ("ชั่วโมง".equals(type1)) {
@@ -80,7 +93,13 @@ public class ParkingAdminController {
 		ModelAndView mav = new ModelAndView("parking-admin");
 
 		AddMallManager mm = new AddMallManager();
+<<<<<<< HEAD
 
+=======
+		ParkingManager pm = new ParkingManager();
+
+		MallManager mm = new MallManager();
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		ParkingUserManager pm = new ParkingUserManager();
 
 		String nameMall = request.getParameter("nameMalls");
@@ -92,11 +111,22 @@ public class ParkingAdminController {
 		String dateII = request.getParameter("dateoftypeII2");
 		String price = request.getParameter("priceConII");
 
+<<<<<<< HEAD
+=======
+		int times=Integer.parseInt(timeII1);
+		
+		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(timeoftypeII)){
+			times=(times*60) ;
+
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		int times = Integer.parseInt(timeII1);
 
 		if ("ชั่วโมง".equals(timeoftypeII)) {
 			times = (times * 60);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		}
 		Mall mall = new Mall();
 		ConditionOfParking c1 = new ConditionOfParking(conditionI, times, 0, dateI, "1");
@@ -126,6 +156,12 @@ public class ParkingAdminController {
 		ModelAndView mav = new ModelAndView("parking-admin");
 
 		AddMallManager mm = new AddMallManager();
+<<<<<<< HEAD
+=======
+		ParkingManager pm = new ParkingManager();
+
+		MallManager mm = new MallManager();
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		ParkingUserManager pm = new ParkingUserManager();
 
 		String conditionI = request.getParameter("typeOfFreeConditionI");
@@ -169,10 +205,25 @@ public class ParkingAdminController {
 
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
+<<<<<<< HEAD
 		AddMallManager mm = new AddMallManager();
+=======
+
+		ModelAndView mav = new ModelAndView("parking-user");
+		AddMallManager mm = new AddMallManager();
+
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		ModelAndView mav = new ModelAndView("parking-admin");
 		ParkingAdminManager pm = new ParkingAdminManager();
 		List<String> listType = pm.getMallType();
+<<<<<<< HEAD
+=======
+=======
+		MallManager mm = new MallManager();
+
+		List<String> listType = mm.getMallType();
+>>>>>>> 9c227f6c39d478b92011cc82edb60ddd71570a75
+>>>>>>> 4a85fef0fd106189fd7dc5f2e59ad1abfb68bf44
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
 		List<Mall> listMallByType = pm.getMallShow(t);
