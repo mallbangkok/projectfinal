@@ -7,13 +7,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.spring.addmallcontroller.MallManager;
+import com.spring.addmall.AddMallManager;
 
 public class RunGame {
 	public static void main(String[] arge) {
 		 String area = "WebContent/WEB-INF/assets/text/areas1.txt";
 		 String malls = "WebContent/WEB-INF/assets/text/listmalls1.txt";
-		 MallManager mm = new MallManager();
+		 AddMallManager mm = new AddMallManager();
 		 Set<String> listArea = new HashSet();
 		 Set<String> listDepart = new HashSet();
 		 Set<String> listGroup = new HashSet();

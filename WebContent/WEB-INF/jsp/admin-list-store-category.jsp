@@ -144,7 +144,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">My Properties</li>
+                <li class="active">Admin List Store</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -176,9 +176,6 @@
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
                         	<header><h1>List Store</h1></header>
-                        	<c:if test="${message != null }">
-                        		<h1><c:out value="${message }"/></h1>
-                        	</c:if>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
@@ -202,9 +199,7 @@
 	                                        <td></td>
 	                                        <td></td>
 	                                        <td></td>
-	                                        <td class="actions">
-	                                            <button type="button" class="btn btn-danger">Delete</button>
-	                                        </td>
+	                                        <td></td>
 	                                    </tr>
 	                                    </c:forEach>
                                     </tbody>

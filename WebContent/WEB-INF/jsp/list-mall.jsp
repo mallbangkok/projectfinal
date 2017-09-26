@@ -3,16 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page import="java.util.*,com.spring.model.*"%>
-<%String[] types = {"Regional Mall","Community Mall","HyperMarket/SpecialtyStore","Theme Mall","Luxury Mall"
-    				,"Department Store","Complex","Shopping Plaza"}; %>
-<%String[] areas = {"Siam","Central Bangkok","Sukhumvit","Thonburi","Inner Bangkok","Northern Bangkok",
-		"North-East Bangkok","North-Middle Bangkok","North-West Bangkok","South-East Bangkok","South-West Bangkok","Upcountry"}; %>
-<% HashMap<String,String> map = new HashMap<String,String>(); 
-	map.put("null", "Directory");
-	map.put("Type", "Type");
-	map.put("Area", "Area");
-	pageContext.setAttribute("map", map);
-%>
+
 <!DOCTYPE html>
 
 <html>
@@ -181,13 +172,42 @@
                         <section id="properties">
                         <form action="list-mall" method="post" id="frm">
                         <div class="row">
-                   		<c:if test="${listmallpage != null }">
-                                    		<c:forEach begin="1" end="${countpages}" varStatus="loop">
+                   			<c:choose>
+                   				<c:when test="${listmallpage == 1 }">
+												<c:forEach begin="0" end="9" var="i" items="${listByType}"
+													varStatus="loop">
+													<div class="col-md-3 col-sm-3">
+														<div class="property equal-height">
+															<a href="javascript:;" onclick="onClick(${i.mallId})">
+																<input type="hidden" id="valueClick" name="valueClick" />
+																<div class="property-image">
+																	<img alt=""
+																		src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+																</div>
+																<div class="overlay">
+																	<div class="info">
+																		<h3>
+																			<c:out value="${i.mallNameEng }" />
+																		</h3>
+																		<h4>
+																			<c:out value="${i.mallNameThai }" />
+																		</h4>
+																	</div>
+																</div>
+															</a>
+														</div>
+														<!-- /.property -->
+													</div>
+													<!-- /.col-md-3 -->
+												</c:forEach>
+											</c:when>
+											<c:otherwise>
+												<c:forEach begin="1" end="${countpages}" varStatus="loop">
                                     			<c:choose>
-                                    				<c:when test="${listpage == loop.index }">
+                                    				<c:when test="${listmallpage == loop.index }">
                                     					<c:choose>
-                                    						<c:when test="${listpage == 1}">
-                                    							<c:forEach begin="0" end="9" var="i" items="${listByType}" varStatus="loop">
+                                    						<c:when test="${listmallpage == 1}">
+                                    							<c:forEach begin="0" end="9" var="i" items="${listByType}" varStatus="val">
 									                            		<div class="col-md-3 col-sm-3">
 										                                	<div class="property equal-height">
 										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
@@ -207,7 +227,7 @@
                          										</c:forEach>
                                     						</c:when>
                                     						<c:otherwise>
-                                    							<c:forEach begin="${listpage * 10 - 10 }" end="${listpage * 10 - 1}" var="i" items="${listByType}" varStatus="loop">
+                                    							<c:forEach begin="${listmallpage * 10 - 10 }" end="${listmallpage * 10 - 1}" var="i" items="${listByType}" varStatus="val">
 									                            		<div class="col-md-3 col-sm-3">
 										                                	<div class="property equal-height">
 										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
@@ -230,27 +250,8 @@
                                     				</c:when>
                                     			</c:choose>
                                     		</c:forEach>
-                                    	</c:if>
-                                 <c:if test="${listmallpage == 1 }">
-                                 	<c:forEach begin="0" end="9" var="i" items="${listByType}" varStatus="loop">
-									                            		<div class="col-md-3 col-sm-3">
-										                                	<div class="property equal-height">
-										                                    	<a href="javascript:;" onclick="onClick(${i.mallId})">
-										                                    	<input type="hidden" id="valueClick" name="valueClick" />
-										                                        	<div class="property-image">
-										                                            	<img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
-										                                        	</div>
-										                                        	<div class="overlay">
-										                                            	<div class="info">
-										                                                	<h3><c:out value="${i.mallNameEng }" /></h3>
-										                                                	<h4><c:out value="${i.mallNameThai }" /></h4>
-										                                            	</div>
-										                                        	</div>
-										                                    	</a>
-										                                	</div><!-- /.property -->
-									                            		</div><!-- /.col-md-3 -->
-                         										</c:forEach>
-                                 </c:if>
+											</c:otherwise>
+                   			</c:choose>
                         </div><!-- /.row-->
                         </form>
                         <!-- Pagination -->
@@ -262,7 +263,7 @@
                             <c:if test="${listmallpage != null }">
                             	<c:forEach varStatus="val" begin="1" end="${countpages}">
 	                                	<c:choose>
-	                                		<c:when test="${listpage == val.index }">
+	                                		<c:when test="${listmallpage == val.index }">
 	                                			<li class="active"><a href="change-list-mall-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
 	                                		</c:when>
 	                                		<c:otherwise>

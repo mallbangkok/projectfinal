@@ -8,14 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.spring.addmallcontroller.MallManager;
+
+import com.spring.addmall.AddMallManager;
 import com.spring.model.Mall;
 
 public class ParkingUserController {
 	@RequestMapping(value = "/gettype-user", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-user");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		List<String> listType = mm.getMallType();
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);

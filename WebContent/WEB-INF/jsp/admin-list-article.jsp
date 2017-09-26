@@ -8,7 +8,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
@@ -173,7 +173,7 @@
                 	<c:when test="${listArticle != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1>List Mall (found : <c:out value="${listArticleSize}"/> Mall)</h1></header>
+                        	<header><h1>List Article (found : <c:out value="${listArticleSize}"/> Article)</h1></header>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
@@ -199,24 +199,24 @@
 	                                        <td class="actions">
 	                                            <a href="list-update-article?articleid=${i.articleid }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 	                                        </td>
-	                                        <td class="actions">
-	                                            <button type="button" class="btn btn-danger">Delete</button>
-	                                        </td>
+	                                        <td class="actions"><a href="admin-delete-article?articleid=${i.articleid }" class="edit"><i 
+												class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+											</td>
 	                                    </tr>
 	                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
                             <!-- Pagination -->
-                            <div class="center">
+                            <!-- <div class="center">
                                 <ul class="pagination">
                                     <li class="active"><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#">4</a></li>
                                     <li><a href="#">5</a></li>
-                                </ul><!-- /.pagination-->
-                            </div><!-- /.center-->
+                                </ul>/.pagination
+                            </div>/.center -->
                         </div><!-- /.my-properties -->
                     </section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->

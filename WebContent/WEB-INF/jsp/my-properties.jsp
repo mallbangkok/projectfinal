@@ -164,7 +164,9 @@
                     <section id="my-properties">
                         <header><h1>Welcome To Admin Management</h1></header>
                         	<div class="my-properties">
-                           		
+                           		<c:if test="${message != null }">
+                           			<h2><c:out value="${message}"/></h2>
+                           		</c:if>
                         	</div><!-- /.my-properties -->
                     	</section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->

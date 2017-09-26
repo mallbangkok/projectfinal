@@ -188,9 +188,7 @@
 	                                        <td></td>
 	                                        <td></td>
 	                                        <td></td>
-	                                        <td class="actions">
-	                                            <button type="button" class="btn btn-danger">Delete</button>
-	                                        </td>
+	                                        <td></td>
 	                                    </tr>
 	                                    </c:forEach>
                                     </tbody>

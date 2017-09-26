@@ -1,0 +1,44 @@
+package com.spring.adminlistmall;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.spring.model.HibernateConnection;
+import com.spring.model.Mall;
+
+public class AdminListMallManager {
+	@SuppressWarnings("unchecked")
+	public List<Mall> getAllMalls() {
+		List<Mall> list = new ArrayList<Mall>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public List<Mall> listMallByType(String type){
+		List<Mall> listMalls = new ArrayList<>();
+		for(Mall m : this.getAllMalls()){
+			if(type.equals(m.getType())){
+				listMalls.add(m);
+			}
+		}
+		return listMalls;
+	}
+	
+	public int countPages(String type){
+		List<Mall> listMalls = this.listMallByType(type);
+		double value = listMalls.size() / 10.0;
+		int mPages = (int) Math.ceil(value);
+		return mPages;
+	}
+}

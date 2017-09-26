@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.addmallcontroller.MallManager;
+import com.spring.addmall.AddMallManager;
+import com.spring.addstore.AddStoreManager;
 import com.spring.model.Mall;
 import com.spring.model.Store;
-import com.spring.store.controller.StoreManager;
 
 @Controller
 public class SerchFilterController {
 	@RequestMapping(value = "/loadsearchfilter", method = RequestMethod.GET)
 	public ModelAndView loadPageSerch(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		Mall mall = new Mall();
 		String area = "WebContent/WEB-INF/assets/text/area1.txt";
 		String malls = "WebContent/WEB-INF/assets/text/listmall1.txt";
@@ -99,12 +99,12 @@ public class SerchFilterController {
 	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		String name = request.getParameter("malls");
 		System.out.println("--" + name + "--");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
-			String demo = (m.getMallNameEng() + " ");
+			String demo = (m.getMallNameEng());
 			System.out.println("-*-" + demo + "-*-");
 			if (name.equals(demo)) {
 				mall = m;

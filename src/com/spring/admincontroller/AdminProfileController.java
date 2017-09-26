@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.logincontroller.AddUserManager;
-import com.spring.logincontroller.LoginMannager;
+import com.spring.login.AddUserManager;
+import com.spring.login.LoginMannager;
 import com.spring.model.Login;
 
 @Controller

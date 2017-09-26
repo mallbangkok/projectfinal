@@ -191,7 +191,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon">T</span>
                                                     <select name="type" required>
-                                                    	<option value="null">Please Select Type</option>
+                                                    	<option value="">Please Select Type</option>
                                                     	<option value="Regional Mall">Regional Mall</option>
                                                     	<option value="Community Mall">Community Mall</option>
                                                     	<option value="HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</option>
@@ -210,7 +210,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon">A</span>
                                                     <select name="area" required>
-                                                    	<option value="null">Please Select Area</option>
+                                                    	<option value="">Please Select Area</option>
                                                     	<option value="Siam">Siam</option>
                                                     	<option value="Central Bangkok">Central Bangkok</option>
                                                     	<option value="Sukhumvit">Sukhumvit</option>
@@ -233,7 +233,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon">G</span>
                                                     <select name="mallgroup" required>
-                                                    	<option value="null">Please Select Group</option>
+                                                    	<option value="">Please Select Group</option>
                                                     	<option value="No Group">No Group</option>
                                                     	<option value="Central Group">Central Group</option>
                                                     	<option value="The Mall Group">The Mall Group</option>
@@ -289,7 +289,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon">S</span>
                                                     <select name="statusmall" required>
-                                                    	<option value="null">Please Select Status</option>
+                                                    	<option value="">Please Select Status</option>
                                                     	<option value="Open">Open</option>
                                                     	<option value="Closed">Closed</option>
                                                     	<option value="Renovated">Renovated</option>
@@ -303,7 +303,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon">Time</span>
                                                     <select name="timemall" required>
-                                                    	<option value="null">Please Select Time Mall</option>
+                                                    	<option value="">Please Select Time Mall</option>
                                                     	<option value="24 Hours Everyday">24 Hours Everyday</option>
                                                     	<option value="06:00 - 22:00 Everyday">06:00 - 22:00 Everyday</option>
                                                     	<option value="06:00 - 24:00 Everyday">06:00 - 24:00 Everyday</option>
@@ -358,9 +358,6 @@
                                                     </select>
                                                 </div>
                                             </div><!-- /.form-group -->
-                                        </div>
-                                        <div class="col-md-4">
-                                            
                                         </div>
                                     </div>
                                     <!-- 

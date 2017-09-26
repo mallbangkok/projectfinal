@@ -229,13 +229,15 @@
                     <h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
                     <a href="#" class="link-arrow">All Properties</a>
                 </header>
+                <form id="frm" action="list-mall" method="post">
                 <div class="row">
                 	<c:choose>
                 		<c:when test="${store != null }">
                 			<c:forEach var="i" items="${store}">
                     		<div class="col-md-3 col-sm-6">
                         	<div class="property">
-                            	<a href="property-detail.html">
+                            	<a href="javascript:;" onclick="onClick(${i.mall.mallId})">
+                            	<input type="hidden" id="valueClick" name="valueClick" />
                                 	<div class="property-image">
                                   		<img src="<c:url value="/img/mall/thumbnail/${i.mall.imageMall }"/>" >
                                 	</div>
@@ -258,25 +260,10 @@
                 	</c:choose>
                 	
                 </div><!-- /.row-->
+                </form>
                 <form action="index-slider-search-custom-click" method="post" id="frm">
 	                <div class="center">
 	                            <ul class="pagination">
-	                            <c:choose>
-	                            	<c:when test="${storeSize <= 15}">
-	                            		<li class="active"><a href="#">1</a></li>
-	                            	</c:when>
-	                            	<c:when test="${storeSize <= 30}">
-	                            		<li class="active"><a href="javascript:;" onclick="onClick(1)">1</a></li>
-		                                <li><a href="javascript:;" onclick="onClick(2)">2</a></li>
-	                            	</c:when>
-	                            	<c:otherwise>
-	                            		<li class="active"><a href="javascript:;" onclick="onClick(1)">1</a></li>
-		                                <li><a href="javascript:;" onclick="onClick(2)">2</a></li>
-		                                <li><a href="javascript:;" onclick="onClick(3)">3</a></li>
-		                                <li><a href="javascript:;" onclick="onClick(4)">4</a></li>
-		                                <li><a href="javascript:;" onclick="onClick(5)">5</a></li>
-	                            	</c:otherwise>
-	                            </c:choose>
 	                                
 	                            </ul><!-- /.pagination-->
 	                        </div><!-- /.center-->
@@ -372,7 +359,15 @@
 </div>
 
 <div id="overlay"></div>
-
+<script type="text/javascript">
+	var mid;
+	onClick = function(id){
+		document.getElementById('valueClick').value = id;
+		document.getElementById('frm').submit();
+		mid = id;
+		console.log(mid);
+	}
+</script>
 <script type="text/javascript">
 	onClick = function(num){
 		document.getElementById('valueClick').value = num;

@@ -1,6 +1,5 @@
 package com.spring.calculateparking;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.spring.addmallcontroller.MallManager;
+
+import com.spring.addmall.AddMallManager;
 import com.spring.model.ConditionOfParking;
 import com.spring.model.Mall;
 
@@ -26,7 +26,7 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionIII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionIII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		ParkingManager pm = new ParkingManager();
 		String nameMall = request.getParameter("nameMalls");
 		String con1 =request.getParameter("conditionIII1");
@@ -45,7 +45,7 @@ public class ParkingAdminController {
 		String price3 = request.getParameter("priceIII3");
 		System.out.println("3::"+con3 +" "+date3+" "+time3+" "+price3);
 		int times=Integer.parseInt(time1);
-		if("ชั่วโมง".equals(type1)){
+		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(type1)){
 			times=(times*60) ;
 		}
 		ConditionOfParking c1 = new ConditionOfParking(con1,times,0,date1,"1");
@@ -74,7 +74,7 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		ParkingManager pm = new ParkingManager();
 		String nameMall = request.getParameter("nameMalls");
 		String conditionI = request.getParameter("nameConII1");
@@ -86,7 +86,7 @@ public class ParkingAdminController {
 		String price = request.getParameter("priceConII");
 		int times=Integer.parseInt(timeII1);
 		
-		if("ชั่วโมง".equals(timeoftypeII)){
+		if("เธ�เธฑเน�เธงเน�เธกเธ�".equals(timeoftypeII)){
 			times=(times*60) ;
 		}
 		Mall mall = new Mall();
@@ -115,7 +115,7 @@ public class ParkingAdminController {
 	@RequestMapping(value = "add-conditionI-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionI(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		ParkingManager pm = new ParkingManager();
 		String conditionI = request.getParameter("typeOfFreeConditionI");
 		String dateI = request.getParameter("dateofTypeConditonI");
@@ -167,7 +167,7 @@ public class ParkingAdminController {
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-user");
-		MallManager mm = new MallManager();
+		AddMallManager mm = new AddMallManager();
 		List<String> listType = mm.getMallType();
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);

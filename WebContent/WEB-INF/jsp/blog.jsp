@@ -147,9 +147,6 @@
                         <header><h1>Blog Listing</h1></header>
                         <c:forEach var="i" items="${articles}">
                         	<article class="blog-post">
-	                         <%--    <a href="blog-detail.html">
-	                            <img src="<c:url value="/img/properties/property-detail-02.jpg"/>" alt=""></a>  --%>
-	                            
 	                            <header>
 		                            <a href="javascript:;" onclick="onClick(${i.articleid})">
 		                            <h2><c:out value="${i.articlename }"/></h2>

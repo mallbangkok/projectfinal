@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*,com.spring.model.* ,com.spring.addmallcontroller.*"%>
+    <%@ page import="java.util.*,com.spring.model.* ,com.spring.*"%>
     
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<% 
-  MallManager mm  = new MallManager();
-  List<Mall> list = mm.getAllMalls() ; 
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -163,24 +160,17 @@
                                                 <label for="select-mall">Select Type</label>
                                                 	<select name="types" id="types" onchange="onChange()">
                                                     	<option value="">Select type</option>
-<<<<<<< HEAD
                                                     	<option value="Regional Mall">Regional Mall</option>
-=======
->>>>>>> d8eccad5b2854a6ea75c4d7bf0fec6db60aec546
                                                     	<option value="Community Mall">Community Mall</option>
                                                     	<option value="Theme Mall">Theme Mall</option>
                                                     	<option value="Luxury Mall">Luxury Mall</option>
                                                     	<option value="Complex">Complex</option>
                                                     	<option value="Shopping Plaza">Shopping Plaza</option>
                                                     	<option value="Department Store">Department Store</option>
-<<<<<<< HEAD
-=======
                                                     	<option value="Regional Mall">Regional Mall</option>
                                                     	<option value="HyperMarket/SpecialtyStore">HyperMarket/SpecialtyStore</option>
->>>>>>> d8eccad5b2854a6ea75c4d7bf0fec6db60aec546
                                                         <c:choose>
                                   							<c:when test="${typeMall != null }">
-
                                   							<option value="${typeMall}"selected>${typeMall}</option>
                                   						    </c:when>
                             				           </c:choose>
@@ -206,7 +196,7 @@
                                            <div class="form-group">
                                                 <label for="select-mall"> Floor </label>
                                                                 <select name="select-floor" id="select-floor" required> 
-                                                                    <option value="null">Please Select Floor</option>
+                                                                    <option value="">Please Select Floor</option>
                                                                     <option value="G">G</option>
                                                                     <option value="LG">LG</option>
                                                                     <option value="M">M</option>
@@ -241,7 +231,7 @@
                                              <div class="form-group">
                                                 <label for="select-mall"> Type </label>
                                                                 <select name="select-type" id="select-type" required>
-                                                                    <option>Please Select Type</option>
+                                                                    <option value="">Please Select Type</option>
                                                                     <option value="Food">Food</option>
                                                                     <option value="Shopping">Shopping</option>
                                                                     <option value="Services">Services</option>
@@ -252,7 +242,7 @@
                                              <div class="form-group">
                                                 <label for="select-status"> Status </label>
                                                                 <select name="select-status" id="select-status" required>
-                                                                   <option>Please Select Status</option>
+                                                                   <option value="">Please Select Status</option>
                                                     			   <option value="Open">Open</option>
                                                     		       <option value="Closed">Closed</option>
                                                     	           <option value="Renovated">Renovated</option>

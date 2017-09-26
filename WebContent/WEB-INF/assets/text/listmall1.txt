@@ -1,0 +1,348 @@
+South-West Bangkok:::CentralPlaza Salaya
+Regional Mall:::CentralPlaza Salaya
+Central Group:::CentralPlaza Salaya
+Northern Bangkok:::CentralPlaza Chaengwattana
+Regional Mall:::CentralPlaza Chaengwattana
+Central Group:::CentralPlaza Chaengwattana
+North-West Bangkok:::CentralPlaza WestGate
+Regional Mall:::CentralPlaza WestGate
+Central Group:::CentralPlaza WestGate
+North-Middle Bangkok:::CentralPlaza Grand Rama 9
+Regional Mall:::CentralPlaza Grand Rama 9
+Central Group:::CentralPlaza Grand Rama 9
+North-East Bangkok:::CentralPlaza Ramintra
+Regional Mall:::CentralPlaza Ramintra
+Central Group:::CentralPlaza Ramintra
+Thonburi:::Seacon Bangkae
+Regional Mall:::Seacon Bangkae
+Seacon Group:::Seacon Bangkae
+South-East Bangkok:::Seacon Square
+Regional Mall:::Seacon Square
+Seacon Group:::Seacon Square
+South-East Bangkok:::Mega Bangna
+Regional Mall:::Mega Bangna
+Siam Future:::Mega Bangna
+South-West Bangkok:::CentralPlaza Rama 2
+Regional Mall:::CentralPlaza Rama 2
+Central Group:::CentralPlaza Rama 2
+Thonburi:::The Mall Thapra
+Regional Mall:::The Mall Thapra
+The Mall Group:::The Mall Thapra
+South-West Bangkok:::The Mall Bangkae
+Regional Mall:::The Mall Bangkae
+The Mall Group:::The Mall Bangkae
+Northern Bangkok:::CentralPlaza Rattanathibet
+Regional Mall:::CentralPlaza Rattanathibet
+Central Group:::CentralPlaza Rattanathibet
+Northern Bangkok:::The Mall Ngamwongwan
+Regional Mall:::The Mall Ngamwongwan
+The Mall Group:::The Mall Ngamwongwan
+South-East Bangkok:::CentralPlaza Bangna
+Regional Mall:::CentralPlaza Bangna
+Central Group:::CentralPlaza Bangna
+North-Middle Bangkok:::The Mall Bangkapi
+Regional Mall:::The Mall Bangkapi
+The Mall Group:::The Mall Bangkapi
+Northern Bangkok:::Future Park Rangsit + Zpell
+Regional Mall:::Future Park Rangsit + Zpell
+Rangsit Plaza:::Future Park Rangsit + Zpell
+Central Bangkok:::CentralWorld
+Regional Mall:::CentralWorld
+Central Group:::CentralWorld
+Siam:::Siam Paragon
+Luxury Mall:::Siam Paragon
+Siam Piwat:::Siam Paragon
+Inner Bangkok:::CentralPlaza Rama 3
+Regional Mall:::CentralPlaza Rama 3
+Central Group:::CentralPlaza Rama 3
+North-East Bangkok:::Fashion Island
+Regional Mall:::Fashion Island
+Land & House (Siam Retail):::Fashion Island
+North-Middle Bangkok:::CentralPlaza Lardprao
+Regional Mall:::CentralPlaza Lardprao
+Central Group:::CentralPlaza Lardprao
+Thonburi:::CentralPlaza Pinklao
+Regional Mall:::CentralPlaza Pinklao
+Central Group:::CentralPlaza Pinklao
+Thonburi:::Platform Wongwianyai
+Community Mall:::Platform Wongwianyai
+Central Group:::Platform Wongwianyai
+Inner Bangkok:::The Up Rama 3
+Community Mall:::The Up Rama 3
+No Group:::The Up Rama 3
+Northern Bangkok:::The Avenue Chaengwattana
+Community Mall:::The Avenue Chaengwattana
+Siam Future:::The Avenue Chaengwattana
+North-Middle Bangkok:::The JAS Ramintra
+Community Mall:::The JAS Ramintra
+JAS:::The JAS Ramintra
+Inner Bangkok:::The Seasons
+Community Mall:::The Seasons
+No Group:::The Seasons
+Sukhumvit:::Market Place Thonglor
+Community Mall:::Market Place Thonglor
+Siam Future:::Market Place Thonglor
+Inner Bangkok:::Tree on 3 (Future Mart Rama 3)
+Community Mall:::Tree on 3 (Future Mart Rama 3)
+No Group:::Tree on 3 (Future Mart Rama 3)
+Sukhumvit:::J Avenue
+Community Mall:::J Avenue
+Siam Future:::J Avenue
+Inner Bangkok:::Int-Intersect
+Community Mall:::Int-Intersect
+No Group:::Int-Intersect
+South-East Bangkok:::JAS Urban Srinakarin
+Community Mall:::JAS Urban Srinakarin
+JAS:::JAS Urban Srinakarin
+North-Middle Bangkok:::The JAS Wanghin
+Community Mall:::The JAS Wanghin
+JAS:::The JAS Wanghin
+Thonburi:::Vue
+Community Mall:::Vue
+Raimond Land:::Vue
+Sukhumvit:::K Village
+Community Mall:::K Village
+No Group:::K Village
+Thonburi:::The Light House
+Community Mall:::The Light House
+No Group:::The Light House
+Thonburi:::Riverside Plaza
+Community Mall:::Riverside Plaza
+No Group:::Riverside Plaza
+Sukhumvit:::Suanplearn Market
+Community Mall:::Suanplearn Market
+No Group:::Suanplearn Market
+North-West Bangkok:::Pure Place Ratchapruek
+Community Mall:::Pure Place Ratchapruek
+Sammakorn:::Pure Place Ratchapruek
+South-West Bangkok:::The Paseo Town
+Community Mall:::The Paseo Town
+TBN:::The Paseo Town
+North-Middle Bangkok:::The Crystal + Crystal Veranda
+Community Mall:::The Crystal + Crystal Veranda
+K.E.Land:::The Crystal + Crystal Veranda
+North-Middle Bangkok:::Nawamin City Avenue
+Community Mall:::Nawamin City Avenue
+Siam Future:::Nawamin City Avenue
+Thonburi:::Sena Fest
+Community Mall:::Sena Fest
+Sena Development:::Sena Fest
+South-West Bangkok:::Victoria Gardens
+Community Mall:::Victoria Gardens
+No Group:::Victoria Gardens
+South-West Bangkok:::Petchkasem Power Center
+Community Mall:::Petchkasem Power Center
+Siam Future:::Petchkasem Power Center
+North-Middle Bangkok:::The Walk Kaset-Nawamin
+Community Mall:::The Walk Kaset-Nawamin
+Index:::The Walk Kaset-Nawamin
+North-West Bangkok:::The Circle Ratchapruek
+Community Mall:::The Circle Ratchapruek
+No Group:::The Circle Ratchapruek
+North-West Bangkok:::The Crystal SB Ratchapruek
+Community Mall:::The Crystal SB Ratchapruek
+K.E.Land:::The Crystal SB Ratchapruek
+Thonburi:::The Sense Pinklao
+Community Mall:::The Sense Pinklao
+No Group:::The Sense Pinklao
+Sukhumvit:::The Phyll
+Community Mall:::The Phyll
+No Group:::The Phyll
+Upcountry:::Hua Hin Market Village
+Community Mall:::Hua Hin Market Village
+Land & House (Siam Retail):::Hua Hin Market Village
+North-West Bangkok:::Food Villa Ratchapruek
+Community Mall:::Food Villa Ratchapruek
+No Group:::Food Villa Ratchapruek
+North-Middle Bangkok:::Avenue Ratchayothin
+Community Mall:::Avenue Ratchayothin
+Siam Future:::Avenue Ratchayothin
+Sukhumvit:::Habito Mall
+Community Mall:::Habito Mall
+Sansiri:::Habito Mall
+South-West Bangkok:::The Bright
+Community Mall:::The Bright
+No Group:::The Bright
+South-East Bangkok:::HaHa Market
+Community Mall:::HaHa Market
+MBK Group,Siam Piwat:::HaHa Market
+North-West Bangkok:::The Crystal PTT Chaiyaprurk
+Community Mall:::The Crystal PTT Chaiyaprurk
+K.E.Land:::The Crystal PTT Chaiyaprurk
+Sukhumvit:::Park Lane Ekamai
+Community Mall:::Park Lane Ekamai
+No Group:::Park Lane Ekamai
+South-East Bangkok:::Pickadaily
+Community Mall:::Pickadaily
+No Group:::Pickadaily
+Northern Bangkok:::Bee Hive Lifestyle Mall
+Community Mall:::Bee Hive Lifestyle Mall
+No Group:::Bee Hive Lifestyle Mall
+North-East Bangkok:::The Nine Center
+Community Mall:::The Nine Center
+MBK Group:::The Nine Center
+Sukhumvit:::Ekkamai Power Center
+Community Mall:::Ekkamai Power Center
+Siam Future:::Ekkamai Power Center
+North-East Bangkok:::Pure Place Ramkamhaeng
+Community Mall:::Pure Place Ramkamhaeng
+Sammakorn:::Pure Place Ramkamhaeng
+South-East Bangkok:::The Paseo Mall
+Community Mall:::The Paseo Mall
+TBN:::The Paseo Mall
+Inner Bangkok:::La Villa
+Community Mall:::La Villa
+Siam Future:::La Villa
+Northern Bangkok:::Big C Supercenter Chaengwattana
+HyperMarket/SpecialtyStore:::Big C Supercenter Chaengwattana
+TCC Group:::Big C Supercenter Chaengwattana
+Northern Bangkok:::Tesco Lotus Chaengwattana
+HyperMarket/SpecialtyStore:::Tesco Lotus Chaengwattana
+Tesco:::Tesco Lotus Chaengwattana
+Inner Bangkok:::Tesco Lotus Rama 3
+HyperMarket/SpecialtyStore:::Tesco Lotus Rama 3
+Tesco:::Tesco Lotus Rama 3
+South-West Bangkok:::Tesco Lotus Rama 2
+HyperMarket/SpecialtyStore:::Tesco Lotus Rama 2
+Tesco:::Tesco Lotus Rama 2
+South-East Bangkok:::Maxvalu Phattanakan
+HyperMarket/SpecialtyStore:::Maxvalu Phattanakan
+No Group:::Maxvalu Phattanakan
+North-West Bangkok:::Big C+HomePro Rattanathibet+Center Point
+HyperMarket/SpecialtyStore:::Big C+HomePro Rattanathibet+Center Point
+TCC Group:::Big C+HomePro Rattanathibet+Center Point
+Sukhumvit:::Tesco Lotus Sukhumvit 50 BTS Onnut
+HyperMarket/SpecialtyStore:::Tesco Lotus Sukhumvit 50 BTS Onnut
+Tesco:::Tesco Lotus Sukhumvit 50 BTS Onnut
+North-Middle Bangkok:::Big C Extra Ratchadapisek
+HyperMarket/SpecialtyStore:::Big C Extra Ratchadapisek
+TCC Group:::Big C Extra Ratchadapisek
+North-West Bangkok:::HomeWorks Ratchapruek
+HyperMarket/SpecialtyStore:::HomeWorks Ratchapruek
+Central Group:::HomeWorks Ratchapruek
+South-West Bangkok:::Big C Supercenter Rama 2
+HyperMarket/SpecialtyStore:::Big C Supercenter Rama 2
+TCC Group:::Big C Supercenter Rama 2
+North-Middle Bangkok:::Tesco Lotus Extra Ramindra
+HyperMarket/SpecialtyStore:::Tesco Lotus Extra Ramindra
+Tesco:::Tesco Lotus Extra Ramindra
+Northern Bangkok:::Big C Supercenter Rattanatibet
+HyperMarket/SpecialtyStore:::Big C Supercenter Rattanatibet
+TCC Group:::Big C Supercenter Rattanatibet
+North-Middle Bangkok:::HomePro Ekamai-Ramindra
+HyperMarket/SpecialtyStore:::HomePro Ekamai-Ramindra
+Land & House (Siam Retail):::HomePro Ekamai-Ramindra
+Inner Bangkok:::HomePro Rama 3
+HyperMarket/SpecialtyStore:::HomePro Rama 3
+Land & House (Siam Retail):::HomePro Rama 3
+North-Middle Bangkok:::Tesco Lotus Bangkapi
+HyperMarket/SpecialtyStore:::Tesco Lotus Bangkapi
+Tesco:::Tesco Lotus Bangkapi
+Central Bangkok:::Big C Ratchadamri
+HyperMarket/SpecialtyStore:::Big C Ratchadamri
+TCC Group:::Big C Ratchadamri
+South-East Bangkok:::Big C Bangna
+HyperMarket/SpecialtyStore:::Big C Bangna
+TCC Group:::Big C Bangna
+South-East Bangkok:::Tesco Lotus Extra Bangna
+HyperMarket/SpecialtyStore:::Tesco Lotus Extra Bangna
+TCC Group:::Tesco Lotus Extra Bangna
+South-East Bangkok:::Tesco Lotus Supermarket Onnut 80
+HyperMarket/SpecialtyStore:::Tesco Lotus Supermarket Onnut 80
+Tesco:::Tesco Lotus Supermarket Onnut 80
+South-East Bangkok:::Tesco Lotus Department Store Phattanakarn + London Street
+HyperMarket/SpecialtyStore:::Tesco Lotus Department Store Phattanakarn + London Street
+Tesco:::Tesco Lotus Department Store Phattanakarn + London Street
+Siam:::Siam Discovery
+Theme Mall:::Siam Discovery
+Siam Piwat:::Siam Discovery
+Sukhumvit:::Terminal 21
+Theme Mall:::Terminal 21
+Land & House (Siam Retail):::Terminal 21
+North-East Bangkok:::The Promenade
+Theme Mall:::The Promenade
+Land & House (Siam Retail):::The Promenade
+Upcountry:::Bluport Hua Hin
+Theme Mall:::Bluport Hua Hin
+The Mall Group:::Bluport Hua Hin
+Siam:::Siam Square One
+Theme Mall:::Siam Square One
+Chula:::Siam Square One
+Sukhumvit:::Gateway Ekamai
+Theme Mall:::Gateway Ekamai
+TCC Group:::Gateway Ekamai
+North-Middle Bangkok:::The Street Ratchada
+Theme Mall:::The Street Ratchada
+TCC Group, The Street:::The Street Ratchada
+North-Middle Bangkok:::CentralFestival EastVille
+Theme Mall:::CentralFestival EastVille
+Central Group:::CentralFestival EastVille
+South-East Bangkok:::Paradise Park
+Theme Mall:::Paradise Park
+MBK Group,Paradise Park,Siam Piwat:::Paradise Park
+Siam:::Siam Center
+Theme Mall:::Siam Center
+Siam Piwat:::Siam Center
+North-Middle Bangkok:::Esplanade Ratchadapisek
+Theme Mall:::Esplanade Ratchadapisek
+Siam Future:::Esplanade Ratchadapisek
+Inner Bangkok:::Century The Movie Plaza
+Theme Mall:::Century The Movie Plaza
+Century:::Century The Movie Plaza
+Sukhumvit:::Emporium
+Luxury Mall:::Emporium
+The Mall Group:::Emporium
+Sukhumvit:::EmQuatier
+Luxury Mall:::EmQuatier
+The Mall Group:::EmQuatier
+Central Bangkok:::Central Embassy
+Luxury Mall:::Central Embassy
+Central Group:::Central Embassy
+Central Bangkok:::Central Chidlom
+Luxury Mall:::Central Chidlom
+Central Group:::Central Chidlom
+Central Bangkok:::Gaysorn Plaza
+Luxury Mall:::Gaysorn Plaza
+Gaysorn Group:::Gaysorn Plaza
+Inner Bangkok:::Robinson Bangrak
+Department Store:::Robinson Bangrak
+Central Group:::Robinson Bangrak
+Thonburi:::Tang Hua Seng Thonburi
+Department Store:::Tang Hua Seng Thonburi
+Tang Hua Seng:::Tang Hua Seng Thonburi
+Thonburi:::Pata Pinklao
+Department Store:::Pata Pinklao
+Pata:::Pata Pinklao
+South-East Bangkok:::The Mall Ramkhamhaeng
+Department Store:::The Mall Ramkhamhaeng
+The Mall Group:::The Mall Ramkhamhaeng
+Central Bangkok:::Amarin Plaza
+Complex:::Amarin Plaza
+Gaysorn Group:::Amarin Plaza
+Central Bangkok:::Life Center
+Complex:::Life Center
+Land & House (Siam Retail):::Life Center
+Northern Bangkok:::Major Cineplex Rangsit
+Complex:::Major Cineplex Rangsit
+Major Group:::Major Cineplex Rangsit
+Sukhumvit:::Major Cineplex Sukhumvit
+Complex:::Major Cineplex Sukhumvit
+Major Group:::Major Cineplex Sukhumvit
+North-Middle Bangkok:::Major Cineplex Ratchayothin
+Complex:::Major Cineplex Ratchayothin
+Major Group:::Major Cineplex Ratchayothin
+North-Middle Bangkok:::Esplanade Ngamwongwan + Tesco Lotus Khaerai
+Complex:::Esplanade Ngamwongwan + Tesco Lotus Khaerai
+Major Group,Tesco Lotus:::Esplanade Ngamwongwan + Tesco Lotus Khaerai
+Siam:::Chamchuri Square
+Complex:::Chamchuri Square
+Chula:::Chamchuri Square
+Inner Bangkok:::Supreme Complex
+Complex:::Supreme Complex
+No Group:::Supreme Complex
+North-Middle Bangkok:::Union Mall
+Shopping Plaza:::Union Mall
+No Group:::Union Mall
+Siam:::MBK Center
+Shopping Plaza:::MBK Center
+MBK Group:::MBK Center
