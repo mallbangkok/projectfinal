@@ -18,7 +18,7 @@ import com.spring.model.Mall;
 public class ParkingUserController {
 	@RequestMapping(value = "/parking-user", method = RequestMethod.GET)
 	public ModelAndView loadPageCalculateParkingUser(HttpSession session) {
-		ModelAndView mav = new ModelAndView("parking-user");
+		ModelAndView mav = new ModelAndView("user-parking");
 		ArrayList<String> list = new ArrayList<String>();
 		session.setAttribute("listCondition", list);
 		return mav;
@@ -26,7 +26,7 @@ public class ParkingUserController {
 	//true
 	@RequestMapping(value = "/gettype-user", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("parking-user");
+		ModelAndView mav = new ModelAndView("user-parking");
 
 		AddMallManager mm = new AddMallManager();
 
@@ -44,7 +44,7 @@ public class ParkingUserController {
 	//false
 	@RequestMapping(value = "/dosearchmall-user", method = RequestMethod.GET)
 	public ModelAndView doSearchMall(HttpServletRequest request, HttpSession session) {
-		ModelAndView mav = new ModelAndView("parking-user");
+		ModelAndView mav = new ModelAndView("user-parking");
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMall");
 		Mall mall = pm.doSearchMall(nameMall);
@@ -121,7 +121,7 @@ public class ParkingUserController {
 	@RequestMapping(value = "/docalculate-user", method = RequestMethod.GET)
 	public ModelAndView doCalculate(HttpServletRequest request, HttpSession session) {
 		ParkingUserManager pm = new ParkingUserManager();
-		ModelAndView mav = new ModelAndView("parking-user");
+		ModelAndView mav = new ModelAndView("user-parking");
 		String timeIn = request.getParameter("timeIn");
 		String timeOut = request.getParameter("timeOut");
 		String nameMall = request.getParameter("mallsName");

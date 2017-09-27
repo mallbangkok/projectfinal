@@ -28,7 +28,7 @@ public class Mall {
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Store> stores = new HashSet<Store>();
 	
-	@OneToMany (cascade=CascadeType.ALL, mappedBy = "mall" , fetch = FetchType.EAGER) 
+	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
 	
 	public Mall() {

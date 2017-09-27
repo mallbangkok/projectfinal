@@ -20,13 +20,13 @@ import com.spring.userparking.ParkingUserManager;
 public class ParkingAdminController {
 	@RequestMapping(value = "add-stamp-parking", method = RequestMethod.GET)
 	public ModelAndView addStamp(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 		return mav;
 	}
 	//false
 	@RequestMapping(value = "add-conditionIII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionIII(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 		AddMallManager mm = new AddMallManager();
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMalls");
@@ -78,7 +78,7 @@ public class ParkingAdminController {
 	//false
 	@RequestMapping(value = "add-conditionII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionII(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 
 		AddMallManager mm = new AddMallManager();
 
@@ -124,7 +124,7 @@ public class ParkingAdminController {
 	// false
 	@RequestMapping(value = "add-conditionI-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionI(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 
 		AddMallManager mm = new AddMallManager();
 		ParkingUserManager pm = new ParkingUserManager();
@@ -152,7 +152,7 @@ public class ParkingAdminController {
 	//true
 	@RequestMapping(value = "parking-admin", method = RequestMethod.GET)
 	public ModelAndView loadPageCalculateParkingAdmin(HttpSession session) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 		session.setAttribute("typeOfParking", "I");
 
 		return mav;
@@ -160,7 +160,7 @@ public class ParkingAdminController {
 	//true
 	@RequestMapping(value = "parking-admin-typeofparking", method = RequestMethod.GET)
 	public ModelAndView loadPageTypeOfParking(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 		String t = request.getParameter("type");
 		String nameMall = request.getParameter("nameMall");
 		session.setAttribute("typeOfParking", t);
@@ -172,7 +172,7 @@ public class ParkingAdminController {
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		AddMallManager mm = new AddMallManager();
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parking");
 		ParkingAdminManager pm = new ParkingAdminManager();
 		List<String> listType = pm.getMallType();
 		String t = request.getParameter("type");
@@ -186,7 +186,7 @@ public class ParkingAdminController {
 	//true
 	@RequestMapping(value = "updateCondition", method = RequestMethod.GET)
 	public ModelAndView updateCondition(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("parking-admin");
+		ModelAndView mav = new ModelAndView("admin-parkign");
 		return mav;
 	}
 
