@@ -1,4 +1,4 @@
-package com.spring.calculateparking;
+package com.spring.adminaddparking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.spring.addmall.AddMallManager;
 import com.spring.model.ConditionOfParking;
 import com.spring.model.Mall;
+import com.spring.userparking.ParkingUserManager;
 
 @Controller
 public class ParkingAdminController {

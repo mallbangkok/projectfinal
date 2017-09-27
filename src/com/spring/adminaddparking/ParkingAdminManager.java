@@ -1,4 +1,4 @@
-package com.spring.calculateparking;
+package com.spring.adminaddparking;
 
 import java.util.ArrayList;
 import java.util.List;
