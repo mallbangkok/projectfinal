@@ -220,7 +220,7 @@
                		 </div><!-- /.col-md-9 -->
                		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
                		   <c:choose>
-                               <c:when test="${typeOfParking == 'III' }">
+                               <c:when test="${sizeofcon == '3' }">
                                 <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get">
                                 <input type="hidden" name="nameMalls" id="nameMalls" >
                                <div class="col-md-8 col-sm-12">   
@@ -230,15 +230,17 @@
                                 <section id="address">
                                     <div class="form-group">
                                         <label for="form-create-agency-address-1">Starting Rate :</label>
-                                        <input type="text" class="form-control" id="conditionIII1"name="conditionIII1" value="จอดรถฟรี">
+                                        <input type="text" class="form-control" id="conditionIII1"name="conditionIII1" value="${conditions.get(0).getConName()}">
                                     </div><!-- /.form-group -->
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <select name="dateIII1" id="dateIII1">
+                                                	<option value="Please Select Date">Please Select Date</option>
                                         		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
                                         			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
                                         			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
+                                        			<option value="${conditions.get(0).getDateOfCon()}" selected>${conditions.get(0).getDateOfCon()}</option>
                                        		   </select>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
@@ -335,7 +337,7 @@
                                </c:when>
                        </c:choose>
                		  <c:choose>
-                               <c:when test="${typeOfParking == 'I' }">
+                               <c:when test="${sizeofcon == '1' }">
                                <div class="col-md-8 col-sm-12">
                                 <section id="property-features">
                                    <hr class="thick"></hr>
@@ -378,7 +380,7 @@
                                </c:when>
                       </c:choose>
                		 <c:choose>
-                               <c:when test="${typeOfParking == 'II' }">
+                               <c:when test="${sizeofcon == '2' }">
                                 <div class="col-md-8 col-sm-12">
                                   <form role="form" id="addconditionII"  action="add-conditionII-parking" method="get" >
                                    <input type="hidden" name="nameMalls" id="nameMalls" >
@@ -456,57 +458,6 @@
                             </div><!-- /.col-md-8 -->
                                </c:when>
                      </c:choose>
-                      <c:choose>
-                               <c:when test="${typeOfParking == 'addStamp' }">
-                                <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
-                                   <hr class="thick"></hr>
-                                   <div class="col-md-6 col-sm-6">
-                                <section id="address">
-                                    <div class="row">
-                                     <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="form-create-agency-city">Stramp :</label>
-  												<input type="text" class="form-control" id="form-create-agency-city" value="ใบเสร็จ">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                         <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Price">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                         <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Time">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-4 -->
-                                         <div class="col-md-8 col-sm-8">
-                                            <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="ชั่วโมง">
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-8 -->
-                                    </div><!-- /.row -->
-                                     <section id="submit">
-                           				 <div class="form-group center">
-                              				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
-                           				 </div><!-- /.form-group -->
-                       				 </section>
-                                </section><!-- /#address -->
-                            </div><!-- /.col-md-6 --> 
-                         
-                                </section><!-- /#property-features -->
-                            </div><!-- /.col-md-8 -->
-                               </c:when>
-                      </c:choose>
                		 <!-- End of Add Condition Condition Condition Condition Condition Condition Condition -->
                		  <header><h3> </h3></header>
                         	<div class="my-properties">

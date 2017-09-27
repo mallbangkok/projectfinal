@@ -20,14 +20,10 @@ public class ParkingUserController {
 	public ModelAndView loadPageCalculateParkingUser(HttpSession session) {
 		ModelAndView mav = new ModelAndView("parking-user");
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("55");
-		list.add("55");
-		list.add("55");
-		list.add("55");
 		session.setAttribute("listCondition", list);
 		return mav;
 	}
-
+	//true
 	@RequestMapping(value = "/gettype-user", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-user");
@@ -45,7 +41,7 @@ public class ParkingUserController {
 		session.setAttribute("nameMall", null);
 		return mav;
 	}
-
+	//false
 	@RequestMapping(value = "/dosearchmall-user", method = RequestMethod.GET)
 	public ModelAndView doSearchMall(HttpServletRequest request, HttpSession session) {
 		ModelAndView mav = new ModelAndView("parking-user");
@@ -121,7 +117,7 @@ public class ParkingUserController {
 
 		return mav;
 	}
-
+	//true
 	@RequestMapping(value = "/docalculate-user", method = RequestMethod.GET)
 	public ModelAndView doCalculate(HttpServletRequest request, HttpSession session) {
 		ParkingUserManager pm = new ParkingUserManager();

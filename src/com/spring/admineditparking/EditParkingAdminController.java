@@ -29,9 +29,10 @@ public class EditParkingAdminController {
 		String name= request.getParameter("nameMall");
 		Mall mall = em.doSearchMall(name);
 		List<ConditionOfParking> list = em.doSearchCondition(name);
+		
 		session.setAttribute("datamall", mall);
 		session.setAttribute("conditions", list);
-		session.setAttribute("sizeofcon", list.size());
+		session.setAttribute("sizeofcon", ""+list.size());
 		return mav;
 	} 
 	@RequestMapping(value = "/gettype-edit", method = RequestMethod.GET)

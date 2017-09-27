@@ -101,11 +101,9 @@ public class SerchFilterController {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		AddMallManager mm = new AddMallManager();
 		String name = request.getParameter("malls");
-		System.out.println("--" + name + "--");
 		Mall mall = new Mall();
 		for (Mall m : mm.getAllMalls()) {
 			String demo = (m.getMallNameEng());
-			System.out.println("-*-" + demo + "-*-");
 			if (name.equals(demo)) {
 				mall = m;
 			}

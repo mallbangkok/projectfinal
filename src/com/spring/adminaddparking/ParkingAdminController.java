@@ -23,7 +23,7 @@ public class ParkingAdminController {
 		ModelAndView mav = new ModelAndView("parking-admin");
 		return mav;
 	}
-
+	//false
 	@RequestMapping(value = "add-conditionIII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionIII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -75,7 +75,7 @@ public class ParkingAdminController {
 		}
 		return mav;
 	}
-
+	//false
 	@RequestMapping(value = "add-conditionII-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionII(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -121,7 +121,7 @@ public class ParkingAdminController {
 		return mav;
 	}
 
-	// Condition is one of Parking
+	// false
 	@RequestMapping(value = "add-conditionI-parking", method = RequestMethod.GET)
 	public ModelAndView addConditionI(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -149,7 +149,7 @@ public class ParkingAdminController {
 
 		return mav;
 	}
-
+	//true
 	@RequestMapping(value = "parking-admin", method = RequestMethod.GET)
 	public ModelAndView loadPageCalculateParkingAdmin(HttpSession session) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -157,7 +157,7 @@ public class ParkingAdminController {
 
 		return mav;
 	}
-
+	//true
 	@RequestMapping(value = "parking-admin-typeofparking", method = RequestMethod.GET)
 	public ModelAndView loadPageTypeOfParking(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("parking-admin");
@@ -168,6 +168,7 @@ public class ParkingAdminController {
 		return mav;
 	}
 
+	//true
 	@RequestMapping(value = "/gettype-parking", method = RequestMethod.GET)
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		AddMallManager mm = new AddMallManager();
@@ -182,7 +183,7 @@ public class ParkingAdminController {
 		session.setAttribute("nameMall", null);
 		return mav;
 	}
-
+	//true
 	@RequestMapping(value = "updateCondition", method = RequestMethod.GET)
 	public ModelAndView updateCondition(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("parking-admin");
