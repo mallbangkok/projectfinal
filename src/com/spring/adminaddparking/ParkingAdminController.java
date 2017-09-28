@@ -45,7 +45,6 @@ public class ParkingAdminController {
 		String time3 = request.getParameter("timeIII3");
 		String price3 = request.getParameter("priceIII3");
 
-		System.out.println("3::" + con3 + " " + date3 + " " + time3 + " " + price3);
 		int times = Integer.parseInt(time1);
 		if ("ชั่วโมง".equals(type1)) {
 			times = (times * 60);

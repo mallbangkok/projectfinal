@@ -145,10 +145,11 @@
 									<li><a href="agencies-listing.html">Agencies Listing</a></li>
 									<li><a href="agency-detail.html">Agency Detail</a></li>
 								</ul></li>
-							<li><a href="loadsearchfilter">Search Mall</a>
+								<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
+									<li><a href="loadsearchfilter">Search Filter</a></li>
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
-								</ul></li>
+								</ul>
 							</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
@@ -406,7 +407,7 @@
                                        	<c:choose>
                                                   <c:when test="${listShopping != null }">
                                                       <c:forEach var="i" items="${listShopping}">
-                                                      	<li><c:out value="${i}"></c:out></li>
+                                                      	<li><c:out value="${i.storeName}" /> , Level : <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
@@ -419,7 +420,7 @@
                                       	<c:choose>
                                                   <c:when test="${listFood != null }">
                                                       <c:forEach var="i" items="${listFood}">
-                                                      	<li><c:out value="${i}"></c:out></li>
+                                                      	<li><c:out value="${i.storeName}" /> , Level : <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
@@ -432,7 +433,7 @@
                                        	<c:choose>
                                                   <c:when test="${listService != null }">
                                                       <c:forEach var="i" items="${listService}">
-                                                      	<li><c:out value="${i}"></c:out></li>
+                                                      <li><c:out value="${i.storeName}" /> , Level : <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>

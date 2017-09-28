@@ -31,6 +31,7 @@ public class SearchCustomManager {
 		for(Store s : this.getAllStores()){
 			if(s.getStoreName().matches(shopname + "(.*)")){
 				listStore.add(s);
+				System.out.println();
 			}
 		}
 		return listStore;
