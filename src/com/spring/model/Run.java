@@ -28,10 +28,10 @@ import com.spring.addmall.*;
 import com.spring.addstore.AddStoreManager;
 import com.spring.admindeletemall.AdminDeleteMallManager;
 import com.spring.admindeletestore.AdminDeleteStoreManager;
-import com.spring.admineditparking.EditParkingAdminManager;
 import com.spring.login.AddUserManager;
 import com.spring.login.LoginMannager;
 import com.spring.searchfilter.SearchFilterManager;
+import com.spring.updateparking.EditParkingAdminManager;
 
 public class Run {
 	public static String doUpdateCondition(ConditionOfParking con) {
