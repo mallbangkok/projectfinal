@@ -1,13 +1,10 @@
-package com.spring.addmall;
+package com.spring.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import com.spring.model.Facilities;
-import com.spring.model.HibernateConnection;
 
 
 public class FacilitiesManager {

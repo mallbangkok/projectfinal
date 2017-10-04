@@ -21,8 +21,8 @@ public class AdminListMallController {
 	public ModelAndView loadAdminListPage(HttpSession session) {
 		ModelAndView mav = new ModelAndView("admin-list-category");
 		
-		AddMallManager mm = new AddMallManager();
-		List<String> types = mm.getMallType();
+		AdminListMallManager almm = new AdminListMallManager();
+		List<String> types = almm.getMallType();
 		
 		session.setAttribute("type", types);
 		session.setAttribute("mPage", 1);

@@ -197,7 +197,7 @@
 													<label for="submit-price">Write Your Article</label>
 													<div class="input-group">
 
-														<textarea name="textarea" id="textarea" rows="5" cols="47"></textarea>
+														<textarea name="textarea" id="textarea" rows="5" cols="47" required></textarea>
 														<script type="text/javascript">
 															CKEDITOR.replace('textarea');
 														</script>

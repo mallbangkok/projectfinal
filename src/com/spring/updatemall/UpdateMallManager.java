@@ -9,8 +9,8 @@ import java.util.Locale;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.spring.addmall.FacilitiesManager;
 import com.spring.model.Facilities;
+import com.spring.model.FacilitiesManager;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
 

@@ -214,7 +214,7 @@
                                        	<c:choose>
                                                   <c:when test="${listShopping != null }">
                                                       <c:forEach var="i" items="${listShopping}">
-                                                      	<li><c:out value="${i.storeName}" /> , Level : <c:out value="${i.floor }"/></li>
+                                                      	<li><c:out value="${i.storeName}" /> , Level <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
@@ -227,7 +227,7 @@
                                       	<c:choose>
                                                   <c:when test="${listFood != null }">
                                                       <c:forEach var="i" items="${listFood}">
-                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                      	<li><c:out value="${i.storeName}" />, Level <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>
@@ -240,7 +240,7 @@
                                        	<c:choose>
                                                   <c:when test="${listServices != null }">
                                                       <c:forEach var="i" items="${listServices}">
-                                                      	<li><c:out value="${i.storeName}"></c:out></li>
+                                                      	<li><c:out value="${i.storeName}" />, Level <c:out value="${i.floor }"/></li>
                                                      </c:forEach>
                                                   </c:when>
                                        	</c:choose>

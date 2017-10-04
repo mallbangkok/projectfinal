@@ -27,7 +27,6 @@ public class UserListMallController {
 		int pages = ulmm.countPage(typename);
 		
 		session.setAttribute("countpages", pages);
-		
 		session.setAttribute("listmallpage", 1);
 		session.setAttribute("type", typename);
 		session.setAttribute("listByType", listByType);
@@ -36,7 +35,7 @@ public class UserListMallController {
 	}
 	
 	@RequestMapping(value = "/list-mall", method = RequestMethod.POST)
-	public ModelAndView ListMallPage(HttpServletRequest request, HttpSession session, Model md) {
+	public ModelAndView ListMallDetailPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		UserListMallManager ulmm = new UserListMallManager();
 		String m = request.getParameter("valueClick");
