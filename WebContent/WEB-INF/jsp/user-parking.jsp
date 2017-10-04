@@ -205,33 +205,31 @@
                     <div class="col-md-4 col-sm-4"></div><!-- /.col-md-3 -->
                    <div class="col-md-4 col-sm-4">
                         <div class="price-box">
-                            <header><h2>Paking</h2></header>
+                            <header><h2>Parking</h2></header>
                             <div class="price">
                                 <figure>Condition</figure>
                             </div>
                             <ul> 
                             <c:choose>
-                            	<c:when test="${number == null }">
+                            	<c:when test="${number == '0' }">
                             	 <li><span>ขออภัย ไม่พบข้อมูลของบริการค่าจอดรถ</span></li>
                             	</c:when>
-                                <c:when test="${number != null }">
-                                	 <li><span>Mall Name : ${malls.mallNameEng}</span> </li>
+                                <c:when test="${number != '0' }">
+                                	 <li><span>Name : ${malls.mallNameEng}</span> </li>
                                  <c:if test = "${number == '1'}">      
-                                 <c:forEach var="i" items="${malls.conditionOfParking}">
-                                	 <li><span>${i.conName}</span> </li>
-                                	 <li><span>${i.dateOfCon}</span></li>
-                                 </c:forEach>
+                                 <c:forEach var="i" items="${listConditon}">
+                                		 <li><span>${i}</span> </li>
+                                     </c:forEach>
                                 </c:if>
                                 <c:if test = "${number == '2'}">      
-                                	 <li><span>${con1}</span> </li>
-                                	 <li><span>${con2}</span></li>
-                                	 <li><span>${date}</span></li>
+                                	 <c:forEach var="i" items="${listConditon}">
+                                		 <li><span>${i}</span> </li>
+                                     </c:forEach>
                                 </c:if>
                                  <c:if test = "${number == '3'}">      
-                                	 <li><span>${con1}</span> </li>
-                                	 <li><span>${con2}</span></li>
-                                	 <li><span>${con3}</span></li>
-                                	 <li><span>${date}</span></li>
+                                	 <c:forEach var="i" items="${listConditon}">
+                                		 <li><span>${i}</span> </li>
+                                     </c:forEach>
                                 </c:if>
                                 </c:when>
                             </c:choose>
@@ -255,18 +253,19 @@
                                 <section id="address">
                                 <c:choose>
                                            <c:when test="${number != null }">
-                                           <c:if test = "${number != '1'}">
+                                           <c:if test = "${number != '0'}">
+                                            <c:if test = "${number != '1'}">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                             <label for="form-create-agency-zip">Time In:</label>
-                                                <input type="text" class="form-control"name="timeIn" id="timeIn" placeholder="00.00">
+                                                <input type="time" class="form-control"name="timeIn" id="timeIn" placeholder="00:00">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                             <label for="form-create-agency-zip">Time Out:</label>
-                                                <input type="text" class="form-control"name="timeOut" id="timeOut" placeholder="00.00">
+                                                <input type="text" class="form-control"name="timeOut" id="timeOut" placeholder="00:00">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
@@ -295,6 +294,7 @@
                                         </div><!-- /.col-md-4 -->  
                                         <div class="col-md-4 col-sm-4"></div>
                                     </div><!-- /.row -->
+                                 	</c:if>
                                     </c:if>
                                      </c:when>
                                            </c:choose>
@@ -315,76 +315,7 @@
     <!-- Page Footer -->
     <footer id="page-footer">
         <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
-                                <hr>
-                                <a href="#" class="link-arrow">Read More</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="<c:url value="/img/properties/property-06.jpg"/>">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="<c:url value="/img/properties/property-09.jpg"/>">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
+           
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">

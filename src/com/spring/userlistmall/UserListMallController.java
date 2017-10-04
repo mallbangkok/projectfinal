@@ -41,10 +41,8 @@ public class UserListMallController {
 		String m = request.getParameter("valueClick");
 		long mallid = Long.parseLong(m);
 		System.out.println(mallid);
-		
 		Mall mall = ulmm.isSelectedMall(mallid);
 		session.setAttribute("mall", mall);
-		
 		List<Store> listFood = ulmm.listFood(mallid);
 		List<Store> listShopping = ulmm.listShopping(mallid);
 		List<Store> listServices = ulmm.listServices(mallid);

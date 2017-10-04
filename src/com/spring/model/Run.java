@@ -21,6 +21,8 @@ import java.util.Set;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import com.spring.addmall.*;
 import com.spring.addstore.AddStoreManager;
@@ -29,18 +31,48 @@ import com.spring.admindeletestore.AdminDeleteStoreManager;
 import com.spring.login.AddUserManager;
 import com.spring.login.LoginMannager;
 import com.spring.searchfilter.SearchFilterManager;
+import com.spring.updateparking.EditParkingAdminManager;
 
 public class Run {
-
+	public static String doUpdateCondition(ConditionOfParking con) {
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.saveOrUpdate(con);
+			session.getTransaction().commit();
+			session.close();
+			return "Update  Successfully...";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Cannot Update !!!";
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
-		AddMallManager mm = new AddMallManager();
-		FacilitiesManager fm = new FacilitiesManager();
-		AddStoreManager sm = new AddStoreManager();
+		EditParkingAdminManager em = new EditParkingAdminManager();
+		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
+		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
+		ConditionOfParking c3 = new ConditionOfParking(4,"demo", 11, 22, "55","3");
+		Mall mall = new Mall();
+		for (Mall m : em.getAllMalls()) {
+			if ("Central Chidlom".equalsIgnoreCase(m.getMallNameEng())) {
+				mall = m;
+			}
+		}
 		
-		AddMallManager am = new AddMallManager();
+		System.out.println(mall.getMallNameEng());
 		
-		SearchFilterManager sfm = new SearchFilterManager();
-		
+		c1.setMall(mall);;
+		doUpdateCondition(c1);
+//		AddMallManager mm = new AddMallManager();
+//		FacilitiesManager fm = new FacilitiesManager();
+//		AddStoreManager sm = new AddStoreManager();
+//		
+//		AddMallManager am = new AddMallManager();
+//		
+//		SearchFilterManager sfm = new SearchFilterManager();
+//		
 		
 		
 		
@@ -67,8 +99,7 @@ public class Run {
 //				System.out.println(s.getStoreName() + " " + s.getMall().getMallNameEng());
 //			}
 //		}
-		List<Mall> listMall = mm.getAllMalls();
-		List<Mall> listMallLastedUpdate = new ArrayList<>();
+	
 		
 	}
 	

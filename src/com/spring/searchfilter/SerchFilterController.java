@@ -23,71 +23,17 @@ import com.spring.model.Store;
 
 @Controller
 public class SerchFilterController {
+	//false
 	@RequestMapping(value = "/loadsearchfilter", method = RequestMethod.GET)
 	public ModelAndView loadPageSerch(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
-		AddMallManager mm = new AddMallManager();
-		Mall mall = new Mall();
-		String area = "WebContent/WEB-INF/assets/text/area1.txt";
-		String malls = "WebContent/WEB-INF/assets/text/listmall1.txt";
-
-		Set<String> listArea = new HashSet();
-		Set<String> listDepart = new HashSet();
-		Set<String> listGroup = new HashSet();
-		for (Mall m : mm.getAllMalls()) {
-			listArea.add(m.getArea());
-			listDepart.add(m.getType());
-			listGroup.add(m.getMallGroup());
-
-		}
-		String[] liArea = listArea.toArray(new String[listArea.size()]);
-		String[] liDepart = listDepart.toArray(new String[listDepart.size()]);
-		String[] liGroup = listGroup.toArray(new String[listGroup.size()]);
-		try {
-			FileWriter out = new FileWriter(area);
-			FileWriter outMall = new FileWriter(malls);
-			for (int i = 0; i < liArea.length; i++) {
-				out.write("Area:::" + liArea[i] + "\n");
-			}
-			for (int i = 0; i < liDepart.length; i++) {
-				out.write("Depart:::" + liDepart[i] + "\n");
-			}
-			for (int i = 0; i < liGroup.length; i++) {
-				out.write("Groups:::" + liGroup[i] + "\n");
-			}
-			out.close();
-			for (Mall m : mm.getAllMalls()) {
-				outMall.write(m.getArea() + ":::" + m.getMallNameEng() + "\n");
-				outMall.write(m.getType() + ":::" + m.getMallNameEng() + "\n");
-				outMall.write(m.getMallGroup() + ":::" + m.getMallNameEng() + "\n");
-			}
-			outMall.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		for (Mall m : mm.getAllMalls()) {
-			if ("Siam Square One".equals(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-		List<String> listFood = new ArrayList();
-		List<String> listShopping = new ArrayList();
-		List<String> listService = new ArrayList();
-		for (Store s : mall.getStores()) {
-			if (s.getStoreType().equals("Food")) {
-				listFood.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-			if (s.getStoreType().equals("Shopping")) {
-				listShopping.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-			if (s.getStoreType().equals("Service")) {
-				listService.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-		}
-		Collections.sort(listFood);
-		Collections.sort(listShopping);
-		Collections.sort(listService);
-
+		SearchFilterManager sm = new SearchFilterManager();
+		Mall mall = sm.doSearchMall("Siam Square One");
+		
+		List<Store> listFood = sm.listFood(mall.getMallId());
+		List<Store> listShopping =sm.listShopping(mall.getMallId());
+		List<Store> listService = sm.listServices(mall.getMallId());
+		
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
@@ -95,38 +41,17 @@ public class SerchFilterController {
 		return mav;
 
 	}
-
+	//false
 	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
-		AddMallManager mm = new AddMallManager();
 		String name = request.getParameter("malls");
-		System.out.println("--" + name + "--");
-		Mall mall = new Mall();
-		for (Mall m : mm.getAllMalls()) {
-			String demo = (m.getMallNameEng());
-			System.out.println("-*-" + demo + "-*-");
-			if (name.equals(demo)) {
-				mall = m;
-			}
-		}
-		List<String> listFood = new ArrayList();
-		List<String> listShopping = new ArrayList();
-		List<String> listService = new ArrayList();
-		for (Store s : mall.getStores()) {
-			if (s.getStoreType().equals("Food")) {
-				listFood.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-			if (s.getStoreType().equals("Shopping")) {
-				listShopping.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-			if (s.getStoreType().equals("Service")) {
-				listService.add(s.getStoreName() + " Level " + s.getFloor());
-			}
-		}
-
+		SearchFilterManager sm = new SearchFilterManager();
+		Mall mall = sm.doSearchMall(name);
+		List<Store> listFood = sm.listFood(mall.getMallId());
+		List<Store> listShopping =sm.listShopping(mall.getMallId());
+		List<Store> listService = sm.listServices(mall.getMallId());
 		session.setAttribute("listShopping", listShopping);
-
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
 		session.setAttribute("dataMall", mall);

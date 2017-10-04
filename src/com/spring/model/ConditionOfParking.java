@@ -19,7 +19,7 @@ public class ConditionOfParking {
 	private int priceOfCon;
 	private String dateOfCon;
 	private String type;
-	@ManyToOne (cascade=CascadeType.ALL) 
+	@ManyToOne (cascade=CascadeType.MERGE) 
 	@JoinColumn (name = "mallId")
 	private Mall mall;
 
@@ -84,6 +84,17 @@ public class ConditionOfParking {
 		this.dateOfCon = dateOfCon;
 	}
 
+	public ConditionOfParking(int conditionId, String conName, int timeOfCon, int priceOfCon, String dateOfCon,
+			String type) {
+		super();
+		this.conditionId = conditionId;
+		this.conName = conName;
+		this.timeOfCon = timeOfCon;
+		this.priceOfCon = priceOfCon;
+		this.dateOfCon = dateOfCon;
+		this.type = type;
+	}
+
 	public Mall getMall() {
 		return mall;
 	}
@@ -108,6 +119,7 @@ public class ConditionOfParking {
 		this.dateOfCon = dateOfCon;
 		this.type = type;
 	}
+	
 	
 
 }

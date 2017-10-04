@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/assets/css/style.css=UTF-8
 encoding//WebContent/WEB-INF/assets/css/style3.css=UTF-8
-encoding//src/com/spring/calculateparking/ParkingAdminController.java=UTF-8
+encoding//src/com/spring/adminaddparking/ParkingAdminController.java=UTF-8
 encoding//src/com/spring/model/Run.java=UTF-8
 encoding//src/com/spring/model/RunGame.java=UTF-8
