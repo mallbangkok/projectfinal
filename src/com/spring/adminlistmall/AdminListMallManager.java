@@ -41,4 +41,19 @@ public class AdminListMallManager {
 		int mPages = (int) Math.ceil(value);
 		return mPages;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getMallType() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(type) from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

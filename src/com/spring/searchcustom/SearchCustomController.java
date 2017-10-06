@@ -19,6 +19,8 @@ public class SearchCustomController {
 	@RequestMapping(value = "/index-slider-search-custom", method = RequestMethod.GET)
 	public ModelAndView loadSearchCustomPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-slider-search-custom");
+		session.setAttribute("store",null);
+		session.setAttribute("storeSize", null);
 		return mav;
 	}
 	
@@ -39,13 +41,6 @@ public class SearchCustomController {
 		
 		session.setAttribute("store", listStore);
 		session.setAttribute("storeSize", listStore.size());
-		return mav;
-	}
-	
-	@RequestMapping(value = "/index-slider-search-custom-click", method = RequestMethod.POST)
-	public ModelAndView loadSearchCustomPageClick(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("index-slider-search-custom");
-		
 		return mav;
 	}
 }

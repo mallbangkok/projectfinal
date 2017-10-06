@@ -225,10 +225,20 @@
         </section><!-- /#banner -->
         <section id="new-properties" class="block">
             <div class="container">
-                <header class="section-title">
-                    <h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
-                    <a href="#" class="link-arrow">All Properties</a>
-                </header>
+                <c:choose>
+                	<c:when test="${storeSize != null }">
+                		<header class="section-title">
+                    	<h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
+                    	<a href="#" class="link-arrow">All Properties</a>
+                		</header>
+                	</c:when>
+                	<c:otherwise>
+                		<header class="section-title">
+                    	<h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
+                    	<a href="#" class="link-arrow">All Properties</a>
+                		</header>
+                	</c:otherwise>
+                </c:choose>
                 <form id="frm" action="list-mall" method="post">
                 <div class="row">
                 	<c:choose>

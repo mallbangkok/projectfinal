@@ -93,7 +93,7 @@ public class UserListMallManager {
 	
 	public Mall isSelectedMall(long mallid){
 		List<Mall> list = this.getAllMalls();
-		Mall mall = new Mall();
+		Mall mall = null;
 		for(Mall m : list){
 			if(m.getMallId() == mallid){
 				mall = m;
