@@ -55,10 +55,9 @@ public class ParkingAdminManager {
 				System.out.println(this.addWeek(w1));
 				System.out.println(this.addWeek(w2));
 				System.out.println(this.addWeek(w3));
-
-				System.out.println(">>0");
+				
 			} else {
-				System.out.println("0<<");
+				
 				Conditions c1 = new Conditions(con1, "I");
 				Conditions c2 = new Conditions(con2, "II");
 				Conditions c3 = new Conditions(con3, "III");

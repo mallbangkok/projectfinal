@@ -25,46 +25,19 @@ public class ParkingAdminController {
 	}
 
 	// true
-	@RequestMapping(value = "add-conditionIII-parking", method = RequestMethod.GET)
-	public ModelAndView addConditionIII(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin-parking");
-		ParkingAdminManager pm = new ParkingAdminManager();
-		
-		return mav;
-	}
-
-	// true
-	@RequestMapping(value = "add-conditionII-parking", method = RequestMethod.GET)
-	public ModelAndView addConditionII(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin-parking");
-		ParkingAdminManager pm = new ParkingAdminManager();
-		String nameMall = request.getParameter("nameMalls");
-		String conditionI = request.getParameter("nameConII1");
-		String dateI = request.getParameter("dateoftypeII1");
-		String timeII1 = request.getParameter("timeII1");
-		String timeoftypeII = request.getParameter("timeoftypeII");
-		String conditionII = request.getParameter("nameConII2");
-		String dateII = request.getParameter("dateoftypeII2");
-		String price = request.getParameter("priceConII");
-		System.out.println(
-				pm.doAddConditionII(nameMall, conditionI, dateI, timeII1, timeoftypeII, conditionII, dateII, price));
-		return mav;
-	}
-
-	// true
 	@RequestMapping(value = "add-condition-parking", method = RequestMethod.GET)
 	public ModelAndView addCondition(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin-parking");
 		ParkingAdminManager pm = new ParkingAdminManager();
 		String typeOfCondition = request.getParameter("typeOfCondition");
-		try{
-			if("I".equals(typeOfCondition)){
+		try {
+			if ("I".equals(typeOfCondition)) {
 				String conditionI = request.getParameter("typeOfFreeConditionI");
 				String dateI = request.getParameter("dateofTypeConditonI");
 				String nameMall = request.getParameter("nameMalls");
 				System.out.println(pm.doAddConditionI(nameMall, conditionI, dateI));
 				System.out.println("11");
-			}else if ("II".equals(typeOfCondition)){
+			} else if ("II".equals(typeOfCondition)) {
 				String nameMall = request.getParameter("nameMalls");
 				String conditionI = request.getParameter("nameConII1");
 				String dateI = request.getParameter("dateoftypeII1");
@@ -73,10 +46,10 @@ public class ParkingAdminController {
 				String conditionII = request.getParameter("nameConII2");
 				String dateII = request.getParameter("dateoftypeII2");
 				String price = request.getParameter("priceConII");
-				System.out.println(
-						pm.doAddConditionII(nameMall, conditionI, dateI, timeII1, timeoftypeII, conditionII, dateII, price));
+				System.out.println(pm.doAddConditionII(nameMall, conditionI, dateI, timeII1, timeoftypeII, conditionII,
+						dateII, price));
 				System.out.println("22");
-			}else if ("III".equals(typeOfCondition)){
+			} else if ("III".equals(typeOfCondition)) {
 				String nameMall = request.getParameter("nameMalls");
 				String con1 = request.getParameter("conditionIII1");
 				String date1 = request.getParameter("dateIII1");
@@ -89,16 +62,13 @@ public class ParkingAdminController {
 				String date3 = request.getParameter("dateIII3");
 				String time3 = request.getParameter("timeIII3");
 				String price3 = request.getParameter("priceIII3");
-				System.out.println(pm.doAddConditionIII(nameMall, con1, date1, time1, type1, con2, date2, price2, con3, date3,
-						time3, price3));
+				System.out.println(pm.doAddConditionIII(nameMall, con1, date1, time1, type1, con2, date2, price2, con3,
+						date3, time3, price3));
 				System.out.println("33");
 			}
-		}catch(Exception e){
-			
+		} catch (Exception e) {
+
 		}
-		
-	
-		
 
 		return mav;
 	}
