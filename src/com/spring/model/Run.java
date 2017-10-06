@@ -34,26 +34,11 @@ import com.spring.searchfilter.SearchFilterManager;
 import com.spring.updateparking.EditParkingAdminManager;
 
 public class Run {
-	public static String doUpdateCondition(ConditionOfParking con) {
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			session.saveOrUpdate(con);
-			session.getTransaction().commit();
-			session.close();
-			return "Update  Successfully...";
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Cannot Update !!!";
-		}
-	}
+	
 	
 	public static void main(String[] args) throws Exception {
 		EditParkingAdminManager em = new EditParkingAdminManager();
-		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
-		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
-		ConditionOfParking c3 = new ConditionOfParking(4,"demo", 11, 22, "55","3");
+		
 		Mall mall = new Mall();
 		for (Mall m : em.getAllMalls()) {
 			if ("Central Chidlom".equalsIgnoreCase(m.getMallNameEng())) {
@@ -63,8 +48,7 @@ public class Run {
 		
 		System.out.println(mall.getMallNameEng());
 		
-		c1.setMall(mall);;
-		doUpdateCondition(c1);
+	
 //		AddMallManager mm = new AddMallManager();
 //		FacilitiesManager fm = new FacilitiesManager();
 //		AddStoreManager sm = new AddStoreManager();

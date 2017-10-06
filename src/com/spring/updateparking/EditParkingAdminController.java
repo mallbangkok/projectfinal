@@ -10,9 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.spring.addmall.AddMallManager;
-import com.spring.model.ConditionOfParking;
 import com.spring.model.Mall;
 import com.spring.userparking.ParkingUserManager;
 
@@ -21,21 +19,6 @@ public class EditParkingAdminController {
 	@RequestMapping(value = "admin-editparking", method = RequestMethod.GET)
 	public ModelAndView addStamp(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin-editparking");
-		return mav;
-	}
-
-	// true
-	@RequestMapping(value = "searchmall-parking", method = RequestMethod.GET)
-	public ModelAndView searchMallParking(HttpServletRequest request, HttpSession session) {
-		ModelAndView mav = new ModelAndView("admin-editparking");
-		EditParkingAdminManager em = new EditParkingAdminManager();
-		String name = request.getParameter("nameMall");
-		Mall mall = em.doSearchMall(name);
-		List<ConditionOfParking> list = em.doSearchCondition(name);
-		session.setAttribute("datamall", mall);
-		session.setAttribute("conditions", list);
-		session.setAttribute("sizeofcon", "" + list.size());
-
 		return mav;
 	}
 
@@ -63,7 +46,7 @@ public class EditParkingAdminController {
 		String nameMall = request.getParameter("nameMalls");
 		String conditionI = request.getParameter("typeOfFreeConditionI");
 		String dateI = request.getParameter("dateofTypeConditonI");
-		System.out.println(em.updateConditionI(conditionI, dateI, nameMall));
+		
 		session.setAttribute("sizeofcon", "" + 1);
 		return mav;
 	}
@@ -81,8 +64,7 @@ public class EditParkingAdminController {
 		String conditionII = request.getParameter("nameConII2");
 		String dateII = request.getParameter("dateoftypeII2");
 		String price = request.getParameter("priceConII");
-		System.out.println(em.updateConditionII( nameMall, price, dateII, conditionII, timeoftypeII, type1,
-				timeII1, dateI, conditionI));
+		
 		session.setAttribute("conditions", null);
 		session.setAttribute("sizeofcon", "" + 2);
 		return mav;
@@ -106,8 +88,7 @@ public class EditParkingAdminController {
 		String date3 = request.getParameter("dateIII3");
 		String time3 = request.getParameter("timeIII3");
 		String price3 = request.getParameter("priceIII3");
-		System.out.println(em.updateConditionIII(price3, time3, date3, con3, price2, date2, con2, type1, time1, date1,
-				con1, nameMall));
+		
 		session.setAttribute("conditions", null);
 		session.setAttribute("sizeofcon", "" + 3);
 		return mav;

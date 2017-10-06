@@ -347,28 +347,28 @@ public class RunGame {
 			}
 		}
 
-		for (ConditionOfParking c : mall.getConditionOfParking()) {
-			if (c.getType().equals("1")) {
-				if (c.getTimeOfCon() >= 60) {
-					free = c.getTimeOfCon() / 60;
-					minite = true;
-				} else {
-					free = c.getTimeOfCon();
-					minite = false;
-				}
-			} else if (c.getType().equals("2")) {
-				price = c.getPriceOfCon();
-			} else if (c.getType().equals("3")) {
-				if (c.getTimeOfCon() >= 60) {
-					hourCon3 = c.getTimeOfCon() / 60;
-				} else {
-					hourCon3 = c.getTimeOfCon();
-
-				}
-				priceCon3 = c.getPriceOfCon();
-
-			}
-		}
+//		for (ConditionOfParking c : mall.getConditions()) {
+//			if (c.getType().equals("1")) {
+//				if (c.getTimeOfCon() >= 60) {
+//					free = c.getTimeOfCon() / 60;
+//					minite = true;
+//				} else {
+//					free = c.getTimeOfCon();
+//					minite = false;
+//				}
+//			} else if (c.getType().equals("2")) {
+//				price = c.getPriceOfCon();
+//			} else if (c.getType().equals("3")) {
+//				if (c.getTimeOfCon() >= 60) {
+//					hourCon3 = c.getTimeOfCon() / 60;
+//				} else {
+//					hourCon3 = c.getTimeOfCon();
+//
+//				}
+//				priceCon3 = c.getPriceOfCon();
+//
+//			}
+//		}
 		int arMin = 0;
 		int aHour = 0;
 		String timeIn = "09:00";

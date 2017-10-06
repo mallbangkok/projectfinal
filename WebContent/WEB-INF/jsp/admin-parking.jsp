@@ -462,7 +462,7 @@
                                 </section><!-- /#address -->
                                  <section id="submit">
                             <div class="form-group center">
-                                <button type="submit" class="btn btn-default large" id="addconditionII">Update</button>
+                                <button type="submit" class="btn btn-default large" id="addconditionII">Add Condition</button>
                             </div><!-- /.form-group -->
                         </section>
                             </div><!-- /.col-md-6 -->
@@ -474,6 +474,8 @@
                       <c:choose>
                                <c:when test="${typeOfParking == 'addStamp' }">
                                 <div class="col-md-8 col-sm-12">
+                                <form role="form" id="addconditionII"  action="add-condition-parking-stamp" method="get">
+                                 <input type="hidden" name="nameMalls" id="nameMalls" >
                                 <section id="property-features">
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
@@ -482,25 +484,23 @@
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="form-create-agency-city">Stramp :</label>
-  												<input type="text" class="form-control" id="form-create-agency-city" value="ใบเสร็จ">
+  												<input type="text" class="form-control" id="con4" name="con4" value="ใบเสร็จ">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->
                                          <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Price">
+                                                <input type="text" class="form-control" id="price4" name="price4" placeholder="Price">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                               
                                                 <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Time">
+                                                <input type="text" class="form-control" id="freeHour" name="freeHour" placeholder="Time">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
@@ -519,6 +519,7 @@
                             </div><!-- /.col-md-6 --> 
                          
                                 </section><!-- /#property-features -->
+                                </form>
                             </div><!-- /.col-md-8 -->
                                </c:when>
                       </c:choose>

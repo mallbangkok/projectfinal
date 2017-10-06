@@ -8,10 +8,10 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.spring.model.ConditionOfParking;
 import com.spring.model.Conditions;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
+import com.spring.model.Stamp;
 import com.spring.model.Week;
 
 public class ParkingAdminManager {
@@ -23,6 +23,16 @@ public class ParkingAdminManager {
 			}
 		}
 		return list;
+	}
+
+	public String doAddStamp(String nameMall, String price, String hour, String con) {
+		String status = "";
+		Mall mall = this.searchMall(nameMall);
+		Stamp stamp = new Stamp(con, Integer.parseInt(price), Integer.parseInt(hour));
+		mall.getStamp().add(stamp);
+		stamp.setMall(mall);
+		status = this.addStamp(stamp);
+		return status;
 	}
 
 	public String doAddConditionIII(String nameMall, String con1, String date1, String time1, String type1, String con2,
@@ -55,9 +65,9 @@ public class ParkingAdminManager {
 				System.out.println(this.addWeek(w1));
 				System.out.println(this.addWeek(w2));
 				System.out.println(this.addWeek(w3));
-				
+
 			} else {
-				
+
 				Conditions c1 = new Conditions(con1, "I");
 				Conditions c2 = new Conditions(con2, "II");
 				Conditions c3 = new Conditions(con3, "III");
@@ -227,21 +237,6 @@ public class ParkingAdminManager {
 		return list;
 	}
 
-	public String addCondition(ConditionOfParking c) {
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			session.save(c);
-			session.getTransaction().commit();
-			session.close();
-			return "Add Condition Successfully...";
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Cannot Add Condition !!!";
-		}
-	}
-
 	public String addConditions(Conditions c) {
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
@@ -269,6 +264,21 @@ public class ParkingAdminManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "Cannot Add Condition !!!";
+		}
+	}
+
+	public String addStamp(Stamp s) {
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.save(s);
+			session.getTransaction().commit();
+			session.close();
+			return "Add Stamp Successfully...";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Cannot Add Stamp !!!";
 		}
 	}
 }

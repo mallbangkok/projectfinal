@@ -2,7 +2,6 @@ package com.spring.adminaddparking;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -10,9 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.spring.addmall.AddMallManager;
-import com.spring.model.ConditionOfParking;
 import com.spring.model.Mall;
 import com.spring.userparking.ParkingUserManager;
 
@@ -69,6 +66,19 @@ public class ParkingAdminController {
 		} catch (Exception e) {
 
 		}
+
+		return mav;
+	}
+
+	@RequestMapping(value = "add-condition-parking-stamp", method = RequestMethod.GET)
+	public ModelAndView addStamp(HttpSession session, HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin-parking");
+		ParkingAdminManager pm = new ParkingAdminManager();
+		String nameMall = request.getParameter("nameMalls");
+		String con = request.getParameter("con4");
+		String price = request.getParameter("price4");
+		String freeHour = request.getParameter("freeHour");
+		System.out.println(pm.doAddStamp(nameMall, price, freeHour, con));
 
 		return mav;
 	}

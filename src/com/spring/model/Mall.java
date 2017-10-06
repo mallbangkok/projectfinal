@@ -24,6 +24,8 @@ public class Mall {
 	@ManyToMany(cascade=CascadeType.MERGE , mappedBy = "malls" , fetch = FetchType.EAGER)
 	private Set<Facilities> facilites = new HashSet<Facilities>();
 	
+	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
+	private Set<Stamp> stamp = new HashSet<Stamp>();
 
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Store> stores = new HashSet<Store>();
@@ -31,8 +33,7 @@ public class Mall {
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Conditions> conditions = new HashSet<Conditions>();
 	
-	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
-	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
+	
 	
 	public Mall() {
 		super();
@@ -84,6 +85,14 @@ public class Mall {
 	}
 
 
+
+	public Set<Stamp> getStamp() {
+		return stamp;
+	}
+
+	public void setStamp(Set<Stamp> stamp) {
+		this.stamp = stamp;
+	}
 
 	public void setMallNameEng(String mallNameEng) {
 		this.mallNameEng = mallNameEng;
@@ -183,13 +192,6 @@ public class Mall {
 		this.stores = stores;
 	}
 
-	public Set<ConditionOfParking> getConditionOfParking() {
-		return conditionOfParking;
-	}
-
-	public void setConditionOfParking(Set<ConditionOfParking> conditionOfParking) {
-		this.conditionOfParking = conditionOfParking;
-	}
 
 	public Set<Conditions> getConditions() {
 		return conditions;
