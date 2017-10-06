@@ -76,10 +76,9 @@ public class SearchFilterManager {
 		}
 		return list;
 	}
-	public List<Store> listFood(long mallid){
+	public List<Store> listFood(Mall mall){
 		List<Store> listFood = new ArrayList<>();
-		
-		for(Store s : this.listStores(mallid)){
+		for(Store s : mall.getStores()){
 			if(s.getStoreType().equals("Food")){
 				listFood.add(s);
 			}
@@ -109,10 +108,9 @@ public class SearchFilterManager {
 		}
 		return list;
 	}
-	public List<Store> listShopping(long mallid){
+	public List<Store> listShopping(Mall mall){
 		List<Store> listShopping = new ArrayList<>();
-		
-		for(Store s : this.listStores(mallid)){
+		for(Store s : mall.getStores()){
 			if(s.getStoreType().equals("Shopping")){
 				listShopping.add(s);
 			}
@@ -120,10 +118,10 @@ public class SearchFilterManager {
 		return listShopping;
 	}
 	
-	public List<Store> listServices(long mallid){
+	public List<Store> listServices(Mall mall){
 		List<Store> listServices = new ArrayList<>();
 		
-		for(Store s : this.listStores(mallid)){
+		for(Store s : mall.getStores()){
 			if(s.getStoreType().equals("Services")){
 				listServices.add(s);
 			}

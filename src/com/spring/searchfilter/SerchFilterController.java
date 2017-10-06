@@ -30,9 +30,9 @@ public class SerchFilterController {
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall("Siam Square One");
 		
-		List<Store> listFood = sm.listFood(mall.getMallId());
-		List<Store> listShopping =sm.listShopping(mall.getMallId());
-		List<Store> listService = sm.listServices(mall.getMallId());
+		List<Store> listFood = sm.listFood(mall);
+		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listService = sm.listServices(mall);
 		
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
@@ -48,9 +48,9 @@ public class SerchFilterController {
 		String name = request.getParameter("malls");
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall(name);
-		List<Store> listFood = sm.listFood(mall.getMallId());
-		List<Store> listShopping =sm.listShopping(mall.getMallId());
-		List<Store> listService = sm.listServices(mall.getMallId());
+		List<Store> listFood = sm.listFood(mall);
+		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listService = sm.listServices(mall);
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);

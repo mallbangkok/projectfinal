@@ -24,7 +24,8 @@ public class HibernateConnection {
 				.addAnnotatedClass(Facilities.class)
 				.addAnnotatedClass(Article.class)
 				.addAnnotatedClass(Store.class)
-				.addAnnotatedClass(ConditionOfParking.class);
+				.addAnnotatedClass(ConditionOfParking.class)
+				.addAnnotatedClass(Conditions.class).addAnnotatedClass(Week.class);
 		StandardServiceRegistryBuilder ssrd = new StandardServiceRegistryBuilder()
 				.applySettings(cfg.getProperties());
 		sessionFactory = cfg.buildSessionFactory(ssrd.build());

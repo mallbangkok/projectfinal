@@ -43,7 +43,7 @@ public class ParkingUserController {
 		ModelAndView mav = new ModelAndView("user-parking");
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMall");
-		List<String> list = pm.doSearchConditionOfMall(nameMall);
+		List<String> list = pm.doSearchCondition(nameMall);
 		String number = pm.checkNumber(nameMall);
 		Mall mall = pm.doSearchMall(nameMall);
 		session.setAttribute("listConditon", list);

@@ -259,7 +259,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                             <label for="form-create-agency-zip">Time In:</label>
-                                                <input type="time" class="form-control"name="timeIn" id="timeIn" placeholder="00:00">
+                                               <input type="text" class="form-control"name="timeIn" id="timeIn" placeholder="00:00">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
@@ -287,9 +287,7 @@
                                      <div class="col-md-4 col-sm-4"></div>
                                         <div class="col-md-4 col-sm-4">
                                            <div class="form-group clearfix">
-                                            
                                                 <button class="btn btn-default large" id="docalculate-user">Calculate</button>
-                                          
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->  
                                         <div class="col-md-4 col-sm-4"></div>

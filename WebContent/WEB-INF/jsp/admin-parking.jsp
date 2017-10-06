@@ -233,8 +233,9 @@
                		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
                		   <c:choose>
                                <c:when test="${typeOfParking == 'III' }">
-                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get">
-                                <input type="hidden" name="nameMalls" id="nameMalls" >
+                                <form role="form" id="addcondition"  action="add-condition-parking" method="get">
+                                 <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="III" >
                                <div class="col-md-8 col-sm-12">   
                                 <section id="property-features">
                                    <hr class="thick"></hr>
@@ -353,8 +354,9 @@
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
-                                 <form role="form" id="addconditioni"  action="add-conditionI-parking" method="get">
+                                 <form role="form" id="addconditioni"  action="add-condition-parking" method="get">
                                   <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="I" >
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
@@ -392,8 +394,9 @@
                		 <c:choose>
                                <c:when test="${typeOfParking == 'II' }">
                                 <div class="col-md-8 col-sm-12">
-                                  <form role="form" id="addconditionII"  action="add-conditionII-parking" method="get" >
+                                  <form role="form" id="addconditionII"  action="add-condition-parking" method="get" >
                                    <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="II" >
                                 <section id="property-features">
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">

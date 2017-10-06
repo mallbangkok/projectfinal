@@ -29,6 +29,9 @@ public class Mall {
 	private Set<Store> stores = new HashSet<Store>();
 	
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
+	private Set<Conditions> conditions = new HashSet<Conditions>();
+	
+	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
 	
 	public Mall() {
@@ -186,6 +189,14 @@ public class Mall {
 
 	public void setConditionOfParking(Set<ConditionOfParking> conditionOfParking) {
 		this.conditionOfParking = conditionOfParking;
+	}
+
+	public Set<Conditions> getConditions() {
+		return conditions;
+	}
+
+	public void setConditions(Set<Conditions> conditions) {
+		this.conditions = conditions;
 	}
 	
 }
