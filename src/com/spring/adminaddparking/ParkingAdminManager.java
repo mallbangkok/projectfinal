@@ -166,7 +166,6 @@ public class ParkingAdminManager {
 						c = s;
 					}
 				}
-
 				mall.getConditions().add(c);
 				c.getWeek().add(week);
 				c.setMall(mall);

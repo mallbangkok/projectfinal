@@ -309,10 +309,7 @@
                                 <section id="address">
                                     <div class="form-group">
                                         <label for="form-create-agency-address-1">Last Rate :</label>
-                                        <select id="conIII3" name="conIII3">
-                                        	<option value="ชั่วโมงที่กำหนดเป็นต้นไป">ชั่วโมงที่กำหนดเป็นต้นไป</option>
-                                        	<option value="เกินคิดเป็นชั่วโมงละ">เกินคิดเป็นชั่วโมงละ</option>
-                                        </select>
+                                       <input type="text" class="form-control" id="conIII3" name="conIII3" value="เกินคิดเป็นชั่วโมงละ">
                                     </div><!-- /.form-group -->
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">

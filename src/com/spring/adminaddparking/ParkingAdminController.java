@@ -33,7 +33,6 @@ public class ParkingAdminController {
 				String dateI = request.getParameter("dateofTypeConditonI");
 				String nameMall = request.getParameter("nameMalls");
 				System.out.println(pm.doAddConditionI(nameMall, conditionI, dateI));
-				System.out.println("11");
 			} else if ("II".equals(typeOfCondition)) {
 				String nameMall = request.getParameter("nameMalls");
 				String conditionI = request.getParameter("nameConII1");

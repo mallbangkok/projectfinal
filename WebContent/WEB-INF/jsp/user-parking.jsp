@@ -231,6 +231,11 @@
                                 		 <li><span>${i}</span> </li>
                                      </c:forEach>
                                 </c:if>
+                                     <c:if test = "${malls.getStamp() != null}"> 
+                                	 <c:forEach var="i" items="${malls.getStamp()}">
+                                		 <li><input type="checkbox" name="checkstamp" id="checkstamp" value="${i.getStampId()}"><span>${i.getName()} ${i.getPriceOfStamp()} บาท ฟรี  ${i.getHourOfStamp()} ชั่วโมง </span></li>
+                                     </c:forEach>
+                               		</c:if>
                                 </c:when>
                             </c:choose>
                             </ul>

@@ -53,7 +53,7 @@ public class ParkingUserController {
 
 	}
 
-	// true
+	// do calculate
 	@RequestMapping(value = "/docalculate-user", method = RequestMethod.GET)
 	public ModelAndView doCalculate(HttpServletRequest request, HttpSession session) {
 		ParkingUserManager pm = new ParkingUserManager();
@@ -61,9 +61,15 @@ public class ParkingUserController {
 		String timeIn = request.getParameter("timeIn");
 		String timeOut = request.getParameter("timeOut");
 		String nameMall = request.getParameter("mallsName");
-		String type = request.getParameter("typeNumber");
 		String date = request.getParameter("dateOfCal");
-		int price = pm.checkCalculate(nameMall, timeIn, timeOut, date, type);
+		String[] stamps = request.getParameterValues("checkstamp");
+		if (stamps != null) {
+			for (int i = 0; i < stamps.length; i++) {
+				System.out.println("Stamp::" + stamps[i]);
+			}
+		}
+
+		int price = pm.checkCalculate(nameMall, timeIn, timeOut, date, stamps);
 		session.setAttribute("priceafter", "" + price);
 
 		return mav;

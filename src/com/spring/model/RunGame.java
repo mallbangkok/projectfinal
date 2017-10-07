@@ -13,6 +13,229 @@ import org.hibernate.SessionFactory;
 import com.spring.addmall.AddMallManager;
 
 public class RunGame {
+	public static void main(String[] arge) {
+		AddMallManager mm = new AddMallManager();
+		String mallNameI = "Platform Wongwianyai";
+		String mallNameII = "The Up Rama 3";
+		Mall mall = new Mall();
+		Conditions con1 = new Conditions();
+		Conditions con2 = new Conditions();
+		Conditions con3 = new Conditions();
+		Week wc1 = new Week();
+		Week wc2 = new Week();
+		Week wc3 = new Week();
+		// Search mall by name input
+		for (Mall m : mm.getAllMalls()) {
+			if (mallNameII.equals(m.getMallNameEng())) {
+				mall = m;
+			}
+		}
+		// Date input
+		//String dateOfWeek = "จันทร์";
+		//String dateOfWeek = "เสาร์";
+		String dateOfWeek = "จันทร์";
+		for (Conditions c : mall.getConditions()) {
+			if (c.getTypeOfCon().equals("I")) {
+				con1 = c;
+				for (Week w : con1.getWeek()) {
+					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
+								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
+							wc1 = w;
+						}
+					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
+							wc1 = w;
+						}
+
+					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
+							wc1 = w;
+						}
+					}
+				}
+
+			} else if (c.getTypeOfCon().equals("II")) {
+				con2 = c;
+				for (Week w : con2.getWeek()) {
+					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
+								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
+							wc2 = w;
+						}
+					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
+							wc2 = w;
+						}
+
+					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
+							wc2 = w;
+						}
+					}
+				}
+			} else if (c.getTypeOfCon().equals("III")) {
+				con3 = c;
+				for (Week w : con3.getWeek()) {
+					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
+								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
+							wc3 = w;
+						}
+					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
+								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
+							wc3 = w;
+						}
+
+					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
+						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตย์")) {
+							wc3 = w;
+						}
+					}
+				}
+			}
+		}
+		// Time in and Time out
+		String timeIn = "06:00";
+		String timeOut = "12:10";
+		String[] splitTimeIn = timeIn.split(":");
+		String[] splitTimeOut = timeOut.split(":");
+		int hourIn = Integer.parseInt(splitTimeIn[0]);
+		int hourOut = Integer.parseInt(splitTimeOut[0]);
+		int miniteIn = Integer.parseInt(splitTimeIn[1]);
+		int miniteOut = Integer.parseInt(splitTimeOut[1]);
+		int aMin=0,aHour=0,total=0;
+		if (miniteOut < miniteIn) {
+			aMin = (miniteOut + 60) - miniteIn;
+			aHour = (hourOut - 1) - hourIn;
+		} else {
+			aMin = miniteOut - miniteIn;
+			aHour = hourOut - hourIn;
+		}
+		// Serach time of stamp start
+		int freeOfStamp = 0;
+		int[] stamp = {  };
+		for (Integer st : stamp) {
+			for (Stamp s : mall.getStamp()) {
+				if (st == s.getStampId()) {
+					freeOfStamp += s.getHourOfStamp();
+				}
+			}
+		}
+		System.out.println(mall.getMallNameEng());
+		System.out.println("Stamp:" + freeOfStamp + " Hour");
+		// Serach time of stamp stop
+
+		if (mall.getConditions().size() == 2) {
+			int conditionIFree =0;
+			System.out.println("2222222222");
+			boolean typeOfHour =false;
+			if("ชั่วโมง".equals(wc1.getTypeOfTime())){
+				typeOfHour = true;
+				conditionIFree =wc1.getRateTime();
+			}else{
+				typeOfHour = false;
+				conditionIFree =wc1.getRateTime();
+			}
+			if(typeOfHour){//calculate to hour
+				int freeHour =wc1.getRateTime()+freeOfStamp;
+				if(aMin>0){//MiniteFii +1 hour
+					aHour+=1;
+				}
+				if(aHour<freeHour){
+					total+=0;
+				}else{
+					total+=(aHour-freeHour)*wc2.getPrice();
+				}
+				
+				
+			}else{//calculate to minute
+				if(conditionIFree<aMin){//MiniteFii 45<50 minIn check minite to hour +1
+					aHour+=1;
+				}
+				if(aHour<freeOfStamp){//HourIn 3<5 FreeStamp
+					total =0;
+				}else{
+					aHour-=freeOfStamp;
+					if(aHour<wc2.getRateTime()){
+						total+=0;
+					}else{
+						total+=aHour*wc2.getPrice();
+					}
+				}
+			}
+		} else if (mall.getConditions().size() == 3) {
+			Boolean typeOfHour =false;
+			int conditionIFree=0;
+			if("ชั่วโมง".equals(wc1.getTypeOfTime())){
+				typeOfHour = true;
+				conditionIFree =wc1.getRateTime();
+			}else{
+				typeOfHour = false;
+				conditionIFree =wc1.getRateTime();
+			}
+			if(typeOfHour){//calculate by hour
+				int freeHour =wc1.getRateTime()+freeOfStamp;
+				if(aMin>0){//MiniteFii +1 hour
+					aHour+=1;
+					System.out.println("+++++++1");
+				}
+				if(aHour<freeHour){//HourIn 4 < 3+2
+					total +=0;
+				}else{
+					aHour-=freeHour;
+					if(aHour>0){
+						if((aHour+wc1.getRateTime())>wc3.getRateTime()){
+							total+=((wc3.getRateTime()-wc1.getRateTime())*wc2.getPrice())+(((aHour+wc1.getRateTime())-wc3.getRateTime())*wc3.getPrice());
+							System.out.println(">>>");
+						}else if(aHour<wc1.getRateTime()){
+							total+=0;
+						}else if(aHour>=wc1.getRateTime()&&aHour<=wc3.getRateTime()){
+							total+= aHour*wc2.getPrice();
+						}
+					}else{
+						total+=0;
+					}
+				}
+				
+			}else{//calculate by Minite3333
+				if(aMin<=wc1.getRateTime()&& aHour<=0){
+					total +=0;
+				}else{
+					if(aMin>wc1.getRateTime()){
+						aHour+=1;
+					}
+					if((aHour-freeOfStamp)>wc3.getRateTime()){
+						total+=(((aHour-freeOfStamp)-wc3.getRateTime())*wc3.getPrice())+wc3.getRateTime()*wc2.getPrice();
+					}else if((aHour-freeOfStamp)>=1 &&(aHour-freeOfStamp)<=wc3.getRateTime()){
+						total+=(aHour-freeOfStamp)*wc2.getPrice();
+					}
+				}
+			}
+			
+		}
+
+		System.out.println("Time Out :" + timeOut);
+		System.out.println("Time In :" + timeIn);
+		System.out.println("Condition I :" + wc1.getRateTime() + " " + wc1.getTypeOfTime());
+		System.out.println("Condition II :" + wc2.getPrice()+" Batch");
+		System.out.println("Condition II :"+" Hour at "+ wc3.getRateTime()+" " + wc3.getPrice()+" Batch");
+		System.out.println("Stamp:"+freeOfStamp);
+		System.out.println("Time Hour :"+aHour);
+		System.out.println("Time Minute :"+aMin);
+		System.out.println("Total: "+total);
+		
+	}
+	//End Calculate ------------------------------------------------------------------------------------------------> End Calculate
+	
+	
+	
 	public static List<Mall> getAllMalls() {
 		List<Mall> list = new ArrayList<Mall>();
 		try {
@@ -37,7 +260,7 @@ public class RunGame {
 		return mall;
 	}
 
-	public static void main(String[] arge) {
+	public void calculateII() {
 		Conditions con1 = new Conditions();
 		Conditions con2 = new Conditions();
 		Conditions con3 = new Conditions();
@@ -68,7 +291,6 @@ public class RunGame {
 						}
 					}
 				}
-
 			} else if (c.getTypeOfCon().equals("II")) {
 				con2 = c;
 				for (Week w : con2.getWeek()) {
@@ -90,7 +312,7 @@ public class RunGame {
 						}
 					}
 				}
-			}else if (c.getTypeOfCon().equals("III")) {
+			} else if (c.getTypeOfCon().equals("III")) {
 				con3 = c;
 				for (Week w : con3.getWeek()) {
 					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
@@ -118,9 +340,8 @@ public class RunGame {
 		int free = 0;
 		int arMin = 0;
 		int aHour = 0;
-		String timeIn="06:00";
-		String timeOut="10:00";
-		
+		String timeIn = "06:00";
+		String timeOut = "10:00";
 		String[] splitTimeIn = timeIn.split(":");
 		String[] splitTimeOut = timeOut.split(":");
 		int hourIn = Integer.parseInt(splitTimeIn[0]);
@@ -175,7 +396,7 @@ public class RunGame {
 			}
 		} else {
 			System.out.println("No");
-			System.out.println("Check:"+check +" <= "+hour3);
+			System.out.println("Check:" + check + " <= " + hour3);
 			if (arMin > 0) {
 				aHour += 1;
 			}
@@ -183,253 +404,16 @@ public class RunGame {
 		}
 		System.out.println(timeOut);
 		System.out.println(timeIn);
-		System.out.println("Free:" + free +wc1.getTypeOfTime());
+		System.out.println("Free:" + free + wc1.getTypeOfTime());
 		System.out.println("Price:" + price2);
 		System.out.println("Hour: " + aHour);
 		System.out.println(price3 + " >><< " + hour3);
 		System.out.println("Minite:" + arMin);
 		System.out.println("Totle : " + totalOfParking);
-		
-	}
-
-	public void conditionI() {
-		AddMallManager mm = new AddMallManager();
-		Mall mall = new Mall();
-		Conditions con1 = new Conditions();
-		Conditions con2 = new Conditions();
-		Conditions con3 = new Conditions();
-		Week wc1 = new Week();
-		Week wc2 = new Week();
-		Week wc3 = new Week();
-		for (Mall m : mm.getAllMalls()) {
-			if ("The Up Rama 3".equals(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-		String dateOfWeek = "จันทร์";
-		for (Conditions c : mall.getConditions()) {
-			if (c.getTypeOfCon().equals("I")) {
-				con1 = c;
-				for (Week w : con1.getWeek()) {
-					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
-								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
-							wc1 = w;
-						}
-					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
-							wc1 = w;
-						}
-
-					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
-							wc1 = w;
-						}
-					}
-				}
-
-			} else if (c.getTypeOfCon().equals("II")) {
-				con2 = c;
-				for (Week w : con2.getWeek()) {
-					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
-								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
-							wc2 = w;
-						}
-					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
-							wc2 = w;
-						}
-
-					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
-							wc2 = w;
-						}
-					}
-				}
-			}else if (c.getTypeOfCon().equals("III")) {
-				con3 = c;
-				for (Week w : con3.getWeek()) {
-					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")
-								|| dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตบ์")) {
-							wc3 = w;
-						}
-					} else if ("จันทร์-ศุกร์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("จันทร์") || dateOfWeek.equals("อังคาร") || dateOfWeek.equals("พูธ")
-								|| dateOfWeek.equals("พฤหัสบดี") || dateOfWeek.equals("ศุกร์")) {
-							wc3 = w;
-						}
-
-					} else if ("เสาร์-อาทิตย์".equals(w.getDayOfWeek())) {
-						if (dateOfWeek.equals("เสาร์") || dateOfWeek.equals("อาทิตย์")) {
-							wc3 = w;
-						}
-					}
-				}
-			}
-		}
-		boolean minite = false;
-		int totalOfParking = 0;
-		int free = 0;
-		int arMin = 0;
-		int aHour = 0;
-		String timeIn = "08:00";
-		String timeOut = "09:01";
-		String[] splitTimeIn = timeIn.split(":");
-		String[] splitTimeOut = timeOut.split(":");
-		int hourIn = Integer.parseInt(splitTimeIn[0]);
-		int hourOut = Integer.parseInt(splitTimeOut[0]);
-		int miniteIn = Integer.parseInt(splitTimeIn[1]);
-		int miniteOut = Integer.parseInt(splitTimeOut[1]);
-
-		if ("ชั่วโมง".equals(wc1.getTypeOfTime())) {
-			free = wc1.getRateTime();
-			minite = true;
-		} else {
-			free = wc1.getRateTime();
-			minite = false;
-		}
-		if (miniteOut < miniteIn) {
-			arMin = (miniteOut + 60) - miniteIn;
-			aHour = (hourOut - 1) - hourIn;
-		} else {
-			arMin = miniteOut - miniteIn;
-			aHour = hourOut - hourIn;
-		}
-		int check = 0;
-		int price = wc2.getPrice();
-		if (minite) {
-			if (aHour < free) {
-				totalOfParking = 0;
-			} else {
-				if (arMin > 0) {
-					aHour += 1;
-				}
-				totalOfParking = (aHour - free) * price;
-			}
-		} else {
-			if (arMin <= free) {
-				totalOfParking = aHour * price;
-			} else {
-				aHour += 1;
-				totalOfParking = (aHour * price);
-			}
-		}
-
-		System.out.println(timeOut);
-		System.out.println(timeIn);
-		System.out.println("Free:" + free);
-		System.out.println("Price:" + price);
-		System.out.println("Hour: " + aHour);
-		System.out.println("Minite:" + arMin);
-		System.out.println("Totle : " + totalOfParking);
 
 	}
 
-	public void parkingCalculate() {
-		AddMallManager mm = new AddMallManager();
-		Mall mall = new Mall();
-		int totalOfParking = 0;
-		int free = 0;
-		int price = 0;
-		int hourCon3 = 0;
-		int priceCon3 = 0;
-		boolean minite = false;
-		for (Mall m : mm.getAllMalls()) {
-			if ("Siam Paragon".equals(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-
-//		for (ConditionOfParking c : mall.getConditions()) {
-//			if (c.getType().equals("1")) {
-//				if (c.getTimeOfCon() >= 60) {
-//					free = c.getTimeOfCon() / 60;
-//					minite = true;
-//				} else {
-//					free = c.getTimeOfCon();
-//					minite = false;
-//				}
-//			} else if (c.getType().equals("2")) {
-//				price = c.getPriceOfCon();
-//			} else if (c.getType().equals("3")) {
-//				if (c.getTimeOfCon() >= 60) {
-//					hourCon3 = c.getTimeOfCon() / 60;
-//				} else {
-//					hourCon3 = c.getTimeOfCon();
-//
-//				}
-//				priceCon3 = c.getPriceOfCon();
-//
-//			}
-//		}
-		int arMin = 0;
-		int aHour = 0;
-		String timeIn = "09:00";
-		String timeOut = "15:00";
-		String[] splitTimeIn = timeIn.split(":");
-		String[] splitTimeOut = timeOut.split(":");
-		int hourIn = Integer.parseInt(splitTimeIn[0]);
-		int hourOut = Integer.parseInt(splitTimeOut[0]);
-		int miniteIn = Integer.parseInt(splitTimeIn[1]);
-		int miniteOut = Integer.parseInt(splitTimeOut[1]);
-
-		if (miniteOut < miniteIn) {
-			arMin = (miniteOut + 60) - miniteIn;
-			aHour = (hourOut - 1) - hourIn;
-		} else {
-			arMin = miniteOut - miniteIn;
-			aHour = hourOut - hourIn;
-		}
-		int check = 0;
-		if (minite) {
-			check = aHour - free;
-		} else {
-			check = aHour;
-		}
-		if (check <= hourCon3) {
-			System.out.println("OK");
-			if (minite) {
-				if (aHour < free) {
-					totalOfParking = 0;
-				} else {
-					if (arMin > 0) {
-						aHour += 1;
-					}
-					totalOfParking = (aHour - free) * price;
-				}
-			} else {
-
-				if (arMin <= free) {
-					totalOfParking = aHour * price;
-				} else {
-					aHour += 1;
-					totalOfParking = (aHour * price);
-				}
-			}
-		} else {
-			System.out.println("No");
-			if (arMin > 0) {
-				aHour += 1;
-			}
-			totalOfParking = ((hourCon3 - free) * price) + ((aHour - hourCon3) * priceCon3);
-		}
-
-		System.out.println(timeOut);
-		System.out.println(timeIn);
-		System.out.println("Free:" + free);
-		System.out.println("Price:" + price);
-		System.out.println("Hour: " + aHour);
-		System.out.println(priceCon3 + " >><< " + hourCon3);
-		System.out.println("Minite:" + arMin);
-		System.out.println("Totle : " + totalOfParking);
-	}
+	
 
 	public void addWeek() {
 		AddMallManager mm = new AddMallManager();
