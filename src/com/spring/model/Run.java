@@ -31,22 +31,14 @@ import com.spring.admindeletestore.AdminDeleteStoreManager;
 import com.spring.login.AddUserManager;
 import com.spring.login.LoginMannager;
 import com.spring.searchfilter.SearchFilterManager;
-import com.spring.updateparking.EditParkingAdminManager;
+
 
 public class Run {
 	
 	
 	public static void main(String[] args) throws Exception {
-		EditParkingAdminManager em = new EditParkingAdminManager();
-		
-		Mall mall = new Mall();
-		for (Mall m : em.getAllMalls()) {
-			if ("Central Chidlom".equalsIgnoreCase(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-		
-		System.out.println(mall.getMallNameEng());
+		//EditParkingAdminManager em = new EditParkingAdminManager();
+	
 		
 	
 //		AddMallManager mm = new AddMallManager();

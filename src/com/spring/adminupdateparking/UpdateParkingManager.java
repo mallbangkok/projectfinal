@@ -1,13 +1,15 @@
-package com.spring.updateparking;
+package com.spring.adminupdateparking;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
 
-public class EditParkingAdminManager {
+public class UpdateParkingManager {
 	@SuppressWarnings("unchecked")
 	public List<String> getMallType() {
 		List<String> list = new ArrayList<String>();
