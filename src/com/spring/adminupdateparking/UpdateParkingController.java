@@ -3,20 +3,18 @@ package com.spring.adminupdateparking;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.spring.addmall.AddMallManager;
 import com.spring.adminliststore.AdminListStoreManager;
 import com.spring.model.Mall;
 import com.spring.model.Store;
+
 
 @Controller
 public class UpdateParkingController {
@@ -58,7 +56,7 @@ public class UpdateParkingController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/list-show-store-admin", method = RequestMethod.GET)
+	@RequestMapping(value = "/list-show-condition-admin", method = RequestMethod.GET)
 	public ModelAndView loadAdminListStorePage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("admin-list-condition");
 		AdminListStoreManager alsm = new AdminListStoreManager();
