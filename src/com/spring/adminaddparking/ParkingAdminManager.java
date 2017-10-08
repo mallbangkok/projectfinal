@@ -48,11 +48,11 @@ public class ParkingAdminManager {
 				Conditions c2 = new Conditions();
 				Conditions c3 = new Conditions();
 				for (Conditions s : mall.getConditions()) {
-					if ("I".equals(s.getTypeOfCon())) {
+					if ("I-II".equals(s.getTypeOfCon())) {
 						c1 = s;
-					} else if ("II".equals(s.getTypeOfCon())) {
+					} else if ("II-II".equals(s.getTypeOfCon())) {
 						c2 = s;
-					} else if ("III".equals(s.getTypeOfCon())) {
+					} else if ("III-II".equals(s.getTypeOfCon())) {
 						c3 = s;
 					}
 				}
@@ -68,9 +68,9 @@ public class ParkingAdminManager {
 
 			} else {
 
-				Conditions c1 = new Conditions(con1, "I");
-				Conditions c2 = new Conditions(con2, "II");
-				Conditions c3 = new Conditions(con3, "III");
+				Conditions c1 = new Conditions(con1, "I-II");
+				Conditions c2 = new Conditions(con2, "II-II");
+				Conditions c3 = new Conditions(con3, "III-II");
 				c1.setMall(mall);
 				c2.setMall(mall);
 				c3.setMall(mall);
@@ -113,12 +113,15 @@ public class ParkingAdminManager {
 				Conditions c1 = new Conditions();
 				Conditions c2 = new Conditions();
 				for (Conditions s : mall.getConditions()) {
-					if ("I".equals(s.getTypeOfCon())) {
+					if ("I-II".equals(s.getTypeOfCon())) {
 						c1 = s;
-					} else if ("II".equals(s.getTypeOfCon())) {
+					} else if ("II-II".equals(s.getTypeOfCon())) {
 						c2 = s;
 					}
 				}
+				
+				c1.setMall(mall);
+				c2.setMall(mall);
 				w1.setConditions(c1);
 				w2.setConditions(c2);
 				c1.getWeek().add(w1);
@@ -127,8 +130,8 @@ public class ParkingAdminManager {
 				System.out.println(this.addWeek(w2));
 				System.out.println(">>0");
 			} else {
-				Conditions c1 = new Conditions(conditionI, "I");
-				Conditions c2 = new Conditions(conditionII, "II");
+				Conditions c1 = new Conditions(conditionI, "I-II");
+				Conditions c2 = new Conditions(conditionII, "II-II");
 				System.out.println("0<<");
 				mall.getConditions().add(c1);
 				mall.getConditions().add(c2);
@@ -154,7 +157,7 @@ public class ParkingAdminManager {
 	// true conI
 	public String doAddConditionI(String name, String conditionI, String dateI) {
 		String status = "";
-		Conditions condition = new Conditions(conditionI, "I");
+		Conditions condition = new Conditions(conditionI, "I-I");
 		Week week = new Week(0, 0, "", dateI);
 		Mall mall = this.searchMall(name);
 		try {

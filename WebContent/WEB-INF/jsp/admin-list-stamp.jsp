@@ -10,7 +10,6 @@
     <meta name="author" content="ThemeStarz">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin Management</title>
+    <title>Mall Bangkok | Admin List Store</title>
 
 </head>
 
@@ -144,7 +143,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">Admin List Store</li>
+                <li class="active">Admin Management</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -156,7 +155,7 @@
                 <section id="sidebar">
                     <header><h3>Management List</h3></header>
                     <aside>
-                        <ul class="sidebar-navigation">
+                         <ul class="sidebar-navigation">
                            <li><a href="admin-profile"><i class="fa fa-user"></i><span>Admin Profile</span></a></li>
                             <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
@@ -178,63 +177,121 @@
             <!-- end Sidebar -->
                 <!-- My Properties -->
                 <c:choose>
-                	<c:when test="${type != null}">
+                	<c:when test="${listStamp != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1>List Mall Category</h1></header>
+                        	<header><h1><c:out value="${listStamp.get(0).getMall().getMallNameEng()} "/> List Stamp (found : <c:out value="${listStampSize}"/> Stamp)</h1></header>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
                                     	<thead>
                                     	<tr>
-                                        	<th>Category Name</th>
-                                        	<th></th>
-                                        	<th></th>
-                                        	<th></th>
-                                        	<th></th>
+                                        	<th>Stamp ID</th>
+                                        	<th>Rate</th>
+                                        	<th>Free</th>
+                                        	<th>Edit</th>
+                                        	<th>Delete</th>
+                                        	
                                     	</tr>
                                     	</thead>
                                     <tbody>
-	                                    <c:forEach var="i" items="${type}">
-	                                    <tr>
-	                                        <td>
-	                                          	<div class="inner">
-	                                            	<a href="list-mall-condition-admin?type=${i}"><h2><c:out value="${i}"/></h2></a>
-	                                        	</div>  
-	                                        </td>
-	                                        <td></td>
-	                                        <td></td>
-	                                        <td></td>
-	                                        <td></td>
-	                                    </tr>
-	                                    </c:forEach>
+                                    	<c:if test="${page != null }">
+                                    		<c:forEach begin="1" end="${pages}" varStatus="loop">
+                                    			<c:choose>
+                                    				<c:when test="${page == loop.index }">
+                                    					<c:choose>
+                                    						<c:when test="${page == 1}">
+                                    							<c:forEach varStatus="i" begin="0" end="19" var="val" items="${listStamp }">   
+								                                    <tr>
+								                                        <td>
+								                                          	<div class="inner">
+								                                            	<a href="#"><h2><c:out value="${val.name}"/></h2></a>
+								                                        	</div>  
+								                                        </td>
+								                                        <td><c:out value="${val.priceOfStamp }"/> บาท</td>
+								                                        <td>ฟรี <c:out value="${val.hourOfStamp }"/> ชั่วโมง</td>
+								                                        <td class="actions">
+								                                            <a href="edit-stamp?stampid=${val.stampId }" class="edit"><i class="fa fa-pencil"></i></a>
+								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stamp?stampid=${val.stampId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i></a>
+																		</td>
+								                                    </tr>
+							                                    </c:forEach>
+                                    						</c:when>
+                                    						<c:otherwise>
+                                    							<c:forEach varStatus="i" begin="${page * 20 - 20 }" end="${page * 20 - 1}" var="val" items="${listStamp }">
+								                                    <tr>
+								                                        <td>
+								                                          	<div class="inner">
+								                                            	<a href="#"><h2><c:out value="${val.name}"/></h2></a>
+								                                        	</div>  
+								                                        </td>
+								                                        <td><c:out value="${val.name}"/></td>
+								                                        <td></td>
+								                                        <td class="actions">
+								                                            <a href="update-store?storeid=${val.stampId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.stampId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+																		</td>
+								                                    </tr>
+							                                    </c:forEach>
+                                    						</c:otherwise>
+                                    					</c:choose>
+                                    				</c:when>
+                                    			</c:choose>
+                                    		</c:forEach>
+                                    	</c:if>
+                                    	<c:if test="${page == null}">
+														<c:forEach varStatus="i" begin="0" end="20" var="val"
+															items="${listStamp }">
+															<tr>
+																<td>
+																	<div class="inner">
+																		<a href="#"><h2>
+																				<c:out value="${val.name}" />
+																			</h2></a>
+																	</div>
+																</td>
+																<td><c:out value="${val.name }" /></td>
+																<td></td>
+																<td class="actions"><a href="#" class="edit"><i
+																		class="fa fa-pencil"></i>Edit</a></td>
+																<td class="actions">
+																	<button type="button" class="btn btn-danger">Delete</button>
+																</td>
+															</tr>
+														</c:forEach>
+													</c:if>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
                             <!-- Pagination -->
                             <div class="center">
                                 <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
+                                <c:if test="${page == null }">
+                                	<li class="active"><a href="change-page?page=1"><c:out value="1"/></a></li>
+                                </c:if>
+                                <c:if test="${page != null }">
+                                	<c:forEach varStatus="val" begin="1" end="${pages}">
+	                                	<c:choose>
+	                                		<c:when test="${page == val.index }">
+	                                			<li class="active"><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:when>
+	                                		<c:otherwise>
+	                                			<li><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:otherwise>
+	                                	</c:choose>
+                                	</c:forEach>
+                                </c:if>
+                                
                                 </ul><!-- /.pagination-->
                             </div><!-- /.center-->
                         </div><!-- /.my-properties -->
                     </section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->
                 	</c:when>
-                	<c:otherwise>
-                	<div class="col-md-9 col-sm-10">
-                    <section id="my-properties">
-                        <header><h1>Welcome To Admin Management</h1></header>
-                        	<div class="my-properties">
-                           
-                        	</div><!-- /.my-properties -->
-                    	</section><!-- /#my-properties -->
-                	</div><!-- /.col-md-9 -->
-                	</c:otherwise>
                 </c:choose>
                 <!-- end My Properties -->
             </div><!-- /.row -->

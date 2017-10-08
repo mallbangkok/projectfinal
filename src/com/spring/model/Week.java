@@ -90,6 +90,15 @@ public class Week {
 		this.dayOfWeek = dayOfWeek;
 		this.conditions = conditions;
 	}
+
+	public Week(int weekId, int price, int rateTime, String typeOfTime, String dayOfWeek) {
+		super();
+		this.weekId = weekId;
+		this.price = price;
+		this.rateTime = rateTime;
+		this.typeOfTime = typeOfTime;
+		this.dayOfWeek = dayOfWeek;
+	}
 	
 
 }

@@ -189,8 +189,8 @@
                                     	<tr>
                                         	<th>Mall name</th>
                                         	<th></th>
-                                        	<th></th>
-                                        	<th></th>
+                                        	<th>Stamp</th>
+                                        	<th>Condition</th>
                                         	<th></th>
                                     	</tr>
                                     	</thead>
@@ -203,8 +203,12 @@
 	                                        	</div>  
 	                                        </td>
 	                                        <td><c:out value="${i.mallNameThai }"/></td>
-	                                        <td></td>
-	                                        <td></td>
+	                                        <td class="actions">
+								              <a href="list-show-condition-admin?mallid=${i.mallId }" class="edit"><i class="fa fa-pencil"></i>Condition</a>
+								            </td>
+	                                         <td class="actions">
+								               <a href="list-show-stamp-admin?mallid=${i.mallId }" class="edit"><i class="fa fa-pencil"></i>Stamp</a>
+		                                   </td>
 	                                        <td></td>
 	                                    </tr>
 	                                    </c:forEach>

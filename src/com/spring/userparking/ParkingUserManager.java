@@ -47,7 +47,7 @@ public class ParkingUserManager {
 				} else if ("2".equals(number)) {
 					boolean ant = true;
 					for (Conditions c : mall.getConditions()) {
-						if ("I".equals(c.getTypeOfCon())) {
+						if ("I-II".equals(c.getTypeOfCon())) {
 							for (Week w : c.getWeek()) {
 								list.add(c.getConditionName() + " " + w.getRateTime() + " " + w.getTypeOfTime() + "  "
 										+ w.getDayOfWeek());
@@ -55,7 +55,7 @@ public class ParkingUserManager {
 						}
 					}
 					for (Conditions c : mall.getConditions()) {
-						if ("II".equals(c.getTypeOfCon())) {
+						if ("II-II".equals(c.getTypeOfCon())) {
 							for (Week w : c.getWeek()) {
 								if (ant) {
 									list.add(c.getConditionName() + " " + w.getPrice() + " บาท ");
@@ -68,7 +68,7 @@ public class ParkingUserManager {
 				} else if ("3".equals(number)) {
 					boolean ant = true;
 					for (Conditions c : mall.getConditions()) {
-						if ("I".equals(c.getTypeOfCon())) {
+						if ("I-II".equals(c.getTypeOfCon())) {
 							for (Week w : c.getWeek()) {
 								list.add(c.getConditionName() + " " + w.getRateTime() + " " + w.getTypeOfTime() + "  "
 										+ w.getDayOfWeek());
@@ -76,7 +76,7 @@ public class ParkingUserManager {
 						}
 					}
 					for (Conditions c : mall.getConditions()) {
-						if ("II".equals(c.getTypeOfCon())) {
+						if ("II-II".equals(c.getTypeOfCon())) {
 							for (Week w : c.getWeek()) {
 								if (ant) {
 									list.add(c.getConditionName() + " " + w.getPrice() + " บาท ");
@@ -87,7 +87,7 @@ public class ParkingUserManager {
 					}
 					boolean ant1 = true;
 					for (Conditions c : mall.getConditions()) {
-						if ("III".equals(c.getTypeOfCon())) {
+						if ("III-II".equals(c.getTypeOfCon())) {
 							for (Week w : c.getWeek()) {
 								if (ant1) {
 									list.add(" เกินชั่วโมงที่ " + w.getRateTime() + " คิดชั่วโมงละ  " + w.getPrice()
@@ -219,7 +219,7 @@ public class ParkingUserManager {
 		// Search mall by name input
 		
 		for (Conditions c : mall.getConditions()) {
-			if (c.getTypeOfCon().equals("I")) {
+			if (c.getTypeOfCon().equals("I-II")) {
 				con1 = c;
 				for (Week w : con1.getWeek()) {
 					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
@@ -241,7 +241,7 @@ public class ParkingUserManager {
 					}
 				}
 
-			} else if (c.getTypeOfCon().equals("II")) {
+			} else if (c.getTypeOfCon().equals("II-II")) {
 				con2 = c;
 				for (Week w : con2.getWeek()) {
 					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {
@@ -262,7 +262,7 @@ public class ParkingUserManager {
 						}
 					}
 				}
-			} else if (c.getTypeOfCon().equals("III")) {
+			} else if (c.getTypeOfCon().equals("III-II")) {
 				con3 = c;
 				for (Week w : con3.getWeek()) {
 					if ("จันทร์-อาทิตย์".equals(w.getDayOfWeek())) {

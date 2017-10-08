@@ -177,20 +177,20 @@
             <!-- end Sidebar -->
                 <!-- My Properties -->
                 <c:choose>
-                	<c:when test="${listStore != null}">
+                	<c:when test="${listCondition != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1>List Store (found : <c:out value="${listStoreSize}"/> Store)</h1></header>
+                        	<header><h1><c:out value="${listCondition.get(0).getMall().getMallNameEng()} "/> List Condition (found : <c:out value="${listConditionSize}"/> Condition)</h1></header>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
                                     	<thead>
                                     	<tr>
-                                        	<th>Store name</th>
-                                        	<th>Floor</th>
+                                        	<th>Condition Name</th>
                                         	<th></th>
-                                        	<th>Actions</th>
                                         	<th></th>
+                                        	<th>Rate</th>
+                                        	<th>Delete</th>
                                     	</tr>
                                     	</thead>
                                     <tbody>
@@ -200,38 +200,38 @@
                                     				<c:when test="${page == loop.index }">
                                     					<c:choose>
                                     						<c:when test="${page == 1}">
-                                    							<c:forEach varStatus="i" begin="0" end="19" var="val" items="${listStore }">   
+                                    							<c:forEach varStatus="i" begin="0" end="19" var="val" items="${listCondition }">   
 								                                    <tr>
 								                                        <td>
 								                                          	<div class="inner">
-								                                            	<a href="#"><h2><c:out value="${val.storeName}"/></h2></a>
+								                                            	<a href="#"><h2><c:out value="${val.conditionName}"/></h2></a>
 								                                        	</div>  
 								                                        </td>
-								                                        <td><c:out value="${val.floor }"/></td>
+								                                        <td></td>
 								                                        <td></td>
 								                                        <td class="actions">
-								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+								                                            <a href="seacch-rate-week?conId=${val.conditionId }" class="edit"><i class="fa fa-pencil"></i>Rate</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-condition?conditionid=${val.conditionId }" class="edit"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
 							                                    </c:forEach>
                                     						</c:when>
                                     						<c:otherwise>
-                                    							<c:forEach varStatus="i" begin="${page * 20 - 20 }" end="${page * 20 - 1}" var="val" items="${listStore }">
+                                    							<c:forEach varStatus="i" begin="${page * 20 - 20 }" end="${page * 20 - 1}" var="val" items="${listCondition }">
 								                                    <tr>
 								                                        <td>
 								                                          	<div class="inner">
-								                                            	<a href="#"><h2><c:out value="${val.storeName}"/></h2></a>
+								                                            	<a href="#"><h2><c:out value="${val.conditionName}"/></h2></a>
 								                                        	</div>  
 								                                        </td>
 								                                        <td><c:out value="${val.floor}"/></td>
 								                                        <td></td>
 								                                        <td class="actions">
-								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+								                                            <a href="update-store?storeid=${val.conditionId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.conditionId}" class="edit"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
@@ -244,7 +244,7 @@
                                     	</c:if>
                                     	<c:if test="${page == null}">
 														<c:forEach varStatus="i" begin="0" end="20" var="val"
-															items="${listStore }">
+															items="${listCondition }">
 															<tr>
 																<td>
 																	<div class="inner">
