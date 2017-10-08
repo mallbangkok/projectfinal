@@ -10,7 +10,6 @@
     <meta name="author" content="ThemeStarz">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin Management</title>
+    <title>Mall Bangkok | Admin List Store</title>
 
 </head>
 
@@ -67,57 +66,68 @@
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
-							<li class="has-child"><a href="#">Directory</a>
-								<ul class="child-navigation">
-									<li><a href="#">List By Type</a>
-										<ul class="child-navigation">
-											<c:forEach var="type" items="${types}">
-												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
-											</c:forEach>
-										</ul></li>
-									<li><a href="#">List By Area</a>
-										<ul class="child-navigation">
-											<c:forEach var="area" items="${areas}">
-												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
-											</c:forEach>
-										</ul>
-									</li>
-									<li><a href="list-mall?typename=all">List All</a></li>
-								</ul></li>
-							<li class="has-child"><a href="#">Pages</a>
-								<ul class="child-navigation">
-									<li><a href="article">Test Article</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="invoice-print.html">Invoice</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-properties.html">My Properties</a></li>
-									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
-									<li><a href="create-account.html">Create Account</a></li>
-									<li><a href="create-agency.html">Create Agency</a></li>
-									<li><a href="sign-in">Sign In</a></li>
-									<li class="has-child"><a href="#">Error Pages</a>
-										<ul class="child-navigation">
-											<li><a href="403.html">403</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="500.html">500</a></li>
-										</ul></li>
-								</ul></li>
-							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
+                        <li class="active has-child"><a href="#">Homepage</a>
+                            <ul class="child-navigation">
+                                <li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
+                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
+                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
+                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
+                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
+                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
+                                <li><a href="index-slider.html">Slider Homepage</a></li>
+                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
+                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
+                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
+                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
+                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Directory</a>
+                            <ul class="child-navigation">
+                                <li><a href="#">List By Type</a>
+                                	<ul class="child-navigation">
+                                		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
+                                		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
+                                		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+                                		<li><a href="#">Theme Mall</a></li>
+                                		<li><a href="#">Luxury Mall</a></li>
+                                		<li><a href="#">Department Store</a></li>
+                                		<li><a href="#">Complex</a></li>
+                                		<li><a href="#">Shopping Plaza</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="properties-listing">List By Area</a></li>
+                                <li><a href="properties-listing-grid.html">List All</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Pages</a>
+                            <ul class="child-navigation">
+                                <li><a href="my-properties">Admin Management</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Agents & Agencies</a>
+                            <ul class="child-navigation">
+                                <li><a href="agents-listing.html">Agents Listing</a></li>
+                                <li><a href="agent-detail.html">Agent Detail</a></li>
+                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
+                                <li><a href="agency-detail.html">Agency Detail</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
 								<ul class="child-navigation">
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
-								</ul></li>
-							<li><a href="parking-user">Parking</a>
-								</li>
-							<li class="has-child"><a href="#">Blog</a>
-								<ul class="child-navigation">
-									<li><a href="blog">Blog Listing</a></li>
-									<li><a href="blog-detail">Blog Post Detail</a></li>
-								</ul></li>
-							<li><a href="agency-detail">Contact</a></li>
-							<c:if test="${username != null }">
+								</ul>
+						</li>
+                        <li class="has-child"><a href="#">Blog</a>
+                            <ul class="child-navigation">
+                                <li><a href="blog.html">Blog Listing</a></li>
+                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
-							</c:if>
+						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -145,7 +155,7 @@
                 <section id="sidebar">
                     <header><h3>Management List</h3></header>
                     <aside>
-                        <ul class="sidebar-navigation">
+                         <ul class="sidebar-navigation">
                            <li><a href="admin-profile"><i class="fa fa-user"></i><span>Admin Profile</span></a></li>
                             <li><a href="submit"><i class="fa fa-home"></i><span>Add Mall</span></a></li>
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
@@ -157,7 +167,7 @@
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
                             	<ul>
                             		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
-                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Edit Parking</span></a>
+                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Update Parking</span></a>
                             	</ul>
                             </li>
                         </ul>
@@ -166,16 +176,122 @@
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
-                <div class="col-md-9 col-sm-10">
-                    <section id="my-properties">
-                        <header><h1>Welcome To Admin Management</h1></header>
+                <c:choose>
+                	<c:when test="${listStore != null}">
+                		<div class="col-md-9 col-sm-10">
+                    		<section id="my-properties">
+                        	<header><h1>List Store (found : <c:out value="${listStoreSize}"/> Store)</h1></header>
                         	<div class="my-properties">
-                           		<c:if test="${message != null }">
-                           			<h2><c:out value="${message}"/></h2>
-                           		</c:if>
-                        	</div><!-- /.my-properties -->
-                    	</section><!-- /#my-properties -->
+                            	<div class="table-responsive">
+                                	<table class="table">
+                                    	<thead>
+                                    	<tr>
+                                        	<th>Store name</th>
+                                        	<th>Floor</th>
+                                        	<th></th>
+                                        	<th>Actions</th>
+                                        	<th></th>
+                                    	</tr>
+                                    	</thead>
+                                    <tbody>
+                                    	<c:if test="${page != null }">
+                                    		<c:forEach begin="1" end="${pages}" varStatus="loop">
+                                    			<c:choose>
+                                    				<c:when test="${page == loop.index }">
+                                    					<c:choose>
+                                    						<c:when test="${page == 1}">
+                                    							<c:forEach varStatus="i" begin="0" end="19" var="val" items="${listStore }">   
+								                                    <tr>
+								                                        <td>
+								                                          	<div class="inner">
+								                                            	<a href="#"><h2><c:out value="${val.storeName}"/></h2></a>
+								                                        	</div>  
+								                                        </td>
+								                                        <td><c:out value="${val.floor }"/></td>
+								                                        <td></td>
+								                                        <td class="actions">
+								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+																		</td>
+								                                    </tr>
+							                                    </c:forEach>
+                                    						</c:when>
+                                    						<c:otherwise>
+                                    							<c:forEach varStatus="i" begin="${page * 20 - 20 }" end="${page * 20 - 1}" var="val" items="${listStore }">
+								                                    <tr>
+								                                        <td>
+								                                          	<div class="inner">
+								                                            	<a href="#"><h2><c:out value="${val.storeName}"/></h2></a>
+								                                        	</div>  
+								                                        </td>
+								                                        <td><c:out value="${val.floor}"/></td>
+								                                        <td></td>
+								                                        <td class="actions">
+								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
+								                                        </td>
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+																		</td>
+								                                    </tr>
+							                                    </c:forEach>
+                                    						</c:otherwise>
+                                    					</c:choose>
+                                    				</c:when>
+                                    			</c:choose>
+                                    		</c:forEach>
+                                    	</c:if>
+                                    	<c:if test="${page == null}">
+														<c:forEach varStatus="i" begin="0" end="20" var="val"
+															items="${listStore }">
+															<tr>
+																<td>
+																	<div class="inner">
+																		<a href="#"><h2>
+																				<c:out value="${val.storeName}" />
+																			</h2></a>
+																	</div>
+																</td>
+																<td><c:out value="${val.floor }" /></td>
+																<td></td>
+																<td class="actions"><a href="#" class="edit"><i
+																		class="fa fa-pencil"></i>Edit</a></td>
+																<td class="actions">
+																	<button type="button" class="btn btn-danger">Delete</button>
+																</td>
+															</tr>
+														</c:forEach>
+													</c:if>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.table-responsive -->
+                            <!-- Pagination -->
+                            <div class="center">
+                                <ul class="pagination">
+                                <c:if test="${page == null }">
+                                	<li class="active"><a href="change-page?page=1"><c:out value="1"/></a></li>
+                                </c:if>
+                                <c:if test="${page != null }">
+                                	<c:forEach varStatus="val" begin="1" end="${pages}">
+	                                	<c:choose>
+	                                		<c:when test="${page == val.index }">
+	                                			<li class="active"><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:when>
+	                                		<c:otherwise>
+	                                			<li><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                		</c:otherwise>
+	                                	</c:choose>
+                                	</c:forEach>
+                                </c:if>
+                                
+                                </ul><!-- /.pagination-->
+                            </div><!-- /.center-->
+                        </div><!-- /.my-properties -->
+                    </section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->
+                	</c:when>
+                </c:choose>
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->

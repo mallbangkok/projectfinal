@@ -14,6 +14,49 @@ import com.spring.addmall.AddMallManager;
 
 public class RunGame {
 	public static void main(String[] arge) {
+		System.out.println( do_deleteCondition(57));
+	}
+
+	public static String do_deleteCondition(int conid) {
+		try {
+			String message = "";
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+
+			for (Conditions a : getAllConditions()) {
+				if (conid == a.getConditionId()) {
+					session.delete(a);
+					message = "Delete Conditions Successfully...";
+					break;
+				} else {
+					message = "Cannot Delete , You don't have Conditions id " + conid;
+				}
+			}
+			session.getTransaction().commit();
+			session.close();
+			return message;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Cannot Delete Article !!!";
+		}
+	}
+
+	public static List<Conditions> getAllConditions() {
+		List<Conditions> list = new ArrayList<Conditions>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("from Conditions").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public void testcalculate() {
 		AddMallManager mm = new AddMallManager();
 		String mallNameI = "Platform Wongwianyai";
 		String mallNameII = "The Up Rama 3";
@@ -31,8 +74,8 @@ public class RunGame {
 			}
 		}
 		// Date input
-		//String dateOfWeek = "จันทร์";
-		//String dateOfWeek = "เสาร์";
+		// String dateOfWeek = "จันทร์";
+		// String dateOfWeek = "เสาร์";
 		String dateOfWeek = "จันทร์";
 		for (Conditions c : mall.getConditions()) {
 			if (c.getTypeOfCon().equals("I")) {
@@ -110,7 +153,7 @@ public class RunGame {
 		int hourOut = Integer.parseInt(splitTimeOut[0]);
 		int miniteIn = Integer.parseInt(splitTimeIn[1]);
 		int miniteOut = Integer.parseInt(splitTimeOut[1]);
-		int aMin=0,aHour=0,total=0;
+		int aMin = 0, aHour = 0, total = 0;
 		if (miniteOut < miniteIn) {
 			aMin = (miniteOut + 60) - miniteIn;
 			aHour = (hourOut - 1) - hourIn;
@@ -120,7 +163,7 @@ public class RunGame {
 		}
 		// Serach time of stamp start
 		int freeOfStamp = 0;
-		int[] stamp = {  };
+		int[] stamp = {};
 		for (Integer st : stamp) {
 			for (Stamp s : mall.getStamp()) {
 				if (st == s.getStampId()) {
@@ -133,109 +176,111 @@ public class RunGame {
 		// Serach time of stamp stop
 
 		if (mall.getConditions().size() == 2) {
-			int conditionIFree =0;
+			int conditionIFree = 0;
 			System.out.println("2222222222");
-			boolean typeOfHour =false;
-			if("ชั่วโมง".equals(wc1.getTypeOfTime())){
+			boolean typeOfHour = false;
+			if ("ชั่วโมง".equals(wc1.getTypeOfTime())) {
 				typeOfHour = true;
-				conditionIFree =wc1.getRateTime();
-			}else{
+				conditionIFree = wc1.getRateTime();
+			} else {
 				typeOfHour = false;
-				conditionIFree =wc1.getRateTime();
+				conditionIFree = wc1.getRateTime();
 			}
-			if(typeOfHour){//calculate to hour
-				int freeHour =wc1.getRateTime()+freeOfStamp;
-				if(aMin>0){//MiniteFii +1 hour
-					aHour+=1;
+			if (typeOfHour) {// calculate to hour
+				int freeHour = wc1.getRateTime() + freeOfStamp;
+				if (aMin > 0) {// MiniteFii +1 hour
+					aHour += 1;
 				}
-				if(aHour<freeHour){
-					total+=0;
-				}else{
-					total+=(aHour-freeHour)*wc2.getPrice();
+				if (aHour < freeHour) {
+					total += 0;
+				} else {
+					total += (aHour - freeHour) * wc2.getPrice();
 				}
-				
-				
-			}else{//calculate to minute
-				if(conditionIFree<aMin){//MiniteFii 45<50 minIn check minite to hour +1
-					aHour+=1;
+
+			} else {// calculate to minute
+				if (conditionIFree < aMin) {// MiniteFii 45<50 minIn check
+											// minite to hour +1
+					aHour += 1;
 				}
-				if(aHour<freeOfStamp){//HourIn 3<5 FreeStamp
-					total =0;
-				}else{
-					aHour-=freeOfStamp;
-					if(aHour<wc2.getRateTime()){
-						total+=0;
-					}else{
-						total+=aHour*wc2.getPrice();
+				if (aHour < freeOfStamp) {// HourIn 3<5 FreeStamp
+					total = 0;
+				} else {
+					aHour -= freeOfStamp;
+					if (aHour < wc2.getRateTime()) {
+						total += 0;
+					} else {
+						total += aHour * wc2.getPrice();
 					}
 				}
 			}
 		} else if (mall.getConditions().size() == 3) {
-			Boolean typeOfHour =false;
-			int conditionIFree=0;
-			if("ชั่วโมง".equals(wc1.getTypeOfTime())){
+			Boolean typeOfHour = false;
+			int conditionIFree = 0;
+			if ("ชั่วโมง".equals(wc1.getTypeOfTime())) {
 				typeOfHour = true;
-				conditionIFree =wc1.getRateTime();
-			}else{
+				conditionIFree = wc1.getRateTime();
+			} else {
 				typeOfHour = false;
-				conditionIFree =wc1.getRateTime();
+				conditionIFree = wc1.getRateTime();
 			}
-			if(typeOfHour){//calculate by hour
-				int freeHour =wc1.getRateTime()+freeOfStamp;
-				if(aMin>0){//MiniteFii +1 hour
-					aHour+=1;
+			if (typeOfHour) {// calculate by hour
+				int freeHour = wc1.getRateTime() + freeOfStamp;
+				if (aMin > 0) {// MiniteFii +1 hour
+					aHour += 1;
 					System.out.println("+++++++1");
 				}
-				if(aHour<freeHour){//HourIn 4 < 3+2
-					total +=0;
-				}else{
-					aHour-=freeHour;
-					if(aHour>0){
-						if((aHour+wc1.getRateTime())>wc3.getRateTime()){
-							total+=((wc3.getRateTime()-wc1.getRateTime())*wc2.getPrice())+(((aHour+wc1.getRateTime())-wc3.getRateTime())*wc3.getPrice());
+				if (aHour < freeHour) {// HourIn 4 < 3+2
+					total += 0;
+				} else {
+					aHour -= freeHour;
+					if (aHour > 0) {
+						if ((aHour + wc1.getRateTime()) > wc3.getRateTime()) {
+							total += ((wc3.getRateTime() - wc1.getRateTime()) * wc2.getPrice())
+									+ (((aHour + wc1.getRateTime()) - wc3.getRateTime()) * wc3.getPrice());
 							System.out.println(">>>");
-						}else if(aHour<wc1.getRateTime()){
-							total+=0;
-						}else if(aHour>=wc1.getRateTime()&&aHour<=wc3.getRateTime()){
-							total+= aHour*wc2.getPrice();
+						} else if (aHour < wc1.getRateTime()) {
+							total += 0;
+						} else if (aHour >= wc1.getRateTime() && aHour <= wc3.getRateTime()) {
+							total += aHour * wc2.getPrice();
 						}
-					}else{
-						total+=0;
+					} else {
+						total += 0;
 					}
 				}
-				
-			}else{//calculate by Minite3333
-				if(aMin<=wc1.getRateTime()&& aHour<=0){
-					total +=0;
-				}else{
-					if(aMin>wc1.getRateTime()){
-						aHour+=1;
+
+			} else {// calculate by Minite3333
+				if (aMin <= wc1.getRateTime() && aHour <= 0) {
+					total += 0;
+				} else {
+					if (aMin > wc1.getRateTime()) {
+						aHour += 1;
 					}
-					if((aHour-freeOfStamp)>wc3.getRateTime()){
-						total+=(((aHour-freeOfStamp)-wc3.getRateTime())*wc3.getPrice())+wc3.getRateTime()*wc2.getPrice();
-					}else if((aHour-freeOfStamp)>=1 &&(aHour-freeOfStamp)<=wc3.getRateTime()){
-						total+=(aHour-freeOfStamp)*wc2.getPrice();
+					if ((aHour - freeOfStamp) > wc3.getRateTime()) {
+						total += (((aHour - freeOfStamp) - wc3.getRateTime()) * wc3.getPrice())
+								+ wc3.getRateTime() * wc2.getPrice();
+					} else if ((aHour - freeOfStamp) >= 1 && (aHour - freeOfStamp) <= wc3.getRateTime()) {
+						total += (aHour - freeOfStamp) * wc2.getPrice();
 					}
 				}
 			}
-			
+
 		}
 
 		System.out.println("Time Out :" + timeOut);
 		System.out.println("Time In :" + timeIn);
 		System.out.println("Condition I :" + wc1.getRateTime() + " " + wc1.getTypeOfTime());
-		System.out.println("Condition II :" + wc2.getPrice()+" Batch");
-		System.out.println("Condition II :"+" Hour at "+ wc3.getRateTime()+" " + wc3.getPrice()+" Batch");
-		System.out.println("Stamp:"+freeOfStamp);
-		System.out.println("Time Hour :"+aHour);
-		System.out.println("Time Minute :"+aMin);
-		System.out.println("Total: "+total);
-		
+		System.out.println("Condition II :" + wc2.getPrice() + " Batch");
+		System.out.println("Condition II :" + " Hour at " + wc3.getRateTime() + " " + wc3.getPrice() + " Batch");
+		System.out.println("Stamp:" + freeOfStamp);
+		System.out.println("Time Hour :" + aHour);
+		System.out.println("Time Minute :" + aMin);
+		System.out.println("Total: " + total);
+
 	}
-	//End Calculate ------------------------------------------------------------------------------------------------> End Calculate
-	
-	
-	
+	// End Calculate
+	// ------------------------------------------------------------------------------------------------>
+	// End Calculate
+
 	public static List<Mall> getAllMalls() {
 		List<Mall> list = new ArrayList<Mall>();
 		try {
@@ -412,8 +457,6 @@ public class RunGame {
 		System.out.println("Totle : " + totalOfParking);
 
 	}
-
-	
 
 	public void addWeek() {
 		AddMallManager mm = new AddMallManager();

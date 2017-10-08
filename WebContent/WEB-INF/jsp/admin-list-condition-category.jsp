@@ -67,57 +67,68 @@
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
-							<li class="has-child"><a href="#">Directory</a>
-								<ul class="child-navigation">
-									<li><a href="#">List By Type</a>
-										<ul class="child-navigation">
-											<c:forEach var="type" items="${types}">
-												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
-											</c:forEach>
-										</ul></li>
-									<li><a href="#">List By Area</a>
-										<ul class="child-navigation">
-											<c:forEach var="area" items="${areas}">
-												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
-											</c:forEach>
-										</ul>
-									</li>
-									<li><a href="list-mall?typename=all">List All</a></li>
-								</ul></li>
-							<li class="has-child"><a href="#">Pages</a>
-								<ul class="child-navigation">
-									<li><a href="article">Test Article</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="invoice-print.html">Invoice</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-properties.html">My Properties</a></li>
-									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
-									<li><a href="create-account.html">Create Account</a></li>
-									<li><a href="create-agency.html">Create Agency</a></li>
-									<li><a href="sign-in">Sign In</a></li>
-									<li class="has-child"><a href="#">Error Pages</a>
-										<ul class="child-navigation">
-											<li><a href="403.html">403</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="500.html">500</a></li>
-										</ul></li>
-								</ul></li>
-							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
+                        <li class="active has-child"><a href="#">Homepage</a>
+                            <ul class="child-navigation">
+                                <li><a href="index-google-map-fullscreen.html">Google Map Full Screen</a></li>
+                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
+                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
+                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
+                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
+                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
+                                <li><a href="index-slider.html">Slider Homepage</a></li>
+                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
+                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
+                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
+                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
+                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Directory</a>
+                            <ul class="child-navigation">
+                                <li><a href="#">List By Type</a>
+                                	<ul class="child-navigation">
+                                		<li><a href="list-mall?typename=Regional Mall">Regional Mall</a></li>
+                                		<li><a href="list-mall?typename=Community Mall">Community Mall</a></li>
+                                		<li><a href="#">HyperMarket/SpecialtyStore</a></li>
+                                		<li><a href="#">Theme Mall</a></li>
+                                		<li><a href="#">Luxury Mall</a></li>
+                                		<li><a href="#">Department Store</a></li>
+                                		<li><a href="#">Complex</a></li>
+                                		<li><a href="#">Shopping Plaza</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="properties-listing">List By Area</a></li>
+                                <li><a href="properties-listing-grid.html">List All</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Pages</a>
+                            <ul class="child-navigation">
+                                <li><a href="my-properties">Admin Management</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-child"><a href="#">Agents & Agencies</a>
+                            <ul class="child-navigation">
+                                <li><a href="agents-listing.html">Agents Listing</a></li>
+                                <li><a href="agent-detail.html">Agent Detail</a></li>
+                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
+                                <li><a href="agency-detail.html">Agency Detail</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="loadsearchfilter">Search Mall</a>
 								<ul class="child-navigation">
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
-								</ul></li>
-							<li><a href="parking-user">Parking</a>
-								</li>
-							<li class="has-child"><a href="#">Blog</a>
-								<ul class="child-navigation">
-									<li><a href="blog">Blog Listing</a></li>
-									<li><a href="blog-detail">Blog Post Detail</a></li>
-								</ul></li>
-							<li><a href="agency-detail">Contact</a></li>
-							<c:if test="${username != null }">
+								</ul>
+						</li>
+                        <li class="has-child"><a href="#">Blog</a>
+                            <ul class="child-navigation">
+                                <li><a href="blog.html">Blog Listing</a></li>
+                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
-							</c:if>
+						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -133,7 +144,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">Admin Management</li>
+                <li class="active">Admin List Store</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -157,7 +168,7 @@
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
                             	<ul>
                             		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
-                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Edit Parking</span></a>
+                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Update Parking</span></a>
                             	</ul>
                             </li>
                         </ul>
@@ -166,16 +177,65 @@
             </div><!-- /.col-md-3 -->
             <!-- end Sidebar -->
                 <!-- My Properties -->
-                <div class="col-md-9 col-sm-10">
+                <c:choose>
+                	<c:when test="${type != null}">
+                		<div class="col-md-9 col-sm-10">
+                    		<section id="my-properties">
+                        	<header><h1>List Store</h1></header>
+                        	<div class="my-properties">
+                            	<div class="table-responsive">
+                                	<table class="table">
+                                    	<thead>
+                                    	<tr>
+                                        	<th>Category Name</th>
+                                        	<th></th>
+                                        	<th></th>
+                                        	<th></th>
+                                        	<th></th>
+                                    	</tr>
+                                    	</thead>
+                                    <tbody>
+	                                    <c:forEach var="i" items="${type}">
+	                                    <tr>
+	                                        <td>
+	                                          	<div class="inner">
+	                                            	<a href="list-mall-condition-admin?type=${i}"><h2><c:out value="${i}"/></h2></a>
+	                                        	</div>  
+	                                        </td>
+	                                        <td></td>
+	                                        <td></td>
+	                                        <td></td>
+	                                        <td></td>
+	                                    </tr>
+	                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.table-responsive -->
+                            <!-- Pagination -->
+                            <div class="center">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul><!-- /.pagination-->
+                            </div><!-- /.center-->
+                        </div><!-- /.my-properties -->
+                    </section><!-- /#my-properties -->
+                </div><!-- /.col-md-9 -->
+                	</c:when>
+                	<c:otherwise>
+                	<div class="col-md-9 col-sm-10">
                     <section id="my-properties">
                         <header><h1>Welcome To Admin Management</h1></header>
                         	<div class="my-properties">
-                           		<c:if test="${message != null }">
-                           			<h2><c:out value="${message}"/></h2>
-                           		</c:if>
+                           
                         	</div><!-- /.my-properties -->
                     	</section><!-- /#my-properties -->
-                </div><!-- /.col-md-9 -->
+                	</div><!-- /.col-md-9 -->
+                	</c:otherwise>
+                </c:choose>
                 <!-- end My Properties -->
             </div><!-- /.row -->
         </div><!-- /.container -->

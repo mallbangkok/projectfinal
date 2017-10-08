@@ -8,31 +8,19 @@ import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
 
 public class EditParkingAdminManager {
-	public int getTime(int t, String s) {
-		int total = 0;
-		if ("ชั่วโมง".equals(s)) {
-			total = (t * 60);
-		} else {
-			total = t;
+	@SuppressWarnings("unchecked")
+	public List<String> getMallType() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(type) from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		return total;
-	}
-
-
-
-
-	
-
-	
-
-	public Mall doSearchMall(String name) {
-		Mall mall = new Mall();
-		for (Mall m : getAllMalls()) {
-			if (name.equals(m.getMallNameEng())) {
-				mall = m;
-			}
-		}
-		return mall;
+		return list;
 	}
 
 	public List<Mall> getAllMalls() {
@@ -42,20 +30,6 @@ public class EditParkingAdminManager {
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 			list = session.createQuery("from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	public List<String> getMallType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(type) from Mall").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
