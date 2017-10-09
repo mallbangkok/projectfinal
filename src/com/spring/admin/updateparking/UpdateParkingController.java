@@ -1,4 +1,4 @@
-package com.spring.adminupdateparking;
+package com.spring.admin.updateparking;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;

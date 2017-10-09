@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.adminupdateparking.UpdateParkingManager;
+import com.spring.admin.updateparking.UpdateParkingManager;
 import com.spring.model.Stamp;
 @Controller
 public class ListStampController {

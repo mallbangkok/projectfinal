@@ -1,4 +1,4 @@
-package com.spring.adminupdateparking;
+package com.spring.admin.updateparking;
 
 import java.util.ArrayList;
 import java.util.List;
