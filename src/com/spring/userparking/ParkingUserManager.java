@@ -105,73 +105,7 @@ public class ParkingUserManager {
 		return list;
 	}
 
-	// public List<String> doSearchConditionOfMall(String nameMall) {
-	// List<String> list = new ArrayList();
-	// Mall mall = this.doSearchMall(nameMall);
-	// String number = "";
-	// try {
-	// if (mall.getConditionOfParking().size() == 0) {
-	// number = "0";
-	// } else {
-	// number = "" + mall.getConditionOfParking().size();
-	// if ("1".equals(number)) {
-	// for (ConditionOfParking c : mall.getConditionOfParking()) {
-	// list.add(c.getConName());
-	// list.add(c.getDateOfCon());
-	// }
-	// } else if ("2".equals(number)) {
-	// String con1 = "";
-	// String con2 = "";
-	// String date = "";
-	// for (ConditionOfParking c : mall.getConditionOfParking()) {
-	// if ("1".equals(c.getType())) {
-	// if (60 <= c.getTimeOfCon()) {
-	// con1 = "" + c.getConName() + " " + (c.getTimeOfCon() / 60) + " ชั่วโมง";
-	// } else {
-	// con1 = "" + c.getConName() + " " + c.getTimeOfCon() + " นาที";
-	// }
-	//
-	// } else if ("2".equals(c.getType())) {
-	// con2 = "" + c.getConName() + " " + c.getPriceOfCon() + " บาท";
-	// date = c.getDateOfCon();
-	// }
-	// }
-	// list.add(con1);
-	// list.add(con2);
-	// list.add(date);
-	// } else if ("3".equals(number)) {
-	// String con1 = "";
-	// String con2 = "";
-	// String con3 = "";
-	// String date = "";
-	// for (ConditionOfParking c : mall.getConditionOfParking()) {
-	// if ("1".equals(c.getType())) {
-	// if (60 <= c.getTimeOfCon()) {
-	// con1 = "" + c.getConName() + " " + (c.getTimeOfCon() / 60) + " ชั่วโมง";
-	// } else {
-	// con1 = "" + c.getConName() + " " + c.getTimeOfCon() + " นาที";
-	// }
-	//
-	// } else if ("2".equals(c.getType())) {
-	// con2 = "" + c.getConName() + " " + c.getPriceOfCon() + " บาท";
-	//
-	// } else if ("3".equals(c.getType())) {
-	// con3 = "ชั่วโมงที่ " + (c.getTimeOfCon()) + " เป็นต้นไป คิดเป็นชั่วโมงละ
-	// "
-	// + c.getPriceOfCon() + " บาท";
-	// date = c.getDateOfCon();
-	// }
-	// }
-	// list.add(con1);
-	// list.add(con2);
-	// list.add(con3);
-	// list.add(date);
-	// }
-	// }
-	// } catch (Exception e) {
-	// }
-	// return list;
-	// }
+	
 
 	public Mall doSearchMall(String name) {
 		Mall mall = new Mall();
