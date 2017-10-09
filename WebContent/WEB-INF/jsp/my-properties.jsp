@@ -153,7 +153,7 @@
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
                             	<ul>
                             		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
-                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Update Parking</span></a>
+                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Edit Parking</span></a>
                             	</ul>
                             </li>
                         </ul>

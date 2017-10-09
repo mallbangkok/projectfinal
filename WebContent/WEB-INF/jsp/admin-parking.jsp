@@ -233,8 +233,9 @@
                		 <!-- Start add Condition Condition Condition Condition Condition Condition Condition Condition Condition  -->
                		   <c:choose>
                                <c:when test="${typeOfParking == 'III' }">
-                                <form role="form" id="addconditionIII"  action="add-conditionIII-parking" method="get">
-                                <input type="hidden" name="nameMalls" id="nameMalls" >
+                                <form role="form" id="addcondition"  action="add-condition-parking" method="get">
+                                 <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="III" >
                                <div class="col-md-8 col-sm-12">   
                                 <section id="property-features">
                                    <hr class="thick"></hr>
@@ -308,10 +309,7 @@
                                 <section id="address">
                                     <div class="form-group">
                                         <label for="form-create-agency-address-1">Last Rate :</label>
-                                        <select id="conIII3" name="conIII3">
-                                        	<option value="ชั่วโมงที่กำหนดเป็นต้นไป">ชั่วโมงที่กำหนดเป็นต้นไป</option>
-                                        	<option value="เกินคิดเป็นชั่วโมงละ">เกินคิดเป็นชั่วโมงละ</option>
-                                        </select>
+                                       <input type="text" class="form-control" id="conIII3" name="conIII3" value="เกินคิดเป็นชั่วโมงละ">
                                     </div><!-- /.form-group -->
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
@@ -353,8 +351,9 @@
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
-                                 <form role="form" id="addconditioni"  action="add-conditionI-parking" method="get">
+                                 <form role="form" id="addconditioni"  action="add-condition-parking" method="get">
                                   <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="I" >
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
@@ -392,8 +391,9 @@
                		 <c:choose>
                                <c:when test="${typeOfParking == 'II' }">
                                 <div class="col-md-8 col-sm-12">
-                                  <form role="form" id="addconditionII"  action="add-conditionII-parking" method="get" >
+                                  <form role="form" id="addconditionII"  action="add-condition-parking" method="get" >
                                    <input type="hidden" name="nameMalls" id="nameMalls" >
+                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="II" >
                                 <section id="property-features">
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
@@ -459,7 +459,7 @@
                                 </section><!-- /#address -->
                                  <section id="submit">
                             <div class="form-group center">
-                                <button type="submit" class="btn btn-default large" id="addconditionII">Update</button>
+                                <button type="submit" class="btn btn-default large" id="addconditionII">Add Condition</button>
                             </div><!-- /.form-group -->
                         </section>
                             </div><!-- /.col-md-6 -->
@@ -471,6 +471,8 @@
                       <c:choose>
                                <c:when test="${typeOfParking == 'addStamp' }">
                                 <div class="col-md-8 col-sm-12">
+                                <form role="form" id="addconditionII"  action="add-condition-parking-stamp" method="get">
+                                 <input type="hidden" name="nameMalls" id="nameMalls" >
                                 <section id="property-features">
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
@@ -479,25 +481,23 @@
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="form-create-agency-city">Stramp :</label>
-  												<input type="text" class="form-control" id="form-create-agency-city" value="ใบเสร็จ">
+  												<input type="text" class="form-control" id="con4" name="con4" value="ใบเสร็จ">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->
                                          <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                               
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Price">
+                                                <input type="text" class="form-control" id="price4" name="price4" placeholder="Price">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                               
                                                 <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                
-                                                <input type="text" class="form-control" id="form-create-agency-zip" placeholder="Time">
+                                                <input type="text" class="form-control" id="freeHour" name="freeHour" placeholder="Time">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
@@ -516,6 +516,7 @@
                             </div><!-- /.col-md-6 --> 
                          
                                 </section><!-- /#property-features -->
+                                </form>
                             </div><!-- /.col-md-8 -->
                                </c:when>
                       </c:choose>

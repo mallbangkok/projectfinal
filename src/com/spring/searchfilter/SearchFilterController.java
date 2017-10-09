@@ -23,9 +23,15 @@ public class SearchFilterController {
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall("CentralPlaza Salaya");
 		
+<<<<<<< HEAD:src/com/spring/searchfilter/SearchFilterController.java
 		List<Store> listFood = sm.listFood(mall.getMallId());
 		List<Store> listShopping = sm.listShopping(mall.getMallId());
 		List<Store> listService = sm.listServices(mall.getMallId());
+=======
+		List<Store> listFood = sm.listFood(mall);
+		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listService = sm.listServices(mall);
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b:src/com/spring/searchfilter/SerchFilterController.java
 		
 		session.setAttribute("facilities", mall.getFacilites());
 		session.setAttribute("listShopping", listShopping);
@@ -43,9 +49,15 @@ public class SearchFilterController {
 		String name = request.getParameter("malls");
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall(name);
+<<<<<<< HEAD:src/com/spring/searchfilter/SearchFilterController.java
 		List<Store> listFood = sm.listFood(mall.getMallId());
 		List<Store> listShopping = sm.listShopping(mall.getMallId());
 		List<Store> listService = sm.listServices(mall.getMallId());
+=======
+		List<Store> listFood = sm.listFood(mall);
+		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listService = sm.listServices(mall);
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b:src/com/spring/searchfilter/SerchFilterController.java
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);

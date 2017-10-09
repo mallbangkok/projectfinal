@@ -31,25 +31,13 @@ import com.spring.admindeletestore.AdminDeleteStoreManager;
 import com.spring.adminlistmall.AdminListMallManager;
 import com.spring.login.LoginMannager;
 import com.spring.searchfilter.SearchFilterManager;
-import com.spring.updateparking.EditParkingAdminManager;
+
 
 public class Run {
-	public static String doUpdateCondition(ConditionOfParking con) {
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			session.saveOrUpdate(con);
-			session.getTransaction().commit();
-			session.close();
-			return "Update  Successfully...";
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Cannot Update !!!";
-		}
-	}
+	
 	
 	public static void main(String[] args) throws Exception {
+<<<<<<< HEAD
 //		EditParkingAdminManager em = new EditParkingAdminManager();
 //		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
 //		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
@@ -65,6 +53,12 @@ public class Run {
 //		
 //		c1.setMall(mall);;
 //		doUpdateCondition(c1);
+=======
+		//EditParkingAdminManager em = new EditParkingAdminManager();
+	
+		
+	
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 //		AddMallManager mm = new AddMallManager();
 //		FacilitiesManager fm = new FacilitiesManager();
 //		AddStoreManager sm = new AddStoreManager();
