@@ -23,28 +23,16 @@ public class Mall {
 
 	@ManyToMany(cascade = CascadeType.MERGE, mappedBy = "malls", fetch = FetchType.EAGER)
 	private Set<Facilities> facilites = new HashSet<Facilities>();
-<<<<<<< HEAD
-=======
-	
-	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
+
+	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)
 	private Set<Stamp> stamp = new HashSet<Stamp>();
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 
 	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)
 	private Set<Store> stores = new HashSet<Store>();
-<<<<<<< HEAD
 
 	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)
-	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
-
-=======
-	
-	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Conditions> conditions = new HashSet<Conditions>();
-	
-	
-	
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
+
 	public Mall() {
 		super();
 	}
@@ -92,10 +80,6 @@ public class Mall {
 		return mallNameEng;
 	}
 
-<<<<<<< HEAD
-=======
-
-
 	public Set<Stamp> getStamp() {
 		return stamp;
 	}
@@ -104,7 +88,6 @@ public class Mall {
 		this.stamp = stamp;
 	}
 
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 	public void setMallNameEng(String mallNameEng) {
 		this.mallNameEng = mallNameEng;
 	}
@@ -196,7 +179,6 @@ public class Mall {
 	public void setStores(Set<Store> stores) {
 		this.stores = stores;
 	}
-
 
 	public Set<Conditions> getConditions() {
 		return conditions;

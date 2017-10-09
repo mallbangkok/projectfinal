@@ -37,7 +37,7 @@ public class Run {
 	
 	
 	public static void main(String[] args) throws Exception {
-<<<<<<< HEAD
+
 //		EditParkingAdminManager em = new EditParkingAdminManager();
 //		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
 //		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
@@ -53,12 +53,12 @@ public class Run {
 //		
 //		c1.setMall(mall);;
 //		doUpdateCondition(c1);
-=======
+
 		//EditParkingAdminManager em = new EditParkingAdminManager();
 	
 		
 	
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
+
 //		AddMallManager mm = new AddMallManager();
 //		FacilitiesManager fm = new FacilitiesManager();
 //		AddStoreManager sm = new AddStoreManager();

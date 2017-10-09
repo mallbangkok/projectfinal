@@ -16,23 +16,17 @@ import com.spring.model.Store;
 
 @Controller
 public class SearchFilterController {
-	//false
+	// false
 	@RequestMapping(value = "/loadsearchfilter", method = RequestMethod.GET)
 	public ModelAndView loadPageSearch(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall("CentralPlaza Salaya");
-		
-<<<<<<< HEAD:src/com/spring/searchfilter/SearchFilterController.java
-		List<Store> listFood = sm.listFood(mall.getMallId());
-		List<Store> listShopping = sm.listShopping(mall.getMallId());
-		List<Store> listService = sm.listServices(mall.getMallId());
-=======
+
 		List<Store> listFood = sm.listFood(mall);
-		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listShopping = sm.listShopping(mall);
 		List<Store> listService = sm.listServices(mall);
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b:src/com/spring/searchfilter/SerchFilterController.java
-		
+
 		session.setAttribute("facilities", mall.getFacilites());
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
@@ -42,22 +36,21 @@ public class SearchFilterController {
 		return mav;
 
 	}
-	//false
+
+	// false
 	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
 		String name = request.getParameter("malls");
 		SearchFilterManager sm = new SearchFilterManager();
 		Mall mall = sm.doSearchMall(name);
-<<<<<<< HEAD:src/com/spring/searchfilter/SearchFilterController.java
-		List<Store> listFood = sm.listFood(mall.getMallId());
-		List<Store> listShopping = sm.listShopping(mall.getMallId());
-		List<Store> listService = sm.listServices(mall.getMallId());
-=======
+
+		
+
 		List<Store> listFood = sm.listFood(mall);
-		List<Store> listShopping =sm.listShopping(mall);
+		List<Store> listShopping = sm.listShopping(mall);
 		List<Store> listService = sm.listServices(mall);
->>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b:src/com/spring/searchfilter/SerchFilterController.java
+
 		session.setAttribute("listShopping", listShopping);
 		session.setAttribute("listFood", listFood);
 		session.setAttribute("listService", listService);
