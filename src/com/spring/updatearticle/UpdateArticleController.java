@@ -39,7 +39,7 @@ public class UpdateArticleController {
 	}
 	
 	@RequestMapping(value = "/article-update", method = RequestMethod.POST)
-	public ModelAndView do_addArticle(HttpServletRequest request, HttpSession session, Model md) {
+	public ModelAndView do_UpdateArticle(HttpServletRequest request, HttpSession session, Model md) {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
@@ -57,7 +57,7 @@ public class UpdateArticleController {
 		long articleid = Long.parseLong(aid);
 		
 		String message = uam.isUpdateArticle(articleid, articlename, articlename+".txt", uam.getCurrentDate(), articletype, content);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

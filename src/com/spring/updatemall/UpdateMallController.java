@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,7 +42,7 @@ public class UpdateMallController {
 	}
 
 	@RequestMapping(value = "/list-update-admin", method = RequestMethod.POST)
-	public ModelAndView do_AdminUpdateMall(HttpSession session, HttpServletRequest request) {
+	public ModelAndView do_AdminUpdateMall(HttpSession session, HttpServletRequest request,Model md) {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
@@ -53,7 +54,7 @@ public class UpdateMallController {
 		UpdateMallManager umm = new UpdateMallManager();
 
 		long mid = (long) session.getAttribute("mallid");
-		//System.out.println(mm.do_deleteMall(mid));
+		
 		String mallNameEng = request.getParameter("mallnameEng");
 		String mallNameThai = request.getParameter("mallNameThai");
 		String type = request.getParameter("type");
@@ -66,7 +67,7 @@ public class UpdateMallController {
 		String[] facilities = request.getParameterValues("facilites");
 		
 		String message = umm.isUpdateMall(mid, mallNameEng, mallNameThai, type, area, mallGroup, statusMall, umm.getCurrentDate(), timeMall, phoneNumber, imageName, facilities);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

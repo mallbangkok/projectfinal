@@ -10,7 +10,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.spring.model.Facilities;
-import com.spring.model.FacilitiesManager;
 import com.spring.model.HibernateConnection;
 import com.spring.model.Mall;
 
@@ -44,51 +43,6 @@ public class UpdateMallManager {
 		}
 		return list;
 	}
-
-	@SuppressWarnings("unchecked")
-	public List<String> getMallType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(type) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<String> getMallArea() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(area) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<String> getMallGroup() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(mallGroup) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
 	
 	public Mall isSelectedMall(long mallId){
 		Mall mall = null;
@@ -105,8 +59,7 @@ public class UpdateMallManager {
 		Mall mall = new Mall(mallid,mallNameEng, mallNameThai, type, area, mallGroup, statusMall, getCurrentDate(),
 				timeMall, phoneNumber, imageName);
 
-		FacilitiesManager fm = new FacilitiesManager();
-		List<Facilities> list = fm.listFacilities();
+		List<Facilities> list = this.listFacilities();
 		
 		String message = "";
 		

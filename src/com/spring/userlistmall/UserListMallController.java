@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.model.Mall;
-import com.spring.model.Store;
 
 @Controller
 public class UserListMallController {
@@ -35,7 +34,7 @@ public class UserListMallController {
 	}
 	
 	@RequestMapping(value = "/list-mall", method = RequestMethod.POST)
-	public ModelAndView ListMallDetailPage(HttpServletRequest request, HttpSession session, Model md) {
+	public ModelAndView loadMallDetailPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("mall-detail");
 		UserListMallManager ulmm = new UserListMallManager();
 		String m = request.getParameter("valueClick");
@@ -43,13 +42,11 @@ public class UserListMallController {
 		System.out.println(mallid);
 		Mall mall = ulmm.isSelectedMall(mallid);
 		session.setAttribute("mall", mall);
-		List<Store> listFood = ulmm.listFood(mallid);
-		List<Store> listShopping = ulmm.listShopping(mallid);
-		List<Store> listServices = ulmm.listServices(mallid);
+		session.setAttribute("facilities", mall.getFacilites());
 		
-		session.setAttribute("listFood", listFood);
-		session.setAttribute("listShopping", listShopping);
-		session.setAttribute("listServices", listServices);
+		session.setAttribute("listFood", ulmm.listFood(mallid));
+		session.setAttribute("listShopping", ulmm.listShopping(mallid));
+		session.setAttribute("listServices", ulmm.listServices(mallid));
 		session.setAttribute("mallupdated", ulmm.listMallLastedUpdate());
 		return mav;
 	}

@@ -36,7 +36,7 @@ public class AddArticleController {
 		System.out.println(content);
 		
 		String message = aam.isAddArticle(articlename, articlename+".txt", aam.getCurrentDate(), articletype, content);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

@@ -24,16 +24,4 @@ public class SearchCustomManager {
 		}
 		return list;
 	}
-	
-	public List<Store> isSearchStore(String shopname){
-		List<Store> listStore = new ArrayList<>();
-		
-		for(Store s : this.getAllStores()){
-			if(s.getStoreName().matches(shopname + "(.*)")){
-				listStore.add(s);
-				System.out.println();
-			}
-		}
-		return listStore;
-	}
 }

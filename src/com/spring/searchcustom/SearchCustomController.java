@@ -37,7 +37,13 @@ public class SearchCustomController {
 		
 		String shopname = request.getParameter("inputShop");
 		
-		List<Store> listStore = sm.isSearchStore(shopname);
+		List<Store> listStore = new ArrayList<>();
+		
+		for(Store s : sm.getAllStores()){
+			if(s.getStoreName().matches(shopname + "(.*)")){
+				listStore.add(s);
+			}
+		}
 		
 		session.setAttribute("store", listStore);
 		session.setAttribute("storeSize", listStore.size());

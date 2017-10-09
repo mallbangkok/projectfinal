@@ -42,21 +42,6 @@ public class UpdateStoreManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<String> getStoreType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(storeType) from Store").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-	
-	@SuppressWarnings("unchecked")
 	public List<Mall> getAllMalls() {
 		List<Mall> list = new ArrayList<Mall>();
 		try {
@@ -69,27 +54,6 @@ public class UpdateStoreManager {
 			e.printStackTrace();
 		}
 		return list;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<String> getMallType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(type) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-	
-	public List<String> listMallType(){
-		List<String> listType = this.getMallType();
-		
-		return listType;
 	}
 	
 	public List<Mall> listMallByType(String type){

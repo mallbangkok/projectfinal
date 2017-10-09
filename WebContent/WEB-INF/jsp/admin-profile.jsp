@@ -120,9 +120,6 @@
 							</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -133,7 +130,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">My Properties</li>
+                <li class="active">Admin Profile</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -151,7 +148,6 @@
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
                             <li><a href="article"><i class="fa fa-home"></i><span>Add Article</span></a></li>
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
-                            <li><a href="list-store-admin"><i class="fa fa-book"></i><span>List Store</span></a></li>
                             <li><a href="list-mall-article"><i class="fa fa-book"></i><span>List Article</span></a></li>
                             
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
@@ -189,7 +185,7 @@
 		                                        <td><input type="password" name="newpassword" value="${admin.password}"></td>
 		                                        <td></td>
 		                                        <td class="actions">
-		                                            <button type="submit" class="btn btn-danger">Edit</button>
+		                                            <button type="submit" class="btn btn-danger" onclick="return confirm('You sure edit profile ???');">Edit</button>
 		                                        </td>
 		                                    </tr>
 	                                    </tbody>

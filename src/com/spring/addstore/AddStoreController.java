@@ -20,7 +20,7 @@ public class AddStoreController {
 	public ModelAndView loadAddStorePage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("store-admin");
 		AddStoreManager sm = new AddStoreManager();
-		List<String> listType = sm.listMallType();
+		List<String> listType = sm.getMallType();
 		md.addAttribute("types", listType);
 		return mav;
 	}
@@ -29,7 +29,7 @@ public class AddStoreController {
 	public ModelAndView getType(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("store-admin");
 		AddStoreManager sm = new AddStoreManager();
-		List<String> listType = sm.listMallType();
+		List<String> listType = sm.getMallType();
 		String t = request.getParameter("type");
 		md.addAttribute("types", listType);
 		List<Mall> listMallByType = sm.listMallByType(t);
@@ -56,7 +56,7 @@ public class AddStoreController {
 		String status = request.getParameter("select-status");
 		
 		String message = sm.isAddStore(mallName, storeName, type, status, floor);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

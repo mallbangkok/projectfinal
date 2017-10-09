@@ -1,4 +1,4 @@
-package com.spring.login;
+package com.spring.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class LogoutController {
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public ModelAndView loadIndexPage(HttpSession session) {
-		ModelAndView mav = new ModelAndView("index");
-		session.invalidate();
+public class AdminHomeController {
+	@RequestMapping(value = "/my-properties", method = RequestMethod.GET)
+	public ModelAndView loadAdminPage(HttpSession session) {
+		ModelAndView mav = new ModelAndView("my-properties");
+		
 		return mav;
 	}
 }

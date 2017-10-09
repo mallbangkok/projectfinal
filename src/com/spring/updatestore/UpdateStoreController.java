@@ -57,7 +57,7 @@ public class UpdateStoreController {
 		int storeId = Integer.parseInt(storeid);
 		
 		message = usm.isUpdateStore(storeId, storeName, storeType, storeStatus, floor, mallName);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		
 		return mav;
 	}

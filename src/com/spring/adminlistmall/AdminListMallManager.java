@@ -11,7 +11,7 @@ import com.spring.model.Mall;
 
 public class AdminListMallManager {
 	@SuppressWarnings("unchecked")
-	public List<Mall> getAllMalls() {
+	public List<Mall> getMalls() {
 		List<Mall> list = new ArrayList<Mall>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
@@ -25,22 +25,29 @@ public class AdminListMallManager {
 		return list;
 	}
 	
-	public List<Mall> listMallByType(String type){
-		List<Mall> listMalls = new ArrayList<>();
-		for(Mall m : this.getAllMalls()){
-			if(type.equals(m.getType())){
-				listMalls.add(m);
-			}
-		}
-		return listMalls;
-	}
+//	public List<Mall> listMallByType(String type){
+//		List<Mall> listMalls = new ArrayList<>();
+//		for(Mall m : this.getMalls()){
+//			if(type.equals(m.getType())){
+//				listMalls.add(m);
+//			}
+//		}
+//		return listMalls;
+//	}
 	
-	public int countPages(String type){
-		List<Mall> listMalls = this.listMallByType(type);
-		double value = listMalls.size() / 10.0;
-		int mPages = (int) Math.ceil(value);
-		return mPages;
-	}
+//	public int countPages(String type){
+//		List<Mall> listMalls = new ArrayList<>();
+//		
+//		for(Mall m : this.getMalls()){
+//			if(type.equals(m.getType())){
+//				listMalls.add(m);
+//			}
+//		}
+//
+//		double value = listMalls.size() / 10.0;
+//		int mPages = (int) Math.ceil(value);
+//		return mPages;
+//	}
 	
 	@SuppressWarnings("unchecked")
 	public List<String> getMallType() {

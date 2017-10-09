@@ -58,10 +58,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html">
-                        <img src="<c:url value="/img/logo.png"/>" alt="brand"></a>
-                        
-                    </div>
+							<a href="index-google-map-fullscreen"><img
+								src="<c:url value="/img/logo1@1x.png"/>" alt="MALL BANGKOK"></a>
+						</div>
                 </div>
               <nav
 						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
@@ -302,7 +301,8 @@
                 <div class="col-md-9 col-sm-9">
                     <section id="property-detail">
                         <header class="property-title">
-                       
+                            <h1>${dataMall.mallNameEng}  ${dataMall.mallNameThai}</h1>
+                            <figure>Open-Closed : <c:out value="${dataMall.timeMall}"></c:out></figure>
                         </header>
                         <section id="property-gallery">
                             <div class="owl-carousel property-carousel">
@@ -332,63 +332,24 @@
                             		</c:choose>
                                     </header>
                                     <dl>
-                                        <dt>Area:</dt>
-                                            <dd><c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.area }"></c:out>
-                                  					</c:when>
-                            				</c:choose>
-                            			   </dd>
-                                        <dt>Type Mall:</dt>
-                                            <dd><span class="tag price">
-												<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.type }"></c:out>
-                                  					</c:when>
-                            				    </c:choose>
-											</span></dd>
-                                        <dt>Group Mall:</dt>
-                                            <dd>
-                                            		<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.mallGroup }"></c:out>
-                                  					</c:when>
-                            				    </c:choose>
-                                            </dd>
-                                        <dt>Time Mall:</dt>
-                                           <dd><span class="tag price">
-												<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.timeMall }"></c:out>
-                                  					</c:when>
-                            				    </c:choose>
-											</span></dd>
-                                        <dt>Status:</dt>
-                                            <dd>
-                                            		<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.statusMall }"></c:out>
-                                  					</c:when>
-                            				   	    </c:choose>
-                                            </dd>
-                                        <dt>Time Update:</dt>
-                                            <dd>
-                                            		<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.updatedDate }"></c:out>
-                                  					</c:when>
-                            				   	    </c:choose>
-                                            </dd>
-                                        <dt>Phone:</dt>
-                                            <dd>
-                                            	<dd><span class="tag price">
-												<c:choose>
-                                  					<c:when test="${dataMall != null }">
-                                  						<c:out value="${dataMall.phoneNoMall }"></c:out>
-                                  					</c:when>
-                            				    </c:choose>
-											</span></dd>
-                                            </dd>
+                                    	<dt>Mall Group</dt>
+                                            <dd>${dataMall.mallGroup}</dd>
+                                        <dt>Type</dt>
+                                            <dd>${dataMall.type}</dd>
+                                        <dt>Area</dt>
+                                            <dd>${dataMall.area}</dd>
+                                        <dt>Status Mall</dt>
+                                            <dd>${dataMall.statusMall}</dd>
+                                        <dt>Updated</dt>
+                                            <dd>${dataMall.updatedDate}</dd>
+                                        <dt>Phone Number</dt>
+                                            <dd>${dataMall.phoneNoMall}</dd>
+                                        <dt>Facilities</dt>
+                                            <c:if test="${facilities != null }">
+                                            	<c:forEach var="i" items="${facilities }">
+                                            		<dd><c:out value="${i.facilitiesName }" /></dd>
+                                            	</c:forEach>
+                                            </c:if>
                                     </dl>
                                 </section><!-- /#quick-summary -->
                             </div><!-- /.col-md-4 -->
@@ -470,67 +431,22 @@
                     <section id="sidebar">
                         <aside id="featured-properties">
                             <header><h3>Recent Posts</h3></header>
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">Read More</div>
-                                </div>
-                            </div><!-- /.property -->
-                              <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                    <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                        
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">Read More</div>
-                                </div>
-                            </div><!-- /.property -->
-                              <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                      <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">Read More</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">Read More</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                       <img src="<c:url value="/img/properties/property-03.jpg"/>" alt="">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>1949 Tennessee Avenue</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">Read More</div>
-                                </div>
-                            </div><!-- /.property -->
+                            <c:forEach var="i" items="${mallupdated}">
+	                            <div class="property small">
+	                                <a href="javascript:;" onclick="onClick(${i.mallId})">
+	                                <input type="hidden" id="valueClick" name="valueClick" />
+	                                    <div class="property-image">
+	                                        <img alt="" src="<c:url value="/img/mall/thumbnail/${i.imageMall }"/>">
+	                                    </div>
+	                                </a>
+	                                <div class="info">
+	                                    <a href="javascript:;" onclick="onClickMall(${i.mallId})">
+	                                    <h4><c:out value="${i.mallNameEng }"/></h4></a>
+	                                    <figure><c:out value="${i.mallNameThai }"/></figure>
+	                                    <div class="tag price"><c:out value="${i.updatedDate }"/></div>
+	                                </div>
+	                            </div><!-- /.property -->
+	                        </c:forEach>
                         </aside><!-- /#featured-properties -->
                        
                     </section><!-- /#sidebar -->
@@ -545,77 +461,6 @@
     <!-- Page Footer -->
     <footer id="page-footer">
         <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
-                                <hr>
-                                <a href="#" class="link-arrow">Read More</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                       <img src="<c:url value="/img/properties/property-06.jpg"/>" alt="">
-                                           
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img src="<c:url value="/img/properties/property-09.jpg"/>" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
@@ -628,7 +473,15 @@
     <!-- end Page Footer -->
 </div>
 
-
+<script type="text/javascript">
+	var mid;
+	onClickMall = function(id){
+		document.getElementById('valueClick').value = id;
+		document.getElementById('frmMallupdate').submit();
+		mid = id;
+		console.log(mid);
+	}
+</script>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="js/custom-search2.js"></script>
 <script type="text/javascript"
