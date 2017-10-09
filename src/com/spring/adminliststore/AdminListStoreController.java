@@ -1,6 +1,5 @@
 package com.spring.adminliststore;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,50 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.model.Mall;
 import com.spring.model.Store;
 
 @Controller
 public class AdminListStoreController {
-	@RequestMapping(value = "/list-store-admin", method = RequestMethod.GET)
-	public ModelAndView loadAdminListStorePage(HttpSession session) {
-		ModelAndView mav = new ModelAndView("admin-list-store-category");
-		
-		AdminListStoreManager alsm = new AdminListStoreManager();
-		List<String> types = alsm.getMallType();
-		
-		session.setAttribute("type", types);
-		session.setAttribute("page", 1);
-		return mav;
-	}
-	
-	@RequestMapping(value = "/list-mall-store-admin", method = RequestMethod.GET)
-	public ModelAndView loadAdminListMallStorePage(HttpSession session , HttpServletRequest request) {
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		ModelAndView mav = new ModelAndView("admin-list-mall-store");
-		
-		AdminListStoreManager alsm = new AdminListStoreManager();
-		
-		String type = request.getParameter("type");
-		List<Mall> listMalls = new ArrayList<>();
-		
-		for(Mall m : alsm.getAllMalls()){
-			if(type.equals(m.getType())){
-				listMalls.add(m);
-			}
-		}
-		
-		session.setAttribute("listMalls", listMalls);
-		session.setAttribute("listMallSize", listMalls.size());
-		return mav;
-	}
-	
 	@RequestMapping(value = "/list-show-store-admin", method = RequestMethod.GET)
 	public ModelAndView loadAdminListStorePage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("admin-list-store");
@@ -65,10 +24,17 @@ public class AdminListStoreController {
 		String mid = request.getParameter("mallid");
 		Long mallid = Long.parseLong(mid);
 		
-		List<Store> listStore = alsm.listStore(mallid);
+		List<Store> listStore = new ArrayList<>();
 		
-		int pages = alsm.countPages(mallid);
+		int pages = this.countPages(mallid);
 		
+		for(Store s : alsm.getAllStores()){
+			if(s.getMall().getMallId() == mallid){
+				listStore.add(s);
+			}
+		}
+		
+		session.setAttribute("page", 1);
 		session.setAttribute("pages", pages);
 		session.setAttribute("listStore", listStore);
 		session.setAttribute("listStoreSize", listStore.size());
@@ -85,5 +51,20 @@ public class AdminListStoreController {
 		int page = Integer.parseInt(p);
 		session.setAttribute("page", page);
 		return mav;
+	}
+	
+	public int countPages(long mallid){
+		AdminListStoreManager alsm = new AdminListStoreManager();
+		List<Store> listStores = new ArrayList<>();
+		
+		for(Store s : alsm.getAllStores()){
+			if(s.getMall().getMallId() == mallid){
+				listStores.add(s);
+			}
+		}
+		
+		double value = listStores.size() / 20.0;
+		int mPages = (int) Math.ceil(value);
+		return mPages;
 	}
 }

@@ -27,9 +27,9 @@ public class SearchFilterManager {
 		String area = "WebContent/WEB-INF/assets/text/area1.txt";
 		String malls = "WebContent/WEB-INF/assets/text/listmall1.txt";
 
-		Set<String> listArea = new HashSet();
-		Set<String> listDepart = new HashSet();
-		Set<String> listGroup = new HashSet();
+		Set<String> listArea = new HashSet<>();
+		Set<String> listDepart = new HashSet<>();
+		Set<String> listGroup = new HashSet<>();
 		for (Mall m : getAllMalls()) {
 			listArea.add(m.getArea());
 			listDepart.add(m.getType());
@@ -129,4 +129,12 @@ public class SearchFilterManager {
 		return listServices;
 	}
 	
+	public List<Mall> listMallLastedUpdate(){
+		List<Mall> listMallLastedUpdate = new ArrayList<>();
+		
+		for(int i = 0;i < 6;i++){
+			listMallLastedUpdate.add(this.getAllMalls().get(this.getAllMalls().size() - (i + 1)));
+		}
+		return listMallLastedUpdate;
+	}
 }

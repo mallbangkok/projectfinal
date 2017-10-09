@@ -86,12 +86,6 @@ public class AddStoreManager {
 		return list;
 	}
 	
-	public List<String> listMallType(){
-		List<String> listType = this.getMallType();
-		
-		return listType;
-	}
-	
 	public List<Mall> listMallByType(String type){
 		List<Mall> listMallByType = new ArrayList<>();
 		for (Mall m : this.getAllMalls()) {
@@ -105,9 +99,9 @@ public class AddStoreManager {
 	
 	public String isAddStore(String mallName,String storeName, String type, String status,String floor){
 		String message = "";
-		
-		Store store = new Store(storeName, type, status, floor);
 		Mall mall = null;
+		Store store = new Store(storeName, type, status, floor);
+		
 		for (Mall m : this.getAllMalls()) {
 			if (mallName.equals(m.getMallNameEng())) {
 				mall = m;
@@ -125,15 +119,5 @@ public class AddStoreManager {
 		}
 		
 		return message;
-	}
-	
-	public Store isSelectedStore(long storeid){
-		Store store = null;
-		for(Store s : this.getAllStores()){
-			if(storeid == s.getStoreId()){
-				store = s;
-			}
-		}
-		return store;
 	}
 }

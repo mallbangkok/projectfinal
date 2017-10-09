@@ -1,13 +1,13 @@
 package com.spring.model;
 
 import java.util.*;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "mall")
 public class Mall {
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private long mallId;
 	private String mallNameEng;
 	private String mallNameThai;
@@ -20,25 +20,33 @@ public class Mall {
 	private String timeMall;
 	private String phoneNoMall;
 	private String imageMall;
-	
-	@ManyToMany(cascade=CascadeType.MERGE , mappedBy = "malls" , fetch = FetchType.EAGER)
+
+	@ManyToMany(cascade = CascadeType.MERGE, mappedBy = "malls", fetch = FetchType.EAGER)
 	private Set<Facilities> facilites = new HashSet<Facilities>();
+<<<<<<< HEAD
+=======
 	
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Stamp> stamp = new HashSet<Stamp>();
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 
-	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
+	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)
 	private Set<Store> stores = new HashSet<Store>();
+<<<<<<< HEAD
+
+	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)
+	private Set<ConditionOfParking> conditionOfParking = new HashSet<ConditionOfParking>();
+
+=======
 	
 	@OneToMany (cascade=CascadeType.MERGE, mappedBy = "mall" , fetch = FetchType.EAGER) 
 	private Set<Conditions> conditions = new HashSet<Conditions>();
 	
 	
 	
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 	public Mall() {
 		super();
-		// TODO Auto-generated constructor stub
-		
 	}
 
 	public Mall(String mallNameEng, String mallNameThai, String type, String area, String mallGroup, String statusMall,
@@ -84,6 +92,8 @@ public class Mall {
 		return mallNameEng;
 	}
 
+<<<<<<< HEAD
+=======
 
 
 	public Set<Stamp> getStamp() {
@@ -94,23 +104,18 @@ public class Mall {
 		this.stamp = stamp;
 	}
 
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 	public void setMallNameEng(String mallNameEng) {
 		this.mallNameEng = mallNameEng;
 	}
-
-
 
 	public String getMallNameThai() {
 		return mallNameThai;
 	}
 
-
-
 	public void setMallNameThai(String mallNameThai) {
 		this.mallNameThai = mallNameThai;
 	}
-
-
 
 	public String getType() {
 		return type;
@@ -200,5 +205,5 @@ public class Mall {
 	public void setConditions(Set<Conditions> conditions) {
 		this.conditions = conditions;
 	}
-	
+
 }

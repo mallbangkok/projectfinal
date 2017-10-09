@@ -45,36 +45,6 @@ public class AddMallManager {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<String> getMallType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(type) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<String> getMallArea() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(area) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
 	public List<String> getMallGroup() {
 		List<String> list = new ArrayList<String>();
 		try {
@@ -116,16 +86,6 @@ public class AddMallManager {
 			System.out.println(message);
 			return message;
 		}
-	}
-	
-	public Mall isSelectedMall(long mallId){
-		Mall mall = null;
-		for (Mall m : this.getAllMalls()) {
-			if (mallId == m.getMallId()) {
-				mall = m;
-			}
-		}
-		return mall;
 	}
 	
 	@SuppressWarnings("unchecked")

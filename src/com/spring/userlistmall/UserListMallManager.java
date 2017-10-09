@@ -27,36 +27,6 @@ public class UserListMallManager {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<String> getMallType() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(type) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<String> getMallArea() {
-		List<String> list = new ArrayList<String>();
-		try {
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-			list = session.createQuery("select distinct(area) from Mall").list();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
-	@SuppressWarnings("unchecked")
 	public List<Store> getAllStores() {
 		List<Store> list = new ArrayList<Store>();
 		try {
@@ -72,11 +42,10 @@ public class UserListMallManager {
 	}
 	
 	public List<Mall> listMallLastedUpdate(){
-		List<Mall> listMall = this.getAllMalls();
 		List<Mall> listMallLastedUpdate = new ArrayList<>();
 		
 		for(int i = 0;i < 6;i++){
-			listMallLastedUpdate.add(listMall.get(listMall.size() - (i + 1)));
+			listMallLastedUpdate.add(this.getAllMalls().get(this.getAllMalls().size() - (i + 1)));
 		}
 		return listMallLastedUpdate;
 	}
@@ -92,9 +61,8 @@ public class UserListMallManager {
 	}
 	
 	public Mall isSelectedMall(long mallid){
-		List<Mall> list = this.getAllMalls();
 		Mall mall = null;
-		for(Mall m : list){
+		for(Mall m : this.getAllMalls()){
 			if(m.getMallId() == mallid){
 				mall = m;
 			}
@@ -169,5 +137,35 @@ public class UserListMallManager {
 		double value = this.listByType(typename).size() / 10.0;
 		int pages = (int) Math.ceil(value);
 		return pages;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getMallType() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(type) from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<String> getMallArea() {
+		List<String> list = new ArrayList<String>();
+		try {
+			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			list = session.createQuery("select distinct(area) from Mall").list();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

@@ -161,7 +161,6 @@
                             <li><a href="store-admin"><i class="fa fa-home"></i><span>Add Store</span></a></li>
                             <li><a href="article"><i class="fa fa-home"></i><span>Add Article</span></a></li>
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
-                            <li><a href="list-store-admin"><i class="fa fa-book"></i><span>List Store</span></a></li>
                             <li><a href="list-mall-article"><i class="fa fa-book"></i><span>List Article</span></a></li>
                             
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
@@ -212,7 +211,7 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
@@ -231,7 +230,7 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.storeId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.storeId }" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
@@ -242,27 +241,6 @@
                                     			</c:choose>
                                     		</c:forEach>
                                     	</c:if>
-                                    	<c:if test="${page == null}">
-														<c:forEach varStatus="i" begin="0" end="20" var="val"
-															items="${listStore }">
-															<tr>
-																<td>
-																	<div class="inner">
-																		<a href="#"><h2>
-																				<c:out value="${val.storeName}" />
-																			</h2></a>
-																	</div>
-																</td>
-																<td><c:out value="${val.floor }" /></td>
-																<td></td>
-																<td class="actions"><a href="#" class="edit"><i
-																		class="fa fa-pencil"></i>Edit</a></td>
-																<td class="actions">
-																	<button type="button" class="btn btn-danger">Delete</button>
-																</td>
-															</tr>
-														</c:forEach>
-													</c:if>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->

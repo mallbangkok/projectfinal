@@ -28,7 +28,7 @@ import com.spring.addmall.*;
 import com.spring.addstore.AddStoreManager;
 import com.spring.admindeletemall.AdminDeleteMallManager;
 import com.spring.admindeletestore.AdminDeleteStoreManager;
-import com.spring.login.AddUserManager;
+import com.spring.adminlistmall.AdminListMallManager;
 import com.spring.login.LoginMannager;
 import com.spring.searchfilter.SearchFilterManager;
 
@@ -37,10 +37,28 @@ public class Run {
 	
 	
 	public static void main(String[] args) throws Exception {
+<<<<<<< HEAD
+//		EditParkingAdminManager em = new EditParkingAdminManager();
+//		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
+//		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
+//		ConditionOfParking c3 = new ConditionOfParking(4,"demo", 11, 22, "55","3");
+//		Mall mall = new Mall();
+//		for (Mall m : em.getAllMalls()) {
+//			if ("Central Chidlom".equalsIgnoreCase(m.getMallNameEng())) {
+//				mall = m;
+//			}
+//		}
+//		
+//		System.out.println(mall.getMallNameEng());
+//		
+//		c1.setMall(mall);;
+//		doUpdateCondition(c1);
+=======
 		//EditParkingAdminManager em = new EditParkingAdminManager();
 	
 		
 	
+>>>>>>> 65f3f7d756d6803a11fb1b55709e47a45d18c61b
 //		AddMallManager mm = new AddMallManager();
 //		FacilitiesManager fm = new FacilitiesManager();
 //		AddStoreManager sm = new AddStoreManager();
@@ -76,7 +94,13 @@ public class Run {
 //			}
 //		}
 	
+		AdminListMallManager am = new AdminListMallManager();
 		
+		Mall mall = am.getMalls().get(0);
+		
+		for(Facilities f : mall.getFacilites()){
+			System.out.println(f.getFacilitiesName());
+		}
 	}
 	
 	public static String readFile(String filename) throws IOException{

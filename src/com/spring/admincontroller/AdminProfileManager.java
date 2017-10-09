@@ -1,4 +1,4 @@
-package com.spring.admindeletemall;
+package com.spring.admincontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,17 +7,17 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.spring.model.HibernateConnection;
-import com.spring.model.Mall;
+import com.spring.model.Login;
 
-public class AdminDeleteMallManager {
+public class AdminProfileManager {
 	@SuppressWarnings("unchecked")
-	public List<Mall> getAllMalls() {
-		List<Mall> list = new ArrayList<Mall>();
+	public List<Login> getAllLogin() {
+		List<Login> list = new ArrayList<Login>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			list = session.createQuery("from Mall").list();
+			list = session.createQuery("from Login").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -25,28 +25,19 @@ public class AdminDeleteMallManager {
 		return list;
 	}
 	
-	public String do_deleteMall(long mallId) {
+	public String doHibernateUpdateLogin(String uname ,String upass) {
 		try {
-			String message = "";
+			Login login = new Login(uname,upass);
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-
-			for (Mall m : this.getAllMalls()) {
-				if (mallId == m.getMallId()) {
-					session.delete(m);
-					message = "Delete Mall Successfully...";
-					break;
-				} else {
-					message = "Cannot Delete , You don't have mall id " + mallId;
-				}
-			}
+			session.saveOrUpdate(login);
 			session.getTransaction().commit();
 			session.close();
-			return message;
+			return "Update Admin Profile Successfully...";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Delete Mall !!!";
+			return "Cannot Add Update Admin Profile !!!";
 		}
 	}
 }

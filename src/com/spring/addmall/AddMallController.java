@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.model.Facilities;
-import com.spring.model.FacilitiesManager;;
 
 @Controller
 public class AddMallController {
 	@RequestMapping(value = "/submit", method = RequestMethod.GET)
 	public ModelAndView loadAddMallPage(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("submit");
-		FacilitiesManager fm = new FacilitiesManager();
-		List<Facilities> listFac = fm.listFacilities();
+		AddMallManager am = new AddMallManager();
+		List<Facilities> listFac = am.listFacilities();
 		session.setAttribute("listFac", listFac);
 		return mav;
 	}
@@ -50,7 +49,7 @@ public class AddMallController {
 		String[] facilities = request.getParameterValues("facilites");
 		
 		String message = mm.isAddMall(mallNameEng, mallNameThai, type, area, mallGroup, statusMall, timeMall, phoneNumber, imageName, facilities);
-		session.setAttribute("message", message);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

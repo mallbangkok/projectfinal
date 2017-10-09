@@ -30,18 +30,19 @@ public class LoginController {
 		if ("Login Success".equals(msg)) {
 			session.setAttribute("username", user.getUsername());
 			session.setAttribute("password", user.getPassword());
-			for(int i = 0;i < lmg.getAllLogin().size();i++){
-				if(uname.equals(lmg.getAllLogin().get(i).getUsername())){
-					//session.setAttribute("custid", lmg.getAllLogin().get(i).getCustomer().getCustomerId());
-				}
-			}
 			session.setMaxInactiveInterval(24*60*60);
 			md.addAttribute("access_msg",msg);
-			//md.addAttribute("list",list);
 			return "my-properties";
 		} else {
 			md.addAttribute("error_msg", msg);
 			return "sign-in";
 		}
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView loadIndexPage(HttpSession session) {
+		ModelAndView mav = new ModelAndView("index");
+		session.invalidate();
+		return mav;
 	}
 }
