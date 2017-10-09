@@ -43,6 +43,10 @@ public class ParkingUserController {
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMall");
 		List<String> list = pm.doSearchCondition(nameMall);
+		System.out.println("Size"+list.size());
+		for(String s:list){
+			System.out.println("Condition"+s);
+		}
 		String number = pm.checkNumber(nameMall);
 		Mall mall = pm.doSearchMall(nameMall);
 		session.setAttribute("listConditon", list);

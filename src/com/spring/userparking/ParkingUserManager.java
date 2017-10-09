@@ -37,7 +37,7 @@ public class ParkingUserManager {
 				number = "" + mall.getConditions().size();
 				if ("1".equals(number)) {
 					for (Conditions c : mall.getConditions()) {
-						if ("I".equals(c.getTypeOfCon())) {
+						if ("I-I".equals(c.getTypeOfCon())) {
 							list.add(c.getConditionName());
 							for (Week w : c.getWeek()) {
 								list.add(w.getDayOfWeek());

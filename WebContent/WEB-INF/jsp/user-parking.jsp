@@ -264,13 +264,13 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                             <label for="form-create-agency-zip">Time In:</label>
-                                               <input type="text" class="form-control"name="timeIn" id="timeIn" placeholder="00:00">
+                                               <input type="text" class="form-control"name="timeIn" id="timeIn" placeholder="00:00"required>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                             <label for="form-create-agency-zip">Time Out:</label>
-                                                <input type="text" class="form-control"name="timeOut" id="timeOut" placeholder="00:00">
+                                                <input type="text" class="form-control"name="timeOut" id="timeOut" placeholder="00:00"required>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">

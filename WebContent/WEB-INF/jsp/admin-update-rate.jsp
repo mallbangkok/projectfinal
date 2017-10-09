@@ -215,7 +215,7 @@
                                         </div><!-- /.col-md-8 -->
                                          <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="price4" name="price4" placeholder="Price">
+                                                <input type="text" class="form-control" id="price4" name="price4" placeholder="Price"required >
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
@@ -226,7 +226,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                
-                                                <input type="text" class="form-control" id="freeHour" name="freeHour" placeholder="Time">
+                                                <input type="text" class="form-control" id="freeHour" name="freeHour" placeholder="Time"required >
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
@@ -275,7 +275,7 @@
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="timeIII1"name="timeIII1" placeholder="Time">
+                                                <input type="text" class="form-control" id="timeIII1"name="timeIII1" placeholder="Time"required >
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-8 col-sm-8">
@@ -316,7 +316,8 @@
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <select name="dateIII2" id="dateIII2">
+                                                <select name="dateIII2" id="dateIII2"required >
+                                                	<option >Select Date</option>
                                         		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
                                         			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
                                         			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
@@ -325,7 +326,7 @@
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="priceIII2" name="priceIII2" placeholder="Price">
+                                                <input type="text" class="form-control" id="priceIII2" name="priceIII2" placeholder="Price"required>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-8 col-sm-8">
@@ -365,7 +366,7 @@
                                     <div class="row">
                                      <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <select name="dateIII3" id="dateIII3">
+                                                <select name="dateIII3" id="dateIII3"required>
                                         		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
                                         			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
                                         			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
@@ -374,12 +375,12 @@
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="timeIII3" name="timeIII3" placeholder="Hour">
+                                                <input type="text" class="form-control" id="timeIII3" name="timeIII3" placeholder="Hour"required>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->
                                         <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="priceIII3" name="priceIII3" placeholder="Price">
+                                                <input type="text" class="form-control" id="priceIII3" name="priceIII3" placeholder="Price"required>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->  
                                     </div><!-- /.row -->
@@ -417,7 +418,8 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="form-create-agency-zip">Date:</label>
-                                                <select name="dateofTypeConditonI" id="dateofTypeConditonI">
+                                                <select name="dateofTypeConditonI" id="dateofTypeConditonI" required>
+                                                <option value=''>Select Date</option>
                                         		 	<option value="จันทร์-ศุกร์">จันทร์-ศุกร์</option>
                                         			<option value="จันทร์-อาทิตย์">จันทร์-อาทิตย์</option>
                                         			<option value="เสาร์-อาทิตย์">เสาร์-อาทิตย์</option>
