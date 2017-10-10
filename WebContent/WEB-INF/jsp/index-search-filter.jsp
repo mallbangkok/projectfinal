@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style3.css" type="text/css">
 
-    <title>Mall Bangkok | Google Map with Advanced Horizontal Search</title>
+    <title>Mall Bangkok | Search Filter</title>
 
 </head>
 
@@ -31,13 +31,15 @@
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
-                        <a href="create-agency.html" class="promoted">Create Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Register</strong></a>
                         <a href="sign-in.html">Sign In</a>
                     </div>
                     <div class="language-bar">
@@ -66,101 +68,42 @@
 						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
 						role="navigation">
 						<ul class="nav navbar-nav">
-							<li class="active has-child"><a href="#">Homepage</a>
-								<ul class="child-navigation">
-									<li><a href="index-google-map-fullscreen">Google Map
-											Full Screen</a></li>
-									<li><a href="index-google-map-fixed-height.html">Google
-											Map Fixed Height</a></li>
-									<li><a href="index-google-map-fixed-navigation.html">Google
-											Map Fixed Navigation</a></li>
-									<li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-									<li><a href="index-osm-fixed-height.html">OpenStreetMap
-											Fixed Height</a></li>
-									<li><a href="index-osm-fixed-navigation.html">OpenStreetMap
-											Fixed Navigation</a></li>
-									<li><a href="index-slider.html">Slider Homepage</a></li>
-									<li><a href="index-slider-search-box.html">Slider with
-											Search Box</a></li>
-									<li><a href="index-horizontal-search-floated.html">Horizontal
-											Search Floated</a></li>
-									<li><a href="index-advanced-horizontal-search.html">Horizontal
-											Advanced Search</a></li>
-									<li><a href="index-slider-horizontal-search-box.html">Horizontal
-											Slider Search</a></li>
-									<li><a
-										href="index-slider-horizontal-search-box-floated.html">Horizontal
-											Slider Floated Search</a></li>
-								</ul></li>
+							<li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
 							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
 										<ul class="child-navigation">
-											<li><a href="list-mall?typename=Regional Mall">Regional
-													Mall</a></li>
-											<li><a href="list-mall?typename=Community Mall">Community
-													Mall</a></li>
-											<li><a href="#">HyperMarket/SpecialtyStore</a></li>
-											<li><a href="#">Theme Mall</a></li>
-											<li><a href="#">Luxury Mall</a></li>
-											<li><a href="#">Department Store</a></li>
-											<li><a href="#">Complex</a></li>
-											<li><a href="#">Shopping Plaza</a></li>
+											<c:forEach var="type" items="${types}">
+												<li><a href="list-mall?typename=${type}"><c:out value="${type}"/></a></li>
+											</c:forEach>
 										</ul></li>
-									<li><a href="properties-listing.html">List By Area</a></li>
-									<li><a href="properties-listing-grid.html">List All</a></li>
-								</ul></li>
-							<li class="has-child"><a href="#">Pages</a>
-								<ul class="child-navigation">
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="invoice-print.html">Invoice</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-properties.html">My Properties</a></li>
-									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
-									<li><a href="create-account.html">Create Account</a></li>
-									<li><a href="create-agency.html">Create Agency</a></li>
-									<li><a href="sign-in">Sign In</a></li>
-									<li class="has-child"><a href="#">Error Pages</a>
+									<li><a href="#">List By Area</a>
 										<ul class="child-navigation">
-											<li><a href="403.html">403</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="500.html">500</a></li>
-										</ul></li>
-									<li><a href="faq.html">FAQ</a></li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="sticky-footer.html">Sticky Footer</a></li>
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="shortcodes.html">Shortcodes</a></li>
-									<li><a href="timeline.html">Timeline</a></li>
-									<li><a href="terms-conditions.html">Terms & Conditions</a></li>
-									<li><a href="rtl.html">RTL Support</a></li>
+											<c:forEach var="area" items="${areas}">
+												<li><a href="list-mall?typename=${area}"><c:out value="${area}"/></a></li>
+											</c:forEach>
+										</ul>
+									</li>
+									<li><a href="list-mall?typename=All Malls">List All</a></li>
 								</ul></li>
-							<li class="has-child"><a href="#">Agents & Agencies</a>
-								<ul class="child-navigation">
-									<li><a href="agents-listing.html">Agents Listing</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="agencies-listing.html">Agencies Listing</a></li>
-									<li><a href="agency-detail.html">Agency Detail</a></li>
-								</ul></li>
-								<li class="has-child"><a href="#">Search Mall</a>
+							<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
 									<li><a href="loadsearchfilter">Search Filter</a></li>
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
-								</ul>
-							</li>
+								</ul></li>
+							<li><a href="parking-user">Parking</a>
+								</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
-									<li><a href="blog.html">Blog Listing</a></li>
-									<li><a href="blog-detail.html">Blog Post Detail</a></li>
+									<c:forEach var="val" items="${blogtype}">
+										<li><a href="blog?articletype=${val}"><c:out value="${val}"/></a></li>
+									</c:forEach>
 								</ul></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
+							<li><a href="agency-detail">Contact</a></li>
+							<c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+							</c:if>
 					</nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -464,7 +407,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Mall Bangkok By Boat Buntana</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
