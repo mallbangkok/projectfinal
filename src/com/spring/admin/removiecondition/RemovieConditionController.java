@@ -13,10 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class RemovieConditionController {
 	@RequestMapping(value = "/admin-delete-condition", method = RequestMethod.GET)
 	public ModelAndView removeCondition(HttpServletRequest request, HttpSession session, Model md) {
+		String message ="";
 		ModelAndView mav = new ModelAndView("my-properties");
 		RemoveConditionManager upm = new RemoveConditionManager();
 		String conId = request.getParameter("conditionid");
-		System.out.println(upm.removeCondition(Integer.parseInt(conId)));
+		message =upm.removeCondition(Integer.parseInt(conId));
+		md.addAttribute("message",message);
 		
 		return mav;
 	}

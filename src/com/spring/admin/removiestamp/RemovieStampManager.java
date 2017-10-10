@@ -1,29 +1,27 @@
-package com.spring.admin.removierateweek;
+package com.spring.admin.removiestamp;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import com.spring.model.HibernateConnection;
-import com.spring.model.Week;
+import com.spring.model.Stamp;
 
-public class AdminRemovieRateWeekManager {
-	public String removeRateOfCondition(int weekId) {
+public class RemovieStampManager {
+	public String removeStamp(int stampId) {
 		try {
 			String message = "";
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 
-			for (Week w : this.getAllWeek()) {
-				if (weekId == w.getWeekId()) {
-					session.delete(w);
-					message = "Delete Rate Successfully...";
+			for (Stamp s : this.getAllStamp()) {
+				if (stampId == s.getStampId()) {
+					session.delete(s);
+					message = "Delete Stamp Successfully...";
 					break;
 				} else {
-					message = "Cannot Delete , You don't have RateCondition id " + weekId;
+					message = "Cannot Delete , You don't have Stamp id " + stampId;
 				}
 			}
 			session.getTransaction().commit();
@@ -31,21 +29,22 @@ public class AdminRemovieRateWeekManager {
 			return message;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Delete RateCondition !!!";
+			return "Cannot Delete Mall !!!";
 		}
 	}
 	@SuppressWarnings("unchecked")
-	public List<Week> getAllWeek() {
-		List<Week> list = new ArrayList<Week>();
+	public List<Stamp> getAllStamp() {
+		List<Stamp> list = new ArrayList<Stamp>();
 		try {
 			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-			list = session.createQuery("from Week").list();
+			list = session.createQuery("from Stamp").list();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return list;
 	}
 }

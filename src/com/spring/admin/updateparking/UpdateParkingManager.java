@@ -15,30 +15,6 @@ import com.spring.model.Store;
 import com.spring.model.Week;
 
 public class UpdateParkingManager {
-	public String removeStamp(int stampId) {
-		try {
-			String message = "";
-			SessionFactory sessionFactory = HibernateConnection.doHibernateConnection();
-			Session session = sessionFactory.openSession();
-			session.beginTransaction();
-
-			for (Stamp s : this.getAllStamp()) {
-				if (stampId == s.getStampId()) {
-					session.delete(s);
-					message = "Delete Stamp Successfully...";
-					break;
-				} else {
-					message = "Cannot Delete , You don't have Stamp id " + stampId;
-				}
-			}
-			session.getTransaction().commit();
-			session.close();
-			return message;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Cannot Delete Mall !!!";
-		}
-	}
 
 	public String removeCondition(int condition) {
 		try {
