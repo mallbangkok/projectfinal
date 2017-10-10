@@ -21,17 +21,20 @@ public class EditStampController {
 		String id = request.getParameter("stampid");
 		Stamp stamp = upm.getStampUpdate(Integer.parseInt(id));
 		session.setAttribute("stamp", stamp);
-		
+
 		return mav;
 	}
+
 	@RequestMapping(value = "/update-stamp", method = RequestMethod.GET)
 	public ModelAndView upDateStamp(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("my-properties");
+		String message = "";
 		EditStampManager upm = new EditStampManager();
 		String id = request.getParameter("stampid");
 		String hour = request.getParameter("freeHour");
 		String price = request.getParameter("price4");
-		System.out.println(upm.updateStamp(id, price, hour));
+		message = upm.updateStamp(id, price, hour);
+		md.addAttribute("message",message);
 		return mav;
 	}
 }

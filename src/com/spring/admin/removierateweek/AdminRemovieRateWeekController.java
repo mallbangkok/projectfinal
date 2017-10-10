@@ -12,11 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminRemovieRateWeekController {
 	@RequestMapping(value = "/admin-delete-rate", method = RequestMethod.GET)
 	public ModelAndView removeRateOfCondition(HttpServletRequest request, HttpSession session, Model md) {
+		String message ="";
 		ModelAndView mav = new ModelAndView("my-properties");
 		AdminRemovieRateWeekManager upm = new AdminRemovieRateWeekManager();
 		String weekId = request.getParameter("rateid");
-		System.out.println(upm.removeRateOfCondition(Integer.parseInt(weekId)));
-		
+		message=upm.removeRateOfCondition(Integer.parseInt(weekId));
+		md.addAttribute("message",message);
 		return mav;
 	}
 

@@ -12,17 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.spring.model.Mall;
 
-
 @Controller
 public class UpdateParkingController {
-	@RequestMapping(value = "/admin-delete-stamp", method = RequestMethod.GET)
-	public ModelAndView deleteStamp(HttpServletRequest request, HttpSession session, Model md) {
-		ModelAndView mav = new ModelAndView("my-properties");
-		UpdateParkingManager upm = new UpdateParkingManager();
-		String id = request.getParameter("stampid");
-		System.out.println(upm.removeStamp(Integer.parseInt(id)));
-		return mav;
-	}
 
 	@RequestMapping(value = "admin-editparking", method = RequestMethod.GET)
 	public ModelAndView addStamp(HttpServletRequest request, HttpSession session) {
