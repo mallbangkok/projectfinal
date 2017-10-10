@@ -165,7 +165,6 @@
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
                             <li><a href="list-store-admin"><i class="fa fa-book"></i><span>List Store</span></a></li>
                             <li><a href="list-mall-article"><i class="fa fa-book"></i><span>List Article</span></a></li>
-                            
                             <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
                             	<ul>
                             		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
@@ -337,9 +336,13 @@
                               				  <button type="submit" class="btn btn-default large" id="account-submit">Add Condition</button>
                            				 </div><!-- /.form-group -->
                        				 </section>
-                                </section><!-- /#address -->
-                                
+                                </section><!-- /#address --> 
                             </div><!-- /.col-md-6 --> 
+                             <hr class="thick">
+                                   <c:if test="${message != null }">
+         								<h2><c:out value="${message}"/></h2>
+         							</c:if>
+                                </hr>
                             </div><!-- /.col-md-8 -->  
                             </form>
                                </c:when>
@@ -347,7 +350,7 @@
                		  <c:choose>
                                <c:when test="${typeOfParking == 'I' }">
                                <div class="col-md-8 col-sm-12">
-                                <section id="property-features">
+                                
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
@@ -382,9 +385,11 @@
                        				 </section>
                        				 </form>
                                 </section><!-- /#address -->
+                                 <c:if test="${message != null }">
+                                   <hr class="thick">
+         								<h2><c:out value="${message}"/></h2>
+         							</c:if>
                             </div><!-- /.col-md-6 --> 
-                         
-                                </section><!-- /#property-features -->
                             </div><!-- /.col-md-8 -->
                                </c:when>
                       </c:choose>
@@ -463,6 +468,11 @@
                             </div><!-- /.form-group -->
                         </section>
                             </div><!-- /.col-md-6 -->
+                             <hr class="thick">
+                                   <c:if test="${message != null }">
+         								<h2><c:out value="${message}"/></h2>
+         							</c:if>
+                                </hr>
                                 </section><!-- /#property-features -->
                                   </form>
                             </div><!-- /.col-md-8 -->
@@ -473,7 +483,7 @@
                                 <div class="col-md-8 col-sm-12">
                                 <form role="form" id="addconditionII"  action="add-condition-parking-stamp" method="get">
                                  <input type="hidden" name="nameMalls" id="nameMalls" >
-                                <section id="property-features">
+                                
                                    <hr class="thick"></hr>
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
@@ -513,9 +523,12 @@
                            				 </div><!-- /.form-group -->
                        				 </section>
                                 </section><!-- /#address -->
+                                <hr class="thick">
+                                   <c:if test="${message != null }">
+         								<h2><c:out value="${message}"/></h2>
+         							</c:if>
+                                </hr>
                             </div><!-- /.col-md-6 --> 
-                         
-                                </section><!-- /#property-features -->
                                 </form>
                             </div><!-- /.col-md-8 -->
                                </c:when>
