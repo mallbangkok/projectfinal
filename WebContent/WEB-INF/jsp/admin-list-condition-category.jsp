@@ -182,15 +182,6 @@
                                 </table>
                             </div><!-- /.table-responsive -->
                             <!-- Pagination -->
-                            <div class="center">
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul><!-- /.pagination-->
-                            </div><!-- /.center-->
                         </div><!-- /.my-properties -->
                     </section><!-- /#my-properties -->
                 </div><!-- /.col-md-9 -->
