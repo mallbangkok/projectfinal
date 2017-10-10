@@ -176,7 +176,7 @@
 	                                    <tr>
 	                                        <td>
 	                                          	<div class="inner">
-	                                            	<a href="list-show-condition-admin?mallid=${i.mallId }"><h2><c:out value="${i.mallNameEng}"/></h2></a>
+	                                            	<a href="#"><h2><c:out value="${i.mallNameEng}"/></h2></a>
 	                                        	</div>  
 	                                        </td>
 	                                        <td><c:out value="${i.mallNameThai }"/></td>
