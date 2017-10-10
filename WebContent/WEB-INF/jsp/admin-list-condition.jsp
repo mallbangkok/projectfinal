@@ -28,10 +28,14 @@
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
-                <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+               <div class="contact">
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
 						<c:choose>
@@ -295,22 +299,20 @@
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Copyright Â© 2013. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
+   <footer id="page-footer">
+			<div class="inner">
+				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
+				<!-- /#footer-thumbnails -->
+				<aside id="footer-copyright">
+					<div class="container">
+						<span>Mall Bangkok By Boat Buntana</span> <span
+							class="pull-right"><a href="#page-top" class="roll">Go
+								to top</a></span>
+					</div>
+				</aside>
+			</div>
+			<!-- /.inner -->
+		</footer>
     <!-- end Page Footer -->
 </div>
 

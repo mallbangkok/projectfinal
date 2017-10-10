@@ -27,10 +27,14 @@
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
-                <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+              <div class="contact">
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
                         <a href="create-agency.html" class="promoted">Create Agency</a>
@@ -1571,7 +1575,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Mall Bangkok By Boat Buntana</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

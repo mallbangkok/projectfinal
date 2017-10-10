@@ -25,7 +25,6 @@
 <body class="page-sub-page page-my-properties page-account" id="page-top">
 <!-- Wrapper -->
 <div class="wrapper">
-    <!-- Navigation -->
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
@@ -210,18 +209,20 @@
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Mall Bangkok By Boat Buntana</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
+ <footer id="page-footer">
+			<div class="inner">
+				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
+				<!-- /#footer-thumbnails -->
+				<aside id="footer-copyright">
+					<div class="container">
+						<span>Mall Bangkok By Boat Buntana</span> <span
+							class="pull-right"><a href="#page-top" class="roll">Go
+								to top</a></span>
+					</div>
+				</aside>
+			</div>
+			<!-- /.inner -->
+		</footer>
     <!-- end Page Footer -->
 </div>
 

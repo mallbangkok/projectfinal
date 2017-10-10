@@ -29,7 +29,7 @@
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
-                <div class="contact">
+               <div class="contact">
 						<figure>
 							<strong>Phone:</strong>081-567-1717
 						</figure>
@@ -58,20 +58,23 @@
         </div>
         <div class="container">
             <header class="navbar" id="top" role="banner">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
-                    </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                       <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse"
+							data-target=".bs-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<div class="navbar-brand nav" id="brand">
+							<a href="index-google-map-fullscreen"><img
+								src="<c:url value="/img/logo1@1x.png"/>" alt="MALL BANGKOK"></a>
+						</div>
+					</div>
+					<nav
+						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+						role="navigation">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
 							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
@@ -106,9 +109,10 @@
 							<c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
 							</c:if>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-            </header><!-- /.navbar -->
+						</ul>
+					</nav>
+					<!-- /.navbar collapse-->
+				</header>
         </div><!-- /.container -->
     </div><!-- /.navigation -->
     <!-- end Navigation -->
@@ -255,16 +259,19 @@
     <!-- end Page Content -->
     <!-- Page Footer -->
     <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Mall Bangkok By Boat Buntana</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
+			<div class="inner">
+				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
+				<!-- /#footer-thumbnails -->
+				<aside id="footer-copyright">
+					<div class="container">
+						<span>Mall Bangkok By Boat Buntana</span> <span
+							class="pull-right"><a href="#page-top" class="roll">Go
+								to top</a></span>
+					</div>
+				</aside>
+			</div>
+			<!-- /.inner -->
+		</footer>
     <!-- end Page Footer -->
 </div>
 

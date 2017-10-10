@@ -27,11 +27,14 @@
     <!-- Navigation -->
     <div class="navigation">
         <div class="secondary-navigation">
-            <div class="container">
-                <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+            <div class="contact">
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
 						<c:choose>
@@ -64,9 +67,11 @@
                         <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
                     </div>
                 </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
+                <nav
+						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+						role="navigation">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
 							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
@@ -101,8 +106,8 @@
 							<c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
 							</c:if>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
+						</ul>
+					</nav>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -247,16 +252,19 @@
     <!-- end Page Content -->
     <!-- Page Footer -->
     <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Copyright Â© 2013. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
+			<div class="inner">
+				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
+				<!-- /#footer-thumbnails -->
+				<aside id="footer-copyright">
+					<div class="container">
+						<span>Mall Bangkok By Boat Buntana</span> <span
+							class="pull-right"><a href="#page-top" class="roll">Go
+								to top</a></span>
+					</div>
+				</aside>
+			</div>
+			<!-- /.inner -->
+		</footer>
     <!-- end Page Footer -->
 </div>
 

@@ -98,7 +98,8 @@
 							<c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
 							</c:if>
-					</nav><!-- /.navbar collapse-->
+						</ul>
+					</nav>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->

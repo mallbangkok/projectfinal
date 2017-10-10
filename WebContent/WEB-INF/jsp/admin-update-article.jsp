@@ -226,8 +226,6 @@
 		<!-- Page Footer -->
 		<footer id="page-footer">
 			<div class="inner">
-				
-				<!-- /#footer-main -->
 				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
 				<!-- /#footer-thumbnails -->
 				<aside id="footer-copyright">
