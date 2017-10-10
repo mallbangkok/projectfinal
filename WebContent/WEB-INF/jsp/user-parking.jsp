@@ -292,7 +292,7 @@
                                      <div class="col-md-4 col-sm-4"></div>
                                         <div class="col-md-4 col-sm-4">
                                            <div class="form-group clearfix">
-                                                <button class="btn btn-default large" id="docalculate-user">Calculate</button>
+                                                <button class="btn btn-default large" id="docalculate-user" onclick="checkStasus()">Calculate</button>
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-4 -->  
                                         <div class="col-md-4 col-sm-4"></div>
@@ -341,6 +341,11 @@
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
+<script type="text/javascript">
+function checkStasus(){
+	alert('demo');
+}
+</script>
 <script type="text/javascript">
   function onChanges(){
 		var type = document.getElementById('types').value;

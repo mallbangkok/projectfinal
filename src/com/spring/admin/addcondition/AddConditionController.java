@@ -52,16 +52,17 @@ public class AddConditionController {
 		return mav;
 	}
 	@RequestMapping(value = "add-condition-parking", method = RequestMethod.GET)
-	public ModelAndView addCondition(HttpServletRequest request) {
+	public ModelAndView addCondition(HttpServletRequest request,Model md) {
 		ModelAndView mav = new ModelAndView("admin-parking");
 		AddConditionManager pm = new AddConditionManager();
 		String typeOfCondition = request.getParameter("typeOfCondition");
+		String message ="";
 		try {
 			if ("I".equals(typeOfCondition)) {
 				String conditionI = request.getParameter("typeOfFreeConditionI");
 				String dateI = request.getParameter("dateofTypeConditonI");
 				String nameMall = request.getParameter("nameMalls");
-				System.out.println(pm.doAddConditionI(nameMall, conditionI, dateI));
+				message=pm.doAddConditionI(nameMall, conditionI, dateI);
 			} else if ("II".equals(typeOfCondition)) {
 				String nameMall = request.getParameter("nameMalls");
 				String conditionI = request.getParameter("nameConII1");
@@ -71,9 +72,8 @@ public class AddConditionController {
 				String conditionII = request.getParameter("nameConII2");
 				String dateII = request.getParameter("dateoftypeII2");
 				String price = request.getParameter("priceConII");
-				System.out.println(pm.doAddConditionII(nameMall, conditionI, dateI, timeII1, timeoftypeII, conditionII,
-						dateII, price));
-				System.out.println("22");
+				message=pm.doAddConditionII(nameMall, conditionI, dateI, timeII1, timeoftypeII, conditionII,
+						dateII, price);
 			} else if ("III".equals(typeOfCondition)) {
 				String nameMall = request.getParameter("nameMalls");
 				String con1 = request.getParameter("conditionIII1");
@@ -87,14 +87,14 @@ public class AddConditionController {
 				String date3 = request.getParameter("dateIII3");
 				String time3 = request.getParameter("timeIII3");
 				String price3 = request.getParameter("priceIII3");
-				System.out.println(pm.doAddConditionIII(nameMall, con1, date1, time1, type1, con2, date2, price2, con3,
-						date3, time3, price3));
-				System.out.println("33");
+				message=pm.doAddConditionIII(nameMall, con1, date1, time1, type1, con2, date2, price2, con3,
+						date3, time3, price3);
 			}
 		} catch (Exception e) {
 
 		}
-
+		md.addAttribute("message",message);
+		
 		return mav;
 	}
 	
