@@ -33,9 +33,13 @@
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
                         <c:choose>
@@ -46,11 +50,6 @@
 								<a href="sign-in">Sign In</a>
 							</c:otherwise>
 						</c:choose>
-                    </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -86,36 +85,20 @@
 											</c:forEach>
 										</ul>
 									</li>
-									<li><a href="list-mall?typename=all">List All</a></li>
+									<li><a href="list-mall?typename=All Malls">List All</a></li>
 								</ul></li>
-							<li class="has-child"><a href="#">Pages</a>
+							<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
-									<li><a href="article">Test Article</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="invoice-print.html">Invoice</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-properties.html">My Properties</a></li>
-									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
-									<li><a href="create-account.html">Create Account</a></li>
-									<li><a href="create-agency.html">Create Agency</a></li>
-									<li><a href="sign-in">Sign In</a></li>
-									<li class="has-child"><a href="#">Error Pages</a>
-										<ul class="child-navigation">
-											<li><a href="403.html">403</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="500.html">500</a></li>
-										</ul></li>
-								</ul></li>
-							<li class="has-child"><a href="loadsearchfilter">Search Mall</a>
-								<ul class="child-navigation">
+									<li><a href="loadsearchfilter">Search Filter</a></li>
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
 							<li><a href="parking-user">Parking</a>
 								</li>
 							<li class="has-child"><a href="#">Blog</a>
 								<ul class="child-navigation">
-									<li><a href="blog">Blog Listing</a></li>
-									<li><a href="blog-detail">Blog Post Detail</a></li>
+									<c:forEach var="val" items="${blogtype}">
+										<li><a href="blog?articletype=${val}"><c:out value="${val}"/></a></li>
+									</c:forEach>
 								</ul></li>
 							<li><a href="agency-detail">Contact</a></li>
 							<c:if test="${username != null }">
@@ -123,9 +106,6 @@
 							</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -265,7 +245,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © 2013. All Rights Reserved.</span>
+                    <span>Mall Bangkok By Boat Buntana</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

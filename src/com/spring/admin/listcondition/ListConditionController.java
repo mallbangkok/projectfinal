@@ -29,4 +29,16 @@ public class ListConditionController {
 		session.setAttribute("listConditionSize", listCondition.size());
 		return mav;
 	}
+	
+	@RequestMapping(value = "/change-condition-page", method = RequestMethod.GET)
+	public ModelAndView changedAdminListStorePage(HttpServletRequest request, HttpSession session, Model md) {
+		ModelAndView mav = new ModelAndView("admin-list-condition");
+		
+		String p = request.getParameter("page");
+		System.out.println(p);
+		
+		int page = Integer.parseInt(p);
+		session.setAttribute("page", page);
+		return mav;
+	}
 }
