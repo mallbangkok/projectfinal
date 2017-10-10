@@ -31,7 +31,7 @@ public class RemoveConditionManager {
 			return message;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Cannot Delete Mall !!!";
+			return "Cannot Delete Condition !!!";
 		}
 	}
 	@SuppressWarnings("unchecked")

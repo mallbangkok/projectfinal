@@ -190,7 +190,7 @@
 																						class="fa fa-shopping-basket"></i>View Store</a></td>
 																				<td class="actions"><a href="list-update-admin?mallid=${val.mallId }" class="edit"><i
 																						class="fa fa-pencil"></i>Edit</a></td>
-																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit"><i 
+																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit" onclick="return confirm('You need delete mall ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																				</td>
 																			</tr>
@@ -213,7 +213,7 @@
 																						class="fa fa-shopping-basket"></i>View Store</a></td>
 																				<td class="actions"><a href="list-update-admin?mallid=${val.mallId }" class="edit"><i
 																						class="fa fa-pencil"></i>Edit</a></td>
-																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit"><i 
+																				<td class="actions"><a href="admin-delete-mall?mallid=${val.mallId }" class="edit" onclick="return confirm('You need delete mall ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																				</td>
 																			</tr>

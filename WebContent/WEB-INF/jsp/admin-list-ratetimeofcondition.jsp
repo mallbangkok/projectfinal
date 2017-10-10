@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin List Store</title>
+    <title>Mall Bangkok | Admin List Rate</title>
 
 </head>
 
@@ -46,11 +46,6 @@
 								<a href="sign-in">Sign In</a>
 							</c:otherwise>
 						</c:choose>
-                    </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -109,9 +104,6 @@
 							</c:if>
 						</ul>
 					</nav>
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -122,7 +114,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">Admin Management</li>
+                <li class="active">List Rate</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -194,7 +186,7 @@
 								                                        <td class="actions">
 								                                            <a href="edit-rateofcondition?conId=${val.weekId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-rate?rateid=${val.weekId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-rate?rateid=${val.weekId }" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
@@ -213,7 +205,7 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.conditionId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.listWeek}" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.listWeek}" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>

@@ -174,7 +174,7 @@
 	                                        <td class="actions">
 	                                            <a href="list-update-article?articleid=${i.articleid }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 	                                        </td>
-	                                        <td class="actions"><a href="admin-delete-article?articleid=${i.articleid }" class="edit"><i 
+	                                        <td class="actions"><a href="admin-delete-article?articleid=${i.articleid }" class="edit" onclick="return confirm('You need delete article ??');"><i 
 												class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 											</td>
 	                                    </tr>

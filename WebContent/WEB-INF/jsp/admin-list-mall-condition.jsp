@@ -117,7 +117,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">My Properties</li>
+                <li class="active">List Condition</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
