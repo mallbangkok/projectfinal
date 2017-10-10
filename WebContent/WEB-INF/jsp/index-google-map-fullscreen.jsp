@@ -36,10 +36,10 @@
 				<div class="container">
 					<div class="contact">
 						<figure>
-							<strong>Phone:</strong>+1 810-991-3842
+							<strong>Phone:</strong>081-567-1717
 						</figure>
 						<figure>
-							<strong>Email:</strong>zoner@example.com
+							<strong>Email:</strong>buntana@outlook.com
 						</figure>
 					</div>
 					<div class="user-area">
@@ -98,24 +98,6 @@
 										</ul>
 									</li>
 									<li><a href="list-mall?typename=All Malls">List All</a></li>
-								</ul></li>
-							<li class="has-child"><a href="#">Pages</a>
-								<ul class="child-navigation">
-									<li><a href="article">Test Article</a></li>
-									<li><a href="agent-detail.html">Agent Detail</a></li>
-									<li><a href="invoice-print.html">Invoice</a></li>
-									<li><a href="profile.html">Profile</a></li>
-									<li><a href="my-properties.html">My Properties</a></li>
-									<li><a href="bookmarked.html">Bookmarked Properties</a></li>
-									<li><a href="create-account.html">Create Account</a></li>
-									<li><a href="create-agency.html">Create Agency</a></li>
-									<li><a href="sign-in">Sign In</a></li>
-									<li class="has-child"><a href="#">Error Pages</a>
-										<ul class="child-navigation">
-											<li><a href="403.html">403</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="500.html">500</a></li>
-										</ul></li>
 								</ul></li>
 							<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
@@ -809,7 +791,7 @@
 				<!-- /#footer-thumbnails -->
 				<aside id="footer-copyright">
 					<div class="container">
-						<span>Copyright Â© 2013. All Rights Reserved.</span> <span
+						<span>Mall Bangkok By Boat Buntana</span> <span
 							class="pull-right"><a href="#page-top" class="roll">Go
 								to top</a></span>
 					</div>
