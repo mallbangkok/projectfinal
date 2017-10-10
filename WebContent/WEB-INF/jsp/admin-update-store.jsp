@@ -32,7 +32,7 @@
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
-                <div class="contact">
+               <div class="contact">
 						<figure>
 							<strong>Phone:</strong>081-567-1717
 						</figure>

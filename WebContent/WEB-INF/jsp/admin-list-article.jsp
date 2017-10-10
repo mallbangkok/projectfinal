@@ -25,7 +25,6 @@
 <body class="page-sub-page page-my-properties page-account" id="page-top">
 <!-- Wrapper -->
 <div class="wrapper">
-    <!-- Navigation -->
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">

@@ -32,10 +32,10 @@
 				<div class="container">
 					<div class="contact">
 						<figure>
-							<strong>Phone:</strong>+1 810-991-3842
+							<strong>Phone:</strong>081-567-1717
 						</figure>
 						<figure>
-							<strong>Email:</strong>zoner@example.com
+							<strong>Email:</strong>buntana@outlook.com
 						</figure>
 					</div>
 					<div class="user-area">
