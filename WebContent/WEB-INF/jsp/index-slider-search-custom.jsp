@@ -64,9 +64,11 @@
                         <a href="index-google-map-fullscreen"><img src="<c:url value="/img/logo1@1x.png"/>" alt="brand"></a>
                     </div>
                 </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                       <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
+                <nav
+						class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+						role="navigation">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
 							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
@@ -101,8 +103,8 @@
 							<c:if test="${username != null }">
 								<li><a href="my-properties">Admin Management</a></li>
 							</c:if>
-                    </ul>
-                </nav><!-- /.navbar collapse-->  
+						</ul>
+					</nav>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
