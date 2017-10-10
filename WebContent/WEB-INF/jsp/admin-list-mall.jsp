@@ -141,10 +141,11 @@
                             <li><a href="article"><i class="fa fa-home"></i><span>Add Article</span></a></li>
                             <li><a href="list-category-admin"><i class="fa fa-book"></i><span>List Mall</span></a></li>
                             <li><a href="list-mall-article"><i class="fa fa-book"></i><span>List Article</span></a></li>
-                            <li><a href="parking-admin"><i class="fa fa-automobile" ></i><span>Parking</span></a>
+                            
+                            <li><a href="#"><i class="fa fa-automobile" ></i><span>Parking</span></a>
                             	<ul>
                             		<a href="parking-admin"><i class="fa fa-automobile" ></i><span>Add Parking</span></a>
-                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Update Parking</span></a>
+                            		<a href="admin-editparking"><i class="fa fa-automobile" ></i><span>Edit Parking</span></a>
                             	</ul>
                             </li>
                         </ul>
