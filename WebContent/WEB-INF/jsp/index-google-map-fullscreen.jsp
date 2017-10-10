@@ -10,7 +10,7 @@
 
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700'
 	rel='stylesheet' type='text/css'>
-<link href="fonts/font-awesome.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css"
 	type="text/css">
 <link rel="stylesheet" href="css/bootstrap-select.min.css"
@@ -339,15 +339,14 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="feature-box equal-height">
 								<figure class="icon">
-									<i class="fa fa-folder"></i>
+									<i class="fa fa-search"></i>
 								</figure>
 								<aside class="description">
 									<header>
-										<h3>Wide Range of Properties</h3>
+										<h3>Search Filter</h3>
 									</header>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-									<a href="properties-listing.html" class="link-arrow">Read
-										More</a>
+									<p>Search by data filer or sorting</p>
+									<a href="loadsearchfilter" class="link-arrow">Let's Go</a>
 								</aside>
 							</div>
 							<!-- /.feature-box -->
@@ -356,15 +355,14 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="feature-box equal-height">
 								<figure class="icon">
-									<i class="fa fa-users"></i>
+									<i class="fa fa-search"></i>
 								</figure>
 								<aside class="description">
 									<header>
-										<h3>14 Agents for Your Service</h3>
+										<h3>Search Custom</h3>
 									</header>
-									<p>Aliquam gravida magna et fringilla convallis.
-										Pellentesque habitant morbi</p>
-									<a href="agents-listing.html" class="link-arrow">Read More</a>
+									<p>Search by custom field</p>
+									<a href="index-slider-search-custom" class="link-arrow">Let's Go</a>
 								</aside>
 							</div>
 							<!-- /.feature-box -->
@@ -373,15 +371,14 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="feature-box equal-height">
 								<figure class="icon">
-									<i class="fa fa-money"></i>
+									<i class="fa fa-car"></i>
 								</figure>
 								<aside class="description">
 									<header>
-										<h3>Best Price Guarantee!</h3>
+										<h3>Parking</h3>
 									</header>
-									<p>Phasellus non viverra tortor, id auctor leo. Suspendisse
-										id nibh placerat</p>
-									<a href="#" class="link-arrow">Read More</a>
+									<p>Calculate your parking service </p>
+									<a href="parking-user" class="link-arrow">Let's Go</a>
 								</aside>
 							</div>
 							<!-- /.feature-box -->
@@ -393,348 +390,24 @@
 				<!-- /.container -->
 			</section>
 			<!-- /#our-services -->
-			<section id="new-properties" class="block">
-				<div class="container">
-					<header class="section-title">
-						<h2>New Properties for You</h2>
-						<a href="properties-listing.html" class="link-arrow">All
-							Properties</a>
-					</header>
-					<div class="row">
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<figure class="tag status">For Rent
-								</figure>
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-09.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 11,000</div>
-											<h3>3398 Lodgeville Road</h3>
-											<figure>Golden Valley, MN 55427
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>2
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>2
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>0
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<figure class="tag status">Under Offer
-								</figure>
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-03.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 38,000</div>
-											<h3>2186 Rinehart Road</h3>
-											<figure>Doral, FL 33178
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-06.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 325,000</div>
-											<h3>3705 Brighton Circle Road</h3>
-											<figure>Glenwood, MN 56334
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<figure class="tag status">For Sale
-								</figure>
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-01.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 16,000</div>
-											<h3>362 Lynn Ogden Lane</h3>
-											<figure>Galveston, TX 77550
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-					</div>
-					<!-- /.row-->
-					<div class="row">
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-02.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 18,000</div>
-											<h3>2506 B Street</h3>
-											<figure>New Brighton, MN 55112
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													280m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>2
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<figure class="tag status">For Rent
-								</figure>
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-12.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 136,000</div>
-											<h3>3990 Late Avenue</h3>
-											<figure>Kingfisher, OK 73750
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													30m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>0
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-05.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 12,680</div>
-											<h3>297 Marie Street</h3>
-											<figure>Towson, MD 21204
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-						<div class="col-md-3 col-sm-6">
-							<div class="property">
-								<a href="property-detail.html">
-									<div class="property-image">
-										<img src="<c:url value="/img/properties/property-10.jpg"/>"
-											alt="">
-									</div>
-									<div class="overlay">
-										<div class="info">
-											<div class="tag price">$ 12,800</div>
-											<h3>64 Timberbrook Lane</h3>
-											<figure>Denver, CO 80202
-											</figure>
-										</div>
-										<ul class="additional-info">
-											<li><header>Area:</header>
-												<figure>
-													240m
-													<sup>2</sup>
-												</figure></li>
-											<li><header>Beds:</header>
-												<figure>3
-												</figure></li>
-											<li><header>Baths:</header>
-												<figure>1
-												</figure></li>
-											<li><header>Garages:</header>
-												<figure>1
-												</figure></li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<!-- /.property -->
-						</div>
-						<!-- /.col-md-3 -->
-					</div>
-					<!-- /.row-->
-				</div>
-				<!-- /.container-->
-			</section>
-			<!-- /#new-properties-->
 			<section id="testimonials" class="block">
 				<div class="container">
 					<header class="section-title">
-						<h2>Testimonials</h2>
+						<h2>About Us</h2>
 					</header>
 					<div class="owl-carousel testimonials-carousel">
 						<blockquote class="testimonial">
 							<figure>
 								<div class="image">
-									<img src="<c:url value="/img/client-01.jpg"/>" alt="">
+									<img src="<c:url value="/img/boat_buntana.jpg"/>" alt="">
 
 								</div>
 							</figure>
 							<aside class="cite">
-								<p>Fusce risus metus, placerat in consectetur eu, porttitor
-									a est sed sed dolor lorem cras adipiscing</p>
-								<footer>Natalie Jenkins</footer>
-							</aside>
-						</blockquote>
-						<blockquote class="testimonial">
-							<figure>
-								<div class="image">
-									<img src="<c:url value="/img/client-01.jpg"/>" alt="">
-								</div>
-							</figure>
-							<aside class="cite">
-								<p>Fusce risus metus, placerat in consectetur eu, porttitor
-									a est sed sed dolor lorem cras adipiscing</p>
-								<footer>Natalie Jenkins</footer>
+								<p>เนื่องจากปัจจุบันแต่ละห้างนั้นมีการเปลี่ยนแปลงร้านค่อนข้างบ่อย ถ้าเดินห้างลองสังเกตดู มีร้านที่ปิดไป ร้านเปิดใหม่มาแทบทุกเดือนโดยเฉพาะในห้างใหญ่ดังๆ แล้วห้างเขาก็ไม่ขยันมาอัพเดทข้อมูลใหม่ทุกๆ ครั้งตามที่มีการเปลี่ยนแปลง เว็บไซต์ของห้างบางแห่งถึงกับมีข้อมูลเก่าของร้านที่ปิดไปแล้วเกินกว่าครึ่งห้าง ซึ่งสิ่งนี้คือปัญหาของลูกค้าผู้เดินห้างโดยตรง</p>
+								<hr>
+								<p>เปลี่ยนแปลงตัวเองแค่คนเดียว ย่อมง่ายกว่าพยายามจะไปเปลี่ยนแปลงคนสิบคน</p>
+								<footer>Boat Buntana</footer>
 							</aside>
 						</blockquote>
 					</div>
@@ -743,37 +416,7 @@
 				<!-- /.container -->
 			</section>
 			<!-- /#testimonials -->
-			<section id="partners" class="block">
-				<div class="container">
-					<header class="section-title">
-						<h2>Our Partners</h2>
-					</header>
-					<div class="logos">
-
-						<div class="logo">
-							<a href=""> <img
-								src="<c:url value="/img/logo-partner-01.png"/>" alt=""></a>
-						</div>
-						<div class="logo">
-							<a href=""> <img
-								src="<c:url value="/img/logo-partner-02.png"/>" alt=""></a>
-						</div>
-						<div class="logo">
-							<a href=""> <img
-								src="<c:url value="/img/logo-partner-03.png"/>" alt=""></a>
-						</div>
-						<div class="logo">
-							<a href=""> <img
-								src="<c:url value="/img/logo-partner-04.png"/>" alt=""></a>
-						</div>
-						<div class="logo">
-							<a href=""> <img
-								src="<c:url value="/img/logo-partner-05.png"/>" alt=""></a>
-						</div>
-					</div>
-				</div>
-				<!-- /.container -->
-			</section>
+			
 			<!-- /#partners -->
 		</div>
 		<!-- end Page Content -->
