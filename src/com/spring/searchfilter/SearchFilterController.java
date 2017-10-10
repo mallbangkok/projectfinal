@@ -37,7 +37,6 @@ public class SearchFilterController {
 
 	}
 
-	// false
 	@RequestMapping(value = "/search-mall", method = RequestMethod.GET)
 	public ModelAndView doLoadSelectMall(HttpServletRequest request, HttpSession session, Model md) {
 		ModelAndView mav = new ModelAndView("index-search-filter");
