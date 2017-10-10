@@ -142,13 +142,6 @@
 	                                    <a href="blog?articletype=${i.articletype}" class="tag article"><c:out value="${i.articletype}"/></a>
 	                                </div>
 	                            </figure>
-	                            <p>Fusce quis nulla volutpat, rhoncus ligula ut, pulvinar nisi. In dapibus urna sit amet accumsan
-	                                tristique. Donec odio ligula, luctus venenatis varius id, tincidunt ac ipsum. Cras commodo,
-	                                velit nec aliquam dictum, tortor velit dictum ipsum, sed ornare nunc leo nec ipsum. Vestibulum
-	                                sagittis sapien vitae tristique mollis. Aliquam hendrerit nulla semper, viverra mi et,
-	                                hendrerit mauris. Maecenas hendrerit congue ultrices. In laoreet erat blandit eros aliquet,
-	                                in malesuada sem rutrum. In placerat porta egestas.
-	                            </p>
 	                            <a href="javascript:;" onclick="onClick(${i.articleid})" class="link-arrow">Read More</a>
                        		</article><!-- /.blog-post -->
                         </c:forEach>
