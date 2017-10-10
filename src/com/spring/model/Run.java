@@ -17,90 +17,31 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import com.spring.searchcustom.SearchCustomManager;
 
-import com.spring.addmall.*;
-import com.spring.addstore.AddStoreManager;
-import com.spring.admindeletemall.AdminDeleteMallManager;
-import com.spring.admindeletestore.AdminDeleteStoreManager;
-import com.spring.adminlistmall.AdminListMallManager;
-import com.spring.login.LoginMannager;
-import com.spring.searchfilter.SearchFilterManager;
 
 
 public class Run {
 	
 	
 	public static void main(String[] args) throws Exception {
-
-//		EditParkingAdminManager em = new EditParkingAdminManager();
-//		ConditionOfParking c1 = new ConditionOfParking(6,"demo", 11, 22, "55", "1");
-//		ConditionOfParking c2 = new ConditionOfParking(5,"demo", 11,22,"55", "2");
-//		ConditionOfParking c3 = new ConditionOfParking(4,"demo", 11, 22, "55","3");
-//		Mall mall = new Mall();
-//		for (Mall m : em.getAllMalls()) {
-//			if ("Central Chidlom".equalsIgnoreCase(m.getMallNameEng())) {
-//				mall = m;
-//			}
-//		}
-//		
-//		System.out.println(mall.getMallNameEng());
-//		
-//		c1.setMall(mall);;
-//		doUpdateCondition(c1);
-
-		//EditParkingAdminManager em = new EditParkingAdminManager();
-	
-		
-	
-
-//		AddMallManager mm = new AddMallManager();
-//		FacilitiesManager fm = new FacilitiesManager();
-//		AddStoreManager sm = new AddStoreManager();
-//		
-//		AddMallManager am = new AddMallManager();
-//		
-//		SearchFilterManager sfm = new SearchFilterManager();
-//		
+		String result = "KFC";
+		SearchCustomManager sm = new SearchCustomManager();
+		List<Store> listStore = new ArrayList<>();
 		
 		
-		
-//		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\demon\\Documents\\GitHub\\projectfinal\\WebContent\\WEB-INF\\assets\\test3.txt"));
-//		try {
-//		    StringBuilder sb = new StringBuilder();
-//		    String line = br.readLine();
-//
-//		    while (line != null) {
-//		        sb.append(line);
-//		        sb.append(System.lineSeparator());
-//		        line = br.readLine();
-//		    }
-//		    String everything = sb.toString();
-//		    System.out.print(everything);
-//		} finally {
-//		    br.close();
-//		}
-		
-		//readFile("test3.txt");
-		
-//		for(Store s : sm.getAllStores()){
-//			if(s.getMall().getMallId() == 12){
-//				System.out.println(s.getStoreName() + " " + s.getMall().getMallNameEng());
-//			}
-//		}
-	
-		AdminListMallManager am = new AdminListMallManager();
-		
-		Mall mall = am.getMalls().get(0);
-		
-		for(Facilities f : mall.getFacilites()){
-			System.out.println(f.getFacilitiesName());
+		for(Store s : sm.getAllStores()){
+			if(s.getStoreName().matches(result + "(.*)")){
+				listStore.add(s);
+			}
 		}
+	    
+	    for(Store s : listStore){
+	    	System.out.println(s.getStoreName() + " " + s.getMall().getMallNameEng());
+	    }
 	}
 	
 	public static String readFile(String filename) throws IOException{

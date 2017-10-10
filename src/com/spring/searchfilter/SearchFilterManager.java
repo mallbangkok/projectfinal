@@ -85,6 +85,7 @@ public class SearchFilterManager {
 		}
 		return listFood;
 	}
+	
 	public List<Store> listStores(long mallid){
 		List<Store> listStore = new ArrayList<>();
 		for(Store s : this.getAllStores()){

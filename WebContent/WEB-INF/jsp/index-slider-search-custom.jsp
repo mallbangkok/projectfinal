@@ -48,11 +48,6 @@
 							</c:otherwise>
 						</c:choose>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/se.png"/>" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -191,7 +186,7 @@
                 	</c:when>
                 	<c:otherwise>
                 		<header class="section-title">
-                    	<h2>Result : Found <c:out value="${storeSize}"/> Shop</h2>
+                    	<h2>Result : Can your search shop in search field.</h2>
                 		</header>
                 	</c:otherwise>
                 </c:choose>

@@ -53,13 +53,6 @@
 							</c:otherwise>
 						</c:choose>
                     </div>
-						<div class="language-bar">
-							<a href="#" class="active"><img
-								src="<c:url value="/img/flags/th.png"/>" alt=""></a> <a
-								href="#"><img src="<c:url value="/img/flags/de.png"/>"
-								alt=""></a> <a href="#"><img
-								src="<c:url value="/img/flags/se.png"/>" alt=""></a>
-						</div>
 					</div>
 				</div>
 			</div>

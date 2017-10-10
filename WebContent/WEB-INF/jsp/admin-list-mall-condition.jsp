@@ -131,9 +131,6 @@
 						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -189,8 +186,8 @@
                                     	<tr>
                                         	<th>Mall name</th>
                                         	<th></th>
-                                        	<th>Stamp</th>
                                         	<th>Condition</th>
+                                        	<th>Stamp</th>
                                         	<th></th>
                                     	</tr>
                                     	</thead>

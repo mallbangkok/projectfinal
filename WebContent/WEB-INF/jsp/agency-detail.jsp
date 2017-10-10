@@ -30,9 +30,13 @@
         <div class="secondary-navigation">
             <div class="container">
                 <div class="contact">
-                    <figure><strong>Phone:</strong>+1 810-991-3842</figure>
-                    <figure><strong>Email:</strong>zoner@example.com</figure>
-                </div>
+						<figure>
+							<strong>Phone:</strong>081-567-1717
+						</figure>
+						<figure>
+							<strong>Email:</strong>buntana@outlook.com
+						</figure>
+					</div>
                 <div class="user-area">
                     <div class="actions">
 						<c:choose>
@@ -43,13 +47,6 @@
 								<a href="sign-in">Sign In</a>
 							</c:otherwise>
 						</c:choose>
-                    </div>
-                    <div class="language-bar">
-                        <a href="#" class="active">
-                        <img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -69,23 +66,8 @@
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li class="active has-child"><a href="#">Homepage</a>
-                            <ul class="child-navigation">
-                                <li><a href="index-google-map-fullscreen">Google Map Full Screen</a></li>
-                                <li><a href="index-google-map-fixed-height.html">Google Map Fixed Height</a></li>
-                                <li><a href="index-google-map-fixed-navigation.html">Google Map Fixed Navigation</a></li>
-                                <li><a href="index-osm.html">OpenStreetMap Full Screen</a></li>
-                                <li><a href="index-osm-fixed-height.html">OpenStreetMap Fixed Height</a></li>
-                                <li><a href="index-osm-fixed-navigation.html">OpenStreetMap Fixed Navigation</a></li>
-                                <li><a href="index-slider.html">Slider Homepage</a></li>
-                                <li><a href="index-slider-search-box.html">Slider with Search Box</a></li>
-                                <li><a href="index-horizontal-search-floated.html">Horizontal Search Floated</a></li>
-                                <li><a href="index-advanced-horizontal-search.html">Horizontal Advanced Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box.html">Horizontal Slider Search</a></li>
-                                <li><a href="index-slider-horizontal-search-box-floated.html">Horizontal Slider Floated Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child"><a href="#">Directory</a>
+                        <li class="active"><a href="index-google-map-fullscreen">Homepage</a></li>
+							<li class="has-child"><a href="#">Directory</a>
 								<ul class="child-navigation">
 									<li><a href="#">List By Type</a>
 										<ul class="child-navigation">
@@ -100,56 +82,27 @@
 											</c:forEach>
 										</ul>
 									</li>
-									<li><a href="list-mall?typename=all">List All</a></li>
+									<li><a href="list-mall?typename=All Malls">List All</a></li>
 								</ul></li>
-                        <li class="has-child"><a href="#">Pages</a>
-                            <ul class="child-navigation">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="agent-detail.html">Agent Detail</a></li>
-                                <li><a href="invoice-print.html">Invoice</a></li>
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="my-properties.html">My Properties</a></li>
-                                <li><a href="bookmarked.html">Bookmarked Properties</a></li>
-                                <li><a href="create-account.html">Create Account</a></li>
-                                <li><a href="create-agency.html">Create Agency</a></li>
-                                <li><a href="sign-in.html">Sign In</a></li>
-                                <li class="has-child"><a href="#">Error Pages</a>
-                                    <ul class="child-navigation">
-                                        <li><a href="403.html">403</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="500.html">500</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="sticky-footer.html">Sticky Footer</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                                <li><a href="timeline.html">Timeline</a></li>
-                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                <li><a href="rtl.html">RTL Support</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="loadsearchfilter">Search Mall</a>
+							<li class="has-child"><a href="#">Search Mall</a>
 								<ul class="child-navigation">
+									<li><a href="loadsearchfilter">Search Filter</a></li>
 									<li><a href="index-slider-search-custom">Search Custom</a></li>
 								</ul></li>
-							</li>
 							<li><a href="parking-user">Parking</a>
 								</li>
-                        <li class="has-child"><a href="#">Blog</a>
-                            <ul class="child-navigation">
-                                <li><a href="blog.html">Blog Listing</a></li>
-                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+							<li class="has-child"><a href="#">Blog</a>
+								<ul class="child-navigation">
+									<c:forEach var="val" items="${blogtype}">
+										<li><a href="blog?articletype=${val}"><c:out value="${val}"/></a></li>
+									</c:forEach>
+								</ul></li>
+							<li><a href="agency-detail">Contact</a></li>
+							<c:if test="${username != null }">
+								<li><a href="my-properties">Admin Management</a></li>
+							</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -160,8 +113,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Agencies</a></li>
-                <li class="active">Agency Detail</li>
+                <li class="active"><a href="agency-detail">Contact</a></li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -176,113 +128,34 @@
                             <div class="row">
                                 <div class="col-md-3 col-sm-3">
                                     <figure class="agency-image">
-                                     <img src="<c:url value="/img/agent-01.jpg"/>" alt="">
+                                     <img src="<c:url value="/img/boat_buntana.jpg"/>" alt="">
                                    </figure>
                                 </div><!-- /.col-md-3 -->
                                 <div class="col-md-5 col-sm-5">
                                     <h3>Contact Info</h3>
                                     <address>
-                                        <a href="#" class="show-on-map"><i class="fa fa-map-marker"></i><figure>Map</figure></a>
                                         <strong>Boat Buntana</strong>
                                     </address>
                                     <dl>
                                         <dt>Phone:</dt>
-                                        <dd>(123) 456 789</dd>
-                                        <dt>Mobile:</dt>
-                                        <dd>888 123 456 789</dd>
+                                        <dd>081-567-1717</dd>
                                         <dt>Email:</dt>
-                                        <dd><a href="mailto:#">agency@example.com</a></dd>
-                                        <dt>Skype:</dt>
-                                        <dd>genius.properties</dd>
+                                        <dd><a href="mailto:#">buntana@outlook.com</a></dd>
+                                        <dt>Facebook:</dt>
+                                        <dd><a href="https://www.facebook.com/iBoat">Boat Buntana</a></dd>
                                     </dl>
                                 </div><!-- /.col-md-5 -->
                                 <div class="col-md-4 col-sm-4">
-                                    <h3>Shortly About Us</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum,
-                                        bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt.
-                                        Duis euismod placerat rhoncus. Phasellus mollis imperdiet placerat.
-                                    </p>
-                                    <div id="social">
-                                        <h3>Social Profiles</h3>
-                                        <div class="agent-social">
-                                            <a href="#" class="fa fa-twitter btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
-                                            <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
-                                        </div>
-                                    </div><!-- /.block -->
+                                    <h3>About Us</h3>
+                                    <p>Mall Bangkok ก่อตั้งโดย <a href="https://www.facebook.com/iBoat">Boat Buntana</a> อดีตพนักงานการตลาดดิจิทัลของห้างยักษ์ใหญ่แห่งหนึ่งที่ต้องการจะสร้างสิ่งที่ “ห้างควรจะทำ&#8230;แต่ไม่ทำ” และยังไม่มีใครทำในเวลานั้น นั่นก็คือเว็บไซต์หรือแอปที่รวบรวมข้อมูลห้างไทยกว่า 200 
+                                   		 แห่งเอาไว้ในที่เดียว เพื่อที่จะสามารถค้นหาข้อมูลที่ต้องการได้ทันที แทนที่จะต้องเสิร์ชในกูเกิ้ล แล้วเสียเวลาหาข้อมูลจากหลายๆ เว็บ เสียเวลากลั่นกรองข้อมูลที่ผิดและไม่อัพเดท</p>
+									<p>ติดตามการทำงานของเราและรายละเอียดต่างๆ เพิ่มเติมได้ที่ Blog นะครับ</p>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
                             <div class="row">
 
                             </div><!-- /.row -->
-                        </section><!-- /#agent-info -->
                         <hr class="thick">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <section id="agent-testimonials">
-                                    <h3>What Other Said About Us</h3>
-                                    <div class="owl-carousel testimonials-carousel small">
-                                        <blockquote class="testimonial">
-                                            <figure>
-                                                <div class="image">
-                                                    <img src="<c:url value="/img/client-01.jpg"/>" alt=""> 
-                                                </div>
-                                            </figure>
-                                            <aside class="cite">
-                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
-                                                <footer>Natalie Jenkins</footer>
-                                            </aside>
-                                        </blockquote>
-                                        <blockquote class="testimonial">
-                                            <figure>
-                                                <div class="image">
-                                                
-                                                   <img src="<c:url value="/img/client-01.jpg"/>" alt=""> 
-                                                </div>
-                                            </figure>
-                                            <aside class="cite">
-                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
-                                                <footer>Natalie Jenkins</footer>
-                                            </aside>
-                                        </blockquote>
-                                    </div><!-- /.testimonials-carousel -->
-                                </section><!-- /#agent-testimonial -->
-                            </div><!-- /.col-md-5 -->
-                            <div class="col-md-7">
-                                <h3>Send Us a Message</h3>
-                                <div class="agent-form">
-                                    <form role="form" id="form-contact-agent" method="post"  class="clearfix">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="form-contact-agent-name">Your Name<em>*</em></label>
-                                                    <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
-                                                </div><!-- /.form-group -->
-                                            </div><!-- /.col-md-6 -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="form-contact-agent-email">Your Email<em>*</em></label>
-                                                    <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
-                                                </div><!-- /.form-group -->
-                                            </div><!-- /.col-md-6 -->
-                                        </div><!-- /.row -->
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="form-contact-agent-message">Your Message<em>*</em></label>
-                                                    <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" required></textarea>
-                                                </div><!-- /.form-group -->
-                                            </div><!-- /.col-md-12 -->
-                                        </div><!-- /.row -->
-                                        <div class="form-group clearfix">
-                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Send a Message</button>
-                                        </div><!-- /.form-group -->
-                                        <div id="form-rating-status"></div>
-                                    </form><!-- /#form-contact -->
-                                </div><!-- /.rating-form -->
-                            </div>
-                        </div><!-- /.row -->
-                    </section><!-- /#agent-detail -->
                 </div><!-- /.col-md-9 -->
                 <!-- end Agent Detail -->
 
@@ -298,7 +171,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright Â© 2013. All Rights Reserved.</span>
+                    <span>Mall Bangkok By Boat Buntana</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>

@@ -42,11 +42,6 @@
                     <div class="actions">
                         <a href="sign-in.html">Sign In</a>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>

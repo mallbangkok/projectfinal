@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin List Store</title>
+    <title>Mall Bangkok | Admin List Condition</title>
 
 </head>
 
@@ -130,9 +130,6 @@
 						</c:if>
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -270,16 +267,16 @@
                             <div class="center">
                                 <ul class="pagination">
                                 <c:if test="${page == null }">
-                                	<li class="active"><a href="change-page?page=1"><c:out value="1"/></a></li>
+                                	<li class="active"><a href="change-condition-page?page=1"><c:out value="1"/></a></li>
                                 </c:if>
                                 <c:if test="${page != null }">
                                 	<c:forEach varStatus="val" begin="1" end="${pages}">
 	                                	<c:choose>
 	                                		<c:when test="${page == val.index }">
-	                                			<li class="active"><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                			<li class="active"><a href="change-condition-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
 	                                		</c:when>
 	                                		<c:otherwise>
-	                                			<li><a href="change-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
+	                                			<li><a href="change-condition-page?page=${val.index }"><c:out value="${val.index}"/></a></li>
 	                                		</c:otherwise>
 	                                	</c:choose>
                                 	</c:forEach>
