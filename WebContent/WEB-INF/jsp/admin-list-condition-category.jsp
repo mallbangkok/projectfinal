@@ -169,7 +169,7 @@
 	                                    <tr>
 	                                        <td>
 	                                          	<div class="inner">
-	                                            	<a href="list-mall-condition-admin?type=${i}"><h2><c:out value="${i}"/></h2></a>
+	                                            	<a href="list-mall-admin-condition?type=${i}"><h2><c:out value="${i}"/></h2></a>
 	                                        	</div>  
 	                                        </td>
 	                                        <td></td>
