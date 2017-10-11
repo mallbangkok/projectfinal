@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class RemovieConditionController {
+public class RemoveConditionController {
 	@RequestMapping(value = "/admin-delete-condition", method = RequestMethod.GET)
 	public ModelAndView removeCondition(HttpServletRequest request, HttpSession session, Model md) {
 		String message ="";

@@ -47,11 +47,6 @@
 							</c:otherwise>
 						</c:choose>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +174,7 @@
 	                                        <td class="actions">
 	                                            <a href="list-update-article?articleid=${i.articleid }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 	                                        </td>
-	                                        <td class="actions"><a href="admin-delete-article?articleid=${i.articleid }" class="edit"><i 
+	                                        <td class="actions"><a href="admin-delete-article?articleid=${i.articleid }" class="edit" onclick="return confirm('You need delete article ??');"><i 
 												class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 											</td>
 	                                    </tr>

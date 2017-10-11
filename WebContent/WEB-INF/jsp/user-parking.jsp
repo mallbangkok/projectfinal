@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Mall Bangkok | Admin Management</title>
+    <title>Mall Bangkok | Parking</title>
 
 </head>
 
@@ -41,11 +41,6 @@
                 <div class="user-area">
                     <div class="actions">
 								<a href="sign-in">Sign In</a>
-                    </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
                     </div>
                 </div>
             </div>

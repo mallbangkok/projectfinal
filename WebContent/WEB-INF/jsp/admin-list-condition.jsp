@@ -47,11 +47,6 @@
 							</c:otherwise>
 						</c:choose>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -144,7 +139,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">Admin Management</li>
+                <li class="active">List Condition</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -221,7 +216,7 @@
 								                                        <td class="actions">
 								                                            <a href="seacch-rate-week?conId=${val.conditionId }" class="edit"><i class="fa fa-pencil"></i>Rate</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-condition?conditionid=${val.conditionId }" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-condition?conditionid=${val.conditionId }" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>
@@ -240,7 +235,7 @@
 								                                        <td class="actions">
 								                                            <a href="update-store?storeid=${val.conditionId }" class="edit"><i class="fa fa-pencil"></i>Edit</a>
 								                                        </td>
-								                                        <td class="actions"><a href="admin-delete-stores?storeid=${val.conditionId}" class="edit"><i 
+								                                        <td class="actions"><a href="admin-delete-condition?conditionid=${val.conditionId}" class="edit" onclick="return confirm('You need delete ??');"><i 
 																					class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
 																		</td>
 								                                    </tr>

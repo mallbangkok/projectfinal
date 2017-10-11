@@ -1,6 +1,6 @@
 package com.spring.userparking;
 
-import java.util.ArrayList;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.spring.addmall.AddMallManager;
 
 import com.spring.model.Mall;
 
@@ -39,6 +38,11 @@ public class ParkingUserController {
 	// false
 	@RequestMapping(value = "/dosearchmall-user", method = RequestMethod.GET)
 	public ModelAndView doSearchMall(HttpServletRequest request, HttpSession session) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 		ModelAndView mav = new ModelAndView("user-parking");
 		ParkingUserManager pm = new ParkingUserManager();
 		String nameMall = request.getParameter("nameMall");

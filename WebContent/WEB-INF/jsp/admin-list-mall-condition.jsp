@@ -48,11 +48,6 @@
 							</c:otherwise>
 						</c:choose>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="<c:url value="/img/flags/gb.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/de.png"/>" alt=""></a>
-                        <a href="#"><img src="<c:url value="/img/flags/es.png"/>" alt=""></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -122,7 +117,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index-google-map-fullscreen">Home</a></li>
-                <li class="active">My Properties</li>
+                <li class="active">List Condition</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
