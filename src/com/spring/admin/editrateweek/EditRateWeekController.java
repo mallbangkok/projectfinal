@@ -20,6 +20,7 @@ public class EditRateWeekController {
 		String weekId = request.getParameter("conId");
 		Week week = upm.getWeekUpdate(Integer.parseInt(weekId));
 		session.setAttribute("week", week);
+		session.setAttribute("stamp", null);
 		return mav;
 	}
 	@RequestMapping(value = "/admin-update-parking", method = RequestMethod.GET)
@@ -53,6 +54,7 @@ public class EditRateWeekController {
 			message=upm.updateParking(type,"", date, time, typeOfTime, weekId,Integer.parseInt(price));
 		}
 		md.addAttribute("message",message);
+		session.setAttribute("week", null);
 		return mav;
 	}
 	

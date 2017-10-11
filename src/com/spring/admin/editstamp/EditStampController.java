@@ -21,7 +21,7 @@ public class EditStampController {
 		String id = request.getParameter("stampid");
 		Stamp stamp = upm.getStampUpdate(Integer.parseInt(id));
 		session.setAttribute("stamp", stamp);
-
+		session.setAttribute("week", null);
 		return mav;
 	}
 
@@ -35,6 +35,7 @@ public class EditStampController {
 		String price = request.getParameter("price4");
 		message = upm.updateStamp(id, price, hour);
 		md.addAttribute("message",message);
+		session.setAttribute("stamp", null);
 		return mav;
 	}
 }

@@ -177,7 +177,8 @@
                                 <form role="form" id="updatestamp"  action="update-stamp" method="get">
                                  <input type="hidden" name="stampid" id="stampid"value="${stamp.stampId}" >
                                 <section id="property-features">
-                                   <hr class="thick"></hr>
+                                  <h1>Update Condition</h1>
+                                  
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
                                     <div class="row">
@@ -230,7 +231,8 @@
                                   <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="I-II" >
                                <div class="col-md-8 col-sm-12">   
                                 <section id="property-features">
-                                   <hr class="thick"></hr>
+                                   <h1>Update Condition</h1>
+                                  
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
                                     <div class="form-group">
@@ -280,7 +282,8 @@
                                  <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="II-II" >
                                 <div class="col-md-8 col-sm-12">
                                   <section id="property-features">
-                                   <hr class="thick"></hr>
+                                    <h1>Update Condition</h1>
+                                
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
                                     <div class="form-group">
@@ -329,7 +332,8 @@
                                   <input type="hidden" name="typeOfCondition" id="typeOfCondition"value="III-II" >
                                 <div class="col-md-8 col-sm-12">
                                    <section id="property-features">
-                                   <hr class="thick"></hr>
+                                     <h1>Update Condition</h1>
+                                   
                                   </section>
                              <div class="col-md-6 col-sm-6">
                                 <section id="address">
@@ -373,7 +377,8 @@
                                <c:when test="${week.conditions.typeOfCon == 'I-I' }">
                                <div class="col-md-8 col-sm-12">
                                 <section id="property-features">
-                                   <hr class="thick"></hr>
+                                  <h1>Update Condition</h1>
+                                  
                                    <div class="col-md-6 col-sm-6">
                                 <section id="address">
                                  <form role="form" id="addconditionI-I"  action="admin-update-parking" method="get">

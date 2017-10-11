@@ -32,9 +32,5 @@ public class AddStampController {
 
 		return mav;
 	}
-//	@RequestMapping(value = "updateCondition", method = RequestMethod.GET)
-//	public ModelAndView updateCondition(HttpServletRequest request) {
-//		ModelAndView mav = new ModelAndView("admin-parkign");
-//		return mav;
-//	}
+
 }

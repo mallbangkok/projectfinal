@@ -158,7 +158,15 @@
                 	<c:when test="${listWeek != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1><c:out value="${listWeek.get(0).getConditions().getMall().getMallNameEng()} "/> List Rate (found : <c:out value="${listWeekSize}"/> Rate)</h1></header>
+                    		<header><h1>
+                    		<c:if test="${listWeek.size() == 0 }">
+                        		<c:out value="Not found"/> List Rate (found : <c:out value="0"/> Rate)
+                        	</c:if>
+                        	<c:if test="${listWeek.size() != 0 }">
+             					 <c:out value="${listWeek.get(0).getConditions().getMall().getMallNameEng()} "/> List Rate (found : <c:out value="${listWeekSize}"/> Rate)
+                        	</c:if>
+                        	</h1></header>
+                        	
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">

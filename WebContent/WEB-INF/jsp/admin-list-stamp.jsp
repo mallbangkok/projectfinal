@@ -158,7 +158,14 @@
                 	<c:when test="${listStamp != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1><c:out value="${listStamp.get(0).getMall().getMallNameEng()} "/> List Stamp (found : <c:out value="${listStampSize}"/> Stamp)</h1></header>
+                    		<header><h1>
+                    		<c:if test="${listStamp.size() == 0 }">
+                        		<c:out value="Not found"/> List Stamp (found : <c:out value="0"/> Stamp)
+                        	</c:if>
+                        	<c:if test="${listCondition.size() != 0 }">
+             					  <c:out value="${listStamp.get(0).getMall().getMallNameEng()} "/> List Stamp (found : <c:out value="${listStampSize}"/> Stamp)
+                        	</c:if>
+                        	</h1></header>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
@@ -169,7 +176,6 @@
                                         	<th>Free</th>
                                         	<th>Edit</th>
                                         	<th>Delete</th>
-                                        	
                                     	</tr>
                                     	</thead>
                                     <tbody>

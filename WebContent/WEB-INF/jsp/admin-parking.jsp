@@ -425,7 +425,7 @@
                                         </div><!-- /.col-md-4 -->
                                          <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="form-create-agency-city" value="บาท">
+                                                <input type="text" class="form-control" id="typeofprice" value="บาท">
                                             </div><!-- /.form-group -->
                                         </div><!-- /.col-md-8 -->
                                     </div><!-- /.row -->

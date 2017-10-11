@@ -180,7 +180,16 @@
                 	<c:when test="${listCondition != null}">
                 		<div class="col-md-9 col-sm-10">
                     		<section id="my-properties">
-                        	<header><h1><c:out value="${listCondition.get(0).getMall().getMallNameEng()} "/> List Condition (found : <c:out value="${listConditionSize}"/> Condition)</h1></header>
+                        	<header>
+                        	<h1>
+                        	<c:if test="${listCondition.size() == 0 }">
+                        		<c:out value="Not found"/> List Condition (found : <c:out value="0"/> Condition)
+                        	</c:if>
+                        	<c:if test="${listCondition.size() != 0 }">
+                        		<c:out value="${listCondition.get(0).getMall().getMallNameEng()} "/> List Condition (found : <c:out value="${listConditionSize}"/> Condition)
+                        	</c:if>
+                        	</h1>
+                        	</header>
                         	<div class="my-properties">
                             	<div class="table-responsive">
                                 	<table class="table">
