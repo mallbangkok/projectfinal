@@ -10,10 +10,56 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.spring.adminlistmall.AdminListMallManager;
 import com.spring.model.Mall;
 
 @Controller
 public class UpdateParkingController {
+	public int countPages(String type){
+		AdminListMallManager alm = new AdminListMallManager();
+		List<Mall> listMalls = new ArrayList<>();
+		
+		for(Mall m : alm.getMalls()){
+			if(type.equals(m.getType())){
+				listMalls.add(m);
+			}
+		}
+
+		double value = listMalls.size() / 10.0;
+		int mPages = (int) Math.ceil(value);
+		return mPages;
+	}
+	@RequestMapping(value = "/list-mall-admin-condition", method = RequestMethod.GET)
+	public ModelAndView loadAdminListMallPage(HttpSession session , HttpServletRequest request) {
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		ModelAndView mav = new ModelAndView("admin-list-mall-condition");
+		
+		AdminListMallManager alm = new AdminListMallManager();
+		
+		String type = request.getParameter("type");
+		
+		int mPages = this.countPages(type);
+		List<Mall> listMalls = new ArrayList<>();
+		
+		for(Mall m : alm.getMalls()){
+			if(type.equals(m.getType())){
+				listMalls.add(m);
+			}
+		}
+		
+		session.setAttribute("mallPages", mPages);
+		session.setAttribute("listMalls", listMalls);
+		session.setAttribute("listMallSize", listMalls.size());
+		return mav;
+	}
 
 	@RequestMapping(value = "admin-editparking", method = RequestMethod.GET)
 	public ModelAndView addStamp(HttpServletRequest request, HttpSession session) {
