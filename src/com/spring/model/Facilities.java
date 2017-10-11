@@ -11,7 +11,7 @@ public class Facilities {
 	private String facilitiesId;
 	private String facilitiesName;
 	
-	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.MERGE)
 	@JoinTable(name = "mall_facilities" , joinColumns = {
 		@JoinColumn(name = "facilitiesId")} , inverseJoinColumns = {
 		@JoinColumn(name = "mallId")})

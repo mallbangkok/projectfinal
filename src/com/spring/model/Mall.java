@@ -21,7 +21,7 @@ public class Mall {
 	private String phoneNoMall;
 	private String imageMall;
 
-	@ManyToMany(cascade = CascadeType.MERGE, mappedBy = "malls", fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "malls", fetch = FetchType.EAGER)
 	private Set<Facilities> facilites = new HashSet<Facilities>();
 
 	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "mall", fetch = FetchType.EAGER)

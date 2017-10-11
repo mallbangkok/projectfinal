@@ -40,7 +40,14 @@
 					</div>
                 <div class="user-area">
                     <div class="actions">
-                        <a href="sign-in.html">Sign In</a>
+						<c:choose>
+							<c:when test="${username != null}">
+								<a href="logout">Log Out</a>
+							</c:when>
+							<c:otherwise>
+								<a href="sign-in">Sign In</a>
+							</c:otherwise>
+						</c:choose>
                     </div>
                 </div>
             </div>
